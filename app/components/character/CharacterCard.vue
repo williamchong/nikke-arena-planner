@@ -11,16 +11,10 @@ const emit = defineEmits<{
 }>()
 
 const { localize } = useLocalizedField()
+const { getAvatarUrl } = useAvatars()
 
 const displayName = computed(() => localize(props.character.name))
-
-const roleIcon = computed(() => {
-  switch (props.character.role) {
-    case 'attacker': return 'i-lucide-swords'
-    case 'supporter': return 'i-lucide-heart-handshake'
-    case 'defender': return 'i-lucide-shield'
-  }
-})
+const avatarUrl = computed(() => getAvatarUrl(props.character.avatarImg))
 </script>
 
 <template>
@@ -31,15 +25,18 @@ const roleIcon = computed(() => {
       : 'border-default opacity-50 hover:opacity-75'"
     @click="emit('toggle', character.id)"
   >
+    <img
+      v-if="avatarUrl"
+      :src="avatarUrl"
+      :alt="displayName"
+      class="size-12 rounded-full object-cover"
+      loading="lazy"
+    >
     <div class="flex items-center gap-1">
-      <UIcon :name="roleIcon" class="size-3.5 text-muted" />
       <CommonBurstBadge :burst="character.burst" />
     </div>
     <span class="line-clamp-2 text-xs font-medium leading-tight">
       {{ displayName }}
-    </span>
-    <span class="text-[10px] text-muted uppercase">
-      {{ character.weapon }}
     </span>
   </button>
 </template>

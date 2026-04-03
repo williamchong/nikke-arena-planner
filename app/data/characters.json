@@ -44,7 +44,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1377
+    "releaseOrder": 1377,
+    "avatarImg": "si_c352_00_s"
   },
   {
     "id": "snow-white-heavy-arms",
@@ -91,7 +92,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1461
+    "releaseOrder": 1461,
+    "avatarImg": "si_c471_00_s"
   },
   {
     "id": "trina",
@@ -138,7 +140,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1167
+    "releaseOrder": 1167,
+    "avatarImg": "si_c412_00_s"
   },
   {
     "id": "anis",
@@ -185,7 +188,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c012_00_s"
   },
   {
     "id": "jackal",
@@ -232,7 +236,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 376
+    "releaseOrder": 376,
+    "avatarImg": "si_c111_00_s"
   },
   {
     "id": "centi",
@@ -279,7 +284,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c080_00_s"
   },
   {
     "id": "rumani",
@@ -326,7 +332,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1020
+    "releaseOrder": 1020,
+    "avatarImg": "si_c240_00_s"
   },
   {
     "id": "emilia-2149",
@@ -373,7 +380,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 810
+    "releaseOrder": 810,
+    "avatarImg": "si_c821_00_s"
   },
   {
     "id": "emilia",
@@ -420,7 +428,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 810
+    "releaseOrder": 810,
+    "avatarImg": "si_c821_00_s"
   },
   {
     "id": "noah",
@@ -467,7 +476,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c232_00_s"
   },
   {
     "id": "pascal",
@@ -514,7 +524,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 608
+    "releaseOrder": 608,
+    "avatarImg": "si_c812_00_s"
   },
   {
     "id": "maiden-ice-rose",
@@ -561,7 +572,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1069
+    "releaseOrder": 1069,
+    "avatarImg": "si_c183_00_s"
   },
   {
     "id": "drake-treasure",
@@ -608,7 +620,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 1335
+    "releaseOrder": 1335,
+    "avatarImg": "si_c101_00_s"
   },
   {
     "id": "drake",
@@ -655,7 +668,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c101_00_s"
   },
   {
     "id": "viper",
@@ -702,7 +716,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 383
+    "releaseOrder": 383,
+    "avatarImg": "si_c112_00_s"
   },
   {
     "id": "viper-treasure",
@@ -749,7 +764,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 383
+    "releaseOrder": 383,
+    "avatarImg": "si_c112_00_s"
   },
   {
     "id": "maiden",
@@ -796,7 +812,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c181_00_s"
   },
   {
     "id": "neon",
@@ -843,7 +860,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c011_00_s"
   },
   {
     "id": "noir",
@@ -890,7 +908,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 509
+    "releaseOrder": 509,
+    "avatarImg": "si_c271_00_s"
   },
   {
     "id": "pepper",
@@ -937,7 +956,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c131_00_s"
   },
   {
     "id": "sugar",
@@ -984,7 +1004,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c140_00_s"
   },
   {
     "id": "soda-twinkling-bunny",
@@ -1031,7 +1052,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 880
+    "releaseOrder": 880,
+    "avatarImg": "si_c314_00_s"
   },
   {
     "id": "laplace-treasure",
@@ -1078,7 +1100,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1251
+    "releaseOrder": 1251,
+    "avatarImg": "si_c100_00_s"
   },
   {
     "id": "liberalio",
@@ -1125,7 +1148,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1405
+    "releaseOrder": 1405,
+    "avatarImg": "si_c262_00_s"
   },
   {
     "id": "mica-snow-buddy",
@@ -1172,7 +1196,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 712
+    "releaseOrder": 712,
+    "avatarImg": "si_c062_00_s"
   },
   {
     "id": "zwei",
@@ -1219,7 +1244,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 950
+    "releaseOrder": 950,
+    "avatarImg": "si_c390_00_s"
   },
   {
     "id": "nihilister",
@@ -1266,7 +1292,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 453
+    "releaseOrder": 453,
+    "avatarImg": "si_c261_00_s"
   },
   {
     "id": "arcana",
@@ -1313,7 +1340,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1230
+    "releaseOrder": 1230,
+    "avatarImg": "si_c581_00_s"
   },
   {
     "id": "a2",
@@ -1360,7 +1388,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 615
+    "releaseOrder": 615,
+    "avatarImg": "si_c811_00_s"
   },
   {
     "id": "laplace",
@@ -1407,7 +1436,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 327
+    "releaseOrder": 327,
+    "avatarImg": "si_c100_00_s"
   },
   {
     "id": "rapunzel",
@@ -1454,7 +1484,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c221_00_s"
   },
   {
     "id": "diesel-winter-sweets",
@@ -1501,7 +1532,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1433
+    "releaseOrder": 1433,
+    "avatarImg": "si_c075_00_s"
   },
   {
     "id": "grave",
@@ -1548,7 +1580,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1041
+    "releaseOrder": 1041,
+    "avatarImg": "si_c514_00_s"
   },
   {
     "id": "scarlet",
@@ -1595,7 +1628,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c222_00_s"
   },
   {
     "id": "anchor",
@@ -1642,7 +1676,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 579
+    "releaseOrder": 579,
+    "avatarImg": "si_c351_00_s"
   },
   {
     "id": "anchor-innocent-maid",
@@ -1689,7 +1724,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1132
+    "releaseOrder": 1132,
+    "avatarImg": "si_c355_00_s"
   },
   {
     "id": "anne-miracle-fairy",
@@ -1736,7 +1772,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 348
+    "releaseOrder": 348,
+    "avatarImg": "si_c121_00_s"
   },
   {
     "id": "vesti",
@@ -1783,7 +1820,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c091_00_s"
   },
   {
     "id": "bay",
@@ -1830,7 +1868,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 831
+    "releaseOrder": 831,
+    "avatarImg": "si_c550_00_s"
   },
   {
     "id": "bay-treasure",
@@ -1877,7 +1916,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 831
+    "releaseOrder": 831,
+    "avatarImg": "si_c550_00_s"
   },
   {
     "id": "biscuit",
@@ -1924,7 +1964,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 438
+    "releaseOrder": 438,
+    "avatarImg": "si_c381_00_s"
   },
   {
     "id": "tia",
@@ -1971,7 +2012,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 649
+    "releaseOrder": 649,
+    "avatarImg": "si_c451_00_s"
   },
   {
     "id": "quiry",
@@ -2018,7 +2060,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 656
+    "releaseOrder": 656,
+    "avatarImg": "si_c033_00_s"
   },
   {
     "id": "crust",
@@ -2065,7 +2108,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1195
+    "releaseOrder": 1195,
+    "avatarImg": "si_c521_00_s"
   },
   {
     "id": "mica",
@@ -2112,7 +2156,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c061_00_s"
   },
   {
     "id": "noise",
@@ -2159,7 +2204,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c430_00_s"
   },
   {
     "id": "power",
@@ -2206,7 +2252,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 417
+    "releaseOrder": 417,
+    "avatarImg": "si_c801_00_s"
   },
   {
     "id": "sora",
@@ -2253,7 +2300,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1279
+    "releaseOrder": 1279,
+    "avatarImg": "si_c532_00_s"
   },
   {
     "id": "ada",
@@ -2300,7 +2348,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 978
+    "releaseOrder": 978,
+    "avatarImg": "si_c840_00_s"
   },
   {
     "id": "mana",
@@ -2347,7 +2396,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1111
+    "releaseOrder": 1111,
+    "avatarImg": "si_c290_00_s"
   },
   {
     "id": "anis-sparkling-summer",
@@ -2394,7 +2444,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 579
+    "releaseOrder": 579,
+    "avatarImg": "si_c015_00_s"
   },
   {
     "id": "jill",
@@ -2441,7 +2492,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 978
+    "releaseOrder": 978,
+    "avatarImg": "si_c841_00_s"
   },
   {
     "id": "scarlet-black-shadow",
@@ -2488,7 +2540,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 730
+    "releaseOrder": 730,
+    "avatarImg": "si_c225_00_s"
   },
   {
     "id": "harran",
@@ -2535,7 +2588,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c230_00_s"
   },
   {
     "id": "raven",
@@ -2582,7 +2636,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1265
+    "releaseOrder": 1265,
+    "avatarImg": "si_c851_00_s"
   },
   {
     "id": "privaty-unkind-maid",
@@ -2629,7 +2684,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 765
+    "releaseOrder": 765,
+    "avatarImg": "si_c313_00_s"
   },
   {
     "id": "guilty",
@@ -2676,7 +2732,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 376
+    "releaseOrder": 376,
+    "avatarImg": "si_c400_00_s"
   },
   {
     "id": "ether",
@@ -2723,7 +2780,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c291_00_s"
   },
   {
     "id": "poli",
@@ -2770,7 +2828,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c030_00_s"
   },
   {
     "id": "poli-treasure",
@@ -2817,7 +2876,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c030_00_s"
   },
   {
     "id": "leona",
@@ -2864,7 +2924,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 740
+    "releaseOrder": 740,
+    "avatarImg": "si_c382_00_s"
   },
   {
     "id": "marciana",
@@ -2911,7 +2972,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 628
+    "releaseOrder": 628,
+    "avatarImg": "si_c321_00_s"
   },
   {
     "id": "mary",
@@ -2958,7 +3020,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c130_00_s"
   },
   {
     "id": "naga",
@@ -3005,7 +3068,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 642
+    "releaseOrder": 642,
+    "avatarImg": "si_c450_00_s"
   },
   {
     "id": "neve",
@@ -3052,7 +3116,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 341
+    "releaseOrder": 341,
+    "avatarImg": "si_c193_00_s"
   },
   {
     "id": "dorothy-serendipity",
@@ -3099,7 +3164,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 1293
+    "releaseOrder": 1293,
+    "avatarImg": "si_c234_00_s"
   },
   {
     "id": "isabel",
@@ -3146,7 +3212,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c231_00_s"
   },
   {
     "id": "soline-frost-ticket",
@@ -3193,7 +3260,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 1419
+    "releaseOrder": 1419,
+    "avatarImg": "si_c074_00_s"
   },
   {
     "id": "brid-silent-track",
@@ -3240,7 +3308,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 1440
+    "releaseOrder": 1440,
+    "avatarImg": "si_c073_00_s"
   },
   {
     "id": "k",
@@ -3287,7 +3356,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1244
+    "releaseOrder": 1244,
+    "avatarImg": "si_c041_00_s"
   },
   {
     "id": "quency",
@@ -3334,7 +3404,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 376
+    "releaseOrder": 376,
+    "avatarImg": "si_c402_00_s"
   },
   {
     "id": "crow",
@@ -3381,7 +3452,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c110_00_s"
   },
   {
     "id": "soline",
@@ -3428,7 +3500,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c071_00_s"
   },
   {
     "id": "asuka",
@@ -3475,7 +3548,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 964
+    "releaseOrder": 964,
+    "avatarImg": "si_c830_00_s"
   },
   {
     "id": "snow-white",
@@ -3522,7 +3596,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c220_00_s"
   },
   {
     "id": "ade",
@@ -3569,7 +3644,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 775
+    "releaseOrder": 775,
+    "avatarImg": "si_c310_00_s"
   },
   {
     "id": "rei-ayanami-tentative-name",
@@ -3616,7 +3692,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1153
+    "releaseOrder": 1153,
+    "avatarImg": "si_c834_00_s"
   },
   {
     "id": "mihara",
@@ -3663,7 +3740,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c161_00_s"
   },
   {
     "id": "moran",
@@ -3710,7 +3788,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 754
+    "releaseOrder": 754,
+    "avatarImg": "si_c281_00_s"
   },
   {
     "id": "phantom",
@@ -3757,7 +3836,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1013
+    "releaseOrder": 1013,
+    "avatarImg": "si_c580_00_s"
   },
   {
     "id": "vesti-tactical-upgrade",
@@ -3804,7 +3884,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1328
+    "releaseOrder": 1328,
+    "avatarImg": "si_c094_00_s"
   },
   {
     "id": "himeno",
@@ -3851,7 +3932,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 417
+    "releaseOrder": 417,
+    "avatarImg": "si_c802_00_s"
   },
   {
     "id": "rouge",
@@ -3898,7 +3980,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 992
+    "releaseOrder": 992,
+    "avatarImg": "si_c272_00_s"
   },
   {
     "id": "eunhwa",
@@ -3945,7 +4028,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c092_00_s"
   },
   {
     "id": "ludmilla",
@@ -3992,7 +4076,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c190_00_s"
   },
   {
     "id": "quency-escape-queen",
@@ -4039,7 +4124,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1006
+    "releaseOrder": 1006,
+    "avatarImg": "si_c403_00_s"
   },
   {
     "id": "n102",
@@ -4086,7 +4172,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c120_00_s"
   },
   {
     "id": "belorta",
@@ -4133,7 +4220,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c060_00_s"
   },
   {
     "id": "yan",
@@ -4180,7 +4268,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c201_00_s"
   },
   {
     "id": "yuni",
@@ -4227,7 +4316,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c160_00_s"
   },
   {
     "id": "ein",
@@ -4274,7 +4364,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 936
+    "releaseOrder": 936,
+    "avatarImg": "si_c391_00_s"
   },
   {
     "id": "d-killer-wife",
@@ -4321,7 +4412,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 796
+    "releaseOrder": 796,
+    "avatarImg": "si_c043_00_s"
   },
   {
     "id": "exia",
@@ -4368,7 +4460,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c210_00_s"
   },
   {
     "id": "exia-treasure",
@@ -4415,7 +4508,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c210_00_s"
   },
   {
     "id": "bready",
@@ -4462,7 +4556,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1181
+    "releaseOrder": 1181,
+    "avatarImg": "si_c520_00_s"
   },
   {
     "id": "dolla",
@@ -4509,7 +4604,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c202_00_s"
   },
   {
     "id": "helm",
@@ -4556,7 +4652,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 313
+    "releaseOrder": 313,
+    "avatarImg": "si_c352_00_s"
   },
   {
     "id": "cocoa",
@@ -4603,7 +4700,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 396
+    "releaseOrder": 396,
+    "avatarImg": "si_c311_00_s"
   },
   {
     "id": "ram",
@@ -4650,7 +4748,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 810
+    "releaseOrder": 810,
+    "avatarImg": "si_c822_00_s"
   },
   {
     "id": "maxwell",
@@ -4697,7 +4796,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c102_00_s"
   },
   {
     "id": "milk",
@@ -4744,7 +4844,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c141_00_s"
   },
   {
     "id": "milk-treasure",
@@ -4791,7 +4892,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c141_00_s"
   },
   {
     "id": "trony",
@@ -4838,7 +4940,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 866
+    "releaseOrder": 866,
+    "avatarImg": "si_c501_00_s"
   },
   {
     "id": "sakura-bloom-in-summer",
@@ -4885,7 +4988,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 915
+    "releaseOrder": 915,
+    "avatarImg": "si_c284_00_s"
   },
   {
     "id": "red-hood",
@@ -4932,7 +5036,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 670
+    "releaseOrder": 670,
+    "avatarImg": "si_c470_00_s"
   },
   {
     "id": "rapunzel-pure-grace",
@@ -4979,7 +5084,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1034
+    "releaseOrder": 1034,
+    "avatarImg": "si_c226_00_s"
   },
   {
     "id": "mari",
@@ -5026,7 +5132,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 971
+    "releaseOrder": 971,
+    "avatarImg": "si_c832_00_s"
   },
   {
     "id": "eunhwa-tactical-upgrade",
@@ -5073,7 +5180,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1321
+    "releaseOrder": 1321,
+    "avatarImg": "si_c095_00_s"
   },
   {
     "id": "ade-agent-bunny",
@@ -5120,7 +5228,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1342
+    "releaseOrder": 1342,
+    "avatarImg": "si_c315_00_s"
   },
   {
     "id": "milk-blooming-bunny",
@@ -5167,7 +5276,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1349
+    "releaseOrder": 1349,
+    "avatarImg": "si_c143_00_s"
   },
   {
     "id": "yulha",
@@ -5214,7 +5324,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c171_00_s"
   },
   {
     "id": "admi",
@@ -5261,7 +5372,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c172_00_s"
   },
   {
     "id": "sakura",
@@ -5308,7 +5420,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 453
+    "releaseOrder": 453,
+    "avatarImg": "si_c282_00_s"
   },
   {
     "id": "mary-bay-goddess",
@@ -5355,7 +5468,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 530
+    "releaseOrder": 530,
+    "avatarImg": "si_c132_00_s"
   },
   {
     "id": "frima",
@@ -5402,7 +5516,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c142_00_s"
   },
   {
     "id": "frima-treasure",
@@ -5449,7 +5564,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c142_00_s"
   },
   {
     "id": "helm-aquamarine",
@@ -5496,7 +5612,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 586
+    "releaseOrder": 586,
+    "avatarImg": "si_c353_00_s"
   },
   {
     "id": "2b",
@@ -5543,7 +5660,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 608
+    "releaseOrder": 608,
+    "avatarImg": "si_c810_00_s"
   },
   {
     "id": "blanc",
@@ -5590,7 +5708,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 502
+    "releaseOrder": 502,
+    "avatarImg": "si_c270_00_s"
   },
   {
     "id": "brid",
@@ -5637,7 +5756,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c070_00_s"
   },
   {
     "id": "folkwang",
@@ -5684,7 +5804,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c242_00_s"
   },
   {
     "id": "guillotine-winter-slayer",
@@ -5731,7 +5852,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1076
+    "releaseOrder": 1076,
+    "avatarImg": "si_c182_00_s"
   },
   {
     "id": "rapi",
@@ -5778,7 +5900,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c010_00_s"
   },
   {
     "id": "rupee",
@@ -5825,7 +5948,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c200_00_s"
   },
   {
     "id": "rupee-winter-shopper",
@@ -5872,7 +5996,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 341
+    "releaseOrder": 341,
+    "avatarImg": "si_c203_00_s"
   },
   {
     "id": "rosanna-chic-ocean",
@@ -5919,7 +6044,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 922
+    "releaseOrder": 922,
+    "avatarImg": "si_c283_00_s"
   },
   {
     "id": "mori",
@@ -5966,7 +6092,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1209
+    "releaseOrder": 1209,
+    "avatarImg": "si_c590_00_s"
   },
   {
     "id": "privaty",
@@ -6013,7 +6140,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c170_00_s"
   },
   {
     "id": "sin",
@@ -6060,7 +6188,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 376
+    "releaseOrder": 376,
+    "avatarImg": "si_c401_00_s"
   },
   {
     "id": "dorothy",
@@ -6107,7 +6236,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 481
+    "releaseOrder": 481,
+    "avatarImg": "si_c233_00_s"
   },
   {
     "id": "tove",
@@ -6154,7 +6284,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 691
+    "releaseOrder": 691,
+    "avatarImg": "si_c192_00_s"
   },
   {
     "id": "tove-treasure",
@@ -6201,7 +6332,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 691
+    "releaseOrder": 691,
+    "avatarImg": "si_c192_00_s"
   },
   {
     "id": "eve",
@@ -6248,7 +6380,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1258
+    "releaseOrder": 1258,
+    "avatarImg": "si_c850_00_s"
   },
   {
     "id": "julia",
@@ -6295,7 +6428,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c150_00_s"
   },
   {
     "id": "julia-treasure",
@@ -6342,7 +6476,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c150_00_s"
   },
   {
     "id": "miranda-treasure",
@@ -6389,7 +6524,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1356
+    "releaseOrder": 1356,
+    "avatarImg": "si_c032_00_s"
   },
   {
     "id": "d",
@@ -6436,7 +6572,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 467
+    "releaseOrder": 467,
+    "avatarImg": "si_c040_00_s"
   },
   {
     "id": "epinel",
@@ -6483,7 +6620,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c241_00_s"
   },
   {
     "id": "alice-wonderland-bunny",
@@ -6530,7 +6668,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 887
+    "releaseOrder": 887,
+    "avatarImg": "si_c195_00_s"
   },
   {
     "id": "clay",
@@ -6577,7 +6716,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 901
+    "releaseOrder": 901,
+    "avatarImg": "si_c551_00_s"
   },
   {
     "id": "rei",
@@ -6624,7 +6764,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 481
+    "releaseOrder": 481,
+    "avatarImg": "si_c392_00_s"
   },
   {
     "id": "liter",
@@ -6671,7 +6812,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c082_00_s"
   },
   {
     "id": "mast",
@@ -6718,7 +6860,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 565
+    "releaseOrder": 565,
+    "avatarImg": "si_c350_00_s"
   },
   {
     "id": "makima",
@@ -6765,7 +6908,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 417
+    "releaseOrder": 417,
+    "avatarImg": "si_c800_00_s"
   },
   {
     "id": "misato",
@@ -6812,7 +6956,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 964
+    "releaseOrder": 964,
+    "avatarImg": "si_c833_00_s"
   },
   {
     "id": "miranda",
@@ -6859,7 +7004,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c032_00_s"
   },
   {
     "id": "nero",
@@ -6906,7 +7052,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 551
+    "releaseOrder": 551,
+    "avatarImg": "si_c380_00_s"
   },
   {
     "id": "novel",
@@ -6953,7 +7100,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c212_00_s"
   },
   {
     "id": "volume",
@@ -7000,7 +7148,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c431_00_s"
   },
   {
     "id": "signal",
@@ -7047,7 +7196,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c022_00_s"
   },
   {
     "id": "little-mermaid",
@@ -7094,7 +7244,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1209
+    "releaseOrder": 1209,
+    "avatarImg": "si_c513_00_s"
   },
   {
     "id": "sakura-suzuhara",
@@ -7141,7 +7292,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1146
+    "releaseOrder": 1146,
+    "avatarImg": "si_c836_00_s"
   },
   {
     "id": "nayuta",
@@ -7188,7 +7340,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1398
+    "releaseOrder": 1398,
+    "avatarImg": "si_c223_00_s"
   },
   {
     "id": "modernia",
@@ -7235,7 +7388,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 365
+    "releaseOrder": 365,
+    "avatarImg": "si_c260_00_s"
   },
   {
     "id": "alice",
@@ -7282,7 +7436,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c191_00_s"
   },
   {
     "id": "mihara-bonding-chain",
@@ -7329,7 +7484,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1216
+    "releaseOrder": 1216,
+    "avatarImg": "si_c162_00_s"
   },
   {
     "id": "cinderella",
@@ -7376,7 +7532,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1034
+    "releaseOrder": 1034,
+    "avatarImg": "si_c511_00_s"
   },
   {
     "id": "rosanna",
@@ -7423,7 +7580,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 516
+    "releaseOrder": 516,
+    "avatarImg": "si_c280_00_s"
   },
   {
     "id": "ludmilla-winter-owner",
@@ -7470,7 +7628,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 705
+    "releaseOrder": 705,
+    "avatarImg": "si_c194_00_s"
   },
   {
     "id": "asuka-wille",
@@ -7517,7 +7676,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1146
+    "releaseOrder": 1146,
+    "avatarImg": "si_c835_00_s"
   },
   {
     "id": "aria",
@@ -7564,7 +7724,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c432_00_s"
   },
   {
     "id": "emma",
@@ -7611,7 +7772,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c090_00_s"
   },
   {
     "id": "diesel",
@@ -7658,7 +7820,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c072_00_s"
   },
   {
     "id": "diesel-treasure",
@@ -7705,7 +7868,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c072_00_s"
   },
   {
     "id": "flora",
@@ -7752,7 +7916,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1055
+    "releaseOrder": 1055,
+    "avatarImg": "si_c411_00_s"
   },
   {
     "id": "crown",
@@ -7799,7 +7964,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 845
+    "releaseOrder": 845,
+    "avatarImg": "si_c330_00_s"
   },
   {
     "id": "guillotine",
@@ -7846,7 +8012,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c180_00_s"
   },
   {
     "id": "kilo",
@@ -7893,7 +8060,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 845
+    "releaseOrder": 845,
+    "avatarImg": "si_c361_00_s"
   },
   {
     "id": "rapi-red-hood",
@@ -7940,7 +8108,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1096
+    "releaseOrder": 1096,
+    "avatarImg": "si_c016_00_s"
   },
   {
     "id": "rem",
@@ -7987,7 +8156,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 817
+    "releaseOrder": 817,
+    "avatarImg": "si_c820_00_s"
   },
   {
     "id": "rei-ayanami",
@@ -8034,7 +8204,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 971
+    "releaseOrder": 971,
+    "avatarImg": "si_c831_00_s"
   },
   {
     "id": "mast-romantic-maid",
@@ -8081,7 +8252,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1125
+    "releaseOrder": 1125,
+    "avatarImg": "si_c354_00_s"
   },
   {
     "id": "neon-blue-ocean",
@@ -8128,7 +8300,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 537
+    "releaseOrder": 537,
+    "avatarImg": "si_c014_00_s"
   },
   {
     "id": "soda",
@@ -8175,7 +8348,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 396
+    "releaseOrder": 396,
+    "avatarImg": "si_c312_00_s"
   },
   {
     "id": "elegg",
@@ -8222,7 +8396,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 782
+    "releaseOrder": 782,
+    "avatarImg": "si_c500_00_s"
   },
   {
     "id": "elegg-boom-and-shock",
@@ -8269,7 +8444,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1300
+    "releaseOrder": 1300,
+    "avatarImg": "si_c502_00_s"
   },
   {
     "id": "emma-tactical-upgrade",
@@ -8316,7 +8492,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1314
+    "releaseOrder": 1314,
+    "avatarImg": "si_c093_00_s"
   },
   {
     "id": "delta-ninja-thief",
@@ -8363,7 +8540,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1384
+    "releaseOrder": 1384,
+    "avatarImg": "si_c023_00_s"
   },
   {
     "id": "snow-white-innocent-days",
@@ -8410,7 +8588,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 670
+    "releaseOrder": 670,
+    "avatarImg": "si_c224_00_s"
   },
   {
     "id": "label",
@@ -8457,7 +8636,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1475
+    "releaseOrder": 1475,
+    "avatarImg": "si_c582_00_s"
   },
   {
     "id": "velvet",
@@ -8504,7 +8684,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1489
+    "releaseOrder": 1489,
+    "avatarImg": "si_c316_00_s"
   },
   {
     "id": "chisato",
@@ -8551,7 +8732,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 1503
+    "releaseOrder": 1503,
+    "avatarImg": "si_c860_00_s"
   },
   {
     "id": "takina",
@@ -8598,7 +8780,8 @@
       "attack": 1,
       "defense": -1
     },
-    "releaseOrder": 1510
+    "releaseOrder": 1510,
+    "avatarImg": "si_c861_00_s"
   },
   {
     "id": "privaty-treasure",
@@ -8645,7 +8828,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c170_00_s"
   },
   {
     "id": "zwei-treasure",
@@ -8692,7 +8876,8 @@
       "attack": 2,
       "defense": -2
     },
-    "releaseOrder": 950
+    "releaseOrder": 950,
+    "avatarImg": "si_c390_00_s"
   },
   {
     "id": "centi-treasure",
@@ -8739,7 +8924,8 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 307
+    "releaseOrder": 307,
+    "avatarImg": "si_c080_00_s"
   },
   {
     "id": "moran-treasure",
@@ -8786,6 +8972,7 @@
       "attack": 2,
       "defense": -1
     },
-    "releaseOrder": 754
+    "releaseOrder": 754,
+    "avatarImg": "si_c281_00_s"
   }
 ]

@@ -44,5 +44,6 @@ export interface Character {
     defense: number
   }
   releaseOrder: number
+  avatarImg?: string
   pvpTier?: PvpTier
 }
