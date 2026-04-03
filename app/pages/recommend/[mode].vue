@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const route = useRoute()
+
 const roster = useRosterStore()
 const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
 
@@ -87,6 +88,42 @@ const showRosterPicker = ref(false)
         <div v-if="showRosterPicker" class="mt-4">
           <CharacterGrid />
         </div>
+      </div>
+
+      <!-- SEO landing content when no roster selected -->
+      <div class="mt-8 space-y-6 text-sm leading-relaxed text-muted">
+        <div>
+          <h2 class="mb-2 text-lg font-semibold text-default">
+            {{ t('landing.heading') }}
+          </h2>
+          <p>{{ t('landing.intro') }}</p>
+        </div>
+
+        <div>
+          <h3 class="mb-1 font-semibold text-default">
+            {{ t('landing.howItWorksTitle') }}
+          </h3>
+          <ol class="list-inside list-decimal space-y-1">
+            <li>{{ t('landing.step1') }}</li>
+            <li>{{ t('landing.step2') }}</li>
+            <li>{{ t('landing.step3') }}</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="mb-1 font-semibold text-default">
+            {{ t('landing.featuresTitle') }}
+          </h3>
+          <ul class="list-inside list-disc space-y-1">
+            <li>{{ t('landing.feature1') }}</li>
+            <li>{{ t('landing.feature2') }}</li>
+            <li>{{ t('landing.feature3') }}</li>
+            <li>{{ t('landing.feature4') }}</li>
+            <li>{{ t('landing.feature5') }}</li>
+          </ul>
+        </div>
+
+        <p class="text-xs">{{ t('landing.footer') }}</p>
       </div>
     </template>
 

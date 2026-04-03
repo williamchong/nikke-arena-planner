@@ -77,6 +77,26 @@
     "editRoster": "Edit roster",
     "showingResults": "{count} team(s) found"
   },
+  "meta": {
+    "title": "NIKKE PVP Team Builder — Win More Arena Matches",
+    "description": "Build winning NIKKE PVP teams in seconds. Select your roster, get optimized 5v5 and 15v15 SP Arena compositions with burst speed calculations. Free, no login required.",
+    "keywords": "NIKKE, PVP, arena, team builder, SP arena, 5v5, 15v15, burst speed, team composition, goddess of victory"
+  },
+  "landing": {
+    "heading": "Stop Losing Arena Matches — Build Better Teams in Seconds",
+    "intro": "NIKKE Arena Planner analyzes your roster and instantly recommends the strongest PVP teams you can build. No more guessing which characters to pair, no more losing to teams that burst faster than yours. Select the characters you own, and the planner does the rest.",
+    "howItWorksTitle": "How It Works",
+    "step1": "Select the characters you own from the full roster of 187 NIKKEs",
+    "step2": "Get instant team recommendations for 5v5 Arena and 15v15 SP Arena",
+    "step3": "See burst speed, timing breakdowns, and why each team works",
+    "featuresTitle": "What You Get",
+    "feature1": "Optimized 5v5 teams matched to proven meta archetypes (Scarlet nuke, Alice stall, Crown burst, and more)",
+    "feature2": "15v15 SP Arena allocation — 3 non-overlapping teams built from your roster, optimized via simulated annealing",
+    "feature3": "Burst speed calculator showing exact charge timing for any 5-character combination",
+    "feature4": "Works with any roster size — whether you have 15 characters or 150",
+    "feature5": "Trilingual support (English, 繁體中文, 简体中文) — switch languages instantly",
+    "footer": "NIKKE Arena Planner is a free, open-source fan tool. Not affiliated with Shift Up or Level Infinite. Character data and arena mechanics based on community research."
+  },
   "common": {
     "all": "All",
     "clear": "Clear",
