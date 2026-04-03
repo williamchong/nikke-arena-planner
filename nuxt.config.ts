@@ -7,11 +7,16 @@ export default defineNuxtConfig({
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
   },
   css: ['~/assets/css/main.css'],
+  site: {
+    url: 'https://nikke.williamchong.cloud',
+    name: 'NIKKE Arena Planner',
+  },
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
   ],
   i18n: {
     locales: [
