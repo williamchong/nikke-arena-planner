@@ -22,7 +22,33 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 2. Get instant team recommendations for 5v5 Arena and 15v15 SP Arena
 3. See burst speed, timing breakdowns, and why each team works
 
-The planner uses template matching against 26 curated meta archetypes (covering all 6 CN meta systems), then refines results with a simulated annealing optimizer. Teams are position-sorted (defenders→P1/P5, DPS→P3/P4) and scored based on speed tier, character PVP ratings, suitability, and meta overlap. All computation runs client-side — no server, no login, no data collection.
+All computation runs client-side — no server, no login, no data collection.
+
+## Recommendation Algorithm
+
+The planner uses a multi-stage pipeline to find the best teams from your roster:
+
+### 1. Template Matching
+26 curated meta team templates (Scarlet nuke, Crown burst, Siren control, Alice stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
+
+### 2. Position Sorting
+Characters are assigned to P1-P5 based on role and burst type:
+- **Defenders** → P1/P5 (absorb most damage)
+- **DPS/Attackers** → P3/P4 (safest positions)
+- **B1 holders** placed in lower positions (fires first in burst order)
+
+### 3. Scoring
+Each team is scored as: `priority bonus + speed tier (30-100) + suitability (±200) + PVP tier (×3 tiebreaker) + meta overlap (×30 per archetype)`.
+
+**Meta overlap**: if a team's characters satisfy multiple distinct archetypes (e.g. Scarlet+Blanc+Jackal fits both "Scarlet nuke" and "Blanc Indomitable"), each additional archetype adds +30. Same-archetype variants (e.g. Scarlet-Jackal 2RL vs 3RL) don't stack. Matched archetypes are shown as badges in the UI, and their descriptions appear in "Why this team?".
+
+### 4. Simulated Annealing
+The best template result is refined via simulated annealing (2000 iterations, Metropolis criterion). SA swaps characters between the team and bench, accepting improvements deterministically and worse states probabilistically (high temperature = exploration, low temperature = exploitation). Invalid burst chains (missing B1/B2/B3) are hard-rejected.
+
+For **15v15**, SA operates across all 3 teams simultaneously — it can swap characters between any two teams or between a team and the bench, optimizing total score across the entire allocation.
+
+### 5. Alternates & Meta Filtering
+For each flex slot, other owned characters that could fill it are tracked as alternates. Alternates that would break a multi-meta overlap are filtered out, ensuring swaps don't weaken the composition.
 
 ## Development
 

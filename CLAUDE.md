@@ -30,11 +30,12 @@ characters.json (187 chars) + templates.json (26 meta archetypes)
 
 ### Recommendation Pipeline
 
-1. **Template matching**: Try 26 curated meta templates against owned roster in priority order. Fill required characters, then flex slots with best available. Track alternates per flex slot.
-2. **Position sorting**: Assign P1-P5 based on role (defenders→P1/P5, DPS→P3/P4) and burst type (B1 holders in lower positions).
-3. **Simulated annealing**: Refine template results by swapping characters between teams and bench (2000 iterations, Metropolis criterion). For 15v15, optimizes allocation across all 3 teams.
-4. **Meta overlap bonus**: Teams fitting multiple distinct archetypes get +30 per overlap. Same-archetype variants don't stack.
-5. **Scoring**: `templatePriority * 100 + speedTierScore + suitability * 20 + pvpTier * 3 + metaOverlap * 30`
+1. **Template matching**: 26 templates sorted by priority (P1=meta-defining, P2=strong, P3=viable). For each, check if required chars are owned, fill flex slots with best available, track alternates.
+2. **Position sorting** (`sortByPosition`): Defenders→P1/P5, DPS→P3/P4, B1 holders in lowest position (fires first). Applied to all outputs.
+3. **Scoring** (`scoreTeam`): `(4-priority)*100 + speedTier(30-100) + suitability*20 + pvpTier*3 + metaOverlap*30`
+4. **Meta overlap** (`findMetaOverlap`): Count distinct archetypes the team also satisfies beyond its primary template. Same-archetype variants (e.g. scarlet-jackal 2RL/3RL) don't stack. +30 per unique overlap.
+5. **Simulated annealing**: Refine best template result by swapping chars between team and bench (2000 iterations, T=100, cooling=0.995). For 15v15, operates across all 3 teams. Hard-rejects invalid burst chains.
+6. **Alternate filtering**: Flex slot alternates that would reduce meta overlap count are excluded.
 
 ### Key Domain Concepts
 
