@@ -29,7 +29,12 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'en',
     langDir: 'locales',
+    lazy: true,
     strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: false,
+      redirectOn: 'root',
+    },
     baseUrl: 'https://nikke.williamchong.cloud',
   },
 })
