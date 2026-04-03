@@ -1,52 +1,29 @@
-const STORAGE_KEY = 'nikke-arena-roster'
+import { useLocalStorage } from '@vueuse/core'
 
 export const useRosterStore = defineStore('roster', () => {
-  const ownedIds = ref<Set<string>>(new Set())
+  const storedIds = useLocalStorage<string[]>('nikke-arena-roster', [])
 
-  function loadFromStorage() {
-    if (import.meta.client) {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        try {
-          ownedIds.value = new Set(JSON.parse(saved))
-        }
-        catch {
-          ownedIds.value = new Set()
-        }
-      }
-    }
-  }
-
-  function saveToStorage() {
-    if (import.meta.client) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...ownedIds.value]))
-    }
-  }
+  const ownedIds = computed(() => new Set(storedIds.value))
 
   function toggle(id: string) {
-    const next = new Set(ownedIds.value)
-    if (next.has(id)) {
-      next.delete(id)
+    if (storedIds.value.includes(id)) {
+      storedIds.value = storedIds.value.filter((i: string) => i !== id)
     }
     else {
-      next.add(id)
+      storedIds.value = [...storedIds.value, id]
     }
-    ownedIds.value = next
-    saveToStorage()
   }
 
   function selectAll(ids: string[]) {
-    const next = new Set(ownedIds.value)
+    const current = new Set(storedIds.value)
     for (const id of ids) {
-      next.add(id)
+      current.add(id)
     }
-    ownedIds.value = next
-    saveToStorage()
+    storedIds.value = [...current]
   }
 
   function clearAll() {
-    ownedIds.value = new Set()
-    saveToStorage()
+    storedIds.value = []
   }
 
   function isOwned(id: string) {
@@ -54,8 +31,6 @@ export const useRosterStore = defineStore('roster', () => {
   }
 
   const ownedCount = computed(() => ownedIds.value.size)
-
-  loadFromStorage()
 
   return { ownedIds, toggle, selectAll, clearAll, isOwned, ownedCount }
 })

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
+import { useLocalStorage } from '@vueuse/core'
 
 const { t } = useI18n()
 
@@ -12,9 +13,9 @@ const { getCharacter, filterCharacters } = useCharacters()
 const { calculate } = useBurstCalculator()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
 
-const mode = ref<ArenaMode>('attack')
+const mode = useLocalStorage<ArenaMode>('nikke-arena-calc-mode', 'attack')
 // Fixed 5 slots — null means empty, positions are stable
-const slots = ref<(string | null)[]>([null, null, null, null, null])
+const slots = useLocalStorage<(string | null)[]>('nikke-arena-calc-slots', [null, null, null, null, null])
 const showPicker = ref(false)
 
 const pickerSearch = ref('')
