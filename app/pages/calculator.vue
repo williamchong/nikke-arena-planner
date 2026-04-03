@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import type { ArenaMode, Character } from '~/types/character'
+import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
 
 const { t } = useI18n()
 const roster = useRosterStore()
 const { getCharacter, filterCharacters } = useCharacters()
 const { calculate } = useBurstCalculator()
+const { burstIcon, weaponIcon, elementIcon } = useIcons()
 
 const mode = ref<ArenaMode>('attack')
 const selectedIds = ref<string[]>([])
 const showPicker = ref(false)
 const pickerSlot = ref(0)
+
 const pickerSearch = ref('')
+const pickerBurst = ref<BurstType | null>(null)
+const pickerWeapon = ref<WeaponType | null>(null)
+const pickerElement = ref<Element | null>(null)
 
 const selectedCharacters = computed(() =>
   selectedIds.value.map(id => getCharacter(id)).filter((c): c is Character => !!c),
@@ -23,13 +28,28 @@ const result = computed(() => {
 
 const pickerCharacters = computed(() => {
   const used = new Set(selectedIds.value)
-  return filterCharacters({ search: pickerSearch.value })
-    .filter(c => !used.has(c.id))
+  const chars = filterCharacters({
+    search: pickerSearch.value,
+    burst: pickerBurst.value,
+    weapon: pickerWeapon.value,
+    element: pickerElement.value,
+  }).filter(c => !used.has(c.id))
+
+  // Sort owned first, then newest first
+  return [...chars].sort((a, b) => {
+    const aOwned = roster.isOwned(a.id) ? 0 : 1
+    const bOwned = roster.isOwned(b.id) ? 0 : 1
+    if (aOwned !== bOwned) return aOwned - bOwned
+    return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
+  })
 })
 
 function openPicker(slot: number) {
   pickerSlot.value = slot
   pickerSearch.value = ''
+  pickerBurst.value = null
+  pickerWeapon.value = null
+  pickerElement.value = null
   showPicker.value = true
 }
 
@@ -53,6 +73,16 @@ const modeOptions = [
   { label: t('calculator.attack'), value: 'attack' as const },
   { label: t('calculator.defense'), value: 'defense' as const },
 ]
+
+const burstFilters: { label: string, value: BurstType }[] = [
+  { label: 'I', value: 'I' },
+  { label: 'II', value: 'II' },
+  { label: 'III', value: 'III' },
+]
+
+const weaponFilters: WeaponType[] = ['AR', 'SMG', 'SG', 'SR', 'RL', 'MG']
+
+const elementFilters: Element[] = ['fire', 'water', 'wind', 'electric', 'iron']
 
 const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
 </script>
@@ -180,13 +210,56 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
           <h3 class="font-semibold">
             Select Character for P{{ pickerSlot + 1 }}
           </h3>
+
           <UInput
             v-model="pickerSearch"
             placeholder="Search..."
             icon="i-lucide-search"
+            size="sm"
             autofocus
           />
-          <div class="grid max-h-80 grid-cols-3 gap-1 overflow-y-auto">
+
+          <!-- Compact icon-only filters -->
+          <div class="flex flex-wrap items-center gap-1">
+            <button
+              v-for="b in burstFilters"
+              :key="b.value"
+              class="flex size-7 items-center justify-center rounded border transition-colors"
+              :class="pickerBurst === b.value ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
+              :title="`Burst ${b.label}`"
+              @click="pickerBurst = pickerBurst === b.value ? null : b.value"
+            >
+              <img v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :alt="`Burst ${b.label}`" class="size-4">
+            </button>
+
+            <span class="mx-0.5 text-muted">|</span>
+
+            <button
+              v-for="w in weaponFilters"
+              :key="w"
+              class="flex size-7 items-center justify-center rounded border transition-colors"
+              :class="pickerWeapon === w ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
+              :title="w"
+              @click="pickerWeapon = pickerWeapon === w ? null : w"
+            >
+              <img v-if="weaponIcon(w)" :src="weaponIcon(w)!" :alt="w" class="size-4">
+            </button>
+
+            <span class="mx-0.5 text-muted">|</span>
+
+            <button
+              v-for="e in elementFilters"
+              :key="e"
+              class="flex size-7 items-center justify-center rounded border transition-colors"
+              :class="pickerElement === e ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
+              :title="t(`element.${e}`)"
+              @click="pickerElement = pickerElement === e ? null : e"
+            >
+              <img v-if="elementIcon(e)" :src="elementIcon(e)!" :alt="t(`element.${e}`)" class="size-4">
+            </button>
+          </div>
+
+          <div class="grid max-h-96 grid-cols-4 gap-1 overflow-y-auto">
             <CharacterCard
               v-for="char in pickerCharacters"
               :key="char.id"
