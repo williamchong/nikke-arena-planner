@@ -1,19 +1,11 @@
-import type { ArenaMode, Character, SpeedTier } from '~/types/character'
+import type { ArenaMode, Character } from '~/types/character'
 import type { TeamComposition, TeamTemplate } from '~/types/template'
 import templatesData from '~/data/templates.json'
 import { useBurstCalculator } from './useBurstCalculator'
 import { useCharacters } from './useCharacters'
+import { PVP_TIER_SCORES, SPEED_TIER_SCORES, scoreTeamRaw, useSimulatedAnnealing } from './useSimulatedAnnealing'
 
 const templates: TeamTemplate[] = templatesData as TeamTemplate[]
-
-const PVP_TIER_SCORES: Record<string, number> = {
-  SSS: 10, SS: 8, S: 6, A: 4, B: 2, C: 1, D: 0, E: 0, F: 0,
-}
-
-const SPEED_TIER_SCORES: Record<SpeedTier, number> = {
-  '1RL': 100, '2RL': 90, '3SG': 85, '5SG': 80,
-  '3RL': 70, '7SG': 60, '4RL': 50, '5RL': 30,
-}
 
 const { calculate } = useBurstCalculator()
 const { getCharacter } = useCharacters()
@@ -148,13 +140,30 @@ function autoFillTeam(available: Character[], mode: ArenaMode): TeamComposition 
   }
 }
 
+function resolveCharacters(ids: string[]): Character[] {
+  return ids.map(id => getCharacter(id)).filter((c): c is Character => !!c)
+}
+
+function toComposition(chars: Character[], mode: ArenaMode, label?: string): TeamComposition {
+  const result = calculate(chars, mode)
+  return {
+    id: label || `sa-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    characters: chars.map(c => c.id),
+    mode,
+    burstSpeed: result.effectiveTier,
+    score: scoreTeamRaw(chars, mode),
+  }
+}
+
 export function useTeamRecommender() {
   const { characters: allCharacters } = useCharacters()
+  const { optimize5v5: saOptimize5v5, optimize15v15: saOptimize15v15 } = useSimulatedAnnealing()
 
   function recommend5v5(ownedIds: Set<string>, mode: ArenaMode): TeamComposition[] {
     const results: TeamComposition[] = []
     const sorted = [...templates].sort((a, b) => a.priority - b.priority)
 
+    // Phase 1: Template matching
     for (const template of sorted) {
       const filled = fillTemplate(template, ownedIds, mode)
       if (filled) {
@@ -162,15 +171,42 @@ export function useTeamRecommender() {
       }
     }
 
+    // Phase 2: SA refinement on the best template result
+    const owned = allCharacters.filter(c => ownedIds.has(c.id))
+    if (results.length > 0 && owned.length >= 5) {
+      const bestTemplate = results.sort((a, b) => b.score - a.score)[0]!
+      const seedTeam = resolveCharacters(bestTemplate.characters)
+      const bench = owned.filter(c => !bestTemplate.characters.includes(c.id))
+
+      const saResult = saOptimize5v5(seedTeam, bench, mode)
+      const saScore = scoreTeamRaw(saResult, mode)
+
+      if (saScore > bestTemplate.score) {
+        results.unshift(toComposition(saResult, mode, 'sa-optimized'))
+      }
+    }
+    else if (owned.length >= 5 && results.length === 0) {
+      // No templates matched — SA from auto-fill seed
+      const autoTeam = autoFillTeam(owned, mode)
+      if (autoTeam) {
+        const seedTeam = resolveCharacters(autoTeam.characters)
+        const bench = owned.filter(c => !autoTeam.characters.includes(c.id))
+        const saResult = saOptimize5v5(seedTeam, bench, mode)
+        results.push(toComposition(saResult, mode, 'sa-optimized'))
+      }
+    }
+
     return results.sort((a, b) => b.score - a.score).slice(0, 5)
   }
 
   /**
-   * Greedy allocation: for each starting template, build 3 teams
-   * by iteratively picking the best available template and removing used characters.
+   * Greedy template allocation → SA refinement.
+   * 1. Build initial 3 teams via greedy template matching
+   * 2. Run simulated annealing to swap characters between teams and bench
    */
   function recommend15v15(ownedIds: Set<string>, mode: ArenaMode): TeamComposition[][] {
     const bestSets: TeamComposition[][] = []
+    const owned = allCharacters.filter(c => ownedIds.has(c.id))
 
     const sorted = [...templates]
       .filter(t => t.mode === 'both' || t.mode === mode)
@@ -184,7 +220,6 @@ export function useTeamRecommender() {
       const usedTemplateIds = new Set<string>()
       let failed = false
 
-      // First team must use the starter template
       const firstFilled = fillTemplate(starter, ownedIds, mode)
       if (!firstFilled) continue
 
@@ -193,7 +228,6 @@ export function useTeamRecommender() {
       for (const id of firstTeam.characters) usedChars.add(id)
       usedTemplateIds.add(starter.id)
 
-      // Teams 2 and 3: find best remaining template or auto-fill
       for (let i = 0; i < 2; i++) {
         const available = new Set([...ownedIds].filter(id => !usedChars.has(id)))
         let team: TeamComposition | null = null
@@ -222,9 +256,23 @@ export function useTeamRecommender() {
         for (const id of team.characters) usedChars.add(id)
       }
 
-      if (!failed && teamSet.length === 3) {
-        bestSets.push(teamSet)
-      }
+      if (failed || teamSet.length !== 3) continue
+
+      // SA refinement: optimize character allocation across the 3 teams
+      const seedTeams = teamSet.map(t => resolveCharacters(t.characters))
+      const allUsed = new Set(teamSet.flatMap(t => t.characters))
+      const bench = owned.filter(c => !allUsed.has(c.id))
+
+      const saTeams = saOptimize15v15(seedTeams, bench, mode)
+      const saSet = saTeams.map((team, idx) =>
+        toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`),
+      )
+
+      // Keep whichever is better: original greedy or SA-refined
+      const greedyTotal = teamSet.reduce((sum, t) => sum + t.score, 0)
+      const saTotal = saSet.reduce((sum, t) => sum + t.score, 0)
+
+      bestSets.push(saTotal > greedyTotal ? saSet : teamSet)
     }
 
     return bestSets
