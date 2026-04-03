@@ -1,0 +1,75 @@
+{
+  "app": {
+    "title": "NIKKE Arena Planner",
+    "description": "Build optimal PVP teams from your roster"
+  },
+  "nav": {
+    "roster": "My Roster",
+    "calculator": "Calculator",
+    "recommend": "Team Builder"
+  },
+  "roster": {
+    "title": "Select Your Characters",
+    "owned": "Owned: {count} / {total}",
+    "selectAll": "Select All",
+    "clearAll": "Clear All",
+    "search": "Search characters...",
+    "filters": "Filters"
+  },
+  "burst": {
+    "I": "Burst I",
+    "II": "Burst II",
+    "III": "Burst III"
+  },
+  "role": {
+    "attacker": "Attacker",
+    "supporter": "Supporter",
+    "defender": "Defender"
+  },
+  "element": {
+    "fire": "Fire",
+    "water": "Water",
+    "wind": "Wind",
+    "electric": "Electric",
+    "iron": "Iron"
+  },
+  "weapon": {
+    "AR": "Assault Rifle",
+    "SMG": "Submachine Gun",
+    "SG": "Shotgun",
+    "SR": "Sniper Rifle",
+    "RL": "Rocket Launcher",
+    "MG": "Machine Gun"
+  },
+  "manufacturer": {
+    "elysion": "Elysion",
+    "missilis": "Missilis",
+    "tetra": "Tetra",
+    "pilgrim": "Pilgrim",
+    "abnormal": "Abnormal"
+  },
+  "calculator": {
+    "title": "Burst Speed Calculator",
+    "selectCharacters": "Select 5 characters to calculate burst speed",
+    "mode": "Mode",
+    "attack": "Attack",
+    "defense": "Defense",
+    "speed": "Speed Tier",
+    "burstGen": "Burst Generation",
+    "invalidChain": "Invalid burst chain — need at least one each of B1, B2, B3",
+    "timing": "Burst Timing"
+  },
+  "recommend": {
+    "title": "Team Recommendations",
+    "mode5v5": "5v5 Arena",
+    "mode15v15": "15v15 SP Arena",
+    "noTeams": "Select more characters in your roster to get recommendations.",
+    "team": "Team {n}",
+    "archetype": "Archetype",
+    "speed": "Speed",
+    "whyThisTeam": "Why this team?"
+  },
+  "common": {
+    "position": "P{n}"
+  }
+}

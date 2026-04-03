@@ -1,0 +1,75 @@
+{
+  "app": {
+    "title": "NIKKE 竞技场规划器",
+    "description": "根据你的角色库组建最佳 PVP 队伍"
+  },
+  "nav": {
+    "roster": "我的角色",
+    "calculator": "充能计算器",
+    "recommend": "队伍推荐"
+  },
+  "roster": {
+    "title": "选择你拥有的角色",
+    "owned": "已拥有：{count} / {total}",
+    "selectAll": "全选",
+    "clearAll": "清除全部",
+    "search": "搜索角色...",
+    "filters": "筛选"
+  },
+  "burst": {
+    "I": "爆裂 I",
+    "II": "爆裂 II",
+    "III": "爆裂 III"
+  },
+  "role": {
+    "attacker": "火力",
+    "supporter": "辅助",
+    "defender": "防御"
+  },
+  "element": {
+    "fire": "燃烧",
+    "water": "水冷",
+    "wind": "风压",
+    "electric": "电击",
+    "iron": "铁甲"
+  },
+  "weapon": {
+    "AR": "步枪",
+    "SMG": "冲锋枪",
+    "SG": "霰弹枪",
+    "SR": "狙击步枪",
+    "RL": "发射器",
+    "MG": "机枪"
+  },
+  "manufacturer": {
+    "elysion": "极乐净土",
+    "missilis": "米西利斯",
+    "tetra": "泰特拉",
+    "pilgrim": "朝圣者",
+    "abnormal": "反常"
+  },
+  "calculator": {
+    "title": "爆裂充能计算器",
+    "selectCharacters": "选择 5 位角色来计算爆裂速度",
+    "mode": "模式",
+    "attack": "进攻",
+    "defense": "防守",
+    "speed": "速度等级",
+    "burstGen": "充能值",
+    "invalidChain": "无效的爆裂链 — 需要至少各一位 B1、B2、B3",
+    "timing": "爆裂时间轴"
+  },
+  "recommend": {
+    "title": "队伍推荐",
+    "mode5v5": "5v5 竞技场",
+    "mode15v15": "15v15 特殊竞技场",
+    "noTeams": "请在角色库中选择更多角色以获得推荐。",
+    "team": "队伍 {n}",
+    "archetype": "战术类型",
+    "speed": "速度",
+    "whyThisTeam": "为什么推荐这个队伍？"
+  },
+  "common": {
+    "position": "P{n}"
+  }
+}
