@@ -137,7 +137,11 @@
     "creditNikkeGg": "竞技场机制指南、元数据分析和队伍组成策略",
     "creditPrydwen": "PVP 等级列表、角色评分和元数据战术分析",
     "creditZuoCatcat": "PVP 充能计算器电子表格，包含逐帧精确的充能数据",
-    "creditFandom": "角色发布日期和游戏数据参考"
+    "creditFandom": "角色发布日期和游戏数据参考",
+    "openSourceTitle": "开放源代码",
+    "openSourceBody": "NIKKE 竞技场规划器是免费的开源项目。欢迎在 GitHub 上报告问题、建议功能或贡献代码。",
+    "reportIssue": "报告问题",
+    "discussions": "讨论区"
   },
   "common": {
     "all": "全部",

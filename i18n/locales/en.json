@@ -137,7 +137,11 @@
     "creditNikkeGg": "Arena mechanics guides, meta analysis, and team composition strategies",
     "creditPrydwen": "PVP tier list, character ratings, and meta archetype analysis",
     "creditZuoCatcat": "PVP burst generation calculator spreadsheet with frame-accurate charge data",
-    "creditFandom": "Character release dates and game data reference"
+    "creditFandom": "Character release dates and game data reference",
+    "openSourceTitle": "Open Source",
+    "openSourceBody": "NIKKE Arena Planner is free and open source. Report bugs, suggest features, or contribute on GitHub.",
+    "reportIssue": "Report Issue",
+    "discussions": "Discussions"
   },
   "common": {
     "all": "All",

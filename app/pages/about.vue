@@ -192,6 +192,45 @@ useHead({
       </ul>
     </section>
 
+    <!-- Open source -->
+    <section class="space-y-2">
+      <h2 class="text-lg font-semibold">
+        {{ t('about.openSourceTitle') }}
+      </h2>
+      <p class="text-sm text-muted">
+        {{ t('about.openSourceBody') }}
+      </p>
+      <div class="flex gap-2">
+        <UButton
+          to="https://github.com/williamchong/nikke-arena-planner"
+          target="_blank"
+          icon="i-lucide-github"
+          label="GitHub"
+          size="sm"
+          variant="outline"
+          color="neutral"
+        />
+        <UButton
+          to="https://github.com/williamchong/nikke-arena-planner/issues"
+          target="_blank"
+          icon="i-lucide-bug"
+          :label="t('about.reportIssue')"
+          size="sm"
+          variant="outline"
+          color="neutral"
+        />
+        <UButton
+          to="https://github.com/williamchong/nikke-arena-planner/discussions"
+          target="_blank"
+          icon="i-lucide-message-circle"
+          :label="t('about.discussions')"
+          size="sm"
+          variant="outline"
+          color="neutral"
+        />
+      </div>
+    </section>
+
     <!-- Disclaimer -->
     <section class="rounded-lg bg-muted/10 p-4 text-xs text-muted">
       {{ t('landing.footer') }}
