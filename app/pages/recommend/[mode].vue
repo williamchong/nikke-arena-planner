@@ -73,8 +73,8 @@ const showRosterPicker = ref(false)
           <UButton
             :label="t('recommend.selectHere')"
             icon="i-lucide-check-square"
-            @click="showRosterPicker = !showRosterPicker"
             :variant="showRosterPicker ? 'solid' : 'outline'"
+            @click="showRosterPicker = !showRosterPicker"
           />
           <UButton
             :label="t('nav.roster')"
