@@ -84,6 +84,7 @@ function buildComposition(
   mode: ArenaMode,
   score: number,
   alternates?: Record<number, string[]>,
+  matchedArchetypes?: string[],
 ): TeamComposition {
   const positioned = sortByPosition(chars)
 
@@ -108,19 +109,46 @@ function buildComposition(
     burstSpeed: calculate(positioned, mode).effectiveTier,
     score,
     alternates: remappedAlternates,
+    matchedArchetypes: matchedArchetypes?.length ? matchedArchetypes : undefined,
   }
 }
 
-function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode): number {
+/**
+ * Count how many distinct meta archetypes this team's characters satisfy
+ * beyond the current one. Same-archetype variants (e.g. scarlet-jackal-2rl
+ * and scarlet-jackal-3rl) count as one.
+ */
+function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: ArenaMode): string[] {
+  const charIds = new Set(chars.map(c => c.id))
+  const currentArchetype = templates.find(t => t.id === currentTemplateId)?.archetype
+  const matched = new Map<string, string>()
+  for (const t of templates) {
+    if (t.id === currentTemplateId) continue
+    if (t.archetype === currentArchetype) continue
+    if (t.mode !== 'both' && t.mode !== mode) continue
+    if (matched.has(t.archetype)) continue
+    if (t.required.every(r => charIds.has(r))) {
+      matched.set(t.archetype, t.id)
+    }
+  }
+  return [...matched.values()]
+}
+
+function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode): { score: number, matchedArchetypes: string[] } {
   const result = calculate(chars, mode)
 
   let score = 0
   score += (4 - template.priority) * 100
   score += SPEED_TIER_SCORES[result.effectiveTier] || 0
   score += chars.reduce((sum, c) => sum + c.suitability[mode], 0) * 20
-  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 10
+  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
 
-  return score
+  const matchedArchetypes = findMetaOverlap(chars, template.id, mode)
+  if (matchedArchetypes.length > 0) {
+    score += 30 * matchedArchetypes.length
+  }
+
+  return { score, matchedArchetypes }
 }
 
 /**
@@ -131,7 +159,7 @@ function fillTemplate(
   template: TeamTemplate,
   availableIds: Set<string>,
   mode: ArenaMode,
-): { characters: Character[], score: number, alternates: Record<number, string[]> } | null {
+): { characters: Character[], score: number, alternates: Record<number, string[]>, matchedArchetypes: string[] } | null {
   for (const reqId of template.required) {
     if (!availableIds.has(reqId)) return null
   }
@@ -175,8 +203,8 @@ function fillTemplate(
 
   if (team.length !== 5) return null
 
-  const score = scoreTeam(team, template, mode)
-  return { characters: team, score, alternates }
+  const { score, matchedArchetypes } = scoreTeam(team, template, mode)
+  return { characters: team, score, alternates, matchedArchetypes }
 }
 
 /**
@@ -263,7 +291,7 @@ export function useTeamRecommender() {
     for (const template of sorted) {
       const filled = fillTemplate(template, ownedIds, mode)
       if (filled) {
-        results.push(buildComposition(template, filled.characters, mode, filled.score, filled.alternates))
+        results.push(buildComposition(template, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes))
       }
     }
 
@@ -319,7 +347,7 @@ export function useTeamRecommender() {
       const firstFilled = fillTemplate(starter, ownedIds, mode)
       if (!firstFilled) continue
 
-      const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates)
+      const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
       teamSet.push(firstTeam)
       for (const id of firstTeam.characters) usedChars.add(id)
       usedTemplateIds.add(starter.id)
@@ -332,7 +360,7 @@ export function useTeamRecommender() {
           if (usedTemplateIds.has(t.id)) continue
           const filled = fillTemplate(t, available, mode)
           if (filled) {
-            team = buildComposition(t, filled.characters, mode, filled.score, filled.alternates)
+            team = buildComposition(t, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes)
             usedTemplateIds.add(t.id)
             break
           }

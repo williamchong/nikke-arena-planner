@@ -23,4 +23,5 @@ export interface TeamComposition {
   burstSpeed: SpeedTier
   score: number
   alternates?: Record<number, string[]>
+  matchedArchetypes?: string[]
 }

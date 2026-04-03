@@ -14,6 +14,7 @@ const { getCharacter } = useCharacters()
 const { localize } = useLocalizedField()
 const { calculate } = useBurstCalculator()
 const { getAvatarUrl } = useAvatars()
+const { getTemplate } = useTeamRecommender()
 
 const characters = computed(() =>
   props.team.characters.map(id => getCharacter(id)).filter((c): c is Character => !!c),
@@ -42,6 +43,14 @@ const templateName = computed(() =>
 const templateNotes = computed(() =>
   props.template ? localize(props.template.notes) : null,
 )
+
+const overlappingTemplateNames = computed(() => {
+  if (!props.team.matchedArchetypes?.length) return []
+  return props.team.matchedArchetypes
+    .map(id => getTemplate(id))
+    .filter((t): t is TeamTemplate => !!t)
+    .map(t => localize(t.name))
+})
 
 // Determine which character fires each burst stage based on position order
 // In NIKKE, lowest position number with the needed burst type fires first
@@ -92,6 +101,15 @@ const showNotes = ref(false)
       <span v-if="label" class="text-sm font-bold">{{ label }}</span>
       <UBadge v-if="templateName" color="primary" variant="subtle" size="xs">
         {{ templateName }}
+      </UBadge>
+      <UBadge
+        v-for="name in overlappingTemplateNames"
+        :key="name"
+        color="neutral"
+        variant="outline"
+        size="xs"
+      >
+        + {{ name }}
       </UBadge>
       <CommonSpeedTierBadge :tier="team.burstSpeed" />
     </div>
