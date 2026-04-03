@@ -4,11 +4,7 @@ import type { BurstType, Character, Element, Manufacturer, Role, WeaponType } fr
 const { t } = useI18n()
 const roster = useRosterStore()
 const { filterCharacters, getAllCharacters } = useCharacters()
-const allChars = getAllCharacters()
-const totalCount = allChars.length
-
-// Build a release-order index: last in the JSON = newest = index 0 (highest priority)
-const releaseOrder = new Map(allChars.map((c, i) => [c.id, allChars.length - 1 - i]))
+const totalCount = getAllCharacters().length
 
 const search = ref('')
 const burst = ref<BurstType | null>(null)
@@ -43,7 +39,8 @@ const filtered = computed(() => {
     const bOwned = snap.has(b.id) ? 0 : 1
     if (aOwned !== bOwned) return aOwned - bOwned
 
-    return (releaseOrder.get(b.id) ?? 0) - (releaseOrder.get(a.id) ?? 0)
+    // Newest characters first (higher releaseOrder = newer)
+    return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
   })
 })
 

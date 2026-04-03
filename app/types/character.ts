@@ -43,5 +43,6 @@ export interface Character {
     attack: number
     defense: number
   }
+  releaseOrder: number
   pvpTier?: PvpTier
 }

@@ -43,7 +43,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1377
   },
   {
     "id": "snow-white-heavy-arms",
@@ -89,7 +90,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1461
   },
   {
     "id": "trina",
@@ -135,7 +137,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1167
   },
   {
     "id": "anis",
@@ -181,7 +184,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "jackal",
@@ -227,7 +231,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 376
   },
   {
     "id": "centi",
@@ -273,7 +278,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "rumani",
@@ -319,7 +325,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1020
   },
   {
     "id": "emilia-2149",
@@ -365,7 +372,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 810
   },
   {
     "id": "emilia",
@@ -411,7 +419,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 810
   },
   {
     "id": "noah",
@@ -457,7 +466,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "pascal",
@@ -503,7 +513,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 608
   },
   {
     "id": "maiden-ice-rose",
@@ -549,7 +560,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1069
   },
   {
     "id": "drake-treasure",
@@ -595,7 +607,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 1335
   },
   {
     "id": "drake",
@@ -641,7 +654,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "viper",
@@ -687,7 +701,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 383
   },
   {
     "id": "viper-treasure",
@@ -733,7 +748,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 383
   },
   {
     "id": "maiden",
@@ -779,7 +795,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "neon",
@@ -825,7 +842,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "noir",
@@ -871,7 +889,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 509
   },
   {
     "id": "pepper",
@@ -917,7 +936,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "sugar",
@@ -963,7 +983,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "soda-twinkling-bunny",
@@ -1009,7 +1030,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 880
   },
   {
     "id": "laplace-treasure",
@@ -1055,7 +1077,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1251
   },
   {
     "id": "liberalio",
@@ -1101,7 +1124,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1405
   },
   {
     "id": "mica-snow-buddy",
@@ -1147,7 +1171,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 712
   },
   {
     "id": "zwei",
@@ -1193,7 +1218,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 950
   },
   {
     "id": "nihilister",
@@ -1239,7 +1265,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 453
   },
   {
     "id": "arcana",
@@ -1285,7 +1312,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1230
   },
   {
     "id": "a2",
@@ -1331,7 +1359,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 615
   },
   {
     "id": "laplace",
@@ -1377,7 +1406,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 327
   },
   {
     "id": "rapunzel",
@@ -1423,7 +1453,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "diesel-winter-sweets",
@@ -1469,7 +1500,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1433
   },
   {
     "id": "grave",
@@ -1515,7 +1547,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1041
   },
   {
     "id": "scarlet",
@@ -1561,7 +1594,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "anchor",
@@ -1607,7 +1641,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 579
   },
   {
     "id": "anchor-innocent-maid",
@@ -1653,7 +1688,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1132
   },
   {
     "id": "anne-miracle-fairy",
@@ -1699,7 +1735,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 348
   },
   {
     "id": "vesti",
@@ -1745,7 +1782,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "bay",
@@ -1791,7 +1829,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 831
   },
   {
     "id": "bay-treasure",
@@ -1837,7 +1876,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 831
   },
   {
     "id": "biscuit",
@@ -1883,7 +1923,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 438
   },
   {
     "id": "tia",
@@ -1929,7 +1970,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 649
   },
   {
     "id": "quiry",
@@ -1975,7 +2017,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 656
   },
   {
     "id": "crust",
@@ -2021,7 +2064,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1195
   },
   {
     "id": "mica",
@@ -2067,7 +2111,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "noise",
@@ -2113,7 +2158,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "power",
@@ -2159,7 +2205,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 417
   },
   {
     "id": "sora",
@@ -2205,7 +2252,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1279
   },
   {
     "id": "ada",
@@ -2251,7 +2299,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 978
   },
   {
     "id": "mana",
@@ -2297,7 +2346,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1111
   },
   {
     "id": "anis-sparkling-summer",
@@ -2343,7 +2393,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 579
   },
   {
     "id": "jill",
@@ -2389,7 +2440,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 978
   },
   {
     "id": "scarlet-black-shadow",
@@ -2435,7 +2487,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 730
   },
   {
     "id": "harran",
@@ -2481,7 +2534,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "raven",
@@ -2527,7 +2581,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1265
   },
   {
     "id": "privaty-unkind-maid",
@@ -2573,7 +2628,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 765
   },
   {
     "id": "guilty",
@@ -2619,7 +2675,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 376
   },
   {
     "id": "ether",
@@ -2665,7 +2722,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "poli",
@@ -2711,7 +2769,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "poli-treasure",
@@ -2757,7 +2816,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "leona",
@@ -2803,7 +2863,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 740
   },
   {
     "id": "marciana",
@@ -2849,7 +2910,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 628
   },
   {
     "id": "mary",
@@ -2895,7 +2957,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "naga",
@@ -2941,7 +3004,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 642
   },
   {
     "id": "neve",
@@ -2987,7 +3051,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 341
   },
   {
     "id": "dorothy-serendipity",
@@ -3033,7 +3098,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 1293
   },
   {
     "id": "isabel",
@@ -3079,7 +3145,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "soline-frost-ticket",
@@ -3125,7 +3192,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 1419
   },
   {
     "id": "brid-silent-track",
@@ -3171,7 +3239,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 1440
   },
   {
     "id": "k",
@@ -3217,7 +3286,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1244
   },
   {
     "id": "quency",
@@ -3263,7 +3333,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 376
   },
   {
     "id": "crow",
@@ -3309,7 +3380,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "soline",
@@ -3355,7 +3427,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "asuka",
@@ -3401,7 +3474,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 964
   },
   {
     "id": "snow-white",
@@ -3447,7 +3521,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "ade",
@@ -3493,7 +3568,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 775
   },
   {
     "id": "rei-ayanami-tentative-name",
@@ -3539,7 +3615,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1153
   },
   {
     "id": "mihara",
@@ -3585,7 +3662,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "moran",
@@ -3631,7 +3709,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 754
   },
   {
     "id": "phantom",
@@ -3677,7 +3756,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1013
   },
   {
     "id": "vesti-tactical-upgrade",
@@ -3723,7 +3803,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1328
   },
   {
     "id": "himeno",
@@ -3769,7 +3850,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 417
   },
   {
     "id": "rouge",
@@ -3815,7 +3897,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 992
   },
   {
     "id": "eunhwa",
@@ -3861,7 +3944,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "ludmilla",
@@ -3907,7 +3991,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "quency-escape-queen",
@@ -3953,7 +4038,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1006
   },
   {
     "id": "n102",
@@ -3999,7 +4085,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "belorta",
@@ -4045,7 +4132,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "yan",
@@ -4091,7 +4179,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "yuni",
@@ -4137,7 +4226,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "ein",
@@ -4183,7 +4273,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 936
   },
   {
     "id": "d-killer-wife",
@@ -4229,7 +4320,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 796
   },
   {
     "id": "exia",
@@ -4275,7 +4367,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "exia-treasure",
@@ -4321,7 +4414,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "bready",
@@ -4367,7 +4461,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1181
   },
   {
     "id": "dolla",
@@ -4413,7 +4508,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "helm",
@@ -4459,7 +4555,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 313
   },
   {
     "id": "cocoa",
@@ -4505,7 +4602,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 396
   },
   {
     "id": "ram",
@@ -4551,7 +4649,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 810
   },
   {
     "id": "maxwell",
@@ -4597,7 +4696,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "milk",
@@ -4643,7 +4743,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "milk-treasure",
@@ -4689,7 +4790,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "trony",
@@ -4735,7 +4837,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 866
   },
   {
     "id": "sakura-bloom-in-summer",
@@ -4781,7 +4884,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 915
   },
   {
     "id": "red-hood",
@@ -4827,7 +4931,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 670
   },
   {
     "id": "rapunzel-pure-grace",
@@ -4873,7 +4978,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1034
   },
   {
     "id": "mari",
@@ -4919,7 +5025,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 971
   },
   {
     "id": "eunhwa-tactical-upgrade",
@@ -4965,7 +5072,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1321
   },
   {
     "id": "ade-agent-bunny",
@@ -5011,7 +5119,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1342
   },
   {
     "id": "milk-blooming-bunny",
@@ -5057,7 +5166,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1349
   },
   {
     "id": "yulha",
@@ -5103,7 +5213,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "admi",
@@ -5149,7 +5260,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "sakura",
@@ -5195,7 +5307,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 453
   },
   {
     "id": "mary-bay-goddess",
@@ -5241,7 +5354,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 530
   },
   {
     "id": "frima",
@@ -5287,7 +5401,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "frima-treasure",
@@ -5333,7 +5448,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "helm-aquamarine",
@@ -5379,7 +5495,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 586
   },
   {
     "id": "2b",
@@ -5425,7 +5542,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 608
   },
   {
     "id": "blanc",
@@ -5471,7 +5589,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 502
   },
   {
     "id": "brid",
@@ -5517,7 +5636,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "folkwang",
@@ -5563,7 +5683,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "guillotine-winter-slayer",
@@ -5609,7 +5730,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1076
   },
   {
     "id": "rapi",
@@ -5655,7 +5777,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "rupee",
@@ -5701,7 +5824,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "rupee-winter-shopper",
@@ -5747,7 +5871,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 341
   },
   {
     "id": "rosanna-chic-ocean",
@@ -5793,7 +5918,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 922
   },
   {
     "id": "mori",
@@ -5839,7 +5965,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1209
   },
   {
     "id": "privaty",
@@ -5885,7 +6012,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "sin",
@@ -5931,7 +6059,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 376
   },
   {
     "id": "dorothy",
@@ -5977,7 +6106,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 481
   },
   {
     "id": "tove",
@@ -6023,7 +6153,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 691
   },
   {
     "id": "tove-treasure",
@@ -6069,7 +6200,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 691
   },
   {
     "id": "eve",
@@ -6115,7 +6247,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1258
   },
   {
     "id": "julia",
@@ -6161,7 +6294,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "julia-treasure",
@@ -6207,7 +6341,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "miranda-treasure",
@@ -6253,7 +6388,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1356
   },
   {
     "id": "d",
@@ -6299,7 +6435,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 467
   },
   {
     "id": "epinel",
@@ -6345,7 +6482,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "alice-wonderland-bunny",
@@ -6391,7 +6529,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 887
   },
   {
     "id": "clay",
@@ -6437,7 +6576,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 901
   },
   {
     "id": "rei",
@@ -6483,7 +6623,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 481
   },
   {
     "id": "liter",
@@ -6529,7 +6670,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "mast",
@@ -6575,7 +6717,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 565
   },
   {
     "id": "makima",
@@ -6621,7 +6764,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 417
   },
   {
     "id": "misato",
@@ -6667,7 +6811,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 964
   },
   {
     "id": "miranda",
@@ -6713,7 +6858,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "nero",
@@ -6759,7 +6905,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 551
   },
   {
     "id": "novel",
@@ -6805,7 +6952,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "volume",
@@ -6851,7 +6999,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "signal",
@@ -6897,7 +7046,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "little-mermaid",
@@ -6943,7 +7093,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1209
   },
   {
     "id": "sakura-suzuhara",
@@ -6989,7 +7140,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1146
   },
   {
     "id": "nayuta",
@@ -7035,7 +7187,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1398
   },
   {
     "id": "modernia",
@@ -7081,7 +7234,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 365
   },
   {
     "id": "alice",
@@ -7127,7 +7281,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "mihara-bonding-chain",
@@ -7173,7 +7328,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1216
   },
   {
     "id": "cinderella",
@@ -7219,7 +7375,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1034
   },
   {
     "id": "rosanna",
@@ -7265,7 +7422,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 516
   },
   {
     "id": "ludmilla-winter-owner",
@@ -7311,7 +7469,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 705
   },
   {
     "id": "asuka-wille",
@@ -7357,7 +7516,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1146
   },
   {
     "id": "aria",
@@ -7403,7 +7563,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "emma",
@@ -7449,7 +7610,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "diesel",
@@ -7495,7 +7657,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "diesel-treasure",
@@ -7541,7 +7704,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "flora",
@@ -7587,7 +7751,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1055
   },
   {
     "id": "crown",
@@ -7633,7 +7798,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 845
   },
   {
     "id": "guillotine",
@@ -7679,7 +7845,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "kilo",
@@ -7725,7 +7892,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 845
   },
   {
     "id": "rapi-red-hood",
@@ -7771,7 +7939,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1096
   },
   {
     "id": "rem",
@@ -7817,7 +7986,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 817
   },
   {
     "id": "rei-ayanami",
@@ -7863,7 +8033,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 971
   },
   {
     "id": "mast-romantic-maid",
@@ -7909,7 +8080,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1125
   },
   {
     "id": "neon-blue-ocean",
@@ -7955,7 +8127,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 537
   },
   {
     "id": "soda",
@@ -8001,7 +8174,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 396
   },
   {
     "id": "elegg",
@@ -8047,7 +8221,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 782
   },
   {
     "id": "elegg-boom-and-shock",
@@ -8093,7 +8268,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1300
   },
   {
     "id": "emma-tactical-upgrade",
@@ -8139,7 +8315,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1314
   },
   {
     "id": "delta-ninja-thief",
@@ -8185,7 +8362,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1384
   },
   {
     "id": "snow-white-innocent-days",
@@ -8231,7 +8409,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 670
   },
   {
     "id": "label",
@@ -8277,7 +8456,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1475
   },
   {
     "id": "velvet",
@@ -8323,7 +8503,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1489
   },
   {
     "id": "chisato",
@@ -8369,7 +8550,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1503
   },
   {
     "id": "takina",
@@ -8415,7 +8597,8 @@
     "suitability": {
       "attack": 1,
       "defense": -1
-    }
+    },
+    "releaseOrder": 1510
   },
   {
     "id": "privaty-treasure",
@@ -8461,7 +8644,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "zwei-treasure",
@@ -8507,7 +8691,8 @@
     "suitability": {
       "attack": 2,
       "defense": -2
-    }
+    },
+    "releaseOrder": 950
   },
   {
     "id": "centi-treasure",
@@ -8553,7 +8738,8 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 307
   },
   {
     "id": "moran-treasure",
@@ -8599,6 +8785,7 @@
     "suitability": {
       "attack": 2,
       "defense": -1
-    }
+    },
+    "releaseOrder": 754
   }
 ]
