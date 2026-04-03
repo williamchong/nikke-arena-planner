@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t, locale, locales } = useI18n()
-const i18nHead = useLocaleHead({ addSeoAttributes: true })
+const i18nHead = useLocaleHead()
 const localeCodes = computed(() =>
   (locales.value as Array<{ code: string }>).map(l => l.code),
 )
@@ -10,9 +10,6 @@ useHead({
     const siteName = t('app.title')
     return title && title !== siteName ? `${title} - ${siteName}` : siteName
   },
-  htmlAttrs: computed(() => i18nHead.value.htmlAttrs || {}),
-  link: computed(() => i18nHead.value.link || []),
-  meta: computed(() => i18nHead.value.meta || []),
   script: computed(() => [
     {
       type: 'application/ld+json',
@@ -56,12 +53,25 @@ useSeoMeta({
 </script>
 
 <template>
-  <UApp>
-    <LayoutAppHeader />
-    <main class="mx-auto max-w-7xl px-4 py-6">
-      <NuxtRouteAnnouncer />
-      <NuxtPage />
-    </main>
-    <LayoutAppFooter />
-  </UApp>
+  <Html :lang="i18nHead.htmlAttrs?.lang" :dir="i18nHead.htmlAttrs?.dir">
+    <Head>
+      <Link rel="icon" type="image/png" href="/favicon.png" />
+      <template v-for="link in i18nHead.link" :key="link.key">
+        <Link :id="link.key" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
+      </template>
+      <template v-for="meta in i18nHead.meta" :key="meta.key">
+        <Meta :id="meta.key" :property="meta.property" :content="meta.content" />
+      </template>
+    </Head>
+    <Body>
+      <UApp>
+        <LayoutAppHeader />
+        <main class="mx-auto max-w-7xl px-4 py-6">
+          <NuxtRouteAnnouncer />
+          <NuxtPage />
+        </main>
+        <LayoutAppFooter />
+      </UApp>
+    </Body>
+  </Html>
 </template>
