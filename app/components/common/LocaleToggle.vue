@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const items = computed(() =>
   (locales.value as Array<{ code: string, name: string }>).map(l => ({
@@ -15,7 +16,7 @@ const currentLabel = computed(() =>
 
 <template>
   <UDropdownMenu
-    :items="items.map(i => ({ ...i, onSelect: () => { locale = i.value as 'en' | 'zh-TW' | 'zh-CN' } }))"
+    :items="items.map(i => ({ ...i, to: switchLocalePath(i.value) }))"
   >
     <UButton
       color="neutral"

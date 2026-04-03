@@ -1,21 +1,22 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const route = useRoute()
-const canonicalPath = computed(() => route.path)
+const i18nHead = useLocaleHead({ addSeoAttributes: true })
 
 useHead({
   title: () => t('meta.title'),
-  link: [
+  htmlAttrs: computed(() => i18nHead.value.htmlAttrs || {}),
+  link: computed(() => [
     { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-    { rel: 'canonical', href: canonicalPath },
-  ],
-  meta: [
-    { name: 'description', content: () => t('meta.description') },
-    { name: 'keywords', content: () => t('meta.keywords') },
-    { property: 'og:title', content: () => t('meta.title') },
-    { property: 'og:description', content: () => t('meta.description') },
+    ...(i18nHead.value.link || []),
+  ]),
+  meta: computed(() => [
+    { name: 'description', content: t('meta.description') },
+    { name: 'keywords', content: t('meta.keywords') },
+    { property: 'og:title', content: t('meta.title') },
+    { property: 'og:description', content: t('meta.description') },
     { property: 'og:type', content: 'website' },
-  ],
+    ...(i18nHead.value.meta || []),
+  ]),
 })
 </script>
 

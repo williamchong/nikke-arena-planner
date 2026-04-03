@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const route = useRoute()
+const localePath = useLocalePath()
 
 const roster = useRosterStore()
 const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
@@ -19,8 +20,8 @@ const recommendations15v15 = computed(() => {
 })
 
 const tabs = computed(() => [
-  { label: t('recommend.mode5v5'), to: '/recommend/5v5' },
-  { label: t('recommend.mode15v15'), to: '/recommend/15v15' },
+  { label: t('recommend.mode5v5'), to: localePath('/recommend/5v5') },
+  { label: t('recommend.mode15v15'), to: localePath('/recommend/15v15') },
 ])
 
 const hasEnoughCharacters = computed(() => {
@@ -78,7 +79,7 @@ const showRosterPicker = ref(false)
           />
           <UButton
             :label="t('nav.roster')"
-            to="/roster"
+            :to="localePath('/roster')"
             icon="i-lucide-external-link"
             variant="ghost"
             color="neutral"

@@ -15,12 +15,13 @@ export default defineNuxtConfig({
   ],
   i18n: {
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'zh-TW', name: '繁體中文', file: 'zh-TW.json' },
-      { code: 'zh-CN', name: '简体中文', file: 'zh-CN.json' },
+      { code: 'en', name: 'English', language: 'en', file: 'en.json' },
+      { code: 'zh-TW', name: '繁體中文', language: 'zh-TW', file: 'zh-TW.json' },
+      { code: 'zh-CN', name: '简体中文', language: 'zh-CN', file: 'zh-CN.json' },
     ],
     defaultLocale: 'en',
     langDir: 'locales',
-    strategy: 'no_prefix',
+    strategy: 'prefix_except_default',
+    baseUrl: 'https://nikke.williamchong.cloud',
   },
 })

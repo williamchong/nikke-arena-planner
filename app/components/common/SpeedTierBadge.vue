@@ -3,6 +3,8 @@ import type { SpeedTier } from '~/types/character'
 
 const props = defineProps<{ tier: SpeedTier }>()
 
+const localePath = useLocalePath()
+
 const colorMap: Record<string, string> = {
   '1RL': 'success',
   '2RL': 'success',
@@ -16,7 +18,7 @@ const colorMap: Record<string, string> = {
 </script>
 
 <template>
-  <NuxtLink to="/about#speed-tiers" class="no-underline">
+  <NuxtLink :to="`${localePath('/about')}#speed-tiers`" class="no-underline">
     <UBadge :color="(colorMap[props.tier] as any) || 'neutral'" variant="solid" size="xs" class="cursor-help">
       {{ props.tier }}
     </UBadge>

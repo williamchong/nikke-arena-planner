@@ -1,5 +1,6 @@
 <script setup lang="ts">
-navigateTo('/recommend/5v5', { replace: true })
+const localePath = useLocalePath()
+navigateTo(localePath('/recommend/5v5'), { replace: true })
 </script>
 
 <template>
