@@ -8,16 +8,53 @@
     },
     "archetype": "scarlet-nuke",
     "mode": "both",
-    "required": ["scarlet", "jackal"],
-    "flex": [
-      { "slot": 2, "options": ["centi", "anis", "pascal"] },
-      { "slot": 3, "options": ["anne-miracle-fairy", "blanc", "trina"] },
-      { "slot": 4, "options": ["anis", "centi", "trina", "liter"] }
+    "required": [
+      "scarlet",
+      "jackal"
     ],
-    "burstSlots": ["I", "III", "II", "III", "II"],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "centi",
+          "anis",
+          "pascal"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "anne-miracle-fairy",
+          "blanc",
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "trina",
+          "liter"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "II",
+      "III",
+      "II"
+    ],
     "preferredSpeed": "2RL",
-    "counters": ["sg-spam", "stall-sanis"],
-    "counteredBy": ["alice-stall", "noah-stall"],
+    "counters": [
+      "sg-spam",
+      "stall-sanis"
+    ],
+    "counteredBy": [
+      "alice-stall",
+      "noah-stall"
+    ],
     "priority": 1,
     "notes": {
       "en": "Fastest nuke team. Scarlet wipes with AoE burst. Jackal provides speed. Needs clip RL batteries.",
@@ -34,16 +71,50 @@
     },
     "archetype": "scarlet-nuke",
     "mode": "both",
-    "required": ["scarlet", "jackal"],
-    "flex": [
-      { "slot": 2, "options": ["noise", "rapunzel", "neon"] },
-      { "slot": 3, "options": ["noah", "blanc", "makima"] },
-      { "slot": 4, "options": ["centi", "anis", "trina"] }
+    "required": [
+      "scarlet",
+      "jackal"
     ],
-    "burstSlots": ["I", "III", "I", "II", "II"],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "noise",
+          "rapunzel",
+          "neon"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "noah",
+          "blanc",
+          "makima"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "I",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["sg-spam"],
-    "counteredBy": ["alice-stall"],
+    "counters": [
+      "sg-spam"
+    ],
+    "counteredBy": [
+      "alice-stall"
+    ],
     "priority": 1,
     "notes": {
       "en": "Classic Scarlet comp with defensive support. Noah/Blanc provides survivability. Good balance of speed and durability.",
@@ -60,15 +131,43 @@
     },
     "archetype": "scarlet-nuke",
     "mode": "both",
-    "required": ["scarlet", "blanc", "jackal"],
-    "flex": [
-      { "slot": 3, "options": ["centi", "anis"] },
-      { "slot": 4, "options": ["anis", "centi", "trina"] }
+    "required": [
+      "scarlet",
+      "blanc",
+      "jackal"
     ],
-    "burstSlots": ["I", "III", "II", "II", "II"],
+    "flex": [
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "II",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["sg-spam", "stall-sanis"],
-    "counteredBy": ["alice-stall"],
+    "counters": [
+      "sg-spam",
+      "stall-sanis"
+    ],
+    "counteredBy": [
+      "alice-stall"
+    ],
     "priority": 1,
     "notes": {
       "en": "Blanc's indomitability protects the team while Scarlet nukes. Very strong on defense.",
@@ -85,16 +184,51 @@
     },
     "archetype": "alice-stall",
     "mode": "both",
-    "required": ["alice", "noah"],
-    "flex": [
-      { "slot": 2, "options": ["biscuit", "noise", "rapunzel"] },
-      { "slot": 3, "options": ["rapunzel", "biscuit", "noise"] },
-      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    "required": [
+      "alice",
+      "noah"
     ],
-    "burstSlots": ["III", "II", "II", "I", "II"],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "biscuit",
+          "noise",
+          "rapunzel"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "rapunzel",
+          "biscuit",
+          "noise"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "II",
+      "I",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["scarlet-jackal-2rl", "scarlet-jackal-3rl"],
-    "counteredBy": ["stall-sanis"],
+    "counters": [
+      "scarlet-jackal-2rl",
+      "scarlet-jackal-3rl"
+    ],
+    "counteredBy": [
+      "stall-sanis"
+    ],
     "priority": 1,
     "notes": {
       "en": "Alice's single-target DPS behind Noah's invincibility shield. Biscuit provides defender immunity. Counters Scarlet teams.",
@@ -111,17 +245,58 @@
     },
     "archetype": "sanis-stall",
     "mode": "both",
-    "required": ["anis-sparkling-summer"],
-    "flex": [
-      { "slot": 1, "options": ["noah", "noise", "biscuit"] },
-      { "slot": 2, "options": ["rapunzel", "biscuit", "noise"] },
-      { "slot": 3, "options": ["biscuit", "rapunzel", "tia"] },
-      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    "required": [
+      "anis-sparkling-summer"
     ],
-    "burstSlots": ["III", "II", "I", "II", "II"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noah",
+          "noise",
+          "biscuit"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "rapunzel",
+          "biscuit",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "biscuit",
+          "rapunzel",
+          "tia"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "I",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["alice-stall"],
-    "counteredBy": ["scarlet-jackal-2rl", "scarlet-blanc-nuke"],
+    "counters": [
+      "alice-stall"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl",
+      "scarlet-blanc-nuke"
+    ],
     "priority": 2,
     "notes": {
       "en": "SAnis hits 2 enemies ignoring taunts. Needs heavy defensive support for the 10s burst window.",
@@ -138,17 +313,57 @@
     },
     "archetype": "red-hood",
     "mode": "attack",
-    "required": ["red-hood"],
-    "flex": [
-      { "slot": 1, "options": ["noah", "noise", "blanc"] },
-      { "slot": 2, "options": ["rapunzel", "biscuit", "noise"] },
-      { "slot": 3, "options": ["biscuit", "rapunzel", "tia"] },
-      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    "required": [
+      "red-hood"
     ],
-    "burstSlots": ["Λ", "II", "I", "II", "II"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noah",
+          "noise",
+          "blanc"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "rapunzel",
+          "biscuit",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "biscuit",
+          "rapunzel",
+          "tia"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "Λ",
+      "II",
+      "I",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["scarlet-jackal-3rl"],
-    "counteredBy": ["scarlet-jackal-2rl"],
+    "counters": [
+      "scarlet-jackal-3rl"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
     "priority": 2,
     "notes": {
       "en": "Red Hood's Λ burst lets her fill any burst slot. Strong single-target DPS with flexible team building.",
@@ -165,17 +380,60 @@
     },
     "archetype": "sg-spam",
     "mode": "both",
-    "required": ["privaty"],
-    "flex": [
-      { "slot": 1, "options": ["drake", "drake-treasure", "noir", "sugar"] },
-      { "slot": 2, "options": ["noir", "sugar", "maiden", "viper"] },
-      { "slot": 3, "options": ["centi", "anis", "jackal", "pepper"] },
-      { "slot": 4, "options": ["neon", "pepper", "noise"] }
+    "required": [
+      "privaty"
     ],
-    "burstSlots": ["III", "III", "III", "II", "I"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "drake",
+          "drake-treasure",
+          "noir",
+          "sugar"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "noir",
+          "sugar",
+          "maiden",
+          "viper"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "jackal",
+          "pepper"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "neon",
+          "pepper",
+          "noise"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "III",
+      "III",
+      "II",
+      "I"
+    ],
     "preferredSpeed": "3RL",
     "counters": [],
-    "counteredBy": ["scarlet-jackal-2rl", "scarlet-jackal-3rl", "scarlet-blanc-nuke"],
+    "counteredBy": [
+      "scarlet-jackal-2rl",
+      "scarlet-jackal-3rl",
+      "scarlet-blanc-nuke"
+    ],
     "priority": 3,
     "notes": {
       "en": "Privaty's stun + SG pressure. Good filler team for SP Arena. Weak to Scarlet AoE.",
@@ -192,17 +450,58 @@
     },
     "archetype": "crown-nuke",
     "mode": "both",
-    "required": ["crown"],
-    "flex": [
-      { "slot": 1, "options": ["scarlet-black-shadow", "harran", "maiden-ice-rose", "modernia"] },
-      { "slot": 2, "options": ["jackal", "centi", "anis"] },
-      { "slot": 3, "options": ["blanc", "noah", "trina"] },
-      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    "required": [
+      "crown"
     ],
-    "burstSlots": ["II", "III", "I", "II", "II"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "scarlet-black-shadow",
+          "harran",
+          "maiden-ice-rose",
+          "modernia"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "blanc",
+          "noah",
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "III",
+      "I",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["alice-stall"],
-    "counteredBy": ["scarlet-jackal-2rl"],
+    "counters": [
+      "alice-stall"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
     "priority": 1,
     "notes": {
       "en": "Crown buffs entire team. Pair with strong B3 DPS for devastating burst. Meta-defining in current patch.",
@@ -219,17 +518,57 @@
     },
     "archetype": "tank-wall",
     "mode": "defense",
-    "required": ["moran"],
-    "flex": [
-      { "slot": 1, "options": ["moran-treasure", "noah", "biscuit"] },
-      { "slot": 2, "options": ["noise", "rapunzel", "neon"] },
-      { "slot": 3, "options": ["alice", "scarlet", "modernia"] },
-      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    "required": [
+      "moran"
     ],
-    "burstSlots": ["II", "II", "I", "III", "II"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "moran-treasure",
+          "noah",
+          "biscuit"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "noise",
+          "rapunzel",
+          "neon"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "alice",
+          "scarlet",
+          "modernia"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "II",
+      "I",
+      "III",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["scarlet-jackal-2rl"],
-    "counteredBy": ["stall-sanis"],
+    "counters": [
+      "scarlet-jackal-2rl"
+    ],
+    "counteredBy": [
+      "stall-sanis"
+    ],
     "priority": 2,
     "notes": {
       "en": "Moran's damage reduction + revival mechanics create a wall. High CP investment required.",
@@ -246,17 +585,58 @@
     },
     "archetype": "harran-nuke",
     "mode": "both",
-    "required": ["harran"],
-    "flex": [
-      { "slot": 1, "options": ["jackal", "centi", "anis"] },
-      { "slot": 2, "options": ["blanc", "noah", "trina"] },
-      { "slot": 3, "options": ["centi", "anis", "noise"] },
-      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    "required": [
+      "harran"
     ],
-    "burstSlots": ["III", "I", "II", "II", "I"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "noah",
+          "trina"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "noise"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "liter"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "I",
+      "II",
+      "II",
+      "I"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["sg-spam"],
-    "counteredBy": ["alice-stall", "noah-stall"],
+    "counters": [
+      "sg-spam"
+    ],
+    "counteredBy": [
+      "alice-stall",
+      "noah-stall"
+    ],
     "priority": 2,
     "notes": {
       "en": "Harran provides AoE burst similar to Scarlet. Good alternative when Scarlet is used in another team.",
@@ -273,17 +653,55 @@
     },
     "archetype": "noir-system",
     "mode": "both",
-    "required": ["noir"],
-    "flex": [
-      { "slot": 1, "options": ["centi", "anis", "jackal"] },
-      { "slot": 2, "options": ["pepper", "neon", "noise"] },
-      { "slot": 3, "options": ["sugar", "drake", "viper"] },
-      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    "required": [
+      "noir"
     ],
-    "burstSlots": ["III", "II", "I", "III", "II"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "pepper",
+          "neon",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "sugar",
+          "drake",
+          "viper"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "liter"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "I",
+      "III",
+      "II"
+    ],
     "preferredSpeed": "3RL",
     "counters": [],
-    "counteredBy": ["scarlet-jackal-2rl"],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
     "priority": 3,
     "notes": {
       "en": "Noir's SG-based damage system. Good filler team for SP Arena when other cores are taken.",
@@ -300,17 +718,56 @@
     },
     "archetype": "2b-nuke",
     "mode": "attack",
-    "required": ["2b"],
-    "flex": [
-      { "slot": 1, "options": ["jackal", "centi", "anis"] },
-      { "slot": 2, "options": ["blanc", "noah", "trina"] },
-      { "slot": 3, "options": ["centi", "anis", "noise"] },
-      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    "required": [
+      "2b"
     ],
-    "burstSlots": ["III", "I", "II", "II", "I"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "noah",
+          "trina"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "noise"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "liter"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "I",
+      "II",
+      "II",
+      "I"
+    ],
     "preferredSpeed": "3RL",
     "counters": [],
-    "counteredBy": ["scarlet-jackal-2rl", "rosanna-counter"],
+    "counteredBy": [
+      "scarlet-jackal-2rl",
+      "rosanna-counter"
+    ],
     "priority": 3,
     "notes": {
       "en": "2B distributes damage across all enemies. Countered by Rosanna's dispel and Noah/Biscuit.",
@@ -327,17 +784,57 @@
     },
     "archetype": "makima-counter",
     "mode": "defense",
-    "required": ["makima"],
-    "flex": [
-      { "slot": 1, "options": ["noise", "rapunzel", "neon"] },
-      { "slot": 2, "options": ["alice", "scarlet", "modernia"] },
-      { "slot": 3, "options": ["centi", "anis", "jackal"] },
-      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    "required": [
+      "makima"
     ],
-    "burstSlots": ["II", "I", "III", "II", "I"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noise",
+          "rapunzel",
+          "neon"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "alice",
+          "scarlet",
+          "modernia"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "liter"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "I",
+      "III",
+      "II",
+      "I"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["sg-spam"],
-    "counteredBy": ["scarlet-jackal-2rl"],
+    "counters": [
+      "sg-spam"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
     "priority": 3,
     "notes": {
       "en": "Makima's indomitability and P5 redirect counter SG teams. Good defensive filler.",
@@ -354,16 +851,48 @@
     },
     "archetype": "snipe",
     "mode": "attack",
-    "required": ["power", "pepper"],
-    "flex": [
-      { "slot": 2, "options": ["centi", "anis", "jackal"] },
-      { "slot": 3, "options": ["anis", "centi", "trina"] },
-      { "slot": 4, "options": ["blanc", "noah", "noise"] }
+    "required": [
+      "power",
+      "pepper"
     ],
-    "burstSlots": ["III", "I", "II", "II", "II"],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "anis",
+          "centi",
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "blanc",
+          "noah",
+          "noise"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "I",
+      "II",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
     "counters": [],
-    "counteredBy": ["scarlet-jackal-2rl"],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
     "priority": 3,
     "notes": {
       "en": "Power and Pepper both target highest ATK enemy. Can snipe key DPS units before they burst.",
@@ -380,22 +909,645 @@
     },
     "archetype": "siren-control",
     "mode": "both",
-    "required": ["little-mermaid"],
-    "flex": [
-      { "slot": 1, "options": ["scarlet", "harran", "maiden-ice-rose"] },
-      { "slot": 2, "options": ["jackal", "centi", "anis"] },
-      { "slot": 3, "options": ["blanc", "noah", "noise"] },
-      { "slot": 4, "options": ["centi", "anis", "trina"] }
+    "required": [
+      "little-mermaid"
     ],
-    "burstSlots": ["II", "III", "I", "II", "II"],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "scarlet",
+          "harran",
+          "maiden-ice-rose"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "blanc",
+          "noah",
+          "noise"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "III",
+      "I",
+      "II",
+      "II"
+    ],
     "preferredSpeed": "3RL",
-    "counters": ["alice-stall", "stall-sanis"],
+    "counters": [
+      "alice-stall",
+      "stall-sanis"
+    ],
     "counteredBy": [],
     "priority": 1,
     "notes": {
       "en": "Siren's stun disrupts enemy burst chains. SSS-tier in current meta. Pairs well with any nuke DPS.",
       "zh-TW": "小美人魚的暈眩打斷敵方爆裂鏈。當前版本SSS級。與任何核爆輸出搭配良好。",
       "zh-CN": "小美人鱼的晕眩打断敌方爆裂链。当前版本SSS级。与任何核爆输出搭配良好。"
+    }
+  },
+  {
+    "id": "rapi-rh-carry",
+    "name": {
+      "en": "Rapi: Red Hood Carry",
+      "zh-TW": "拉比:紅帽主C",
+      "zh-CN": "拉比:红帽主C"
+    },
+    "archetype": "rapi-rh",
+    "mode": "both",
+    "required": [
+      "rapi-red-hood"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noah",
+          "blanc",
+          "noise"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "biscuit",
+          "rapunzel",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "II",
+      "II",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-jackal-3rl",
+      "sg-spam"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "Rapi: Red Hood is SSS tier with massive single-target burst. Pair with defensive supports for sustained damage.",
+      "zh-TW": "拉比:紅帽為SSS級，擁有強大的單體爆裂。搭配防禦輔助進行持續輸出。",
+      "zh-CN": "拉比:红帽为SSS级，拥有强大的单体爆裂。搭配防御辅助进行持续输出。"
+    }
+  },
+  {
+    "id": "vesti-tu-carry",
+    "name": {
+      "en": "Vesti: TU Carry",
+      "zh-TW": "銀華:戰術升級主C",
+      "zh-CN": "银华:战术升级主C"
+    },
+    "archetype": "vesti-tu",
+    "mode": "both",
+    "required": [
+      "vesti-tactical-upgrade"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noah",
+          "blanc",
+          "noise"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "biscuit",
+          "rapunzel",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "II",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "stall-sanis"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "Vesti: Tactical Upgrade is SSS tier. Strong burst DPS with self-sustain capability.",
+      "zh-TW": "銀華:戰術升級為SSS級。強力爆裂輸出兼具自我維持能力。",
+      "zh-CN": "银华:战术升级为SSS级。强力爆裂输出兼具自我维持能力。"
+    }
+  },
+  {
+    "id": "blanc-indom",
+    "name": {
+      "en": "Blanc Indomitable",
+      "zh-TW": "布蘭兒不屈",
+      "zh-CN": "布兰儿不屈"
+    },
+    "archetype": "blanc-indom",
+    "mode": "both",
+    "required": [
+      "blanc"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "harran",
+          "maiden-ice-rose",
+          "modernia",
+          "scarlet-black-shadow"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "noise",
+          "rapunzel",
+          "neon"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "III",
+      "I",
+      "II",
+      "I"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "sg-spam"
+    ],
+    "counteredBy": [
+      "alice-stall"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Blanc's indomitability protects the team. Flexible B3 DPS slot — use whoever isn't in another team.",
+      "zh-TW": "布蘭兒的不屈保護隊伍。靈活的B3輸出位 — 使用未被其他隊伍佔用的角色。",
+      "zh-CN": "布兰儿的不屈保护队伍。灵活的B3输出位 — 使用未被其他队伍占用的角色。"
+    }
+  },
+  {
+    "id": "biscuit-ludmilla-stall",
+    "name": {
+      "en": "Biscuit + Ludmilla Taunt Stall",
+      "zh-TW": "餅乾 + 魯德米拉嘲諷持久",
+      "zh-CN": "饼干 + 鲁德米拉嘲讽持久"
+    },
+    "archetype": "taunt-stall",
+    "mode": "defense",
+    "required": [
+      "biscuit",
+      "ludmilla"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "anis-sparkling-summer",
+          "alice",
+          "modernia"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "noise",
+          "rapunzel",
+          "neon"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "I",
+      "III",
+      "II",
+      "I"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-jackal-2rl"
+    ],
+    "counteredBy": [
+      "stall-sanis"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Ludmilla's permanent off-burst taunt + Biscuit defender immunity. Very tanky defense that wastes opponent's burst.",
+      "zh-TW": "魯德米拉的常駐非爆裂嘲諷 + 餅乾防禦者免疫。非常肉的防守，浪費對手爆裂。",
+      "zh-CN": "鲁德米拉的常驻非爆裂嘲讽 + 饼干防御者免疫。非常肉的防守，浪费对手爆裂。"
+    }
+  },
+  {
+    "id": "super-alice-revive",
+    "name": {
+      "en": "Super Alice (Revive)",
+      "zh-TW": "超級愛麗絲（復活）",
+      "zh-CN": "超级爱丽丝（复活）"
+    },
+    "archetype": "revive-alice",
+    "mode": "attack",
+    "required": [
+      "alice",
+      "rapunzel"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "noah",
+          "biscuit"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "noah",
+          "biscuit",
+          "noise"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "I",
+      "II",
+      "II",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-jackal-3rl",
+      "scarlet-blanc-nuke"
+    ],
+    "counteredBy": [
+      "stall-sanis"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Alice dies early, Rapunzel revives her with ATK buff. Revived Alice deals massive damage. Strong counter to nuke teams.",
+      "zh-TW": "愛麗絲先陣亡，長髮公主復活並附帶攻擊增益。復活後的愛麗絲造成巨大傷害。強力反核爆隊。",
+      "zh-CN": "爱丽丝先阵亡，长发公主复活并附带攻击增益。复活后的爱丽丝造成巨大伤害。强力反核爆队。"
+    }
+  },
+  {
+    "id": "modernia-carry",
+    "name": {
+      "en": "Modernia MG Carry",
+      "zh-TW": "摩德妮亞機槍主C",
+      "zh-CN": "摩德妮亚机枪主C"
+    },
+    "archetype": "modernia",
+    "mode": "both",
+    "required": [
+      "modernia"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "crown",
+          "blanc",
+          "noah"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "noise",
+          "rapunzel",
+          "biscuit"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "liter"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "I",
+      "I",
+      "I"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
+    "priority": 3,
+    "notes": {
+      "en": "Modernia's sustained MG DPS. Good filler team when other B3 cores are taken.",
+      "zh-TW": "摩德妮亞的持續機槍輸出。其他B3核心被佔用時的好補位。",
+      "zh-CN": "摩德妮亚的持续机枪输出。其他B3核心被占用时的好补位。"
+    }
+  },
+  {
+    "id": "rosanna-counter",
+    "name": {
+      "en": "Rosanna Dispel Counter",
+      "zh-TW": "羅珊娜驅散反制",
+      "zh-CN": "罗珊娜驱散反制"
+    },
+    "archetype": "rosanna-counter",
+    "mode": "attack",
+    "required": [
+      "rosanna"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "scarlet",
+          "harran",
+          "maiden-ice-rose"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "blanc",
+          "noah",
+          "noise"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "I",
+      "II",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "2b-distribute",
+      "biscuit-ludmilla-stall"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Rosanna's S1 dispels Jackal links and buffs. Essential attack counter vs Biscuit/Ludmilla and 2B teams.",
+      "zh-TW": "羅珊娜的S1驅散豺狼連結和增益。對抗餅乾/魯德米拉和2B隊伍的必要進攻反制。",
+      "zh-CN": "罗珊娜的S1驱散豺狼连结和增益。对抗饼干/鲁德米拉和2B队伍的必要进攻反制。"
+    }
+  },
+  {
+    "id": "nayuta-carry",
+    "name": {
+      "en": "Nayuta Carry",
+      "zh-TW": "娜由塔主C",
+      "zh-CN": "娜由塔主C"
+    },
+    "archetype": "nayuta",
+    "mode": "both",
+    "required": [
+      "nayuta"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noah",
+          "blanc",
+          "noise"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "biscuit",
+          "rapunzel",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "II",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "stall-sanis"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "Nayuta promoted to SS tier. Strong burst DPS with charge generation utility.",
+      "zh-TW": "娜由塔升至SS級。強力爆裂輸出兼具充能生成功能。",
+      "zh-CN": "娜由塔升至SS级。强力爆裂输出兼具充能生成功能。"
+    }
+  },
+  {
+    "id": "emma-undying",
+    "name": {
+      "en": "Emma Undying Wall",
+      "zh-TW": "艾瑪不死牆",
+      "zh-CN": "艾玛不死墙"
+    },
+    "archetype": "emma-undying",
+    "mode": "defense",
+    "required": [
+      "emma-tactical-upgrade",
+      "jackal"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "scarlet",
+          "harran",
+          "maiden-ice-rose"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "centi",
+          "anis",
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "anis",
+          "centi",
+          "noise"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "I",
+      "III",
+      "II",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "alice-stall"
+    ],
+    "counteredBy": [
+      "scarlet-jackal-2rl"
+    ],
+    "priority": 3,
+    "notes": {
+      "en": "Emma: TU's undying mechanics keep P1/P5 alive. Jackal feeds burst. Niche but effective defense.",
+      "zh-TW": "艾瑪:戰術升級的不死機制保持P1/P5存活。豺狼提供充能。小眾但有效的防守。",
+      "zh-CN": "艾玛:战术升级的不死机制保持P1/P5存活。豺狼提供充能。小众但有效的防守。"
     }
   }
 ]
