@@ -19,7 +19,8 @@
   "burst": {
     "I": "Burst I",
     "II": "Burst II",
-    "III": "Burst III"
+    "III": "Burst III",
+    "Λ": "Burst Λ"
   },
   "role": {
     "attacker": "Attacker",

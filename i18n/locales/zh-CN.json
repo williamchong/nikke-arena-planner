@@ -19,7 +19,8 @@
   "burst": {
     "I": "爆裂 I",
     "II": "爆裂 II",
-    "III": "爆裂 III"
+    "III": "爆裂 III",
+    "Λ": "爆裂 Λ"
   },
   "role": {
     "attacker": "火力",
