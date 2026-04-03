@@ -131,7 +131,13 @@
     "term_cpPenalty": "战力惩罚",
     "termDesc_cpPenalty": "如果你的队伍战力低于对手的84.6%，你会受到属性惩罚（20%到90%）。在特殊竞技场中，将最强角色分散到3支队伍以避免此惩罚。",
     "term_lambda": "Λ（Lambda）爆裂",
-    "termDesc_lambda": "小红帽的独特爆裂类型。她可以充当爆裂I、II或III——填补队伍缺少的任何爆裂位。这使她在组队时极为灵活。"
+    "termDesc_lambda": "小红帽的独特爆裂类型。她可以充当爆裂I、II或III——填补队伍缺少的任何爆裂位。这使她在组队时极为灵活。",
+    "creditsTitle": "数据来源与致谢",
+    "creditsIntro": "本工具建立在 NIKKE 社区的数据与研究之上。特别感谢：",
+    "creditNikkeGg": "竞技场机制指南、元数据分析和队伍组成策略",
+    "creditPrydwen": "PVP 等级列表、角色评分和元数据战术分析",
+    "creditZuoCatcat": "PVP 充能计算器电子表格，包含逐帧精确的充能数据",
+    "creditFandom": "角色发布日期和游戏数据参考"
   },
   "common": {
     "all": "全部",

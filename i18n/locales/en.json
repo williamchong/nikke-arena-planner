@@ -131,7 +131,13 @@
     "term_cpPenalty": "CP Penalty",
     "termDesc_cpPenalty": "If your team's Combat Power is below 84.6% of the opponent's, you receive a stat penalty (20% to 90%). In SP Arena, distribute your strongest characters across all 3 teams to avoid this.",
     "term_lambda": "Λ (Lambda) Burst",
-    "termDesc_lambda": "Red Hood's unique burst type. She can act as Burst I, II, or III — filling whichever slot your team is missing. This makes her extremely flexible in team building."
+    "termDesc_lambda": "Red Hood's unique burst type. She can act as Burst I, II, or III — filling whichever slot your team is missing. This makes her extremely flexible in team building.",
+    "creditsTitle": "Data Sources & Credits",
+    "creditsIntro": "This tool is built on data and research from the NIKKE community. Special thanks to:",
+    "creditNikkeGg": "Arena mechanics guides, meta analysis, and team composition strategies",
+    "creditPrydwen": "PVP tier list, character ratings, and meta archetype analysis",
+    "creditZuoCatcat": "PVP burst generation calculator spreadsheet with frame-accurate charge data",
+    "creditFandom": "Character release dates and game data reference"
   },
   "common": {
     "all": "All",

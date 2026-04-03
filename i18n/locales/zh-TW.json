@@ -131,7 +131,13 @@
     "term_cpPenalty": "戰力懲罰",
     "termDesc_cpPenalty": "如果你的隊伍戰力低於對手的84.6%，你會受到屬性懲罰（20%到90%）。在特殊競技場中，將最強角色分散到3支隊伍以避免此懲罰。",
     "term_lambda": "Λ（Lambda）爆裂",
-    "termDesc_lambda": "小紅帽的獨特爆裂類型。她可以充當爆裂I、II或III——填補隊伍缺少的任何爆裂位。這使她在組隊時極為靈活。"
+    "termDesc_lambda": "小紅帽的獨特爆裂類型。她可以充當爆裂I、II或III——填補隊伍缺少的任何爆裂位。這使她在組隊時極為靈活。",
+    "creditsTitle": "資料來源與致謝",
+    "creditsIntro": "本工具建立在 NIKKE 社群的資料與研究之上。特別感謝：",
+    "creditNikkeGg": "競技場機制指南、元數據分析和隊伍組成策略",
+    "creditPrydwen": "PVP 等級列表、角色評分和元數據戰術分析",
+    "creditZuoCatcat": "PVP 充能計算器試算表，包含逐幀精確的充能資料",
+    "creditFandom": "角色發布日期和遊戲資料參考"
   },
   "common": {
     "all": "全部",

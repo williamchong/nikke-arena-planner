@@ -164,6 +164,34 @@ useHead({
       </dl>
     </section>
 
+    <!-- Data credits -->
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">
+        {{ t('about.creditsTitle') }}
+      </h2>
+      <p class="text-sm text-muted">
+        {{ t('about.creditsIntro') }}
+      </p>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="https://nikke.gg/" target="_blank" rel="noopener" class="font-medium text-primary hover:underline">nikke.gg</a>
+          <span class="text-muted"> — {{ t('about.creditNikkeGg') }}</span>
+        </li>
+        <li>
+          <a href="https://www.prydwen.gg/" target="_blank" rel="noopener" class="font-medium text-primary hover:underline">Prydwen.gg</a>
+          <span class="text-muted"> — {{ t('about.creditPrydwen') }}</span>
+        </li>
+        <li>
+          <a href="https://space.bilibili.com/8724249" target="_blank" rel="noopener" class="font-medium text-primary hover:underline">左猫猫ZuoCatcat</a>
+          <span class="text-muted"> — {{ t('about.creditZuoCatcat') }}</span>
+        </li>
+        <li>
+          <a href="https://nikke-goddess-of-victory-international.fandom.com/wiki/Home" target="_blank" rel="noopener" class="font-medium text-primary hover:underline">NIKKE Fandom Wiki</a>
+          <span class="text-muted"> — {{ t('about.creditFandom') }}</span>
+        </li>
+      </ul>
+    </section>
+
     <!-- Disclaimer -->
     <section class="rounded-lg bg-muted/10 p-4 text-xs text-muted">
       {{ t('landing.footer') }}
