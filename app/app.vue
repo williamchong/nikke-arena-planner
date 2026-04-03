@@ -3,20 +3,22 @@ const { t } = useI18n()
 const i18nHead = useLocaleHead({ addSeoAttributes: true })
 
 useHead({
-  title: () => t('meta.title'),
+  titleTemplate: (title) => {
+    const siteName = t('app.title')
+    return title && title !== siteName ? `${title} - ${siteName}` : siteName
+  },
   htmlAttrs: computed(() => i18nHead.value.htmlAttrs || {}),
-  link: computed(() => [
-    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-    ...(i18nHead.value.link || []),
-  ]),
-  meta: computed(() => [
-    { name: 'description', content: t('meta.description') },
-    { name: 'keywords', content: t('meta.keywords') },
-    { property: 'og:title', content: t('meta.title') },
-    { property: 'og:description', content: t('meta.description') },
-    { property: 'og:type', content: 'website' },
-    ...(i18nHead.value.meta || []),
-  ]),
+  link: computed(() => i18nHead.value.link || []),
+  meta: computed(() => i18nHead.value.meta || []),
+})
+
+useSeoMeta({
+  description: () => t('meta.description'),
+  keywords: () => t('meta.keywords'),
+  ogTitle: () => t('meta.title'),
+  ogDescription: () => t('meta.description'),
+  ogType: 'website',
+  ogSiteName: () => t('app.title'),
 })
 </script>
 

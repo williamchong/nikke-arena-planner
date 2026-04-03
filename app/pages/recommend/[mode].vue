@@ -7,6 +7,10 @@ const roster = useRosterStore()
 const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
 
 const mode = computed(() => route.params.mode as string)
+
+useSeoMeta({
+  title: () => t('recommend.title'),
+})
 const is15v15 = computed(() => mode.value === '15v15')
 
 const recommendations5v5 = computed(() => {

@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    head: {
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    },
   },
   css: ['~/assets/css/main.css'],
   site: {

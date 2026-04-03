@@ -10,11 +10,9 @@ const tiers = [
   { name: '5RL', key: '5rl', time: '~5.5s' },
 ]
 
-useHead({
-  title: () => `${t('about.title')} - ${t('app.title')}`,
-  meta: [
-    { name: 'description', content: () => t('about.metaDescription') },
-  ],
+useSeoMeta({
+  title: () => t('about.title'),
+  description: () => t('about.metaDescription'),
 })
 </script>
 

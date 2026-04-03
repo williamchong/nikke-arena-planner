@@ -2,6 +2,11 @@
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
 
 const { t } = useI18n()
+
+useSeoMeta({
+  title: () => t('calculator.title'),
+})
+
 const roster = useRosterStore()
 const { getCharacter, filterCharacters } = useCharacters()
 const { calculate } = useBurstCalculator()
