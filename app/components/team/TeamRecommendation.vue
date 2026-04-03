@@ -31,22 +31,60 @@ const templateNotes = computed(() =>
   props.template ? localize(props.template.notes) : null,
 )
 
-const showDetails = ref(false)
+// Determine which character fires each burst stage based on position order
+// In NIKKE, lowest position number with the needed burst type fires first
+const burstOrder = computed(() => {
+  if (characters.value.length !== 5) return null
+  const chars = characters.value.map((c, i) => ({ char: c, pos: i + 1 }))
+
+  function findBurster(burstType: 'I' | 'II' | 'III', exclude: Set<number>) {
+    // Λ can fill any slot
+    const candidates = chars.filter(c =>
+      !exclude.has(c.pos) && (c.char.burst === burstType || c.char.burst === 'Λ'),
+    )
+    // Prefer exact match over Λ, then lowest position
+    const exact = candidates.filter(c => c.char.burst === burstType)
+    return (exact.length > 0 ? exact : candidates)[0] ?? null
+  }
+
+  const used = new Set<number>()
+  const b1 = findBurster('I', used)
+  if (b1) used.add(b1.pos)
+  const b2 = findBurster('II', used)
+  if (b2) used.add(b2.pos)
+  const b3 = findBurster('III', used)
+
+  return { b1, b2, b3 }
+})
+
+const timelineSegments = computed(() => {
+  if (!burstResult.value) return null
+  const { b1, b2, b3 } = burstResult.value.timings
+  const max = b3
+  const order = burstOrder.value
+  return {
+    charge: { width: (b1 / max) * 100, time: b1, char: order?.b1?.char },
+    b1ToB2: { width: ((b2 - b1) / max) * 100, time: b2 - b1, char: order?.b2?.char },
+    b2ToB3: { width: ((b3 - b2) / max) * 100, time: b3 - b2, char: order?.b3?.char },
+    total: b3,
+  }
+})
+
+const showNotes = ref(false)
 </script>
 
 <template>
   <div class="rounded-lg border border-default p-4">
+    <!-- Header -->
     <div class="mb-3 flex flex-wrap items-center gap-2">
       <span v-if="label" class="text-sm font-bold">{{ label }}</span>
       <UBadge v-if="templateName" color="primary" variant="subtle" size="xs">
         {{ templateName }}
       </UBadge>
       <CommonSpeedTierBadge :tier="team.burstSpeed" />
-      <span v-if="burstResult" class="text-xs text-muted">
-        {{ burstResult.timings.total.toFixed(2) }}s {{ t('calculator.timing') }}
-      </span>
     </div>
 
+    <!-- Characters -->
     <div class="flex flex-wrap gap-2">
       <TeamSlot
         v-for="(char, i) in characters"
@@ -56,54 +94,55 @@ const showDetails = ref(false)
       />
     </div>
 
-    <!-- Expandable details -->
-    <div class="mt-3 flex flex-wrap gap-3">
-      <button
-        class="text-xs text-muted hover:text-default"
-        @click="showDetails = !showDetails"
-      >
-        {{ showDetails ? '▼' : '▶' }} {{ t('recommend.details') }}
-      </button>
+    <!-- Burst timeline visualization -->
+    <div v-if="timelineSegments" class="mt-3 space-y-1">
+      <!-- Visual bar with character names -->
+      <div class="flex h-7 overflow-hidden rounded-full text-[10px] font-bold text-white">
+        <div
+          class="flex items-center justify-center gap-0.5 bg-info"
+          :style="{ width: `${timelineSegments.charge.width}%` }"
+          :title="timelineSegments.charge.char ? `B1: ${localize(timelineSegments.charge.char.name)}` : 'B1'"
+        >
+          <span>B1</span>
+          <span v-if="timelineSegments.charge.char" class="truncate opacity-80">{{ localize(timelineSegments.charge.char.name) }}</span>
+        </div>
+        <div
+          class="flex items-center justify-center gap-0.5 bg-warning"
+          :style="{ width: `${timelineSegments.b1ToB2.width}%` }"
+          :title="timelineSegments.b1ToB2.char ? `B2: ${localize(timelineSegments.b1ToB2.char.name)}` : 'B2'"
+        >
+          <span>B2</span>
+          <span v-if="timelineSegments.b1ToB2.char" class="truncate opacity-80">{{ localize(timelineSegments.b1ToB2.char.name) }}</span>
+        </div>
+        <div
+          class="flex items-center justify-center gap-0.5 bg-error"
+          :style="{ width: `${timelineSegments.b2ToB3.width}%` }"
+          :title="timelineSegments.b2ToB3.char ? `B3: ${localize(timelineSegments.b2ToB3.char.name)}` : 'B3'"
+        >
+          <span>B3</span>
+          <span v-if="timelineSegments.b2ToB3.char" class="truncate opacity-80">{{ localize(timelineSegments.b2ToB3.char.name) }}</span>
+        </div>
+      </div>
+
+      <!-- Timing labels -->
+      <div class="flex items-center gap-3 text-xs">
+        <span class="text-info">{{ burstResult!.timings.b1.toFixed(2) }}s</span>
+        <span class="text-muted">→</span>
+        <span class="text-warning">{{ burstResult!.timings.b2.toFixed(2) }}s</span>
+        <span class="text-muted">→</span>
+        <span class="text-error">{{ burstResult!.timings.b3.toFixed(2) }}s Full Burst</span>
+      </div>
     </div>
 
-    <div v-if="showDetails" class="mt-3 space-y-2">
-      <!-- Burst timing breakdown -->
-      <div v-if="burstResult" class="flex gap-4 text-xs">
-        <div class="text-center">
-          <div class="font-bold">{{ burstResult.timings.b1.toFixed(2) }}s</div>
-          <div class="text-muted">B1</div>
-        </div>
-        <div class="text-center">
-          <div class="font-bold">{{ burstResult.timings.b2.toFixed(2) }}s</div>
-          <div class="text-muted">B2</div>
-        </div>
-        <div class="text-center">
-          <div class="font-bold">{{ burstResult.timings.b3.toFixed(2) }}s</div>
-          <div class="text-muted">Full Burst</div>
-        </div>
-        <div class="ml-auto text-right">
-          <div class="font-bold">{{ team.score }}</div>
-          <div class="text-muted">{{ t('recommend.score') }}</div>
-        </div>
-      </div>
-
-      <!-- Burst gen bar at 3RL -->
-      <div v-if="burstResult" class="flex items-center gap-2 text-xs">
-        <span class="w-16 text-muted">3RL gen:</span>
-        <div class="flex-1">
-          <div class="h-3 overflow-hidden rounded-full bg-muted/20">
-            <div
-              class="h-full rounded-full transition-all"
-              :class="burstResult.totalBurstGen['3RL'] >= 1.0 ? 'bg-success' : 'bg-primary'"
-              :style="{ width: `${Math.min(burstResult.totalBurstGen['3RL'] * 100, 100)}%` }"
-            />
-          </div>
-        </div>
-        <span class="w-12 text-right font-mono">{{ burstResult.totalBurstGen['3RL'].toFixed(3) }}</span>
-      </div>
-
-      <!-- Template notes -->
-      <p v-if="templateNotes" class="text-xs text-muted">
+    <!-- Notes toggle -->
+    <div v-if="templateNotes" class="mt-3">
+      <button
+        class="text-xs text-muted hover:text-default"
+        @click="showNotes = !showNotes"
+      >
+        {{ showNotes ? '▼' : '▶' }} {{ t('recommend.whyThisTeam') }}
+      </button>
+      <p v-if="showNotes" class="mt-1 text-xs text-muted">
         {{ templateNotes }}
       </p>
     </div>

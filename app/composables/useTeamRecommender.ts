@@ -10,18 +10,87 @@ const templates: TeamTemplate[] = templatesData as TeamTemplate[]
 const { calculate } = useBurstCalculator()
 const { getCharacter } = useCharacters()
 
+/**
+ * Sort a team of 5 characters into optimal P1-P5 positions.
+ * Rules:
+ * - Defenders → P1/P5 (absorb damage)
+ * - Attackers → P3/P4 (safest positions)
+ * - Supporters → P2/P5 (flexible)
+ * - Within role groups, place B1 holders in lower positions (fires first)
+ */
+function sortByPosition(chars: Character[]): Character[] {
+  if (chars.length !== 5) return chars
+
+  const defenders = chars.filter(c => c.role === 'defender')
+  const attackers = chars.filter(c => c.role === 'attacker')
+  const supporters = chars.filter(c => c.role === 'supporter')
+
+  // Sort each group: B1 first (lowest burst type fires first from lower position)
+  const burstPriority: Record<string, number> = { I: 0, Λ: 1, II: 2, III: 3 }
+  const byBurst = (a: Character, b: Character) =>
+    (burstPriority[a.burst] ?? 3) - (burstPriority[b.burst] ?? 3)
+
+  defenders.sort(byBurst)
+  attackers.sort(byBurst)
+  supporters.sort(byBurst)
+
+  // Assign positions: P1(tank), P2(support/flex), P3-P4(dps), P5(tank/support)
+  const slots: (Character | null)[] = [null, null, null, null, null]
+  const placed = new Set<string>()
+
+  function place(char: Character, pos: number) {
+    if (slots[pos] || placed.has(char.id)) return false
+    slots[pos] = char
+    placed.add(char.id)
+    return true
+  }
+
+  // P1: first defender
+  for (const d of defenders) {
+    if (place(d, 0)) break
+  }
+
+  // P5: second defender, or a supporter
+  for (const d of defenders) {
+    if (!placed.has(d.id) && place(d, 4)) break
+  }
+  if (!slots[4]) {
+    for (const s of supporters) {
+      if (!placed.has(s.id) && place(s, 4)) break
+    }
+  }
+
+  // P3, P4: attackers
+  for (const a of attackers) {
+    if (placed.has(a.id)) continue
+    if (!slots[2] && place(a, 2)) continue
+    if (!slots[3] && place(a, 3)) break
+  }
+
+  // Fill remaining slots with unplaced characters
+  const unplaced = chars.filter(c => !placed.has(c.id)).sort(byBurst)
+  for (const c of unplaced) {
+    for (let i = 0; i < 5; i++) {
+      if (place(c, i)) break
+    }
+  }
+
+  return slots.filter((c): c is Character => !!c)
+}
+
 function buildComposition(
   template: TeamTemplate,
   chars: Character[],
   mode: ArenaMode,
   score: number,
 ): TeamComposition {
+  const positioned = sortByPosition(chars)
   return {
     id: template.id,
-    characters: chars.map(c => c.id),
+    characters: positioned.map(c => c.id),
     mode,
     templateId: template.id,
-    burstSpeed: calculate(chars, mode).effectiveTier,
+    burstSpeed: calculate(positioned, mode).effectiveTier,
     score,
   }
 }
@@ -130,10 +199,11 @@ function autoFillTeam(available: Character[], mode: ArenaMode): TeamComposition 
 
   if (team.length < 5) return null
 
-  const result = calculate(team, mode)
+  const positioned = sortByPosition(team)
+  const result = calculate(positioned, mode)
   return {
     id: `auto-${Date.now()}`,
-    characters: team.map(c => c.id),
+    characters: positioned.map(c => c.id),
     mode,
     burstSpeed: result.effectiveTier,
     score: 0,
@@ -145,10 +215,11 @@ function resolveCharacters(ids: string[]): Character[] {
 }
 
 function toComposition(chars: Character[], mode: ArenaMode, label?: string): TeamComposition {
-  const result = calculate(chars, mode)
+  const positioned = sortByPosition(chars)
+  const result = calculate(positioned, mode)
   return {
     id: label || `sa-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-    characters: chars.map(c => c.id),
+    characters: positioned.map(c => c.id),
     mode,
     burstSpeed: result.effectiveTier,
     score: scoreTeamRaw(chars, mode),
