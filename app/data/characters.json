@@ -1,0 +1,8604 @@
+[
+  {
+    "id": "helm-treasure",
+    "name": {
+      "en": "Helm: Treasure",
+      "zh-TW": "海倫 珍藏",
+      "zh-CN": "海伦 珍藏"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.1991,
+        "2RL": 0.3982,
+        "3SG": 0.1991,
+        "5SG": 0.3982,
+        "3RL": 0.5973,
+        "7SG": 0.5973,
+        "4RL": 0.7964,
+        "5RL": 0.9955
+      },
+      "defense": {
+        "1RL": 0.1991,
+        "2RL": 0.3982,
+        "3SG": 0.1991,
+        "5SG": 0.3982,
+        "3RL": 0.5973,
+        "7SG": 0.5973,
+        "4RL": 0.7964,
+        "5RL": 0.9955
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "snow-white-heavy-arms",
+    "name": {
+      "en": "Snow White: Heavy Arms",
+      "zh-TW": "白雪公主:重型武裝",
+      "zh-CN": "白雪公主:重型武装"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "pilgrim",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.2,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.336,
+        "3SG": 0.28,
+        "5SG": 0.588,
+        "3RL": 0.672,
+        "7SG": 0.924,
+        "4RL": 1.008,
+        "5RL": 1.232
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.336,
+        "3SG": 0.28,
+        "5SG": 0.588,
+        "3RL": 0.672,
+        "7SG": 0.924,
+        "4RL": 1.008,
+        "5RL": 1.232
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "trina",
+    "name": {
+      "en": "Trina",
+      "zh-TW": "特蕾娜",
+      "zh-CN": "特蕾娜"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 68.59,
+    "ammo": 6,
+    "reloadTime": 2.52,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.036,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.144,
+        "2RL": 0.288,
+        "3SG": 0.144,
+        "5SG": 0.288,
+        "3RL": 0.432,
+        "7SG": 0.432,
+        "4RL": 0.576,
+        "5RL": 0.72
+      },
+      "defense": {
+        "1RL": 0.144,
+        "2RL": 0.288,
+        "3SG": 0.144,
+        "5SG": 0.288,
+        "3RL": 0.432,
+        "7SG": 0.432,
+        "4RL": 0.576,
+        "5RL": 0.72
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "anis",
+    "name": {
+      "en": "Anis",
+      "zh-TW": "阿妮斯",
+      "zh-CN": "阿妮斯"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 65.02,
+    "ammo": 6,
+    "reloadTime": 2.03,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0355,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.142,
+        "2RL": 0.284,
+        "3SG": 0.142,
+        "5SG": 0.284,
+        "3RL": 0.426,
+        "7SG": 0.426,
+        "4RL": 0.568,
+        "5RL": 0.71
+      },
+      "defense": {
+        "1RL": 0.142,
+        "2RL": 0.284,
+        "3SG": 0.142,
+        "5SG": 0.284,
+        "3RL": 0.426,
+        "7SG": 0.426,
+        "4RL": 0.568,
+        "5RL": 0.71
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "jackal",
+    "name": {
+      "en": "Jackal",
+      "zh-TW": "豺狼",
+      "zh-CN": "豺狼"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 65.02,
+    "ammo": 6,
+    "reloadTime": 2.03,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0355,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.142,
+        "2RL": 0.284,
+        "3SG": 0.142,
+        "5SG": 0.284,
+        "3RL": 0.426,
+        "7SG": 0.426,
+        "4RL": 0.568,
+        "5RL": 0.71
+      },
+      "defense": {
+        "1RL": 0.142,
+        "2RL": 0.284,
+        "3SG": 0.142,
+        "5SG": 0.284,
+        "3RL": 0.426,
+        "7SG": 0.426,
+        "4RL": 0.568,
+        "5RL": 0.71
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "centi",
+    "name": {
+      "en": "Centi",
+      "zh-TW": "桑迪",
+      "zh-CN": "桑迪"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 1.52,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0345,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.138,
+        "2RL": 0.276,
+        "3SG": 0.138,
+        "5SG": 0.276,
+        "3RL": 0.414,
+        "7SG": 0.414,
+        "4RL": 0.552,
+        "5RL": 0.69
+      },
+      "defense": {
+        "1RL": 0.138,
+        "2RL": 0.276,
+        "3SG": 0.138,
+        "5SG": 0.276,
+        "3RL": 0.414,
+        "7SG": 0.414,
+        "4RL": 0.552,
+        "5RL": 0.69
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rumani",
+    "name": {
+      "en": "Rumani",
+      "zh-TW": "魯瑪妮",
+      "zh-CN": "鲁玛妮"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 56.38,
+    "ammo": 6,
+    "reloadTime": 1.82,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0325,
+    "hitMultiplier": 9.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.13,
+        "2RL": 0.26,
+        "3SG": 0.13,
+        "5SG": 0.26,
+        "3RL": 0.39,
+        "7SG": 0.39,
+        "4RL": 0.52,
+        "5RL": 0.65
+      },
+      "defense": {
+        "1RL": 0.13,
+        "2RL": 0.26,
+        "3SG": 0.13,
+        "5SG": 0.26,
+        "3RL": 0.39,
+        "7SG": 0.39,
+        "4RL": 0.52,
+        "5RL": 0.65
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "emilia-2149",
+    "name": {
+      "en": "Emilia 21.49%",
+      "zh-TW": "愛蜜莉雅 21.49%",
+      "zh-CN": "爱蜜莉雅 21.49%"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 9.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.126,
+        "2RL": 0.252,
+        "3SG": 0.126,
+        "5SG": 0.378,
+        "3RL": 0.504,
+        "7SG": 0.504,
+        "4RL": 0.63,
+        "5RL": 0.756
+      },
+      "defense": {
+        "1RL": 0.126,
+        "2RL": 0.252,
+        "3SG": 0.126,
+        "5SG": 0.378,
+        "3RL": 0.504,
+        "7SG": 0.504,
+        "4RL": 0.63,
+        "5RL": 0.756
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "emilia",
+    "name": {
+      "en": "Emilia",
+      "zh-TW": "愛蜜莉雅",
+      "zh-CN": "爱蜜莉雅"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 9.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.126,
+        "2RL": 0.252,
+        "3SG": 0.126,
+        "5SG": 0.252,
+        "3RL": 0.378,
+        "7SG": 0.378,
+        "4RL": 0.504,
+        "5RL": 0.63
+      },
+      "defense": {
+        "1RL": 0.126,
+        "2RL": 0.252,
+        "3SG": 0.126,
+        "5SG": 0.252,
+        "3RL": 0.378,
+        "7SG": 0.378,
+        "4RL": 0.504,
+        "5RL": 0.63
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "noah",
+    "name": {
+      "en": "Noah",
+      "zh-TW": "諾雅",
+      "zh-CN": "诺雅"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "wind",
+    "manufacturer": "pilgrim",
+    "weapon": "RL",
+    "weaponDmg": 32.02,
+    "ammo": 6,
+    "reloadTime": 2.5,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.015,
+    "hitMultiplier": 8.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.12,
+        "2RL": 0.24,
+        "3SG": 0.12,
+        "5SG": 0.24,
+        "3RL": 0.36,
+        "7SG": 0.36,
+        "4RL": 0.48,
+        "5RL": 0.6
+      },
+      "defense": {
+        "1RL": 0.12,
+        "2RL": 0.24,
+        "3SG": 0.12,
+        "5SG": 0.24,
+        "3RL": 0.36,
+        "7SG": 0.36,
+        "4RL": 0.48,
+        "5RL": 0.6
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "pascal",
+    "name": {
+      "en": "Pascal",
+      "zh-TW": "帕斯卡",
+      "zh-CN": "帕斯卡"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 75.0,
+    "ammo": 6,
+    "reloadTime": 2.5,
+    "chargeTime": 1.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0115,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.092,
+        "2RL": 0.184,
+        "3SG": 0.138,
+        "5SG": 0.23,
+        "3RL": 0.276,
+        "7SG": 0.276,
+        "4RL": 0.276,
+        "5RL": 0.322
+      },
+      "defense": {
+        "1RL": 0.092,
+        "2RL": 0.184,
+        "3SG": 0.138,
+        "5SG": 0.23,
+        "3RL": 0.276,
+        "7SG": 0.276,
+        "4RL": 0.276,
+        "5RL": 0.322
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "maiden-ice-rose",
+    "name": {
+      "en": "Maiden: Ice Rose",
+      "zh-TW": "梅登:冰玫瑰",
+      "zh-CN": "梅登:冰玫瑰"
+    },
+    "burst": "III",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0182,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.091,
+        "2RL": 0.182,
+        "3SG": 0.091,
+        "5SG": 0.182,
+        "3RL": 0.273,
+        "7SG": 0.273,
+        "4RL": 0.364,
+        "5RL": 0.455
+      },
+      "defense": {
+        "1RL": 0.091,
+        "2RL": 0.182,
+        "3SG": 0.091,
+        "5SG": 0.182,
+        "3RL": 0.273,
+        "7SG": 0.273,
+        "4RL": 0.364,
+        "5RL": 0.455
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "drake-treasure",
+    "name": {
+      "en": "Drake: Treasure",
+      "zh-TW": "德雷克 珍藏",
+      "zh-CN": "德雷克 珍藏"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "SG",
+    "weaponDmg": 214.3,
+    "ammo": 9,
+    "reloadTime": 1.52,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.2295,
+        "3RL": 0.2745,
+        "7SG": 0.3195,
+        "4RL": 0.3645,
+        "5RL": 0.4095
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.2295,
+        "3RL": 0.2745,
+        "7SG": 0.3195,
+        "4RL": 0.3645,
+        "5RL": 0.4095
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "drake",
+    "name": {
+      "en": "Drake",
+      "zh-TW": "德雷克",
+      "zh-CN": "德雷克"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "SG",
+    "weaponDmg": 214.3,
+    "ammo": 9,
+    "reloadTime": 0.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "viper",
+    "name": {
+      "en": "Viper",
+      "zh-TW": "毒蛇",
+      "zh-CN": "毒蛇"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 220.4,
+    "ammo": 9,
+    "reloadTime": 0.56,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "viper-treasure",
+    "name": {
+      "en": "Viper: Treasure",
+      "zh-TW": "毒蛇 珍藏",
+      "zh-CN": "毒蛇 珍藏"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 220.4,
+    "ammo": 9,
+    "reloadTime": 0.56,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "maiden",
+    "name": {
+      "en": "Maiden",
+      "zh-TW": "梅登",
+      "zh-CN": "梅登"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 231.6,
+    "ammo": 9,
+    "reloadTime": 0.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "neon",
+    "name": {
+      "en": "Neon",
+      "zh-TW": "尼恩",
+      "zh-CN": "尼恩"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 224.5,
+    "ammo": 9,
+    "reloadTime": 0.6,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "noir",
+    "name": {
+      "en": "Noir",
+      "zh-TW": "諾亞爾",
+      "zh-CN": "诺亚尔"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 204.6,
+    "ammo": 9,
+    "reloadTime": 0.23,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "pepper",
+    "name": {
+      "en": "Pepper",
+      "zh-TW": "佩珀",
+      "zh-CN": "佩珀"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "SG",
+    "weaponDmg": 231.6,
+    "ammo": 9,
+    "reloadTime": 0.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "sugar",
+    "name": {
+      "en": "Sugar",
+      "zh-TW": "舒格",
+      "zh-CN": "舒格"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 231.6,
+    "ammo": 9,
+    "reloadTime": 0.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "soda-twinkling-bunny",
+    "name": {
+      "en": "Soda: Twinkling Bunny",
+      "zh-TW": "索達:閃亮兔女郎",
+      "zh-CN": "索达:闪亮兔女郎"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 231.6,
+    "ammo": 9,
+    "reloadTime": 0.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.135,
+        "5SG": 0.225,
+        "3RL": 0.27,
+        "7SG": 0.315,
+        "4RL": 0.36,
+        "5RL": 0.405
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "laplace-treasure",
+    "name": {
+      "en": "Laplace: Treasure",
+      "zh-TW": "拉普拉斯 珍藏",
+      "zh-CN": "拉普拉斯 珍藏"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 63.11,
+    "ammo": 6,
+    "reloadTime": 2.33,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0145,
+    "hitMultiplier": 6.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.087,
+        "2RL": 0.174,
+        "3SG": 0.087,
+        "5SG": 0.174,
+        "3RL": 0.261,
+        "7SG": 0.261,
+        "4RL": 0.348,
+        "5RL": 0.435
+      },
+      "defense": {
+        "1RL": 0.087,
+        "2RL": 0.174,
+        "3SG": 0.087,
+        "5SG": 0.174,
+        "3RL": 0.261,
+        "7SG": 0.261,
+        "4RL": 0.348,
+        "5RL": 0.435
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "liberalio",
+    "name": {
+      "en": "Liberalio",
+      "zh-TW": "莉貝雷利奧(水母)",
+      "zh-CN": "莉贝雷利奥(水母)"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "pilgrim",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.5,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.168,
+        "3SG": 0.168,
+        "5SG": 0.168,
+        "3RL": 0.336,
+        "7SG": 0.336,
+        "4RL": 0.336,
+        "5RL": 0.504
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.168,
+        "3SG": 0.168,
+        "5SG": 0.168,
+        "3RL": 0.336,
+        "7SG": 0.336,
+        "4RL": 0.336,
+        "5RL": 0.504
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mica-snow-buddy",
+    "name": {
+      "en": "Mica: Snow Buddy",
+      "zh-TW": "米卡:雪地夥伴",
+      "zh-CN": "米卡:雪地伙伴"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 11.7,
+    "ammo": 120,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.004,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.08,
+        "2RL": 0.152,
+        "3SG": 0.116,
+        "5SG": 0.184,
+        "3RL": 0.228,
+        "7SG": 0.26,
+        "4RL": 0.304,
+        "5RL": 0.38
+      },
+      "defense": {
+        "1RL": 0.08,
+        "2RL": 0.152,
+        "3SG": 0.116,
+        "5SG": 0.184,
+        "3RL": 0.228,
+        "7SG": 0.26,
+        "4RL": 0.304,
+        "5RL": 0.38
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "zwei",
+    "name": {
+      "en": "Zwei",
+      "zh-TW": "茨瓦伊",
+      "zh-CN": "茨瓦伊"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 100.75,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0035,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.07,
+        "2RL": 0.14,
+        "3SG": 0.105,
+        "5SG": 0.175,
+        "3RL": 0.21,
+        "7SG": 0.245,
+        "4RL": 0.28,
+        "5RL": 0.315
+      },
+      "defense": {
+        "1RL": 0.07,
+        "2RL": 0.14,
+        "3SG": 0.105,
+        "5SG": 0.175,
+        "3RL": 0.21,
+        "7SG": 0.245,
+        "4RL": 0.28,
+        "5RL": 0.315
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "nihilister",
+    "name": {
+      "en": "Nihilister",
+      "zh-TW": "尼希利斯塔",
+      "zh-CN": "尼希利斯塔"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "pilgrim",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.14,
+        "3SG": 0.028,
+        "5SG": 0.14,
+        "3RL": 0.252,
+        "7SG": 0.252,
+        "4RL": 0.364,
+        "5RL": 0.476
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.14,
+        "3SG": 0.028,
+        "5SG": 0.14,
+        "3RL": 0.252,
+        "7SG": 0.252,
+        "4RL": 0.364,
+        "5RL": 0.476
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "arcana",
+    "name": {
+      "en": "Arcana",
+      "zh-TW": "阿爾卡娜",
+      "zh-CN": "阿尔卡娜"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 64.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.015,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.06,
+        "2RL": 0.12,
+        "3SG": 0.06,
+        "5SG": 0.12,
+        "3RL": 0.18,
+        "7SG": 0.18,
+        "4RL": 0.18,
+        "5RL": 0.24
+      },
+      "defense": {
+        "1RL": 0.06,
+        "2RL": 0.12,
+        "3SG": 0.06,
+        "5SG": 0.12,
+        "3RL": 0.18,
+        "7SG": 0.18,
+        "4RL": 0.18,
+        "5RL": 0.24
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "a2",
+    "name": {
+      "en": "A2",
+      "zh-TW": "A2",
+      "zh-CN": "A2"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 67.65,
+    "ammo": 6,
+    "reloadTime": 1.5,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.013,
+    "hitMultiplier": 9.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.117,
+        "3SG": 0.117,
+        "5SG": 0.117,
+        "3RL": 0.234,
+        "7SG": 0.234,
+        "4RL": 0.234,
+        "5RL": 0.351
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.117,
+        "3SG": 0.117,
+        "5SG": 0.117,
+        "3RL": 0.234,
+        "7SG": 0.234,
+        "4RL": 0.234,
+        "5RL": 0.351
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "laplace",
+    "name": {
+      "en": "Laplace",
+      "zh-TW": "拉普拉斯",
+      "zh-CN": "拉普拉斯"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 63.11,
+    "ammo": 6,
+    "reloadTime": 2.33,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0145,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.058,
+        "2RL": 0.116,
+        "3SG": 0.058,
+        "5SG": 0.116,
+        "3RL": 0.174,
+        "7SG": 0.174,
+        "4RL": 0.232,
+        "5RL": 0.29
+      },
+      "defense": {
+        "1RL": 0.058,
+        "2RL": 0.116,
+        "3SG": 0.058,
+        "5SG": 0.116,
+        "3RL": 0.174,
+        "7SG": 0.174,
+        "4RL": 0.232,
+        "5RL": 0.29
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rapunzel",
+    "name": {
+      "en": "Rapunzel",
+      "zh-TW": "長髮公主",
+      "zh-CN": "长发公主"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "RL",
+    "weaponDmg": 62.95,
+    "ammo": 6,
+    "reloadTime": 2.3,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0145,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.058,
+        "2RL": 0.116,
+        "3SG": 0.058,
+        "5SG": 0.116,
+        "3RL": 0.174,
+        "7SG": 0.174,
+        "4RL": 0.232,
+        "5RL": 0.29
+      },
+      "defense": {
+        "1RL": 0.058,
+        "2RL": 0.116,
+        "3SG": 0.058,
+        "5SG": 0.116,
+        "3RL": 0.174,
+        "7SG": 0.174,
+        "4RL": 0.232,
+        "5RL": 0.29
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "diesel-winter-sweets",
+    "name": {
+      "en": "Diesel: Winter Sweets",
+      "zh-TW": "迪塞爾:冬日甜心",
+      "zh-CN": "迪塞尔:冬日甜心"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0145,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.058,
+        "2RL": 0.116,
+        "3SG": 0.058,
+        "5SG": 0.116,
+        "3RL": 0.174,
+        "7SG": 0.174,
+        "4RL": 0.232,
+        "5RL": 0.29
+      },
+      "defense": {
+        "1RL": 0.058,
+        "2RL": 0.116,
+        "3SG": 0.058,
+        "5SG": 0.116,
+        "3RL": 0.174,
+        "7SG": 0.174,
+        "4RL": 0.232,
+        "5RL": 0.29
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "grave",
+    "name": {
+      "en": "Grave",
+      "zh-TW": "格拉維",
+      "zh-CN": "格拉维"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "pilgrim",
+    "weapon": "AR",
+    "weaponDmg": 17.91,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0585,
+        "2RL": 0.1125,
+        "3SG": 0.0855,
+        "5SG": 0.1395,
+        "3RL": 0.171,
+        "7SG": 0.198,
+        "4RL": 0.225,
+        "5RL": 0.27
+      },
+      "defense": {
+        "1RL": 0.0585,
+        "2RL": 0.1125,
+        "3SG": 0.0855,
+        "5SG": 0.1395,
+        "3RL": 0.171,
+        "7SG": 0.198,
+        "4RL": 0.225,
+        "5RL": 0.27
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "scarlet",
+    "name": {
+      "en": "Scarlet",
+      "zh-TW": "紅蓮",
+      "zh-CN": "红莲"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "pilgrim",
+    "weapon": "AR",
+    "weaponDmg": 27.08,
+    "ammo": 20,
+    "reloadTime": 2.3,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0045,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0585,
+        "2RL": 0.1125,
+        "3SG": 0.0855,
+        "5SG": 0.1395,
+        "3RL": 0.171,
+        "7SG": 0.198,
+        "4RL": 0.225,
+        "5RL": 0.27
+      },
+      "defense": {
+        "1RL": 0.0585,
+        "2RL": 0.1125,
+        "3SG": 0.0855,
+        "5SG": 0.1395,
+        "3RL": 0.171,
+        "7SG": 0.198,
+        "4RL": 0.225,
+        "5RL": 0.27
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "anchor",
+    "name": {
+      "en": "Anchor",
+      "zh-TW": "安克",
+      "zh-CN": "安克"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "anchor-innocent-maid",
+    "name": {
+      "en": "Anchor: Innocent Maid",
+      "zh-TW": "安克:天真的女僕",
+      "zh-CN": "安克:天真的女仆"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "anne-miracle-fairy",
+    "name": {
+      "en": "Anne: Miracle Fairy",
+      "zh-TW": "安妮:奇蹟仙女",
+      "zh-CN": "安妮:奇迹仙女"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "vesti",
+    "name": {
+      "en": "Vesti",
+      "zh-TW": "貝斯蒂",
+      "zh-CN": "贝斯蒂"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "bay",
+    "name": {
+      "en": "Bay",
+      "zh-TW": "貝伊",
+      "zh-CN": "贝伊"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "bay-treasure",
+    "name": {
+      "en": "Bay: Treasure",
+      "zh-TW": "貝伊 珍藏",
+      "zh-CN": "贝伊 珍藏"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "biscuit",
+    "name": {
+      "en": "Biscuit",
+      "zh-TW": "餅乾",
+      "zh-CN": "饼干"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "tia",
+    "name": {
+      "en": "Tia",
+      "zh-TW": "蒂亞",
+      "zh-CN": "蒂亚"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "quiry",
+    "name": {
+      "en": "Quiry",
+      "zh-TW": "基裏",
+      "zh-CN": "基里"
+    },
+    "burst": "III",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "crust",
+    "name": {
+      "en": "Crust",
+      "zh-TW": "克拉斯特",
+      "zh-CN": "克拉斯特"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mica",
+    "name": {
+      "en": "Mica",
+      "zh-TW": "米卡",
+      "zh-CN": "米卡"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "noise",
+    "name": {
+      "en": "Noise",
+      "zh-TW": "諾伊斯",
+      "zh-CN": "诺伊斯"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "power",
+    "name": {
+      "en": "Power",
+      "zh-TW": "帕瓦",
+      "zh-CN": "帕瓦"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "sora",
+    "name": {
+      "en": "Sora",
+      "zh-TW": "索拉",
+      "zh-CN": "索拉"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ada",
+    "name": {
+      "en": "Ada",
+      "zh-TW": "艾達·王",
+      "zh-CN": "艾达·王"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mana",
+    "name": {
+      "en": "Mana",
+      "zh-TW": "瑪娜",
+      "zh-CN": "玛娜"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 15.07,
+    "ammo": 60,
+    "reloadTime": 1.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.00426,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.05538,
+        "2RL": 0.1065,
+        "3SG": 0.08094,
+        "5SG": 0.13206,
+        "3RL": 0.16188,
+        "7SG": 0.18744,
+        "4RL": 0.213,
+        "5RL": 0.2556
+      },
+      "defense": {
+        "1RL": 0.05538,
+        "2RL": 0.1065,
+        "3SG": 0.08094,
+        "5SG": 0.13206,
+        "3RL": 0.16188,
+        "7SG": 0.18744,
+        "4RL": 0.213,
+        "5RL": 0.2556
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "anis-sparkling-summer",
+    "name": {
+      "en": "Anis: Sparkling Summer",
+      "zh-TW": "阿妮斯:閃耀夏日",
+      "zh-CN": "阿妮斯:闪耀夏日"
+    },
+    "burst": "III",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 259.2,
+    "ammo": 5,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.05,
+        "2RL": 0.1,
+        "3SG": 0.075,
+        "5SG": 0.13,
+        "3RL": 0.13,
+        "7SG": 0.13,
+        "4RL": 0.155,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.05,
+        "2RL": 0.1,
+        "3SG": 0.075,
+        "5SG": 0.13,
+        "3RL": 0.13,
+        "7SG": 0.13,
+        "4RL": 0.155,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "jill",
+    "name": {
+      "en": "Jill",
+      "zh-TW": "吉兒·華倫泰",
+      "zh-CN": "吉儿·华伦泰"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "abnormal",
+    "weapon": "AR",
+    "weaponDmg": 71.09,
+    "ammo": 9,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.011,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.044,
+        "2RL": 0.088,
+        "3SG": 0.066,
+        "5SG": 0.121,
+        "3RL": 0.132,
+        "7SG": 0.143,
+        "4RL": 0.154,
+        "5RL": 0.176
+      },
+      "defense": {
+        "1RL": 0.044,
+        "2RL": 0.088,
+        "3SG": 0.066,
+        "5SG": 0.121,
+        "3RL": 0.132,
+        "7SG": 0.143,
+        "4RL": 0.154,
+        "5RL": 0.176
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "scarlet-black-shadow",
+    "name": {
+      "en": "Scarlet: Black Shadow",
+      "zh-TW": "紅蓮:暗影",
+      "zh-CN": "红莲:暗影"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "pilgrim",
+    "weapon": "RL",
+    "weaponDmg": 57.29,
+    "ammo": 9,
+    "reloadTime": 2.0,
+    "chargeTime": 0.3,
+    "maxCharge": 150.0,
+    "chargeCoefficient": 0.0125,
+    "hitMultiplier": 2.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.05,
+        "2RL": 0.0875,
+        "3SG": 0.0875,
+        "5SG": 0.1125,
+        "3RL": 0.1375,
+        "7SG": 0.1875,
+        "4RL": 0.2125,
+        "5RL": 0.2375
+      },
+      "defense": {
+        "1RL": 0.05,
+        "2RL": 0.0875,
+        "3SG": 0.0875,
+        "5SG": 0.1125,
+        "3RL": 0.1375,
+        "7SG": 0.1875,
+        "4RL": 0.2125,
+        "5RL": 0.2375
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "harran",
+    "name": {
+      "en": "Harran",
+      "zh-TW": "哈蘭",
+      "zh-CN": "哈兰"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "pilgrim",
+    "weapon": "SR",
+    "weaponDmg": 70.89,
+    "ammo": 6,
+    "reloadTime": 2.3,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.029,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.029,
+        "2RL": 0.087,
+        "3SG": 0.029,
+        "5SG": 0.087,
+        "3RL": 0.145,
+        "7SG": 0.145,
+        "4RL": 0.203,
+        "5RL": 0.261
+      },
+      "defense": {
+        "1RL": 0.029,
+        "2RL": 0.087,
+        "3SG": 0.029,
+        "5SG": 0.087,
+        "3RL": 0.145,
+        "7SG": 0.145,
+        "4RL": 0.203,
+        "5RL": 0.261
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "raven",
+    "name": {
+      "en": "Raven",
+      "zh-TW": "渡鴉",
+      "zh-CN": "渡鸦"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "abnormal",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 5.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.084,
+        "3SG": 0.07,
+        "5SG": 0.084,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.182,
+        "5RL": 0.217
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.084,
+        "3SG": 0.07,
+        "5SG": 0.084,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.182,
+        "5RL": 0.217
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "privaty-unkind-maid",
+    "name": {
+      "en": "Privaty: Unkind Maid",
+      "zh-TW": "普麗瓦蒂:不友善的女僕",
+      "zh-CN": "普丽瓦蒂:不友善的女仆"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 182.1,
+    "ammo": 9,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.084,
+        "3SG": 0.062,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.084,
+        "3SG": 0.062,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "guilty",
+    "name": {
+      "en": "Guilty",
+      "zh-TW": "吉爾提",
+      "zh-CN": "吉尔提"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "SG",
+    "weaponDmg": 231.4,
+    "ammo": 9,
+    "reloadTime": 2.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.104,
+        "3RL": 0.128,
+        "7SG": 0.148,
+        "4RL": 0.168,
+        "5RL": 0.192
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.104,
+        "3RL": 0.128,
+        "7SG": 0.148,
+        "4RL": 0.168,
+        "5RL": 0.192
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "ether",
+    "name": {
+      "en": "Ether",
+      "zh-TW": "艾瑟兒",
+      "zh-CN": "艾瑟儿"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "SG",
+    "weaponDmg": 214.3,
+    "ammo": 9,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "poli",
+    "name": {
+      "en": "Poli",
+      "zh-TW": "波莉",
+      "zh-CN": "波莉"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "poli-treasure",
+    "name": {
+      "en": "Poli: Treasure",
+      "zh-TW": "波莉 珍藏",
+      "zh-CN": "波莉 珍藏"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "leona",
+    "name": {
+      "en": "Leona",
+      "zh-TW": "萊昂納",
+      "zh-CN": "莱昂纳"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "marciana",
+    "name": {
+      "en": "Marciana",
+      "zh-TW": "瑪律恰那",
+      "zh-CN": "玛律恰那"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "mary",
+    "name": {
+      "en": "Mary",
+      "zh-TW": "梅里",
+      "zh-CN": "梅里"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "naga",
+    "name": {
+      "en": "Naga",
+      "zh-TW": "娜嘉",
+      "zh-CN": "娜嘉"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "SG",
+    "weaponDmg": 204.8,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "neve",
+    "name": {
+      "en": "Neve",
+      "zh-TW": "尼夫",
+      "zh-CN": "尼夫"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "dorothy-serendipity",
+    "name": {
+      "en": "Dorothy: Serendipity",
+      "zh-TW": "桃樂絲:機緣巧遇",
+      "zh-CN": "桃乐丝:机缘巧遇"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "pilgrim",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "isabel",
+    "name": {
+      "en": "Isabel",
+      "zh-TW": "伊莎貝爾",
+      "zh-CN": "伊莎贝尔"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "pilgrim",
+    "weapon": "SG",
+    "weaponDmg": 210.7,
+    "ammo": 9,
+    "reloadTime": 1.86,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "soline-frost-ticket",
+    "name": {
+      "en": "Soline: Frost Ticket",
+      "zh-TW": "索林:霜雪車票",
+      "zh-CN": "索林:霜雪车票"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "brid-silent-track",
+    "name": {
+      "en": "Brid: Silent Track",
+      "zh-TW": "布麗德:靜默軌道",
+      "zh-CN": "布丽德:静默轨道"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 201.5,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.102,
+        "3RL": 0.122,
+        "7SG": 0.142,
+        "4RL": 0.162,
+        "5RL": 0.182
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "k",
+    "name": {
+      "en": "K",
+      "zh-TW": "K",
+      "zh-CN": "K"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 4.55,
+    "ammo": 120,
+    "reloadTime": 1.8,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 2.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "quency",
+    "name": {
+      "en": "Quency",
+      "zh-TW": "坎西",
+      "zh-CN": "坎西"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "SMG",
+    "weaponDmg": 4.47,
+    "ammo": 120,
+    "reloadTime": 1.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 2.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "crow",
+    "name": {
+      "en": "Crow",
+      "zh-TW": "克拉烏",
+      "zh-CN": "克拉乌"
+    },
+    "burst": "III",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "SMG",
+    "weaponDmg": 5.59,
+    "ammo": 120,
+    "reloadTime": 1.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 2.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "soline",
+    "name": {
+      "en": "Soline",
+      "zh-TW": "索林",
+      "zh-CN": "索林"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 5.85,
+    "ammo": 120,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 2.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.076,
+        "3SG": 0.058,
+        "5SG": 0.092,
+        "3RL": 0.114,
+        "7SG": 0.13,
+        "4RL": 0.152,
+        "5RL": 0.19
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "asuka",
+    "name": {
+      "en": "Asuka",
+      "zh-TW": "明日香",
+      "zh-CN": "明日香"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "abnormal",
+    "weapon": "AR",
+    "weaponDmg": 18.76,
+    "ammo": 20,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.003,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.039,
+        "2RL": 0.075,
+        "3SG": 0.057,
+        "5SG": 0.093,
+        "3RL": 0.114,
+        "7SG": 0.132,
+        "4RL": 0.15,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.039,
+        "2RL": 0.075,
+        "3SG": 0.057,
+        "5SG": 0.093,
+        "3RL": 0.114,
+        "7SG": 0.132,
+        "4RL": 0.15,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "snow-white",
+    "name": {
+      "en": "Snow White",
+      "zh-TW": "白雪公主",
+      "zh-CN": "白雪公主"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "AR",
+    "weaponDmg": 14.71,
+    "ammo": 60,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.0975,
+        "7SG": 0.1125,
+        "4RL": 0.1275,
+        "5RL": 0.155
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.0975,
+        "7SG": 0.1125,
+        "4RL": 0.1275,
+        "5RL": 0.155
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ade",
+    "name": {
+      "en": "Ade",
+      "zh-TW": "愛德",
+      "zh-CN": "爱德"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 14.71,
+    "ammo": 60,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rei-ayanami-tentative-name",
+    "name": {
+      "en": "Rei Ayanami (Tentative Name)",
+      "zh-TW": "零（二期）",
+      "zh-CN": "零（二期）"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "abnormal",
+    "weapon": "AR",
+    "weaponDmg": 14.71,
+    "ammo": 60,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mihara",
+    "name": {
+      "en": "Mihara",
+      "zh-TW": "米哈拉",
+      "zh-CN": "米哈拉"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 15.07,
+    "ammo": 60,
+    "reloadTime": 1.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "moran",
+    "name": {
+      "en": "Moran",
+      "zh-TW": "牡丹",
+      "zh-CN": "牡丹"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 14.71,
+    "ammo": 60,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "phantom",
+    "name": {
+      "en": "Phantom",
+      "zh-TW": "潘託姆",
+      "zh-CN": "潘托姆"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 15.78,
+    "ammo": 60,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "vesti-tactical-upgrade",
+    "name": {
+      "en": "Vesti: Tactical Upgrade",
+      "zh-TW": "貝斯蒂:戰術升級",
+      "zh-CN": "贝斯蒂:战术升级"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "RL",
+    "weaponDmg": 22.44,
+    "ammo": 8,
+    "reloadTime": 2.0,
+    "chargeTime": 2.0,
+    "maxCharge": 200.0,
+    "chargeCoefficient": 0.0065,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.0585,
+        "3SG": 0.0,
+        "5SG": 0.1755,
+        "3RL": 0.234,
+        "7SG": 0.234,
+        "4RL": 0.234,
+        "5RL": 0.2925
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.0585,
+        "3SG": 0.0,
+        "5SG": 0.1755,
+        "3RL": 0.234,
+        "7SG": 0.234,
+        "4RL": 0.234,
+        "5RL": 0.2925
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "himeno",
+    "name": {
+      "en": "Himeno",
+      "zh-TW": "姬野",
+      "zh-CN": "姬野"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "abnormal",
+    "weapon": "SR",
+    "weaponDmg": 70.89,
+    "ammo": 6,
+    "reloadTime": 2.3,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.029,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.029,
+        "2RL": 0.058,
+        "3SG": 0.029,
+        "5SG": 0.058,
+        "3RL": 0.087,
+        "7SG": 0.087,
+        "4RL": 0.116,
+        "5RL": 0.145
+      },
+      "defense": {
+        "1RL": 0.029,
+        "2RL": 0.058,
+        "3SG": 0.029,
+        "5SG": 0.058,
+        "3RL": 0.087,
+        "7SG": 0.087,
+        "4RL": 0.116,
+        "5RL": 0.145
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rouge",
+    "name": {
+      "en": "Rouge",
+      "zh-TW": "露姬",
+      "zh-CN": "露姬"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 71.07,
+    "ammo": 6,
+    "reloadTime": 2.33,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.029,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.029,
+        "2RL": 0.058,
+        "3SG": 0.029,
+        "5SG": 0.058,
+        "3RL": 0.087,
+        "7SG": 0.087,
+        "4RL": 0.116,
+        "5RL": 0.145
+      },
+      "defense": {
+        "1RL": 0.029,
+        "2RL": 0.058,
+        "3SG": 0.029,
+        "5SG": 0.058,
+        "3RL": 0.087,
+        "7SG": 0.087,
+        "4RL": 0.116,
+        "5RL": 0.145
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "eunhwa",
+    "name": {
+      "en": "Eunhwa",
+      "zh-TW": "銀華",
+      "zh-CN": "银华"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SR",
+    "weaponDmg": 71.07,
+    "ammo": 6,
+    "reloadTime": 2.33,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.029,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.029,
+        "2RL": 0.058,
+        "3SG": 0.029,
+        "5SG": 0.058,
+        "3RL": 0.087,
+        "7SG": 0.087,
+        "4RL": 0.116,
+        "5RL": 0.145
+      },
+      "defense": {
+        "1RL": 0.029,
+        "2RL": 0.058,
+        "3SG": 0.029,
+        "5SG": 0.058,
+        "3RL": 0.087,
+        "7SG": 0.087,
+        "4RL": 0.116,
+        "5RL": 0.145
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ludmilla",
+    "name": {
+      "en": "Ludmilla",
+      "zh-TW": "魯德米拉",
+      "zh-CN": "鲁德米拉"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 10.32,
+    "ammo": 120,
+    "reloadTime": 2.76,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0015,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.03,
+        "2RL": 0.057,
+        "3SG": 0.0435,
+        "5SG": 0.069,
+        "3RL": 0.0855,
+        "7SG": 0.0975,
+        "4RL": 0.114,
+        "5RL": 0.1425
+      },
+      "defense": {
+        "1RL": 0.03,
+        "2RL": 0.057,
+        "3SG": 0.0435,
+        "5SG": 0.069,
+        "3RL": 0.0855,
+        "7SG": 0.0975,
+        "4RL": 0.114,
+        "5RL": 0.1425
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "quency-escape-queen",
+    "name": {
+      "en": "Quency: Escape Queen",
+      "zh-TW": "坎西:逃生女王",
+      "zh-CN": "坎西:逃生女王"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "SMG",
+    "weaponDmg": 5.06,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.00074,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0296,
+        "2RL": 0.05624,
+        "3SG": 0.04292,
+        "5SG": 0.06808,
+        "3RL": 0.08436,
+        "7SG": 0.0962,
+        "4RL": 0.11248,
+        "5RL": 0.1406
+      },
+      "defense": {
+        "1RL": 0.0296,
+        "2RL": 0.05624,
+        "3SG": 0.04292,
+        "5SG": 0.06808,
+        "3RL": 0.08436,
+        "7SG": 0.0962,
+        "4RL": 0.11248,
+        "5RL": 0.1406
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "n102",
+    "name": {
+      "en": "N102",
+      "zh-TW": "N102",
+      "zh-CN": "N102"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.5,
+    "maxCharge": 350.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "belorta",
+    "name": {
+      "en": "Belorta",
+      "zh-TW": "貝洛塔",
+      "zh-CN": "贝洛塔"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.5,
+    "maxCharge": 350.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "yan",
+    "name": {
+      "en": "Yan",
+      "zh-TW": "楊",
+      "zh-CN": "杨"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.5,
+    "maxCharge": 350.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "yuni",
+    "name": {
+      "en": "Yuni",
+      "zh-TW": "尤妮",
+      "zh-CN": "尤妮"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.5,
+    "maxCharge": 350.0,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.056,
+        "3SG": 0.056,
+        "5SG": 0.056,
+        "3RL": 0.112,
+        "7SG": 0.112,
+        "4RL": 0.112,
+        "5RL": 0.168
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ein",
+    "name": {
+      "en": "Ein",
+      "zh-TW": "愛因",
+      "zh-CN": "爱因"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.14,
+        "7SG": 0.14,
+        "4RL": 0.168,
+        "5RL": 0.196
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.14,
+        "7SG": 0.14,
+        "4RL": 0.168,
+        "5RL": 0.196
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "d-killer-wife",
+    "name": {
+      "en": "D: Killer Wife",
+      "zh-TW": "D:殺手妻子",
+      "zh-CN": "D:杀手妻子"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "exia",
+    "name": {
+      "en": "Exia",
+      "zh-TW": "艾可希雅",
+      "zh-CN": "艾可希雅"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "exia-treasure",
+    "name": {
+      "en": "Exia: Treasure",
+      "zh-TW": "艾可希雅 珍藏",
+      "zh-CN": "艾可希雅 珍藏"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "bready",
+    "name": {
+      "en": "Bready",
+      "zh-TW": "布蕾德",
+      "zh-CN": "布蕾德"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "dolla",
+    "name": {
+      "en": "Dolla",
+      "zh-TW": "朵拉",
+      "zh-CN": "朵拉"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "helm",
+    "name": {
+      "en": "Helm",
+      "zh-TW": "海倫",
+      "zh-CN": "海伦"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "cocoa",
+    "name": {
+      "en": "Cocoa",
+      "zh-TW": "可可",
+      "zh-CN": "可可"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ram",
+    "name": {
+      "en": "Ram",
+      "zh-TW": "拉姆",
+      "zh-CN": "拉姆"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "abnormal",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "maxwell",
+    "name": {
+      "en": "Maxwell",
+      "zh-TW": "麥斯威爾",
+      "zh-CN": "麦斯威尔"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "milk",
+    "name": {
+      "en": "Milk",
+      "zh-TW": "米爾克",
+      "zh-CN": "米尔克"
+    },
+    "burst": "I",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "milk-treasure",
+    "name": {
+      "en": "Milk: Treasure",
+      "zh-TW": "米爾克 珍藏",
+      "zh-CN": "米尔克 珍藏"
+    },
+    "burst": "I",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "trony",
+    "name": {
+      "en": "Trony",
+      "zh-TW": "特羅尼",
+      "zh-CN": "特罗尼"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "sakura-bloom-in-summer",
+    "name": {
+      "en": "Sakura: Bloom in Summer",
+      "zh-TW": "櫻花:夏日綻放",
+      "zh-CN": "樱花:夏日绽放"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.042,
+        "5SG": 0.068,
+        "3RL": 0.084,
+        "7SG": 0.096,
+        "4RL": 0.11,
+        "5RL": 0.134
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.042,
+        "5SG": 0.068,
+        "3RL": 0.084,
+        "7SG": 0.096,
+        "4RL": 0.11,
+        "5RL": 0.134
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "red-hood",
+    "name": {
+      "en": "Red Hood",
+      "zh-TW": "小紅帽",
+      "zh-CN": "小红帽"
+    },
+    "burst": "Λ",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rapunzel-pure-grace",
+    "name": {
+      "en": "Rapunzel: Pure Grace",
+      "zh-TW": "長髮公主:純潔恩典",
+      "zh-CN": "长发公主:纯洁恩典"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mari",
+    "name": {
+      "en": "Mari",
+      "zh-TW": "真理",
+      "zh-CN": "真理"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "abnormal",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "eunhwa-tactical-upgrade",
+    "name": {
+      "en": "Eunhwa: Tactical Upgrade",
+      "zh-TW": "銀華:戰術升級",
+      "zh-CN": "银华:战术升级"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ade-agent-bunny",
+    "name": {
+      "en": "Ade: Agent Bunny",
+      "zh-TW": "愛德:特務兔女郎",
+      "zh-CN": "爱德:特务兔女郎"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "milk-blooming-bunny",
+    "name": {
+      "en": "Milk: Blooming Bunny",
+      "zh-TW": "米爾克:花漾兔女郎",
+      "zh-CN": "米尔克:花漾兔女郎"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "yulha",
+    "name": {
+      "en": "Yulha",
+      "zh-TW": "尤爾夏",
+      "zh-CN": "尤尔夏"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 68.23,
+    "ammo": 6,
+    "reloadTime": 1.87,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0275,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0275,
+        "2RL": 0.055,
+        "3SG": 0.0275,
+        "5SG": 0.055,
+        "3RL": 0.0825,
+        "7SG": 0.0825,
+        "4RL": 0.11,
+        "5RL": 0.1375
+      },
+      "defense": {
+        "1RL": 0.0275,
+        "2RL": 0.055,
+        "3SG": 0.0275,
+        "5SG": 0.055,
+        "3RL": 0.0825,
+        "7SG": 0.0825,
+        "4RL": 0.11,
+        "5RL": 0.1375
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "admi",
+    "name": {
+      "en": "Admi",
+      "zh-TW": "艾德米",
+      "zh-CN": "艾德米"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 67.37,
+    "ammo": 6,
+    "reloadTime": 1.73,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.027,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.027,
+        "2RL": 0.054,
+        "3SG": 0.027,
+        "5SG": 0.054,
+        "3RL": 0.081,
+        "7SG": 0.081,
+        "4RL": 0.108,
+        "5RL": 0.135
+      },
+      "defense": {
+        "1RL": 0.027,
+        "2RL": 0.054,
+        "3SG": 0.027,
+        "5SG": 0.054,
+        "3RL": 0.081,
+        "7SG": 0.081,
+        "4RL": 0.108,
+        "5RL": 0.135
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "sakura",
+    "name": {
+      "en": "Sakura",
+      "zh-TW": "櫻花",
+      "zh-CN": "樱花"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 67.0,
+    "ammo": 6,
+    "reloadTime": 1.67,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.027,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.027,
+        "2RL": 0.054,
+        "3SG": 0.027,
+        "5SG": 0.054,
+        "3RL": 0.081,
+        "7SG": 0.081,
+        "4RL": 0.108,
+        "5RL": 0.135
+      },
+      "defense": {
+        "1RL": 0.027,
+        "2RL": 0.054,
+        "3SG": 0.027,
+        "5SG": 0.054,
+        "3RL": 0.081,
+        "7SG": 0.081,
+        "4RL": 0.108,
+        "5RL": 0.135
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mary-bay-goddess",
+    "name": {
+      "en": "Mary: Bay Goddess",
+      "zh-TW": "梅里:海灣女神",
+      "zh-CN": "梅里:海湾女神"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 65.95,
+    "ammo": 6,
+    "reloadTime": 1.5,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0265,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0265,
+        "2RL": 0.053,
+        "3SG": 0.0265,
+        "5SG": 0.053,
+        "3RL": 0.0795,
+        "7SG": 0.0795,
+        "4RL": 0.106,
+        "5RL": 0.1325
+      },
+      "defense": {
+        "1RL": 0.0265,
+        "2RL": 0.053,
+        "3SG": 0.0265,
+        "5SG": 0.053,
+        "3RL": 0.0795,
+        "7SG": 0.0795,
+        "4RL": 0.106,
+        "5RL": 0.1325
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "frima",
+    "name": {
+      "en": "Frima",
+      "zh-TW": "普琳瑪",
+      "zh-CN": "普琳玛"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 65.95,
+    "ammo": 6,
+    "reloadTime": 1.5,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0265,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0265,
+        "2RL": 0.053,
+        "3SG": 0.0265,
+        "5SG": 0.053,
+        "3RL": 0.0795,
+        "7SG": 0.0795,
+        "4RL": 0.106,
+        "5RL": 0.1325
+      },
+      "defense": {
+        "1RL": 0.0265,
+        "2RL": 0.053,
+        "3SG": 0.0265,
+        "5SG": 0.053,
+        "3RL": 0.0795,
+        "7SG": 0.0795,
+        "4RL": 0.106,
+        "5RL": 0.1325
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "frima-treasure",
+    "name": {
+      "en": "Frima: Treasure",
+      "zh-TW": "普琳瑪 珍藏",
+      "zh-CN": "普琳玛 珍藏"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 65.95,
+    "ammo": 6,
+    "reloadTime": 1.5,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0265,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0265,
+        "2RL": 0.053,
+        "3SG": 0.0265,
+        "5SG": 0.053,
+        "3RL": 0.0795,
+        "7SG": 0.0795,
+        "4RL": 0.106,
+        "5RL": 0.1325
+      },
+      "defense": {
+        "1RL": 0.0265,
+        "2RL": 0.053,
+        "3SG": 0.0265,
+        "5SG": 0.053,
+        "3RL": 0.0795,
+        "7SG": 0.0795,
+        "4RL": 0.106,
+        "5RL": 0.1325
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "helm-aquamarine",
+    "name": {
+      "en": "Helm: Aquamarine",
+      "zh-TW": "海倫:海藍寶石",
+      "zh-CN": "海伦:海蓝宝石"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.078,
+        "7SG": 0.092,
+        "4RL": 0.104,
+        "5RL": 0.128
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.078,
+        "7SG": 0.092,
+        "4RL": 0.104,
+        "5RL": 0.128
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "2b",
+    "name": {
+      "en": "2B",
+      "zh-TW": "2B",
+      "zh-CN": "2B"
+    },
+    "burst": "III",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "abnormal",
+    "weapon": "AR",
+    "weaponDmg": 5.99,
+    "ammo": 90,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.126
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.126
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "blanc",
+    "name": {
+      "en": "Blanc",
+      "zh-TW": "布蘭兒",
+      "zh-CN": "布兰儿"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "brid",
+    "name": {
+      "en": "Brid",
+      "zh-TW": "布麗德",
+      "zh-CN": "布丽德"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 14.29,
+    "ammo": 60,
+    "reloadTime": 1.3,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "folkwang",
+    "name": {
+      "en": "Folkwang",
+      "zh-TW": "富克旺",
+      "zh-CN": "富克旺"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 14.29,
+    "ammo": 60,
+    "reloadTime": 1.3,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "guillotine-winter-slayer",
+    "name": {
+      "en": "Guillotine: Winter Slayer",
+      "zh-TW": "吉蘿婷:寒冬殺手",
+      "zh-CN": "吉萝婷:寒冬杀手"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rapi",
+    "name": {
+      "en": "Rapi",
+      "zh-TW": "拉毗",
+      "zh-CN": "拉毗"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rupee",
+    "name": {
+      "en": "Rupee",
+      "zh-TW": "露菲",
+      "zh-CN": "露菲"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rupee-winter-shopper",
+    "name": {
+      "en": "Rupee: Winter Shopper",
+      "zh-TW": "露菲:冬日購物狂",
+      "zh-CN": "露菲:冬日购物狂"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rosanna-chic-ocean",
+    "name": {
+      "en": "Rosanna: Chic Ocean",
+      "zh-TW": "羅珊娜:高雅海洋",
+      "zh-CN": "罗珊娜:高雅海洋"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mori",
+    "name": {
+      "en": "Mori",
+      "zh-TW": "莫莉",
+      "zh-CN": "莫莉"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "privaty",
+    "name": {
+      "en": "Privaty",
+      "zh-TW": "普麗瓦蒂",
+      "zh-CN": "普丽瓦蒂"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.122
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.122
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "sin",
+    "name": {
+      "en": "Sin",
+      "zh-TW": "森",
+      "zh-CN": "森"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "dorothy",
+    "name": {
+      "en": "Dorothy",
+      "zh-TW": "桃樂絲",
+      "zh-CN": "桃乐丝"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "pilgrim",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "tove",
+    "name": {
+      "en": "Tove",
+      "zh-TW": "託比",
+      "zh-CN": "托比"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 14.2,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "tove-treasure",
+    "name": {
+      "en": "Tove: Treasure",
+      "zh-TW": "託比 珍藏",
+      "zh-CN": "托比 珍藏"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 14.2,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "eve",
+    "name": {
+      "en": "EVE",
+      "zh-TW": "伊芙",
+      "zh-CN": "伊芙"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "abnormal",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.128
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.128
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "julia",
+    "name": {
+      "en": "Julia",
+      "zh-TW": "尤莉亞",
+      "zh-CN": "尤莉亚"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 14.07,
+    "ammo": 60,
+    "reloadTime": 1.2,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "julia-treasure",
+    "name": {
+      "en": "Julia: Treasure",
+      "zh-TW": "尤莉亞 珍藏",
+      "zh-CN": "尤莉亚 珍藏"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "AR",
+    "weaponDmg": 14.07,
+    "ammo": 60,
+    "reloadTime": 1.2,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "miranda-treasure",
+    "name": {
+      "en": "Miranda: Treasure",
+      "zh-TW": "米蘭達 珍藏",
+      "zh-CN": "米兰达 珍藏"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 10.8,
+    "ammo": 120,
+    "reloadTime": 1.43,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.043,
+        "3SG": 0.029,
+        "5SG": 0.051,
+        "3RL": 0.062,
+        "7SG": 0.07,
+        "4RL": 0.081,
+        "5RL": 0.1
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.043,
+        "3SG": 0.029,
+        "5SG": 0.051,
+        "3RL": 0.062,
+        "7SG": 0.07,
+        "4RL": 0.081,
+        "5RL": 0.1
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "d",
+    "name": {
+      "en": "D",
+      "zh-TW": "D",
+      "zh-CN": "D"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 8.73,
+    "ammo": 120,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "epinel",
+    "name": {
+      "en": "Epinel",
+      "zh-TW": "艾菲涅爾",
+      "zh-CN": "艾菲涅尔"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "missilis",
+    "weapon": "SMG",
+    "weaponDmg": 10.12,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "alice-wonderland-bunny",
+    "name": {
+      "en": "Alice: Wonderland Bunny",
+      "zh-TW": "愛麗絲:仙境兔女郎",
+      "zh-CN": "爱丽丝:仙境兔女郎"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 10.12,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.025,
+        "2RL": 0.038,
+        "3SG": 0.034,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.025,
+        "2RL": 0.038,
+        "3SG": 0.034,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "clay",
+    "name": {
+      "en": "Clay",
+      "zh-TW": "克雷伊",
+      "zh-CN": "克雷伊"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 10.12,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rei",
+    "name": {
+      "en": "Rei",
+      "zh-TW": "萊伊",
+      "zh-CN": "莱伊"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 9.15,
+    "ammo": 120,
+    "reloadTime": 1.83,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "liter",
+    "name": {
+      "en": "Liter",
+      "zh-TW": "麗塔",
+      "zh-CN": "丽塔"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "SMG",
+    "weaponDmg": 8.73,
+    "ammo": 120,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mast",
+    "name": {
+      "en": "Mast",
+      "zh-TW": "馬斯特",
+      "zh-CN": "马斯特"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 8.73,
+    "ammo": 120,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "makima",
+    "name": {
+      "en": "Makima",
+      "zh-TW": "瑪奇瑪",
+      "zh-CN": "玛奇玛"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "abnormal",
+    "weapon": "SMG",
+    "weaponDmg": 8.73,
+    "ammo": 120,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "misato",
+    "name": {
+      "en": "Misato",
+      "zh-TW": "美里",
+      "zh-CN": "美里"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "abnormal",
+    "weapon": "SMG",
+    "weaponDmg": 8.1,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "miranda",
+    "name": {
+      "en": "Miranda",
+      "zh-TW": "米蘭達",
+      "zh-CN": "米兰达"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 10.8,
+    "ammo": 120,
+    "reloadTime": 1.43,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "nero",
+    "name": {
+      "en": "Nero",
+      "zh-TW": "尼羅",
+      "zh-CN": "尼罗"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 8.39,
+    "ammo": 120,
+    "reloadTime": 1.3,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "novel",
+    "name": {
+      "en": "Novel",
+      "zh-TW": "諾薇爾",
+      "zh-CN": "诺薇尔"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 8.1,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "volume",
+    "name": {
+      "en": "Volume",
+      "zh-TW": "沃綸姆",
+      "zh-CN": "沃纶姆"
+    },
+    "burst": "I",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "SMG",
+    "weaponDmg": 8.73,
+    "ammo": 120,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "signal",
+    "name": {
+      "en": "Signal",
+      "zh-TW": "西格娜",
+      "zh-CN": "西格娜"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 8.1,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "little-mermaid",
+    "name": {
+      "en": "Little Mermaid",
+      "zh-TW": "小美人魚",
+      "zh-CN": "小美人鱼"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "pilgrim",
+    "weapon": "SMG",
+    "weaponDmg": 10.12,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.025,
+        "2RL": 0.038,
+        "3SG": 0.034,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.025,
+        "2RL": 0.038,
+        "3SG": 0.034,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "sakura-suzuhara",
+    "name": {
+      "en": "Sakura Suzuhara",
+      "zh-TW": "櫻",
+      "zh-CN": "樱"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "abnormal",
+    "weapon": "SMG",
+    "weaponDmg": 8.1,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "nayuta",
+    "name": {
+      "en": "Nayuta",
+      "zh-TW": "娜由塔",
+      "zh-CN": "娜由塔"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "pilgrim",
+    "weapon": "SMG",
+    "weaponDmg": 8.73,
+    "ammo": 120,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "modernia",
+    "name": {
+      "en": "Modernia",
+      "zh-TW": "神罰",
+      "zh-CN": "神罚"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "pilgrim",
+    "weapon": "MG",
+    "weaponDmg": 7.71,
+    "ammo": 300,
+    "reloadTime": 2.3,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 2.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.007,
+        "2RL": 0.033,
+        "3SG": 0.016,
+        "5SG": 0.05,
+        "3RL": 0.071,
+        "7SG": 0.087,
+        "4RL": 0.109,
+        "5RL": 0.147
+      },
+      "defense": {
+        "1RL": 0.007,
+        "2RL": 0.033,
+        "3SG": 0.016,
+        "5SG": 0.05,
+        "3RL": 0.071,
+        "7SG": 0.087,
+        "4RL": 0.109,
+        "5RL": 0.147
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "alice",
+    "name": {
+      "en": "Alice",
+      "zh-TW": "愛麗絲",
+      "zh-CN": "爱丽丝"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.5,
+    "maxCharge": 350.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0,
+        "2RL": 0.028,
+        "3SG": 0.028,
+        "5SG": 0.028,
+        "3RL": 0.056,
+        "7SG": 0.056,
+        "4RL": 0.056,
+        "5RL": 0.084
+      },
+      "defense": {
+        "1RL": 0.0,
+        "2RL": 0.028,
+        "3SG": 0.028,
+        "5SG": 0.028,
+        "3RL": 0.056,
+        "7SG": 0.056,
+        "4RL": 0.056,
+        "5RL": 0.084
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mihara-bonding-chain",
+    "name": {
+      "en": "Mihara: Bonding Chain",
+      "zh-TW": "米哈拉:靈魂鎖鏈",
+      "zh-CN": "米哈拉:灵魂锁链"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.008,
+        "2RL": 0.026,
+        "3SG": 0.015,
+        "5SG": 0.0385,
+        "3RL": 0.0495,
+        "7SG": 0.06,
+        "4RL": 0.071,
+        "5RL": 0.00906
+      },
+      "defense": {
+        "1RL": 0.008,
+        "2RL": 0.026,
+        "3SG": 0.015,
+        "5SG": 0.0385,
+        "3RL": 0.0495,
+        "7SG": 0.06,
+        "4RL": 0.071,
+        "5RL": 0.00906
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "cinderella",
+    "name": {
+      "en": "Cinderella",
+      "zh-TW": "灰姑娘",
+      "zh-CN": "灰姑娘"
+    },
+    "burst": "III",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "pilgrim",
+    "weapon": "RL",
+    "weaponDmg": 32.11,
+    "ammo": 24,
+    "reloadTime": 2.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.00225,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.009,
+        "2RL": 0.018,
+        "3SG": 0.018,
+        "5SG": 0.0225,
+        "3RL": 0.036,
+        "7SG": 0.0405,
+        "4RL": 0.0495,
+        "5RL": 0.063
+      },
+      "defense": {
+        "1RL": 0.009,
+        "2RL": 0.018,
+        "3SG": 0.018,
+        "5SG": 0.0225,
+        "3RL": 0.036,
+        "7SG": 0.0405,
+        "4RL": 0.0495,
+        "5RL": 0.063
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rosanna",
+    "name": {
+      "en": "Rosanna",
+      "zh-TW": "羅珊娜",
+      "zh-CN": "罗珊娜"
+    },
+    "burst": "I",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "MG",
+    "weaponDmg": 5.1,
+    "ammo": 300,
+    "reloadTime": 1.67,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0175,
+        "3SG": 0.009,
+        "5SG": 0.026,
+        "3RL": 0.0365,
+        "7SG": 0.0445,
+        "4RL": 0.0555,
+        "5RL": 0.0745
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0175,
+        "3SG": 0.009,
+        "5SG": 0.026,
+        "3RL": 0.0365,
+        "7SG": 0.0445,
+        "4RL": 0.0555,
+        "5RL": 0.0745
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "ludmilla-winter-owner",
+    "name": {
+      "en": "Ludmilla: Winter Owner",
+      "zh-TW": "魯德米拉:冬日之主",
+      "zh-CN": "鲁德米拉:冬日之主"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "MG",
+    "weaponDmg": 5.86,
+    "ammo": 300,
+    "reloadTime": 3.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "asuka-wille",
+    "name": {
+      "en": "Asuka: WILLE",
+      "zh-TW": "明日香:WILLE",
+      "zh-CN": "明日香:WILLE"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "abnormal",
+    "weapon": "MG",
+    "weaponDmg": 5.47,
+    "ammo": 300,
+    "reloadTime": 2.33,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "aria",
+    "name": {
+      "en": "Aria",
+      "zh-TW": "阿莉亞",
+      "zh-CN": "阿莉亚"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "MG",
+    "weaponDmg": 5.47,
+    "ammo": 300,
+    "reloadTime": 2.33,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "emma",
+    "name": {
+      "en": "Emma",
+      "zh-TW": "艾瑪",
+      "zh-CN": "艾玛"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "diesel",
+    "name": {
+      "en": "Diesel",
+      "zh-TW": "迪塞爾",
+      "zh-CN": "迪塞尔"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.38,
+    "ammo": 300,
+    "reloadTime": 2.16,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "diesel-treasure",
+    "name": {
+      "en": "Diesel: Treasure",
+      "zh-TW": "迪塞爾 珍藏",
+      "zh-CN": "迪塞尔 珍藏"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.38,
+    "ammo": 300,
+    "reloadTime": 2.16,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "flora",
+    "name": {
+      "en": "Flora",
+      "zh-TW": "芙蘿拉",
+      "zh-CN": "芙萝拉"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "crown",
+    "name": {
+      "en": "Crown",
+      "zh-TW": "皇冠",
+      "zh-CN": "皇冠"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "guillotine",
+    "name": {
+      "en": "Guillotine",
+      "zh-TW": "吉蘿婷",
+      "zh-CN": "吉萝婷"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "kilo",
+    "name": {
+      "en": "Kilo",
+      "zh-TW": "吉洛",
+      "zh-CN": "吉洛"
+    },
+    "burst": "III",
+    "role": "defender",
+    "element": "fire",
+    "manufacturer": "missilis",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rapi-red-hood",
+    "name": {
+      "en": "Rapi: Red Hood",
+      "zh-TW": "拉毗:小紅帽",
+      "zh-CN": "拉毗:小红帽"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rem",
+    "name": {
+      "en": "Rem",
+      "zh-TW": "雷姆",
+      "zh-CN": "雷姆"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "abnormal",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "rei-ayanami",
+    "name": {
+      "en": "Rei Ayanami",
+      "zh-TW": "零（一期）",
+      "zh-CN": "零（一期）"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "abnormal",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "mast-romantic-maid",
+    "name": {
+      "en": "Mast: Romantic Maid",
+      "zh-TW": "馬斯特:浪漫的女僕",
+      "zh-CN": "马斯特:浪漫的女仆"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "neon-blue-ocean",
+    "name": {
+      "en": "Neon: Blue Ocean",
+      "zh-TW": "尼恩:藍色海洋",
+      "zh-CN": "尼恩:蓝色海洋"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "soda",
+    "name": {
+      "en": "Soda",
+      "zh-TW": "索達",
+      "zh-CN": "索达"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "tetra",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "elegg",
+    "name": {
+      "en": "Elegg",
+      "zh-TW": "伊萊格",
+      "zh-CN": "伊莱格"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "elegg-boom-and-shock",
+    "name": {
+      "en": "Elegg: Boom and Shock",
+      "zh-TW": "伊萊格:BOOM與驚嚇",
+      "zh-CN": "伊莱格:BOOM与惊吓"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "emma-tactical-upgrade",
+    "name": {
+      "en": "Emma: Tactical Upgrade",
+      "zh-TW": "艾瑪:戰術升級",
+      "zh-CN": "艾玛:战术升级"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "delta-ninja-thief",
+    "name": {
+      "en": "Delta: Ninja Thief",
+      "zh-TW": "德爾塔:怪盜忍者",
+      "zh-CN": "德尔塔:怪盗忍者"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "snow-white-innocent-days",
+    "name": {
+      "en": "Snow White: Innocent Days",
+      "zh-TW": "白雪公主:純真年代",
+      "zh-CN": "白雪公主:纯真年代"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0065,
+        "2RL": 0.0125,
+        "3SG": 0.0095,
+        "5SG": 0.0155,
+        "3RL": 0.0195,
+        "7SG": 0.0225,
+        "4RL": 0.0255,
+        "5RL": 0.033
+      },
+      "defense": {
+        "1RL": 0.0065,
+        "2RL": 0.0125,
+        "3SG": 0.0095,
+        "5SG": 0.0155,
+        "3RL": 0.0195,
+        "7SG": 0.0225,
+        "4RL": 0.0255,
+        "5RL": 0.033
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "label",
+    "name": {
+      "en": "Label",
+      "zh-TW": "蕾貝兒",
+      "zh-CN": "蕾贝儿"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.003,
+    "hitMultiplier": 0.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.044304,
+        "2RL": 0.0852,
+        "3SG": 0.064752,
+        "5SG": 0.105648,
+        "3RL": 0.129504,
+        "7SG": 0.149952,
+        "4RL": 0.1704,
+        "5RL": 0.2004
+      },
+      "defense": {
+        "1RL": 0.044304,
+        "2RL": 0.0852,
+        "3SG": 0.064752,
+        "5SG": 0.105648,
+        "3RL": 0.129504,
+        "7SG": 0.149952,
+        "4RL": 0.1704,
+        "5RL": 0.2004
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "velvet",
+    "name": {
+      "en": "Velvet",
+      "zh-TW": "薇爾維特",
+      "zh-CN": "薇尔维特"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "chisato",
+    "name": {
+      "en": "Chisato",
+      "zh-TW": "千束",
+      "zh-CN": "千束"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "abnormal",
+    "weapon": "SMG",
+    "weaponDmg": 10.12,
+    "ammo": 120,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "takina",
+    "name": {
+      "en": "Takina",
+      "zh-TW": "瀧奈",
+      "zh-CN": "泷奈"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "abnormal",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2.0,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    }
+  },
+  {
+    "id": "privaty-treasure",
+    "name": {
+      "en": "Privaty: Treasure",
+      "zh-TW": "普麗瓦蒂 珍藏",
+      "zh-CN": "普丽瓦蒂 珍藏"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1.0,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.122
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.122
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "zwei-treasure",
+    "name": {
+      "en": "Zwei: Treasure",
+      "zh-TW": "茨瓦伊 珍藏",
+      "zh-CN": "茨瓦伊 珍藏"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 100.75,
+    "ammo": 9,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0035,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.07,
+        "2RL": 0.14,
+        "3SG": 0.105,
+        "5SG": 0.175,
+        "3RL": 0.21,
+        "7SG": 0.245,
+        "4RL": 0.28,
+        "5RL": 0.315
+      },
+      "defense": {
+        "1RL": 0.07,
+        "2RL": 0.14,
+        "3SG": 0.105,
+        "5SG": 0.175,
+        "3RL": 0.21,
+        "7SG": 0.245,
+        "4RL": 0.28,
+        "5RL": 0.315
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    }
+  },
+  {
+    "id": "centi-treasure",
+    "name": {
+      "en": "Centi: Treasure",
+      "zh-TW": "桑迪 珍藏",
+      "zh-CN": "桑迪 珍藏"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "iron",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 1.52,
+    "chargeTime": 1.0,
+    "maxCharge": 250.0,
+    "chargeCoefficient": 0.0345,
+    "hitMultiplier": 4.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.138,
+        "2RL": 0.276,
+        "3SG": 0.138,
+        "5SG": 0.276,
+        "3RL": 0.414,
+        "7SG": 0.414,
+        "4RL": 0.552,
+        "5RL": 0.69
+      },
+      "defense": {
+        "1RL": 0.138,
+        "2RL": 0.276,
+        "3SG": 0.138,
+        "5SG": 0.276,
+        "3RL": 0.414,
+        "7SG": 0.414,
+        "4RL": 0.552,
+        "5RL": 0.69
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  },
+  {
+    "id": "moran-treasure",
+    "name": {
+      "en": "Moran: Treasure",
+      "zh-TW": "牡丹 珍藏",
+      "zh-CN": "牡丹 珍藏"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 14.71,
+    "ammo": 60,
+    "reloadTime": 1.5,
+    "chargeTime": 0.0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0025,
+    "hitMultiplier": 1.0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.0325,
+        "2RL": 0.0625,
+        "3SG": 0.0475,
+        "5SG": 0.0775,
+        "3RL": 0.095,
+        "7SG": 0.11,
+        "4RL": 0.125,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    }
+  }
+]

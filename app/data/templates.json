@@ -1,0 +1,401 @@
+[
+  {
+    "id": "scarlet-jackal-2rl",
+    "name": {
+      "en": "Scarlet + Jackal (2RL Nuke)",
+      "zh-TW": "紅蓮 + 豺狼 (2RL 核爆)",
+      "zh-CN": "红莲 + 豺狼 (2RL 核爆)"
+    },
+    "archetype": "scarlet-nuke",
+    "mode": "both",
+    "required": ["scarlet", "jackal"],
+    "flex": [
+      { "slot": 2, "options": ["centi", "anis", "pascal"] },
+      { "slot": 3, "options": ["anne-miracle-fairy", "blanc", "trina"] },
+      { "slot": 4, "options": ["anis", "centi", "trina", "liter"] }
+    ],
+    "burstSlots": ["I", "III", "II", "III", "II"],
+    "preferredSpeed": "2RL",
+    "counters": ["sg-spam", "stall-sanis"],
+    "counteredBy": ["alice-stall", "noah-stall"],
+    "priority": 1,
+    "notes": {
+      "en": "Fastest nuke team. Scarlet wipes with AoE burst. Jackal provides speed. Needs clip RL batteries.",
+      "zh-TW": "最快核爆隊。紅蓮以範圍爆裂清場。豺狼提供速度。需要彈匣發射器充能。",
+      "zh-CN": "最快核爆队。红莲以范围爆裂清场。豺狼提供速度。需要弹匣发射器充能。"
+    }
+  },
+  {
+    "id": "scarlet-jackal-3rl",
+    "name": {
+      "en": "Scarlet + Jackal (3RL Classic)",
+      "zh-TW": "紅蓮 + 豺狼 (3RL 經典)",
+      "zh-CN": "红莲 + 豺狼 (3RL 经典)"
+    },
+    "archetype": "scarlet-nuke",
+    "mode": "both",
+    "required": ["scarlet", "jackal"],
+    "flex": [
+      { "slot": 2, "options": ["noise", "rapunzel", "neon"] },
+      { "slot": 3, "options": ["noah", "blanc", "makima"] },
+      { "slot": 4, "options": ["centi", "anis", "trina"] }
+    ],
+    "burstSlots": ["I", "III", "I", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["sg-spam"],
+    "counteredBy": ["alice-stall"],
+    "priority": 1,
+    "notes": {
+      "en": "Classic Scarlet comp with defensive support. Noah/Blanc provides survivability. Good balance of speed and durability.",
+      "zh-TW": "經典紅蓮陣容搭配防禦輔助。諾雅/布蘭兒提供生存力。速度與耐久平衡。",
+      "zh-CN": "经典红莲阵容搭配防御辅助。诺雅/布兰儿提供生存力。速度与耐久平衡。"
+    }
+  },
+  {
+    "id": "scarlet-blanc-nuke",
+    "name": {
+      "en": "Scarlet + Blanc (Indomitable Nuke)",
+      "zh-TW": "紅蓮 + 布蘭兒 (不屈核爆)",
+      "zh-CN": "红莲 + 布兰儿 (不屈核爆)"
+    },
+    "archetype": "scarlet-nuke",
+    "mode": "both",
+    "required": ["scarlet", "blanc", "jackal"],
+    "flex": [
+      { "slot": 3, "options": ["centi", "anis"] },
+      { "slot": 4, "options": ["anis", "centi", "trina"] }
+    ],
+    "burstSlots": ["I", "III", "II", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["sg-spam", "stall-sanis"],
+    "counteredBy": ["alice-stall"],
+    "priority": 1,
+    "notes": {
+      "en": "Blanc's indomitability protects the team while Scarlet nukes. Very strong on defense.",
+      "zh-TW": "布蘭兒的不屈保護隊伍，紅蓮進行核爆。防守非常強力。",
+      "zh-CN": "布兰儿的不屈保护队伍，红莲进行核爆。防守非常强力。"
+    }
+  },
+  {
+    "id": "alice-stall",
+    "name": {
+      "en": "Alice Stall (Noah + Biscuit)",
+      "zh-TW": "愛麗絲持久戰 (諾雅 + 餅乾)",
+      "zh-CN": "爱丽丝持久战 (诺雅 + 饼干)"
+    },
+    "archetype": "alice-stall",
+    "mode": "both",
+    "required": ["alice", "noah"],
+    "flex": [
+      { "slot": 2, "options": ["biscuit", "noise", "rapunzel"] },
+      { "slot": 3, "options": ["rapunzel", "biscuit", "noise"] },
+      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    ],
+    "burstSlots": ["III", "II", "II", "I", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["scarlet-jackal-2rl", "scarlet-jackal-3rl"],
+    "counteredBy": ["stall-sanis"],
+    "priority": 1,
+    "notes": {
+      "en": "Alice's single-target DPS behind Noah's invincibility shield. Biscuit provides defender immunity. Counters Scarlet teams.",
+      "zh-TW": "愛麗絲的單體輸出配合諾雅的無敵盾。餅乾提供防禦者免疫。克制紅蓮隊。",
+      "zh-CN": "爱丽丝的单体输出配合诺雅的无敌盾。饼干提供防御者免疫。克制红莲队。"
+    }
+  },
+  {
+    "id": "stall-sanis",
+    "name": {
+      "en": "Summer Anis Stall",
+      "zh-TW": "夏日阿妮斯持久戰",
+      "zh-CN": "夏日阿妮斯持久战"
+    },
+    "archetype": "sanis-stall",
+    "mode": "both",
+    "required": ["anis-sparkling-summer"],
+    "flex": [
+      { "slot": 1, "options": ["noah", "noise", "biscuit"] },
+      { "slot": 2, "options": ["rapunzel", "biscuit", "noise"] },
+      { "slot": 3, "options": ["biscuit", "rapunzel", "tia"] },
+      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    ],
+    "burstSlots": ["III", "II", "I", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["alice-stall"],
+    "counteredBy": ["scarlet-jackal-2rl", "scarlet-blanc-nuke"],
+    "priority": 2,
+    "notes": {
+      "en": "SAnis hits 2 enemies ignoring taunts. Needs heavy defensive support for the 10s burst window.",
+      "zh-TW": "夏日阿妮斯攻擊2名敵人且無視嘲諷。需要大量防禦輔助支撐10秒爆裂窗口。",
+      "zh-CN": "夏日阿妮斯攻击2名敌人且无视嘲讽。需要大量防御辅助支撑10秒爆裂窗口。"
+    }
+  },
+  {
+    "id": "red-hood-carry",
+    "name": {
+      "en": "Red Hood Carry",
+      "zh-TW": "小紅帽主C",
+      "zh-CN": "小红帽主C"
+    },
+    "archetype": "red-hood",
+    "mode": "attack",
+    "required": ["red-hood"],
+    "flex": [
+      { "slot": 1, "options": ["noah", "noise", "blanc"] },
+      { "slot": 2, "options": ["rapunzel", "biscuit", "noise"] },
+      { "slot": 3, "options": ["biscuit", "rapunzel", "tia"] },
+      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    ],
+    "burstSlots": ["Λ", "II", "I", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["scarlet-jackal-3rl"],
+    "counteredBy": ["scarlet-jackal-2rl"],
+    "priority": 2,
+    "notes": {
+      "en": "Red Hood's Λ burst lets her fill any burst slot. Strong single-target DPS with flexible team building.",
+      "zh-TW": "小紅帽的Λ爆裂可以填補任何爆裂位。強力單體輸出且組隊靈活。",
+      "zh-CN": "小红帽的Λ爆裂可以填补任何爆裂位。强力单体输出且组队灵活。"
+    }
+  },
+  {
+    "id": "sg-spam",
+    "name": {
+      "en": "Shotgun Spam (Privaty)",
+      "zh-TW": "霰彈槍壓制 (普麗瓦蒂)",
+      "zh-CN": "霰弹枪压制 (普丽瓦蒂)"
+    },
+    "archetype": "sg-spam",
+    "mode": "both",
+    "required": ["privaty"],
+    "flex": [
+      { "slot": 1, "options": ["drake", "drake-treasure", "noir", "sugar"] },
+      { "slot": 2, "options": ["noir", "sugar", "maiden", "viper"] },
+      { "slot": 3, "options": ["centi", "anis", "jackal", "pepper"] },
+      { "slot": 4, "options": ["neon", "pepper", "noise"] }
+    ],
+    "burstSlots": ["III", "III", "III", "II", "I"],
+    "preferredSpeed": "3RL",
+    "counters": [],
+    "counteredBy": ["scarlet-jackal-2rl", "scarlet-jackal-3rl", "scarlet-blanc-nuke"],
+    "priority": 3,
+    "notes": {
+      "en": "Privaty's stun + SG pressure. Good filler team for SP Arena. Weak to Scarlet AoE.",
+      "zh-TW": "普麗瓦蒂的暈眩 + 霰彈槍壓制。特殊競技場的好補位隊伍。怕紅蓮範圍傷害。",
+      "zh-CN": "普丽瓦蒂的晕眩 + 霰弹枪压制。特殊竞技场的好补位队伍。怕红莲范围伤害。"
+    }
+  },
+  {
+    "id": "crown-nuke",
+    "name": {
+      "en": "Crown Nuke",
+      "zh-TW": "皇冠核爆",
+      "zh-CN": "皇冠核爆"
+    },
+    "archetype": "crown-nuke",
+    "mode": "both",
+    "required": ["crown"],
+    "flex": [
+      { "slot": 1, "options": ["scarlet-black-shadow", "harran", "maiden-ice-rose", "modernia"] },
+      { "slot": 2, "options": ["jackal", "centi", "anis"] },
+      { "slot": 3, "options": ["blanc", "noah", "trina"] },
+      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    ],
+    "burstSlots": ["II", "III", "I", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["alice-stall"],
+    "counteredBy": ["scarlet-jackal-2rl"],
+    "priority": 1,
+    "notes": {
+      "en": "Crown buffs entire team. Pair with strong B3 DPS for devastating burst. Meta-defining in current patch.",
+      "zh-TW": "皇冠增益全隊。搭配強力B3輸出造成毀滅性爆裂。當前版本定義元數據。",
+      "zh-CN": "皇冠增益全队。搭配强力B3输出造成毁灭性爆裂。当前版本定义元数据。"
+    }
+  },
+  {
+    "id": "moran-tank",
+    "name": {
+      "en": "Moran Tank Wall",
+      "zh-TW": "牡丹坦克牆",
+      "zh-CN": "牡丹坦克墙"
+    },
+    "archetype": "tank-wall",
+    "mode": "defense",
+    "required": ["moran"],
+    "flex": [
+      { "slot": 1, "options": ["moran-treasure", "noah", "biscuit"] },
+      { "slot": 2, "options": ["noise", "rapunzel", "neon"] },
+      { "slot": 3, "options": ["alice", "scarlet", "modernia"] },
+      { "slot": 4, "options": ["centi", "anis", "jackal"] }
+    ],
+    "burstSlots": ["II", "II", "I", "III", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["scarlet-jackal-2rl"],
+    "counteredBy": ["stall-sanis"],
+    "priority": 2,
+    "notes": {
+      "en": "Moran's damage reduction + revival mechanics create a wall. High CP investment required.",
+      "zh-TW": "牡丹的減傷 + 復活機制形成堅壁。需要高戰力投入。",
+      "zh-CN": "牡丹的减伤 + 复活机制形成坚壁。需要高战力投入。"
+    }
+  },
+  {
+    "id": "harran-nuke",
+    "name": {
+      "en": "Harran AoE Nuke",
+      "zh-TW": "哈蘭範圍核爆",
+      "zh-CN": "哈兰范围核爆"
+    },
+    "archetype": "harran-nuke",
+    "mode": "both",
+    "required": ["harran"],
+    "flex": [
+      { "slot": 1, "options": ["jackal", "centi", "anis"] },
+      { "slot": 2, "options": ["blanc", "noah", "trina"] },
+      { "slot": 3, "options": ["centi", "anis", "noise"] },
+      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    ],
+    "burstSlots": ["III", "I", "II", "II", "I"],
+    "preferredSpeed": "3RL",
+    "counters": ["sg-spam"],
+    "counteredBy": ["alice-stall", "noah-stall"],
+    "priority": 2,
+    "notes": {
+      "en": "Harran provides AoE burst similar to Scarlet. Good alternative when Scarlet is used in another team.",
+      "zh-TW": "哈蘭提供類似紅蓮的範圍爆裂。紅蓮被其他隊伍使用時的好替代。",
+      "zh-CN": "哈兰提供类似红莲的范围爆裂。红莲被其他队伍使用时的好替代。"
+    }
+  },
+  {
+    "id": "noir-system",
+    "name": {
+      "en": "Noir SG System",
+      "zh-TW": "諾亞爾霰彈系統",
+      "zh-CN": "诺亚尔霰弹系统"
+    },
+    "archetype": "noir-system",
+    "mode": "both",
+    "required": ["noir"],
+    "flex": [
+      { "slot": 1, "options": ["centi", "anis", "jackal"] },
+      { "slot": 2, "options": ["pepper", "neon", "noise"] },
+      { "slot": 3, "options": ["sugar", "drake", "viper"] },
+      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    ],
+    "burstSlots": ["III", "II", "I", "III", "II"],
+    "preferredSpeed": "3RL",
+    "counters": [],
+    "counteredBy": ["scarlet-jackal-2rl"],
+    "priority": 3,
+    "notes": {
+      "en": "Noir's SG-based damage system. Good filler team for SP Arena when other cores are taken.",
+      "zh-TW": "諾亞爾的霰彈傷害系統。其他核心被佔用時的好補位隊伍。",
+      "zh-CN": "诺亚尔的霰弹伤害系统。其他核心被占用时的好补位队伍。"
+    }
+  },
+  {
+    "id": "2b-distribute",
+    "name": {
+      "en": "2B Distributed Damage",
+      "zh-TW": "2B 分散傷害",
+      "zh-CN": "2B 分散伤害"
+    },
+    "archetype": "2b-nuke",
+    "mode": "attack",
+    "required": ["2b"],
+    "flex": [
+      { "slot": 1, "options": ["jackal", "centi", "anis"] },
+      { "slot": 2, "options": ["blanc", "noah", "trina"] },
+      { "slot": 3, "options": ["centi", "anis", "noise"] },
+      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    ],
+    "burstSlots": ["III", "I", "II", "II", "I"],
+    "preferredSpeed": "3RL",
+    "counters": [],
+    "counteredBy": ["scarlet-jackal-2rl", "rosanna-counter"],
+    "priority": 3,
+    "notes": {
+      "en": "2B distributes damage across all enemies. Countered by Rosanna's dispel and Noah/Biscuit.",
+      "zh-TW": "2B 將傷害分散到所有敵人。被羅珊娜的驅散和諾雅/餅乾克制。",
+      "zh-CN": "2B 将伤害分散到所有敌人。被罗珊娜的驱散和诺雅/饼干克制。"
+    }
+  },
+  {
+    "id": "makima-counter",
+    "name": {
+      "en": "Makima Counter",
+      "zh-TW": "瑪奇瑪反制",
+      "zh-CN": "玛奇玛反制"
+    },
+    "archetype": "makima-counter",
+    "mode": "defense",
+    "required": ["makima"],
+    "flex": [
+      { "slot": 1, "options": ["noise", "rapunzel", "neon"] },
+      { "slot": 2, "options": ["alice", "scarlet", "modernia"] },
+      { "slot": 3, "options": ["centi", "anis", "jackal"] },
+      { "slot": 4, "options": ["anis", "centi", "liter"] }
+    ],
+    "burstSlots": ["II", "I", "III", "II", "I"],
+    "preferredSpeed": "3RL",
+    "counters": ["sg-spam"],
+    "counteredBy": ["scarlet-jackal-2rl"],
+    "priority": 3,
+    "notes": {
+      "en": "Makima's indomitability and P5 redirect counter SG teams. Good defensive filler.",
+      "zh-TW": "瑪奇瑪的不屈和P5轉向克制霰彈隊。好的防守補位。",
+      "zh-CN": "玛奇玛的不屈和P5转向克制霰弹队。好的防守补位。"
+    }
+  },
+  {
+    "id": "power-snipe",
+    "name": {
+      "en": "Power + Pepper Snipe",
+      "zh-TW": "帕瓦 + 佩珀狙殺",
+      "zh-CN": "帕瓦 + 佩珀狙杀"
+    },
+    "archetype": "snipe",
+    "mode": "attack",
+    "required": ["power", "pepper"],
+    "flex": [
+      { "slot": 2, "options": ["centi", "anis", "jackal"] },
+      { "slot": 3, "options": ["anis", "centi", "trina"] },
+      { "slot": 4, "options": ["blanc", "noah", "noise"] }
+    ],
+    "burstSlots": ["III", "I", "II", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": [],
+    "counteredBy": ["scarlet-jackal-2rl"],
+    "priority": 3,
+    "notes": {
+      "en": "Power and Pepper both target highest ATK enemy. Can snipe key DPS units before they burst.",
+      "zh-TW": "帕瓦和佩珀都瞄準最高攻擊力的敵人。可以在敵方爆裂前狙殺關鍵輸出。",
+      "zh-CN": "帕瓦和佩珀都瞄准最高攻击力的敌人。可以在敌方爆裂前狙杀关键输出。"
+    }
+  },
+  {
+    "id": "siren-control",
+    "name": {
+      "en": "Siren (Little Mermaid) Control",
+      "zh-TW": "小美人魚控制",
+      "zh-CN": "小美人鱼控制"
+    },
+    "archetype": "siren-control",
+    "mode": "both",
+    "required": ["little-mermaid"],
+    "flex": [
+      { "slot": 1, "options": ["scarlet", "harran", "maiden-ice-rose"] },
+      { "slot": 2, "options": ["jackal", "centi", "anis"] },
+      { "slot": 3, "options": ["blanc", "noah", "noise"] },
+      { "slot": 4, "options": ["centi", "anis", "trina"] }
+    ],
+    "burstSlots": ["II", "III", "I", "II", "II"],
+    "preferredSpeed": "3RL",
+    "counters": ["alice-stall", "stall-sanis"],
+    "counteredBy": [],
+    "priority": 1,
+    "notes": {
+      "en": "Siren's stun disrupts enemy burst chains. SSS-tier in current meta. Pairs well with any nuke DPS.",
+      "zh-TW": "小美人魚的暈眩打斷敵方爆裂鏈。當前版本SSS級。與任何核爆輸出搭配良好。",
+      "zh-CN": "小美人鱼的晕眩打断敌方爆裂链。当前版本SSS级。与任何核爆输出搭配良好。"
+    }
+  }
+]

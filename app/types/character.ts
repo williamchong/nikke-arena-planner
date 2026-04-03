@@ -8,7 +8,7 @@ export type SpeedTier = '1RL' | '2RL' | '3SG' | '5SG' | '3RL' | '7SG' | '4RL' | 
 
 export type PvpTier = 'SSS' | 'SS' | 'S' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F'
 
-export type BurstType = 'I' | 'II' | 'III'
+export type BurstType = 'I' | 'II' | 'III' | 'Λ'
 
 export type Role = 'attacker' | 'supporter' | 'defender'
 
