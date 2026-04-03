@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
 import { useLocalStorage } from '@vueuse/core'
+import { scoreTeamRaw } from '~/composables/useSimulatedAnnealing'
 
 const { t } = useI18n()
 
@@ -34,6 +35,11 @@ const filledCharacters = computed(() =>
 const result = computed(() => {
   if (filledCharacters.value.length !== 5) return null
   return calculate(filledCharacters.value, mode.value)
+})
+
+const teamScore = computed(() => {
+  if (filledCharacters.value.length !== 5) return null
+  return scoreTeamRaw(filledCharacters.value, mode.value)
 })
 
 const isSelected = computed(() => new Set(slots.value.filter((id): id is string => !!id)))
@@ -213,6 +219,10 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
               <div class="text-center">
                 <div class="text-lg font-bold">{{ result.timings.b3.toFixed(2) }}s</div>
                 <div class="text-xs text-muted">Full Burst</div>
+              </div>
+              <div v-if="teamScore !== null" class="ml-auto text-center">
+                <div class="text-lg font-bold">{{ teamScore }}</div>
+                <div class="text-xs text-muted">{{ t('recommend.score') }}</div>
               </div>
             </div>
           </div>
