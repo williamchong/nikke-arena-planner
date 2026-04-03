@@ -65,9 +65,17 @@
     "mode15v15": "15v15 特殊竞技场",
     "noTeams": "请在角色库中选择更多角色以获得推荐。",
     "team": "队伍 {n}",
+    "option": "方案 {n}",
     "archetype": "战术类型",
     "speed": "速度",
-    "whyThisTeam": "为什么推荐这个队伍？"
+    "score": "评分",
+    "details": "详细信息",
+    "whyThisTeam": "为什么推荐这个队伍？",
+    "pickRoster": "先选择你拥有的角色",
+    "pickRosterDesc": "至少需要 {min} 个角色才能获得推荐。目前已选：{current}。",
+    "selectHere": "选择角色",
+    "editRoster": "编辑角色",
+    "showingResults": "找到 {count} 个队伍"
   },
   "common": {
     "all": "全部",

@@ -65,9 +65,17 @@
     "mode15v15": "15v15 特殊競技場",
     "noTeams": "請在角色庫中選擇更多角色以獲得推薦。",
     "team": "隊伍 {n}",
+    "option": "方案 {n}",
     "archetype": "戰術類型",
     "speed": "速度",
-    "whyThisTeam": "為什麼推薦這個隊伍？"
+    "score": "評分",
+    "details": "詳細資訊",
+    "whyThisTeam": "為什麼推薦這個隊伍？",
+    "pickRoster": "先選擇你擁有的角色",
+    "pickRosterDesc": "至少需要 {min} 個角色才能獲得推薦。目前已選：{current}。",
+    "selectHere": "選擇角色",
+    "editRoster": "編輯角色",
+    "showingResults": "找到 {count} 個隊伍"
   },
   "common": {
     "all": "全部",

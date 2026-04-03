@@ -65,9 +65,17 @@
     "mode15v15": "15v15 SP Arena",
     "noTeams": "Select more characters in your roster to get recommendations.",
     "team": "Team {n}",
+    "option": "Option {n}",
     "archetype": "Archetype",
     "speed": "Speed",
-    "whyThisTeam": "Why this team?"
+    "score": "Score",
+    "details": "Details",
+    "whyThisTeam": "Why this team?",
+    "pickRoster": "Select your characters first",
+    "pickRosterDesc": "You need at least {min} characters to get recommendations. Currently selected: {current}.",
+    "selectHere": "Select characters",
+    "editRoster": "Edit roster",
+    "showingResults": "{count} team(s) found"
   },
   "common": {
     "all": "All",
