@@ -2,6 +2,8 @@
   "name": "nikke-arena-planner",
   "type": "module",
   "private": true,
+  "homepage": "https://nikke.williamchong.cloud",
+  "repository": "https://github.com/williamchong/nikke-arena-planner",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
