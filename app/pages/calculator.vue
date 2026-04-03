@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
-import { useLocalStorage } from '@vueuse/core'
 import { scoreTeamRaw } from '~/composables/useSimulatedAnnealing'
 
 const { t } = useI18n()
@@ -14,9 +13,31 @@ const { getCharacter, filterCharacters } = useCharacters()
 const { calculate } = useBurstCalculator()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
 
-const mode = useLocalStorage<ArenaMode>('nikke-arena-calc-mode', 'attack')
+const mode = ref<ArenaMode>('attack')
 // Fixed 5 slots — null means empty, positions are stable
-const slots = useLocalStorage<(string | null)[]>('nikke-arena-calc-slots', [null, null, null, null, null])
+const slots = ref<(string | null)[]>([null, null, null, null, null])
+
+// Load from localStorage only on client after mount
+if (import.meta.client) {
+  onMounted(() => {
+    try {
+      const saved = localStorage.getItem('nikke-arena-calc')
+      if (saved) {
+        const data = JSON.parse(saved)
+        if (data.mode) mode.value = data.mode
+        if (data.slots) slots.value = data.slots
+      }
+    }
+    catch { /* ignore corrupt localStorage */ }
+  })
+
+  watch([mode, slots], () => {
+    localStorage.setItem('nikke-arena-calc', JSON.stringify({
+      mode: mode.value,
+      slots: slots.value,
+    }))
+  }, { deep: true })
+}
 const showPicker = ref(false)
 
 const pickerSearch = ref('')
