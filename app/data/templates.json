@@ -1644,5 +1644,77 @@
       "zh-TW": "諾雅的無敵爆裂 + 餅乾的防禦者免疫形成極為堅固的防線。克制所有紅蓮核爆變體。搭配任何B3輸出。",
       "zh-CN": "诺雅的无敌爆裂 + 饼干的防御者免疫形成极为坚固的防线。克制所有红莲核爆变体。搭配任何B3输出。"
     }
+  },
+  {
+    "id": "helen-system",
+    "name": {
+      "en": "Helm: Treasure Charge System",
+      "zh-TW": "海倫珍藏充能系統",
+      "zh-CN": "海伦珍藏充能系统"
+    },
+    "archetype": "helen-system",
+    "mode": "both",
+    "required": [
+      "helm-treasure"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "scarlet",
+          "scarlet-black-shadow",
+          "harran",
+          "maiden-ice-rose",
+          "crown"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "noah",
+          "noise"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "centi",
+          "anis"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "trina",
+          "bay-treasure"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "III",
+      "II",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "2RL",
+    "counters": [
+      "stall-sanis",
+      "sg-spam"
+    ],
+    "counteredBy": [
+      "alice-stall",
+      "noah-stall"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Helm: Treasure generates massive burst charge. One of the 6 core CN meta systems. Enables extremely fast burst rotations when paired with any nuke DPS.",
+      "zh-TW": "海倫珍藏產生大量充能。中國伺服器六大核心體系之一。搭配任何核爆輸出可實現極快的爆裂循環。",
+      "zh-CN": "海伦珍藏产生大量充能。国服六大核心体系之一。搭配任何核爆输出可实现极快的爆裂循环。"
+    }
   }
 ]
