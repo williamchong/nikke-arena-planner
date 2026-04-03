@@ -128,7 +128,9 @@ const showRosterPicker = ref(false)
           </ul>
         </div>
 
-        <p class="text-xs">{{ t('landing.footer') }}</p>
+        <p class="text-xs text-muted">
+          {{ t('landing.footer') }}<NuxtLink :to="`${localePath('/about')}#credits`" class="text-primary hover:underline">{{ t('landing.footerLink') }}</NuxtLink>{{ t('landing.footerEnd') }}
+        </p>
       </div>
     </template>
 

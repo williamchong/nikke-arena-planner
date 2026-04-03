@@ -97,7 +97,9 @@
     "feature3": "Burst speed calculator showing exact charge timing for any 5-character combination",
     "feature4": "Works with any roster size — whether you have 15 characters or 150",
     "feature5": "Trilingual support (English, 繁體中文, 简体中文) — switch languages instantly",
-    "footer": "NIKKE Arena Planner is a free, open-source fan tool. Not affiliated with Shift Up or Level Infinite. Character data and arena mechanics based on community research."
+    "footer": "NIKKE Arena Planner is a free, open-source fan tool. Not affiliated with Shift Up or Level Infinite. Character data and arena mechanics based on ",
+    "footerLink": "community research",
+    "footerEnd": "."
   },
   "about": {
     "title": "About — How to Use NIKKE Arena Planner",

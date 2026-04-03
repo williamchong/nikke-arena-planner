@@ -165,7 +165,7 @@ useHead({
     </section>
 
     <!-- Data credits -->
-    <section class="space-y-3">
+    <section id="credits" class="space-y-3">
       <h2 class="text-lg font-semibold">
         {{ t('about.creditsTitle') }}
       </h2>
@@ -233,7 +233,7 @@ useHead({
 
     <!-- Disclaimer -->
     <section class="rounded-lg bg-muted/10 p-4 text-xs text-muted">
-      {{ t('landing.footer') }}
+      {{ t('landing.footer') }}<a href="#credits" class="text-primary hover:underline">{{ t('landing.footerLink') }}</a>{{ t('landing.footerEnd') }}
     </section>
   </div>
 </template>

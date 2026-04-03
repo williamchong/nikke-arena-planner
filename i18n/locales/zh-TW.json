@@ -97,7 +97,9 @@
     "feature3": "充能速度計算器，顯示任意 5 人組合的精確充能時間",
     "feature4": "適用於任何角色庫規模 — 無論你有 15 位還是 150 位角色",
     "feature5": "三語支援（English、繁體中文、简体中文）— 即時切換語言",
-    "footer": "NIKKE 競技場規劃器是免費的開源粉絲工具。與 Shift Up 或 Level Infinite 無關。角色資料與競技場機制基於社群研究。"
+    "footer": "NIKKE 競技場規劃器是免費的開源粉絲工具。與 Shift Up 或 Level Infinite 無關。角色資料與競技場機制基於",
+    "footerLink": "社群研究",
+    "footerEnd": "。"
   },
   "about": {
     "title": "關於 — 如何使用 NIKKE 競技場規劃器",
