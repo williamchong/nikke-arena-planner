@@ -16,7 +16,7 @@ const currentLabel = computed(() =>
 
 <template>
   <UDropdownMenu
-    :items="items.map(i => ({ ...i, to: switchLocalePath(i.value) }))"
+    :items="items.map(i => ({ ...i, to: switchLocalePath(i.value as any) }))"
   >
     <UButton
       color="neutral"
