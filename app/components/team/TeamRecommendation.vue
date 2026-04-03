@@ -44,12 +44,11 @@ const templateNotes = computed(() =>
   props.template ? localize(props.template.notes) : null,
 )
 
-const overlappingTemplateNames = computed(() => {
+const overlappingTemplates = computed(() => {
   if (!props.team.matchedArchetypes?.length) return []
   return props.team.matchedArchetypes
     .map(id => getTemplate(id))
     .filter((t): t is TeamTemplate => !!t)
-    .map(t => localize(t.name))
 })
 
 // Determine which character fires each burst stage based on position order
@@ -103,13 +102,13 @@ const showNotes = ref(false)
         {{ templateName }}
       </UBadge>
       <UBadge
-        v-for="name in overlappingTemplateNames"
-        :key="name"
+        v-for="ot in overlappingTemplates"
+        :key="ot.id"
         color="neutral"
         variant="outline"
         size="xs"
       >
-        + {{ name }}
+        + {{ localize(ot.name) }}
       </UBadge>
       <CommonSpeedTierBadge :tier="team.burstSpeed" />
     </div>
@@ -177,16 +176,21 @@ const showNotes = ref(false)
     </div>
 
     <!-- Notes toggle -->
-    <div v-if="templateNotes" class="mt-3">
+    <div v-if="templateNotes || overlappingTemplates.length > 0" class="mt-3">
       <button
         class="text-xs text-muted hover:text-default"
         @click="showNotes = !showNotes"
       >
         {{ showNotes ? '▼' : '▶' }} {{ t('recommend.whyThisTeam') }}
       </button>
-      <p v-if="showNotes" class="mt-1 text-xs text-muted">
-        {{ templateNotes }}
-      </p>
+      <div v-if="showNotes" class="mt-1 space-y-1.5 text-xs text-muted">
+        <p v-if="templateNotes && templateName">
+          <span class="font-medium text-default">{{ templateName }}:</span> {{ templateNotes }}
+        </p>
+        <p v-for="ot in overlappingTemplates" :key="ot.id">
+          <span class="font-medium text-default">{{ localize(ot.name) }}:</span> {{ localize(ot.notes) }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
