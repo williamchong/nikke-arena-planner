@@ -58,7 +58,7 @@ Three locales: `en`, `zh-TW`, `zh-CN`. Files in `i18n/locales/`. Strategy: `no_p
 
 ### Deployment
 
-GitHub Pages via `.github/workflows/deploy.yml`. Base URL set via `NUXT_APP_BASE_URL` env var. Static generation with `nuxt generate`.
+GitHub Pages at nikke.williamchong.cloud via `.github/workflows/deploy.yml`. Custom domain configured via CNAME. Static generation with `nuxt generate`.
 
 ### Roadmap
 

@@ -41,7 +41,7 @@ npx nuxt generate
 
 ## Deployment
 
-Deploys automatically to GitHub Pages on push to master. See `.github/workflows/deploy.yml`.
+Deploys automatically to [nikke.williamchong.cloud](https://nikke.williamchong.cloud) via GitHub Pages on push to master. See `.github/workflows/deploy.yml`.
 
 ## Tech Stack
 

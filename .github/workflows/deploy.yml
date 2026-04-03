@@ -33,7 +33,10 @@ jobs:
       - name: Generate static site
         run: npx nuxt generate
         env:
-          NUXT_APP_BASE_URL: /nikke-arena-planner/
+          NUXT_APP_CNAME: nikke.williamchong.cloud
+
+      - name: Add CNAME
+        run: echo "nikke.williamchong.cloud" > .output/public/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
