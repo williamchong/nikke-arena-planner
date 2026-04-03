@@ -2,20 +2,28 @@
 
 ## MVP (Completed)
 
-- [x] Character database (187 characters with PVP stats, burst gen, release dates)
-- [x] Character roster selector with search, filters, avatars, and localStorage persistence
+- [x] Character database (187 characters with PVP stats, burst gen, release dates, PVP tier ratings)
+- [x] Character roster selector with search, filters, in-game icons, avatars, and localStorage persistence
 - [x] Roster sorting: owned first, then newest characters first (stable sort on toggle)
-- [x] Burst speed calculator (manual 5-char picker with speed tier and timing visualization)
-- [x] Template-based team recommender (15 curated meta archetypes)
+- [x] Burst speed calculator with team scoring, B1→B2→B3 timing, and modal multi-pick
+- [x] Template-based team recommender (26 curated meta archetypes covering all 6 CN meta systems)
 - [x] Simulated annealing optimization for 5v5 and 15v15 team allocation
+- [x] Position-aware sorting (defenders→P1/P5, DPS→P3/P4, B1 in lowest position)
+- [x] Multi-meta overlap detection with bonus scoring and UI badges
+- [x] Alternate character picks shown per flex slot (filtered to preserve meta overlap)
+- [x] Visual burst timeline showing which character fires B1/B2/B3
 - [x] 5v5 Arena recommendations (up to 5 team suggestions)
 - [x] 15v15 SP Arena recommendations (3 non-overlapping teams, multiple allocation options)
-- [x] Team recommendations show burst timing, 3RL gen bar, score, and expandable notes
+- [x] In-game icons for burst type, weapon, element, role, manufacturer
+- [x] Character avatars (169 unique images via Vite asset imports)
+- [x] Element-colored avatar rings
 - [x] Trilingual UI (English, 繁體中文, 简体中文)
 - [x] Dark/light mode toggle
 - [x] Onboarding flow: team builder as default landing, inline roster picker
-- [x] SEO meta tags (og:title, og:description, keywords) and landing page content
-- [x] GitHub Pages deployment (auto-deploy on push to master)
+- [x] About page with usage guide, speed tier glossary, key terms, and data credits
+- [x] SEO: meta tags, JSON-LD (WebApplication, WebSite, FAQPage), sitemap, hreflang
+- [x] i18n SEO: prefix_except_default strategy, lazy loading, browser detection, useLocaleHead
+- [x] GitHub Pages deployment with custom domain (nikke.williamchong.cloud)
 - [x] CI pipeline (lint + typecheck on every push)
 
 ## Post-MVP
@@ -25,20 +33,8 @@
 #### Counter-Matching
 Input an opponent's defense team composition and get attack team recommendations that specifically counter it. Uses the existing `counters`/`counteredBy` fields in team templates, plus character-level counter logic (e.g., Rosanna dispels Jackal links, Noah blocks Scarlet AoE).
 
-#### Position Optimizer
-Auto-assign P1-P5 positions based on weapon targeting rules:
-- Defenders and shielders → P1/P5 (absorb most damage)
-- DPS → P3/P4 (safest positions)
-- RL/SR units avoid P1 on attack (cover behavior exposes P2)
-
-#### More Team Templates
-Expand from 15 to 30+ templates covering:
-- Nayuta teams (promoted to SSS tier)
-- Vesti: Tactical Upgrade compositions
-- Rapi: Red Hood carry teams
-- Helen system (from CN meta)
-- Peony + Nilo tank wall (from CN meta)
-- Champion Arena 5-team configurations
+#### CP Distribution Optimizer
+Input per-character CP values and optimize 15v15 allocation to avoid the 84.6% CP penalty threshold. Characters with higher CP get distributed across teams to balance total team CP.
 
 ### Medium Priority
 
@@ -48,9 +44,6 @@ Expand from 15 to 30+ templates covering:
 - Burst gen chart across speed tiers (attack vs defense)
 - Which templates use this character
 - Suitability ratings and PVP tier
-
-#### CP Distribution Optimizer
-Input per-character CP values and optimize 15v15 allocation to avoid the 84.6% CP penalty threshold. Characters with higher CP get distributed across teams to balance total team CP.
 
 #### URL Team Sharing
 Encode team compositions as compact URL parameters (e.g., `/share?t=scarlet,jackal,centi,anis,blanc`). Share link renders team read-only with burst speed and timing.

@@ -6,11 +6,15 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 
 ## What You Get
 
-- **Instant team recommendations** matched to proven meta archetypes (Scarlet nuke, Alice stall, Crown burst, and more)
-- **15v15 SP Arena allocation** - 3 non-overlapping teams optimized from your roster via simulated annealing
-- **Burst speed calculator** showing exact charge timing for any 5-character combination
-- **Works with any roster size** - whether you have 15 characters or 150
-- **Trilingual** - English, 繁體中文, 简体中文
+- **Instant team recommendations** matched to 26 proven meta archetypes covering all 6 CN meta systems
+- **15v15 SP Arena allocation** — 3 non-overlapping teams optimized via simulated annealing
+- **Multi-meta detection** — teams fitting multiple archetypes get bonus scoring and show all matched metas
+- **Burst speed calculator** with team scoring, timing visualization, and B1→B2→B3 burst order
+- **Position-aware** — auto-assigns P1-P5 based on role and burst type
+- **Character avatars and in-game icons** for burst, weapon, element, role, and manufacturer
+- **Alternate picks** — shows which other owned characters could fill each flex slot
+- **Works with any roster size** — whether you have 15 characters or 150
+- **Trilingual** — English, 繁體中文, 简体中文
 
 ## How It Works
 
@@ -18,7 +22,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 2. Get instant team recommendations for 5v5 Arena and 15v15 SP Arena
 3. See burst speed, timing breakdowns, and why each team works
 
-The planner uses template matching against 15 curated meta team archetypes, then refines results with a simulated annealing optimizer that swaps characters between teams to maximize total team quality. All computation runs client-side in your browser - no server, no login, no data collection.
+The planner uses template matching against 26 curated meta archetypes (covering all 6 CN meta systems), then refines results with a simulated annealing optimizer. Teams are position-sorted (defenders→P1/P5, DPS→P3/P4) and scored based on speed tier, character PVP ratings, suitability, and meta overlap. All computation runs client-side — no server, no login, no data collection.
 
 ## Development
 
@@ -47,8 +51,9 @@ Deploys automatically to [nikke.williamchong.cloud](https://nikke.williamchong.c
 
 - Nuxt 4 + Vue 3.5 + TypeScript
 - Nuxt UI v4 + Tailwind CSS v4
-- Pinia (state management with localStorage persistence)
-- @nuxtjs/i18n (trilingual support)
+- Pinia + VueUse (state management with localStorage persistence)
+- @nuxtjs/i18n (trilingual, prefix_except_default, lazy loading)
+- @nuxtjs/sitemap (auto i18n sitemap generation)
 - Fully client-side (SSR disabled, no backend)
 
 ## Disclaimer
