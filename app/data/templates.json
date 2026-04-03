@@ -56,7 +56,7 @@
       "alice-stall",
       "noah-stall"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
       "en": "Fastest nuke team. Scarlet wipes with AoE burst. Jackal provides speed. Needs clip RL batteries.",
       "zh-TW": "最快核爆隊。紅蓮以範圍爆裂清場。豺狼提供速度。需要彈匣發射器充能。",
@@ -116,7 +116,7 @@
     "counteredBy": [
       "alice-stall"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
       "en": "Classic Scarlet comp with defensive support. Noah/Blanc provides survivability. Good balance of speed and durability.",
       "zh-TW": "經典紅蓮陣容搭配防禦輔助。諾雅/布蘭兒提供生存力。速度與耐久平衡。",
@@ -234,7 +234,7 @@
     "counteredBy": [
       "stall-sanis"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
       "en": "Alice's single-target DPS behind Noah's invincibility shield. Biscuit provides defender immunity. Counters Scarlet teams.",
       "zh-TW": "愛麗絲的單體輸出配合諾雅的無敵盾。餅乾提供防禦者免疫。克制紅蓮隊。",
@@ -1512,7 +1512,7 @@
     "counteredBy": [
       "scarlet-jackal-2rl"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
       "en": "Nayuta promoted to SS tier. Strong burst DPS with charge generation utility.",
       "zh-TW": "娜由塔升至SS級。強力爆裂輸出兼具充能生成功能。",
@@ -1638,7 +1638,7 @@
     "counteredBy": [
       "stall-sanis"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
       "en": "Noah's invincibility burst + Biscuit's defender immunity creates an extremely tanky wall. Counters all Scarlet nuke variants. Pair with any B3 DPS.",
       "zh-TW": "諾雅的無敵爆裂 + 餅乾的防禦者免疫形成極為堅固的防線。克制所有紅蓮核爆變體。搭配任何B3輸出。",
