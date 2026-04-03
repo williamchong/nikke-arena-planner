@@ -17,7 +17,17 @@ const element = ref<Element | null>(null)
 const weapon = ref<WeaponType | null>(null)
 const manufacturer = ref<Manufacturer | null>(null)
 
+// Snapshot of owned IDs at mount time + when filters change — prevents re-sorting on every toggle
+const ownedSnapshot = ref(new Set(roster.ownedIds))
+
+watch([search, burst, role, element, weapon, manufacturer], () => {
+  ownedSnapshot.value = new Set(roster.ownedIds)
+})
+
 const filtered = computed(() => {
+  // Track ownedIds to re-render cards (highlight state), but sort uses snapshot
+  void roster.ownedIds
+
   const chars = filterCharacters({
     search: search.value,
     burst: burst.value,
@@ -27,13 +37,12 @@ const filtered = computed(() => {
     manufacturer: manufacturer.value,
   })
 
+  const snap = ownedSnapshot.value
   return [...chars].sort((a: Character, b: Character) => {
-    // Owned characters first
-    const aOwned = roster.isOwned(a.id) ? 0 : 1
-    const bOwned = roster.isOwned(b.id) ? 0 : 1
+    const aOwned = snap.has(a.id) ? 0 : 1
+    const bOwned = snap.has(b.id) ? 0 : 1
     if (aOwned !== bOwned) return aOwned - bOwned
 
-    // Then by release date descending (newest first)
     return (releaseOrder.get(b.id) ?? 0) - (releaseOrder.get(a.id) ?? 0)
   })
 })
