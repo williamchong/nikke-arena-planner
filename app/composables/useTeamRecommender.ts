@@ -83,8 +83,23 @@ function buildComposition(
   chars: Character[],
   mode: ArenaMode,
   score: number,
+  alternates?: Record<number, string[]>,
 ): TeamComposition {
   const positioned = sortByPosition(chars)
+
+  // Remap alternates indices from unsorted to sorted positions
+  let remappedAlternates: Record<number, string[]> | undefined
+  if (alternates) {
+    remappedAlternates = {}
+    for (const [oldIdx, alts] of Object.entries(alternates)) {
+      const charId = chars[Number(oldIdx)]?.id
+      const newIdx = positioned.findIndex(c => c.id === charId)
+      if (newIdx !== -1 && alts.length > 0) {
+        remappedAlternates[newIdx] = alts
+      }
+    }
+  }
+
   return {
     id: template.id,
     characters: positioned.map(c => c.id),
@@ -92,6 +107,7 @@ function buildComposition(
     templateId: template.id,
     burstSpeed: calculate(positioned, mode).effectiveTier,
     score,
+    alternates: remappedAlternates,
   }
 }
 
@@ -115,7 +131,7 @@ function fillTemplate(
   template: TeamTemplate,
   availableIds: Set<string>,
   mode: ArenaMode,
-): { characters: Character[], score: number } | null {
+): { characters: Character[], score: number, alternates: Record<number, string[]> } | null {
   for (const reqId of template.required) {
     if (!availableIds.has(reqId)) return null
   }
@@ -124,6 +140,7 @@ function fillTemplate(
 
   const team: Character[] = []
   const used = new Set<string>()
+  const alternates: Record<number, string[]> = {}
 
   for (const reqId of template.required) {
     const char = getCharacter(reqId)
@@ -134,24 +151,32 @@ function fillTemplate(
 
   for (const flex of template.flex) {
     let filled = false
+    const alts: string[] = []
     for (const optId of flex.options) {
       if (availableIds.has(optId) && !used.has(optId)) {
         const char = getCharacter(optId)
         if (char) {
-          team.push(char)
-          used.add(optId)
-          filled = true
-          break
+          if (!filled) {
+            team.push(char)
+            used.add(optId)
+            filled = true
+          }
+          else {
+            alts.push(optId)
+          }
         }
       }
     }
     if (!filled) return null
+    if (alts.length > 0) {
+      alternates[team.length - 1] = alts
+    }
   }
 
   if (team.length !== 5) return null
 
   const score = scoreTeam(team, template, mode)
-  return { characters: team, score }
+  return { characters: team, score, alternates }
 }
 
 /**
@@ -238,7 +263,7 @@ export function useTeamRecommender() {
     for (const template of sorted) {
       const filled = fillTemplate(template, ownedIds, mode)
       if (filled) {
-        results.push(buildComposition(template, filled.characters, mode, filled.score))
+        results.push(buildComposition(template, filled.characters, mode, filled.score, filled.alternates))
       }
     }
 
@@ -294,7 +319,7 @@ export function useTeamRecommender() {
       const firstFilled = fillTemplate(starter, ownedIds, mode)
       if (!firstFilled) continue
 
-      const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score)
+      const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates)
       teamSet.push(firstTeam)
       for (const id of firstTeam.characters) usedChars.add(id)
       usedTemplateIds.add(starter.id)
@@ -307,7 +332,7 @@ export function useTeamRecommender() {
           if (usedTemplateIds.has(t.id)) continue
           const filled = fillTemplate(t, available, mode)
           if (filled) {
-            team = buildComposition(t, filled.characters, mode, filled.score)
+            team = buildComposition(t, filled.characters, mode, filled.score, filled.alternates)
             usedTemplateIds.add(t.id)
             break
           }

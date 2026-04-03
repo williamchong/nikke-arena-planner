@@ -77,7 +77,8 @@
     "pickRosterDesc": "You need at least {min} characters to get recommendations. Currently selected: {current}.",
     "selectHere": "Select characters",
     "editRoster": "Edit roster",
-    "showingResults": "{count} team(s) found"
+    "showingResults": "{count} team(s) found",
+    "orSwap": "or"
   },
   "meta": {
     "title": "NIKKE PVP Team Builder — Win More Arena Matches",

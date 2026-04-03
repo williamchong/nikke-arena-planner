@@ -77,7 +77,8 @@
     "pickRosterDesc": "至少需要 {min} 個角色才能獲得推薦。目前已選：{current}。",
     "selectHere": "選擇角色",
     "editRoster": "編輯角色",
-    "showingResults": "找到 {count} 個隊伍"
+    "showingResults": "找到 {count} 個隊伍",
+    "orSwap": "或"
   },
   "meta": {
     "title": "NIKKE PVP 隊伍規劃器 — 贏得更多競技場勝利",

@@ -13,10 +13,22 @@ const { t } = useI18n()
 const { getCharacter } = useCharacters()
 const { localize } = useLocalizedField()
 const { calculate } = useBurstCalculator()
+const { getAvatarUrl } = useAvatars()
 
 const characters = computed(() =>
   props.team.characters.map(id => getCharacter(id)).filter((c): c is Character => !!c),
 )
+
+const alternatesMap = computed(() => {
+  if (!props.team.alternates) return {}
+  const map: Record<number, Character[]> = {}
+  for (const [posStr, ids] of Object.entries(props.team.alternates)) {
+    const pos = Number(posStr)
+    const chars = ids.map(id => getCharacter(id)).filter((c): c is Character => !!c)
+    if (chars.length > 0) map[pos] = chars
+  }
+  return map
+})
 
 const burstResult = computed(() => {
   if (characters.value.length !== 5) return null
@@ -86,12 +98,24 @@ const showNotes = ref(false)
 
     <!-- Characters -->
     <div class="flex flex-wrap gap-2">
-      <TeamSlot
-        v-for="(char, i) in characters"
-        :key="char.id"
-        :character="char"
-        :position="i + 1"
-      />
+      <div v-for="(char, i) in characters" :key="char.id" class="flex flex-col items-center gap-1">
+        <TeamSlot
+          :character="char"
+          :position="i + 1"
+        />
+        <div v-if="alternatesMap[i]" class="flex items-center gap-0.5">
+          <span class="text-[9px] text-muted">{{ t('recommend.orSwap') }}</span>
+          <div v-for="alt in alternatesMap[i].slice(0, 3)" :key="alt.id" :title="localize(alt.name)" class="cursor-help">
+            <img
+              v-if="getAvatarUrl(alt.avatarImg)"
+              :src="getAvatarUrl(alt.avatarImg)!"
+              :alt="localize(alt.name)"
+              class="size-5 rounded-full opacity-60 ring-1 ring-default hover:opacity-100"
+            >
+          </div>
+          <span v-if="alternatesMap[i].length > 3" class="text-[9px] text-muted">+{{ alternatesMap[i].length - 3 }}</span>
+        </div>
+      </div>
     </div>
 
     <!-- Burst timeline visualization -->

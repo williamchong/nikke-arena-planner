@@ -77,7 +77,8 @@
     "pickRosterDesc": "至少需要 {min} 个角色才能获得推荐。目前已选：{current}。",
     "selectHere": "选择角色",
     "editRoster": "编辑角色",
-    "showingResults": "找到 {count} 个队伍"
+    "showingResults": "找到 {count} 个队伍",
+    "orSwap": "或"
   },
   "meta": {
     "title": "NIKKE PVP 队伍规划器 — 赢得更多竞技场胜利",

@@ -22,4 +22,5 @@ export interface TeamComposition {
   templateId?: string
   burstSpeed: SpeedTier
   score: number
+  alternates?: Record<number, string[]>
 }
