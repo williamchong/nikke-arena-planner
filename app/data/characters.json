@@ -45,7 +45,8 @@
       "defense": -1
     },
     "releaseOrder": 1377,
-    "avatarImg": "si_c352_00_s"
+    "avatarImg": "si_c352_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "snow-white-heavy-arms",
@@ -93,7 +94,8 @@
       "defense": -1
     },
     "releaseOrder": 1461,
-    "avatarImg": "si_c471_00_s"
+    "avatarImg": "si_c471_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "trina",
@@ -189,7 +191,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c012_00_s"
+    "avatarImg": "si_c012_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "jackal",
@@ -237,7 +240,8 @@
       "defense": -1
     },
     "releaseOrder": 376,
-    "avatarImg": "si_c111_00_s"
+    "avatarImg": "si_c111_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "centi",
@@ -285,7 +289,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c080_00_s"
+    "avatarImg": "si_c080_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "rumani",
@@ -333,7 +338,8 @@
       "defense": -1
     },
     "releaseOrder": 1020,
-    "avatarImg": "si_c240_00_s"
+    "avatarImg": "si_c240_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "emilia",
@@ -381,7 +387,8 @@
       "defense": -1
     },
     "releaseOrder": 810,
-    "avatarImg": "si_c821_00_s"
+    "avatarImg": "si_c821_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "noah",
@@ -429,7 +436,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c232_00_s"
+    "avatarImg": "si_c232_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "pascal",
@@ -477,7 +485,8 @@
       "defense": -1
     },
     "releaseOrder": 608,
-    "avatarImg": "si_c812_00_s"
+    "avatarImg": "si_c812_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "maiden-ice-rose",
@@ -525,7 +534,8 @@
       "defense": -1
     },
     "releaseOrder": 1069,
-    "avatarImg": "si_c183_00_s"
+    "avatarImg": "si_c183_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "drake-treasure",
@@ -573,7 +583,8 @@
       "defense": -2
     },
     "releaseOrder": 1335,
-    "avatarImg": "si_c101_00_s"
+    "avatarImg": "si_c101_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "drake",
@@ -621,7 +632,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c101_00_s"
+    "avatarImg": "si_c101_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "viper",
@@ -669,7 +681,8 @@
       "defense": -2
     },
     "releaseOrder": 383,
-    "avatarImg": "si_c112_00_s"
+    "avatarImg": "si_c112_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "viper-treasure",
@@ -717,7 +730,8 @@
       "defense": -2
     },
     "releaseOrder": 383,
-    "avatarImg": "si_c112_00_s"
+    "avatarImg": "si_c112_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "maiden",
@@ -765,7 +779,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c181_00_s"
+    "avatarImg": "si_c181_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "neon",
@@ -813,7 +828,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c011_00_s"
+    "avatarImg": "si_c011_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "noir",
@@ -861,7 +877,8 @@
       "defense": -2
     },
     "releaseOrder": 509,
-    "avatarImg": "si_c271_00_s"
+    "avatarImg": "si_c271_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "pepper",
@@ -909,7 +926,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c131_00_s"
+    "avatarImg": "si_c131_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "sugar",
@@ -957,7 +975,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c140_00_s"
+    "avatarImg": "si_c140_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "soda-twinkling-bunny",
@@ -1005,7 +1024,8 @@
       "defense": -2
     },
     "releaseOrder": 880,
-    "avatarImg": "si_c314_00_s"
+    "avatarImg": "si_c314_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "laplace-treasure",
@@ -1053,7 +1073,8 @@
       "defense": -1
     },
     "releaseOrder": 1251,
-    "avatarImg": "si_c100_00_s"
+    "avatarImg": "si_c100_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "liberalio",
@@ -1101,7 +1122,8 @@
       "defense": -1
     },
     "releaseOrder": 1405,
-    "avatarImg": "si_c262_00_s"
+    "avatarImg": "si_c262_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "mica-snow-buddy",
@@ -1245,7 +1267,8 @@
       "defense": -1
     },
     "releaseOrder": 453,
-    "avatarImg": "si_c261_00_s"
+    "avatarImg": "si_c261_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "arcana",
@@ -1389,7 +1412,8 @@
       "defense": -1
     },
     "releaseOrder": 327,
-    "avatarImg": "si_c100_00_s"
+    "avatarImg": "si_c100_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "rapunzel",
@@ -1437,7 +1461,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c221_00_s"
+    "avatarImg": "si_c221_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "diesel-winter-sweets",
@@ -1533,7 +1558,8 @@
       "defense": -1
     },
     "releaseOrder": 1041,
-    "avatarImg": "si_c514_00_s"
+    "avatarImg": "si_c514_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "scarlet",
@@ -1581,7 +1607,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c222_00_s"
+    "avatarImg": "si_c222_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "anchor",
@@ -1677,7 +1704,8 @@
       "defense": -1
     },
     "releaseOrder": 1132,
-    "avatarImg": "si_c355_00_s"
+    "avatarImg": "si_c355_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "anne-miracle-fairy",
@@ -1725,7 +1753,8 @@
       "defense": -1
     },
     "releaseOrder": 348,
-    "avatarImg": "si_c121_00_s"
+    "avatarImg": "si_c121_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "vesti",
@@ -1869,7 +1898,8 @@
       "defense": -1
     },
     "releaseOrder": 831,
-    "avatarImg": "si_c550_00_s"
+    "avatarImg": "si_c550_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "biscuit",
@@ -1917,7 +1947,8 @@
       "defense": -1
     },
     "releaseOrder": 438,
-    "avatarImg": "si_c381_00_s"
+    "avatarImg": "si_c381_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "tia",
@@ -1965,7 +1996,8 @@
       "defense": -1
     },
     "releaseOrder": 649,
-    "avatarImg": "si_c451_00_s"
+    "avatarImg": "si_c451_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "quiry",
@@ -2157,7 +2189,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c430_00_s"
+    "avatarImg": "si_c430_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "power",
@@ -2205,7 +2238,8 @@
       "defense": -1
     },
     "releaseOrder": 417,
-    "avatarImg": "si_c801_00_s"
+    "avatarImg": "si_c801_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "sora",
@@ -2301,7 +2335,8 @@
       "defense": -1
     },
     "releaseOrder": 978,
-    "avatarImg": "si_c840_00_s"
+    "avatarImg": "si_c840_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "mana",
@@ -2397,7 +2432,8 @@
       "defense": -2
     },
     "releaseOrder": 579,
-    "avatarImg": "si_c015_00_s"
+    "avatarImg": "si_c015_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "jill",
@@ -2493,7 +2529,8 @@
       "defense": -1
     },
     "releaseOrder": 730,
-    "avatarImg": "si_c225_00_s"
+    "avatarImg": "si_c225_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "harran",
@@ -2541,7 +2578,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c230_00_s"
+    "avatarImg": "si_c230_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "raven",
@@ -3021,7 +3059,8 @@
       "defense": -2
     },
     "releaseOrder": 642,
-    "avatarImg": "si_c450_00_s"
+    "avatarImg": "si_c450_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "neve",
@@ -3117,7 +3156,8 @@
       "defense": -2
     },
     "releaseOrder": 1293,
-    "avatarImg": "si_c234_00_s"
+    "avatarImg": "si_c234_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "isabel",
@@ -3261,7 +3301,8 @@
       "defense": -2
     },
     "releaseOrder": 1440,
-    "avatarImg": "si_c073_00_s"
+    "avatarImg": "si_c073_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "k",
@@ -3501,7 +3542,8 @@
       "defense": -1
     },
     "releaseOrder": 964,
-    "avatarImg": "si_c830_00_s"
+    "avatarImg": "si_c830_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "snow-white",
@@ -3741,7 +3783,8 @@
       "defense": -1
     },
     "releaseOrder": 754,
-    "avatarImg": "si_c281_00_s"
+    "avatarImg": "si_c281_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "phantom",
@@ -3837,7 +3880,8 @@
       "defense": -1
     },
     "releaseOrder": 1328,
-    "avatarImg": "si_c094_00_s"
+    "avatarImg": "si_c094_00_s",
+    "pvpTier": "SSS"
   },
   {
     "id": "himeno",
@@ -3933,7 +3977,8 @@
       "defense": -1
     },
     "releaseOrder": 992,
-    "avatarImg": "si_c272_00_s"
+    "avatarImg": "si_c272_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "eunhwa",
@@ -4029,7 +4074,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c190_00_s"
+    "avatarImg": "si_c190_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "quency-escape-queen",
@@ -4317,7 +4363,8 @@
       "defense": -1
     },
     "releaseOrder": 936,
-    "avatarImg": "si_c391_00_s"
+    "avatarImg": "si_c391_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "d-killer-wife",
@@ -4365,7 +4412,8 @@
       "defense": -1
     },
     "releaseOrder": 796,
-    "avatarImg": "si_c043_00_s"
+    "avatarImg": "si_c043_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "exia",
@@ -4461,7 +4509,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c210_00_s"
+    "avatarImg": "si_c210_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "bready",
@@ -4653,7 +4702,8 @@
       "defense": -1
     },
     "releaseOrder": 396,
-    "avatarImg": "si_c311_00_s"
+    "avatarImg": "si_c311_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "ram",
@@ -4701,7 +4751,8 @@
       "defense": -1
     },
     "releaseOrder": 810,
-    "avatarImg": "si_c822_00_s"
+    "avatarImg": "si_c822_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "maxwell",
@@ -4749,7 +4800,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c102_00_s"
+    "avatarImg": "si_c102_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "milk",
@@ -4989,7 +5041,8 @@
       "defense": -1
     },
     "releaseOrder": 670,
-    "avatarImg": "si_c470_00_s"
+    "avatarImg": "si_c470_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "rapunzel-pure-grace",
@@ -5037,7 +5090,8 @@
       "defense": -1
     },
     "releaseOrder": 1034,
-    "avatarImg": "si_c226_00_s"
+    "avatarImg": "si_c226_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "mari",
@@ -5133,7 +5187,8 @@
       "defense": -1
     },
     "releaseOrder": 1321,
-    "avatarImg": "si_c095_00_s"
+    "avatarImg": "si_c095_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "ade-agent-bunny",
@@ -5181,7 +5236,8 @@
       "defense": -1
     },
     "releaseOrder": 1342,
-    "avatarImg": "si_c315_00_s"
+    "avatarImg": "si_c315_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "milk-blooming-bunny",
@@ -5229,7 +5285,8 @@
       "defense": -1
     },
     "releaseOrder": 1349,
-    "avatarImg": "si_c143_00_s"
+    "avatarImg": "si_c143_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "yulha",
@@ -5613,7 +5670,8 @@
       "defense": -1
     },
     "releaseOrder": 608,
-    "avatarImg": "si_c810_00_s"
+    "avatarImg": "si_c810_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "blanc",
@@ -5661,7 +5719,8 @@
       "defense": -1
     },
     "releaseOrder": 502,
-    "avatarImg": "si_c270_00_s"
+    "avatarImg": "si_c270_00_s",
+    "pvpTier": "SSS"
   },
   {
     "id": "brid",
@@ -5757,7 +5816,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c242_00_s"
+    "avatarImg": "si_c242_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "guillotine-winter-slayer",
@@ -5805,7 +5865,8 @@
       "defense": -1
     },
     "releaseOrder": 1076,
-    "avatarImg": "si_c182_00_s"
+    "avatarImg": "si_c182_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "rapi",
@@ -6093,7 +6154,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c170_00_s"
+    "avatarImg": "si_c170_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "sin",
@@ -6477,7 +6539,8 @@
       "defense": -1
     },
     "releaseOrder": 1356,
-    "avatarImg": "si_c032_00_s"
+    "avatarImg": "si_c032_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "d",
@@ -6573,7 +6636,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c241_00_s"
+    "avatarImg": "si_c241_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "alice-wonderland-bunny",
@@ -6765,7 +6829,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c082_00_s"
+    "avatarImg": "si_c082_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "mast",
@@ -6813,7 +6878,8 @@
       "defense": -1
     },
     "releaseOrder": 565,
-    "avatarImg": "si_c350_00_s"
+    "avatarImg": "si_c350_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "makima",
@@ -6861,7 +6927,8 @@
       "defense": -1
     },
     "releaseOrder": 417,
-    "avatarImg": "si_c800_00_s"
+    "avatarImg": "si_c800_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "misato",
@@ -7005,7 +7072,8 @@
       "defense": -1
     },
     "releaseOrder": 551,
-    "avatarImg": "si_c380_00_s"
+    "avatarImg": "si_c380_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "novel",
@@ -7197,7 +7265,8 @@
       "defense": -1
     },
     "releaseOrder": 1209,
-    "avatarImg": "si_c513_00_s"
+    "avatarImg": "si_c513_00_s",
+    "pvpTier": "SSS"
   },
   {
     "id": "sakura-suzuhara",
@@ -7293,7 +7362,8 @@
       "defense": -1
     },
     "releaseOrder": 1398,
-    "avatarImg": "si_c223_00_s"
+    "avatarImg": "si_c223_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "modernia",
@@ -7341,7 +7411,8 @@
       "defense": -1
     },
     "releaseOrder": 365,
-    "avatarImg": "si_c260_00_s"
+    "avatarImg": "si_c260_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "alice",
@@ -7389,7 +7460,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c191_00_s"
+    "avatarImg": "si_c191_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "mihara-bonding-chain",
@@ -7437,7 +7509,8 @@
       "defense": -1
     },
     "releaseOrder": 1216,
-    "avatarImg": "si_c162_00_s"
+    "avatarImg": "si_c162_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "cinderella",
@@ -7485,7 +7558,8 @@
       "defense": -1
     },
     "releaseOrder": 1034,
-    "avatarImg": "si_c511_00_s"
+    "avatarImg": "si_c511_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "rosanna",
@@ -7533,7 +7607,8 @@
       "defense": -1
     },
     "releaseOrder": 516,
-    "avatarImg": "si_c280_00_s"
+    "avatarImg": "si_c280_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "ludmilla-winter-owner",
@@ -7581,7 +7656,8 @@
       "defense": -1
     },
     "releaseOrder": 705,
-    "avatarImg": "si_c194_00_s"
+    "avatarImg": "si_c194_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "asuka-wille",
@@ -7917,7 +7993,8 @@
       "defense": -1
     },
     "releaseOrder": 845,
-    "avatarImg": "si_c330_00_s"
+    "avatarImg": "si_c330_00_s",
+    "pvpTier": "SSS"
   },
   {
     "id": "guillotine",
@@ -8061,7 +8138,8 @@
       "defense": -1
     },
     "releaseOrder": 1096,
-    "avatarImg": "si_c016_00_s"
+    "avatarImg": "si_c016_00_s",
+    "pvpTier": "SSS"
   },
   {
     "id": "rem",
@@ -8109,7 +8187,8 @@
       "defense": -1
     },
     "releaseOrder": 817,
-    "avatarImg": "si_c820_00_s"
+    "avatarImg": "si_c820_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "rei-ayanami",
@@ -8205,7 +8284,8 @@
       "defense": -1
     },
     "releaseOrder": 1125,
-    "avatarImg": "si_c354_00_s"
+    "avatarImg": "si_c354_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "neon-blue-ocean",
@@ -8301,7 +8381,8 @@
       "defense": -1
     },
     "releaseOrder": 396,
-    "avatarImg": "si_c312_00_s"
+    "avatarImg": "si_c312_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "elegg",
@@ -8349,7 +8430,8 @@
       "defense": -1
     },
     "releaseOrder": 782,
-    "avatarImg": "si_c500_00_s"
+    "avatarImg": "si_c500_00_s",
+    "pvpTier": "B"
   },
   {
     "id": "elegg-boom-and-shock",
@@ -8445,7 +8527,8 @@
       "defense": -1
     },
     "releaseOrder": 1314,
-    "avatarImg": "si_c093_00_s"
+    "avatarImg": "si_c093_00_s",
+    "pvpTier": "S"
   },
   {
     "id": "delta-ninja-thief",
@@ -8589,7 +8672,8 @@
       "defense": -1
     },
     "releaseOrder": 1475,
-    "avatarImg": "si_c582_00_s"
+    "avatarImg": "si_c582_00_s",
+    "pvpTier": "A"
   },
   {
     "id": "velvet",
@@ -8733,7 +8817,8 @@
       "defense": -1
     },
     "releaseOrder": 1510,
-    "avatarImg": "si_c861_00_s"
+    "avatarImg": "si_c861_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "privaty-treasure",
@@ -8781,7 +8866,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c170_00_s"
+    "avatarImg": "si_c170_00_s",
+    "pvpTier": "SS"
   },
   {
     "id": "zwei-treasure",
@@ -8925,6 +9011,7 @@
       "defense": -1
     },
     "releaseOrder": 754,
-    "avatarImg": "si_c281_00_s"
+    "avatarImg": "si_c281_00_s",
+    "pvpTier": "SSS"
   }
 ]

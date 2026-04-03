@@ -53,6 +53,7 @@
     ],
     "counteredBy": [
       "alice-stall",
+      "alice-stall",
       "noah-stall"
     ],
     "priority": 1,
@@ -194,7 +195,11 @@
         "options": [
           "biscuit",
           "noise",
-          "rapunzel"
+          "rapunzel",
+          "takina",
+          "mast-romantic-maid",
+          "bay-treasure",
+          "milk-blooming-bunny"
         ]
       },
       {
@@ -254,7 +259,11 @@
         "options": [
           "noah",
           "noise",
-          "biscuit"
+          "biscuit",
+          "takina",
+          "mast-romantic-maid",
+          "bay-treasure",
+          "milk-blooming-bunny"
         ]
       },
       {
@@ -390,7 +399,8 @@
           "drake",
           "drake-treasure",
           "noir",
-          "sugar"
+          "sugar",
+          "privaty-treasure"
         ]
       },
       {
@@ -460,7 +470,13 @@
           "scarlet-black-shadow",
           "harran",
           "maiden-ice-rose",
-          "modernia"
+          "modernia",
+          "ada",
+          "snow-white-heavy-arms",
+          "helm-treasure",
+          "ein",
+          "liberalio",
+          "privaty-treasure"
         ]
       },
       {
@@ -527,7 +543,8 @@
         "options": [
           "moran-treasure",
           "noah",
-          "biscuit"
+          "biscuit",
+          "bay-treasure"
         ]
       },
       {
@@ -634,6 +651,7 @@
       "sg-spam"
     ],
     "counteredBy": [
+      "alice-stall",
       "alice-stall",
       "noah-stall"
     ],
@@ -918,7 +936,9 @@
         "options": [
           "scarlet",
           "harran",
-          "maiden-ice-rose"
+          "maiden-ice-rose",
+          "snow-white-heavy-arms",
+          "liberalio"
         ]
       },
       {
@@ -984,7 +1004,9 @@
         "options": [
           "noah",
           "blanc",
-          "noise"
+          "noise",
+          "takina",
+          "mast-romantic-maid"
         ]
       },
       {
@@ -1016,7 +1038,7 @@
       "III",
       "II",
       "II",
-      "II",
+      "I",
       "II"
     ],
     "preferredSpeed": "3RL",
@@ -1120,7 +1142,12 @@
           "harran",
           "maiden-ice-rose",
           "modernia",
-          "scarlet-black-shadow"
+          "scarlet-black-shadow",
+          "ada",
+          "snow-white-heavy-arms",
+          "helm-treasure",
+          "ein",
+          "liberalio"
         ]
       },
       {
@@ -1373,7 +1400,8 @@
         "options": [
           "scarlet",
           "harran",
-          "maiden-ice-rose"
+          "maiden-ice-rose",
+          "ada"
         ]
       },
       {
@@ -1441,7 +1469,8 @@
         "options": [
           "noah",
           "blanc",
-          "noise"
+          "noise",
+          "takina"
         ]
       },
       {
@@ -1548,6 +1577,72 @@
       "en": "Emma: TU's undying mechanics keep P1/P5 alive. Jackal feeds burst. Niche but effective defense.",
       "zh-TW": "艾瑪:戰術升級的不死機制保持P1/P5存活。豺狼提供充能。小眾但有效的防守。",
       "zh-CN": "艾玛:战术升级的不死机制保持P1/P5存活。豺狼提供充能。小众但有效的防守。"
+    }
+  },
+  {
+    "id": "noah-stall",
+    "name": {
+      "en": "Noah + Biscuit Stall",
+      "zh-TW": "諾雅 + 餅乾持久戰",
+      "zh-CN": "诺雅 + 饼干持久战"
+    },
+    "archetype": "noah-stall",
+    "mode": "defense",
+    "required": [
+      "noah",
+      "biscuit"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "alice",
+          "scarlet",
+          "modernia",
+          "harran",
+          "snow-white-heavy-arms"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "rapunzel",
+          "noise",
+          "neon",
+          "mast-romantic-maid"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "anis",
+          "jackal",
+          "bay-treasure"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "II",
+      "III",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-jackal-2rl",
+      "scarlet-jackal-3rl",
+      "scarlet-blanc-nuke"
+    ],
+    "counteredBy": [
+      "stall-sanis"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "Noah's invincibility burst + Biscuit's defender immunity creates an extremely tanky wall. Counters all Scarlet nuke variants. Pair with any B3 DPS.",
+      "zh-TW": "諾雅的無敵爆裂 + 餅乾的防禦者免疫形成極為堅固的防線。克制所有紅蓮核爆變體。搭配任何B3輸出。",
+      "zh-CN": "诺雅的无敌爆裂 + 饼干的防御者免疫形成极为坚固的防线。克制所有红莲核爆变体。搭配任何B3输出。"
     }
   }
 ]

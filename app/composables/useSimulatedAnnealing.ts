@@ -35,7 +35,8 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode): number {
   let score = 0
   score += SPEED_TIER_SCORES[result.effectiveTier] || 0
   score += chars.reduce((sum, c) => sum + c.suitability[mode], 0) * 20
-  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 10
+  // Tier is a tiebreaker, not a driver — template priority and speed matter more
+  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
   return score
 }
 
