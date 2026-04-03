@@ -8,7 +8,8 @@ const { calculate } = useBurstCalculator()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
 
 const mode = ref<ArenaMode>('attack')
-const selectedIds = ref<string[]>([])
+// Fixed 5 slots — null means empty, positions are stable
+const slots = ref<(string | null)[]>([null, null, null, null, null])
 const showPicker = ref(false)
 
 const pickerSearch = ref('')
@@ -16,16 +17,21 @@ const pickerBurst = ref<BurstType | null>(null)
 const pickerWeapon = ref<WeaponType | null>(null)
 const pickerElement = ref<Element | null>(null)
 
-const selectedCharacters = computed(() =>
-  selectedIds.value.map(id => getCharacter(id)).filter((c): c is Character => !!c),
+const slotCharacters = computed(() =>
+  slots.value.map(id => id ? getCharacter(id) ?? null : null),
+)
+
+const filledCharacters = computed(() =>
+  slotCharacters.value.filter((c): c is Character => !!c),
 )
 
 const result = computed(() => {
-  if (selectedCharacters.value.length !== 5) return null
-  return calculate(selectedCharacters.value, mode.value)
+  if (filledCharacters.value.length !== 5) return null
+  return calculate(filledCharacters.value, mode.value)
 })
 
-const isSelected = computed(() => new Set(selectedIds.value))
+const isSelected = computed(() => new Set(slots.value.filter((id): id is string => !!id)))
+const filledCount = computed(() => isSelected.value.size)
 
 const pickerCharacters = computed(() => {
   const chars = filterCharacters({
@@ -51,15 +57,20 @@ const pickerCharacters = computed(() => {
 })
 
 function toggleInPicker(id: string) {
-  if (isSelected.value.has(id)) {
-    selectedIds.value = selectedIds.value.filter(i => i !== id)
+  const next = [...slots.value]
+  const existingIdx = next.indexOf(id)
+  if (existingIdx !== -1) {
+    next[existingIdx] = null
   }
-  else if (selectedIds.value.length < 5) {
-    selectedIds.value = [...selectedIds.value, id]
-    if (selectedIds.value.length === 5) {
+  else {
+    const emptyIdx = next.indexOf(null)
+    if (emptyIdx === -1) return
+    next[emptyIdx] = id
+    if (!next.includes(null)) {
       showPicker.value = false
     }
   }
+  slots.value = next
 }
 
 function openPicker() {
@@ -71,11 +82,13 @@ function openPicker() {
 }
 
 function removeCharacter(index: number) {
-  selectedIds.value = selectedIds.value.filter((_, i) => i !== index)
+  const next = [...slots.value]
+  next[index] = null
+  slots.value = next
 }
 
 function clearAll() {
-  selectedIds.value = []
+  slots.value = [null, null, null, null, null]
 }
 
 const modeOptions = [
@@ -121,16 +134,16 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
           <TeamSlot
             v-for="i in 5"
             :key="i"
-            :character="selectedCharacters[i - 1] ?? null"
+            :character="slotCharacters[i - 1] ?? null"
             :position="i"
-            :removable="!!selectedCharacters[i - 1]"
+            :removable="!!slotCharacters[i - 1]"
             @click="openPicker"
             @remove="removeCharacter(i - 1)"
           />
         </div>
 
         <UButton
-          v-if="selectedIds.length > 0"
+          v-if="filledCount > 0"
           icon="i-lucide-x"
           :label="t('roster.clearAll')"
           size="xs"
@@ -211,10 +224,10 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
         <div class="flex flex-col gap-3 p-4">
           <div class="flex items-center justify-between">
             <h3 class="font-semibold">
-              {{ t('calculator.selectCharacters') }} ({{ selectedIds.length }}/5)
+              {{ t('calculator.selectCharacters') }} ({{ filledCount }}/5)
             </h3>
             <UButton
-              v-if="selectedIds.length > 0"
+              v-if="filledCount > 0"
               icon="i-lucide-x"
               :label="t('roster.clearAll')"
               size="xs"
@@ -225,13 +238,13 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
           </div>
 
           <!-- Selected team preview -->
-          <div v-if="selectedIds.length > 0" class="flex gap-1">
+          <div v-if="filledCount > 0" class="flex gap-1">
             <TeamSlot
               v-for="i in 5"
               :key="i"
-              :character="selectedCharacters[i - 1] ?? null"
+              :character="slotCharacters[i - 1] ?? null"
               :position="i"
-              :removable="!!selectedCharacters[i - 1]"
+              :removable="!!slotCharacters[i - 1]"
               @remove="removeCharacter(i - 1)"
             />
           </div>
@@ -292,7 +305,7 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
               :class="isSelected.has(char.id)
                 ? 'border-primary bg-primary/10 ring-1 ring-primary/30'
                 : 'border-default hover:border-primary/50'"
-              :disabled="!isSelected.has(char.id) && selectedIds.length >= 5"
+              :disabled="!isSelected.has(char.id) && filledCount >= 5"
               @click="toggleInPicker(char.id)"
             >
               <CharacterAvatar :character="char" size="sm" />
