@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t, locale, locales } = useI18n()
 const i18nHead = useLocaleHead()
+const { url: siteUrl } = useSiteConfig()
 const localeCodes = computed(() =>
   (locales.value as Array<{ code: string }>).map(l => l.code),
 )
@@ -17,7 +18,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         'name': t('app.title'),
-        'url': 'https://nikke.williamchong.cloud',
+        'url': siteUrl,
         'description': t('meta.description'),
         'applicationCategory': 'GameApplication',
         'operatingSystem': 'Web',
@@ -35,7 +36,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         'name': t('app.title'),
-        'url': 'https://nikke.williamchong.cloud',
+        'url': siteUrl,
         'inLanguage': locale.value,
       }),
     },
@@ -49,6 +50,9 @@ useSeoMeta({
   ogDescription: () => t('meta.description'),
   ogType: 'website',
   ogSiteName: () => t('app.title'),
+  ogImage: `${siteUrl}/images/og-image.png`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 })
 </script>
 
