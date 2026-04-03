@@ -10,7 +10,6 @@ const { burstIcon, weaponIcon, elementIcon } = useIcons()
 const mode = ref<ArenaMode>('attack')
 const selectedIds = ref<string[]>([])
 const showPicker = ref(false)
-const pickerSlot = ref(0)
 
 const pickerSearch = ref('')
 const pickerBurst = ref<BurstType | null>(null)
@@ -26,26 +25,44 @@ const result = computed(() => {
   return calculate(selectedCharacters.value, mode.value)
 })
 
+const isSelected = computed(() => new Set(selectedIds.value))
+
 const pickerCharacters = computed(() => {
-  const used = new Set(selectedIds.value)
   const chars = filterCharacters({
     search: pickerSearch.value,
     burst: pickerBurst.value,
     weapon: pickerWeapon.value,
     element: pickerElement.value,
-  }).filter(c => !used.has(c.id))
+  })
 
-  // Sort owned first, then newest first
+  const sel = isSelected.value
   return [...chars].sort((a, b) => {
+    // Selected first, then owned, then newest
+    const aS = sel.has(a.id) ? 0 : 1
+    const bS = sel.has(b.id) ? 0 : 1
+    if (aS !== bS) return aS - bS
+
     const aOwned = roster.isOwned(a.id) ? 0 : 1
     const bOwned = roster.isOwned(b.id) ? 0 : 1
     if (aOwned !== bOwned) return aOwned - bOwned
+
     return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
   })
 })
 
-function openPicker(slot: number) {
-  pickerSlot.value = slot
+function toggleInPicker(id: string) {
+  if (isSelected.value.has(id)) {
+    selectedIds.value = selectedIds.value.filter(i => i !== id)
+  }
+  else if (selectedIds.value.length < 5) {
+    selectedIds.value = [...selectedIds.value, id]
+    if (selectedIds.value.length === 5) {
+      showPicker.value = false
+    }
+  }
+}
+
+function openPicker() {
   pickerSearch.value = ''
   pickerBurst.value = null
   pickerWeapon.value = null
@@ -53,20 +70,12 @@ function openPicker(slot: number) {
   showPicker.value = true
 }
 
-function pickCharacter(char: Character) {
-  const next = [...selectedIds.value]
-  if (pickerSlot.value < next.length) {
-    next[pickerSlot.value] = char.id
-  }
-  else {
-    next.push(char.id)
-  }
-  selectedIds.value = next
-  showPicker.value = false
-}
-
 function removeCharacter(index: number) {
   selectedIds.value = selectedIds.value.filter((_, i) => i !== index)
+}
+
+function clearAll() {
+  selectedIds.value = []
 }
 
 const modeOptions = [
@@ -81,7 +90,6 @@ const burstFilters: { label: string, value: BurstType }[] = [
 ]
 
 const weaponFilters: WeaponType[] = ['AR', 'SMG', 'SG', 'SR', 'RL', 'MG']
-
 const elementFilters: Element[] = ['fire', 'water', 'wind', 'electric', 'iron']
 
 const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
@@ -94,12 +102,8 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
     </h1>
 
     <div class="grid gap-6 lg:grid-cols-2">
-      <!-- Left: Character Picker -->
+      <!-- Left: Team + controls -->
       <div class="flex flex-col gap-4">
-        <p class="text-sm text-muted">
-          {{ t('calculator.selectCharacters') }}
-        </p>
-
         <div class="flex items-center gap-2">
           <span class="text-sm font-medium">{{ t('calculator.mode') }}:</span>
           <UButton
@@ -120,10 +124,20 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
             :character="selectedCharacters[i - 1] ?? null"
             :position="i"
             :removable="!!selectedCharacters[i - 1]"
-            @click="openPicker(i - 1)"
+            @click="openPicker"
             @remove="removeCharacter(i - 1)"
           />
         </div>
+
+        <UButton
+          v-if="selectedIds.length > 0"
+          icon="i-lucide-x"
+          :label="t('roster.clearAll')"
+          size="xs"
+          variant="ghost"
+          color="error"
+          @click="clearAll"
+        />
       </div>
 
       <!-- Right: Results -->
@@ -170,28 +184,16 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
             </h3>
             <div class="flex gap-4 text-sm">
               <div class="text-center">
-                <div class="text-lg font-bold">
-                  {{ result.timings.b1.toFixed(2) }}s
-                </div>
-                <div class="text-xs text-muted">
-                  B1
-                </div>
+                <div class="text-lg font-bold">{{ result.timings.b1.toFixed(2) }}s</div>
+                <div class="text-xs text-muted">B1</div>
               </div>
               <div class="text-center">
-                <div class="text-lg font-bold">
-                  {{ result.timings.b2.toFixed(2) }}s
-                </div>
-                <div class="text-xs text-muted">
-                  B2
-                </div>
+                <div class="text-lg font-bold">{{ result.timings.b2.toFixed(2) }}s</div>
+                <div class="text-xs text-muted">B2</div>
               </div>
               <div class="text-center">
-                <div class="text-lg font-bold">
-                  {{ result.timings.b3.toFixed(2) }}s
-                </div>
-                <div class="text-xs text-muted">
-                  Full Burst
-                </div>
+                <div class="text-lg font-bold">{{ result.timings.b3.toFixed(2) }}s</div>
+                <div class="text-xs text-muted">Full Burst</div>
               </div>
             </div>
           </div>
@@ -203,13 +205,36 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
       </div>
     </div>
 
-    <!-- Character Picker Modal -->
+    <!-- Character Picker Modal — pick up to 5 in one go -->
     <UModal v-model:open="showPicker">
       <template #content>
         <div class="flex flex-col gap-3 p-4">
-          <h3 class="font-semibold">
-            Select Character for P{{ pickerSlot + 1 }}
-          </h3>
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">
+              {{ t('calculator.selectCharacters') }} ({{ selectedIds.length }}/5)
+            </h3>
+            <UButton
+              v-if="selectedIds.length > 0"
+              icon="i-lucide-x"
+              :label="t('roster.clearAll')"
+              size="xs"
+              variant="ghost"
+              color="error"
+              @click="clearAll"
+            />
+          </div>
+
+          <!-- Selected team preview -->
+          <div v-if="selectedIds.length > 0" class="flex gap-1">
+            <TeamSlot
+              v-for="i in 5"
+              :key="i"
+              :character="selectedCharacters[i - 1] ?? null"
+              :position="i"
+              :removable="!!selectedCharacters[i - 1]"
+              @remove="removeCharacter(i - 1)"
+            />
+          </div>
 
           <UInput
             v-model="pickerSearch"
@@ -260,13 +285,18 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
           </div>
 
           <div class="grid max-h-96 grid-cols-4 gap-1 overflow-y-auto">
-            <CharacterCard
+            <button
               v-for="char in pickerCharacters"
               :key="char.id"
-              :character="char"
-              :owned="roster.isOwned(char.id)"
-              @toggle="pickCharacter(char)"
-            />
+              class="flex flex-col items-center gap-1 rounded-lg border p-1.5 text-center transition-all"
+              :class="isSelected.has(char.id)
+                ? 'border-primary bg-primary/10 ring-1 ring-primary/30'
+                : 'border-default hover:border-primary/50'"
+              :disabled="!isSelected.has(char.id) && selectedIds.length >= 5"
+              @click="toggleInPicker(char.id)"
+            >
+              <CharacterAvatar :character="char" size="sm" />
+            </button>
           </div>
         </div>
       </template>
