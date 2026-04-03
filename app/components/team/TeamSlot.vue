@@ -11,9 +11,6 @@ const emit = defineEmits<{
   remove: []
   click: []
 }>()
-
-const { localize } = useLocalizedField()
-const { getAvatarUrl } = useAvatars()
 </script>
 
 <template>
@@ -25,17 +22,7 @@ const { getAvatarUrl } = useAvatars()
     <span class="text-[10px] font-bold text-muted">P{{ position }}</span>
 
     <template v-if="character">
-      <img
-        v-if="getAvatarUrl(character.avatarImg)"
-        :src="getAvatarUrl(character.avatarImg)!"
-        :alt="localize(character.name)"
-        class="size-10 rounded-full object-cover"
-        loading="lazy"
-      >
-      <CommonBurstBadge :burst="character.burst" />
-      <span class="line-clamp-2 text-[10px] font-medium leading-tight">
-        {{ localize(character.name) }}
-      </span>
+      <CharacterAvatar :character="character" size="sm" />
       <button
         v-if="removable"
         class="absolute -right-1 -top-1 rounded-full bg-error/80 p-0.5 text-white hover:bg-error"
