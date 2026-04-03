@@ -336,54 +336,6 @@
     "avatarImg": "si_c240_00_s"
   },
   {
-    "id": "emilia-2149",
-    "name": {
-      "en": "Emilia 21.49%",
-      "zh-TW": "愛蜜莉雅 21.49%",
-      "zh-CN": "爱蜜莉雅 21.49%"
-    },
-    "burst": "III",
-    "role": "attacker",
-    "element": "water",
-    "manufacturer": "abnormal",
-    "weapon": "RL",
-    "weaponDmg": 61.3,
-    "ammo": 6,
-    "reloadTime": 2.0,
-    "chargeTime": 1.0,
-    "maxCharge": 250.0,
-    "chargeCoefficient": 0.014,
-    "hitMultiplier": 9.0,
-    "burstGen": {
-      "attack": {
-        "1RL": 0.126,
-        "2RL": 0.252,
-        "3SG": 0.126,
-        "5SG": 0.378,
-        "3RL": 0.504,
-        "7SG": 0.504,
-        "4RL": 0.63,
-        "5RL": 0.756
-      },
-      "defense": {
-        "1RL": 0.126,
-        "2RL": 0.252,
-        "3SG": 0.126,
-        "5SG": 0.378,
-        "3RL": 0.504,
-        "7SG": 0.504,
-        "4RL": 0.63,
-        "5RL": 0.756
-      }
-    },
-    "suitability": {
-      "attack": 2,
-      "defense": -1
-    },
-    "releaseOrder": 810,
-    "avatarImg": "si_c821_00_s"
-  },
-  {
     "id": "emilia",
     "name": {
       "en": "Emilia",
