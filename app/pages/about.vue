@@ -14,6 +14,61 @@ useSeoMeta({
   title: () => t('about.title'),
   description: () => t('about.metaDescription'),
 })
+
+const faqItems = computed(() => [
+  {
+    q: t('about.whatTitle'),
+    a: t('about.whatBody'),
+  },
+  {
+    q: `What does 2RL mean in NIKKE PVP?`,
+    a: t('about.tier_2rl'),
+  },
+  {
+    q: `What does 3RL mean in NIKKE PVP?`,
+    a: t('about.tier_3rl'),
+  },
+  {
+    q: `What is a burst chain in NIKKE?`,
+    a: t('about.termDesc_burstChain'),
+  },
+  {
+    q: `What is burst generation in NIKKE PVP?`,
+    a: t('about.termDesc_burstGen'),
+  },
+  {
+    q: `What positions should I use in NIKKE Arena?`,
+    a: t('about.termDesc_position'),
+  },
+  {
+    q: `What is the CP penalty in NIKKE Arena?`,
+    a: t('about.termDesc_cpPenalty'),
+  },
+  {
+    q: `What is Lambda (Λ) burst in NIKKE?`,
+    a: t('about.termDesc_lambda'),
+  },
+])
+
+useHead({
+  script: computed(() => [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': faqItems.value.map(item => ({
+          '@type': 'Question',
+          'name': item.q,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': item.a,
+          },
+        })),
+      }),
+    },
+  ]),
+})
 </script>
 
 <template>

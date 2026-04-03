@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale, locales } = useI18n()
 const i18nHead = useLocaleHead({ addSeoAttributes: true })
+const localeCodes = computed(() =>
+  (locales.value as Array<{ code: string }>).map(l => l.code),
+)
 
 useHead({
   titleTemplate: (title) => {
@@ -10,6 +13,36 @@ useHead({
   htmlAttrs: computed(() => i18nHead.value.htmlAttrs || {}),
   link: computed(() => i18nHead.value.link || []),
   meta: computed(() => i18nHead.value.meta || []),
+  script: computed(() => [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        'name': t('app.title'),
+        'url': 'https://nikke.williamchong.cloud',
+        'description': t('meta.description'),
+        'applicationCategory': 'GameApplication',
+        'operatingSystem': 'Web',
+        'offers': {
+          '@type': 'Offer',
+          'price': '0',
+          'priceCurrency': 'USD',
+        },
+        'inLanguage': localeCodes.value,
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': t('app.title'),
+        'url': 'https://nikke.williamchong.cloud',
+        'inLanguage': locale.value,
+      }),
+    },
+  ]),
 })
 
 useSeoMeta({
