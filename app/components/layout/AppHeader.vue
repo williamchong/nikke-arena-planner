@@ -32,10 +32,18 @@ function isActive(item: { to: string }) {
           size="sm"
         />
         <UButton
-          :to="'/calculator'"
+          to="/calculator"
           icon="i-lucide-calculator"
           :label="t('nav.calculator')"
           :variant="route.path === '/calculator' ? 'soft' : 'ghost'"
+          color="neutral"
+          size="xs"
+        />
+        <UButton
+          to="/about"
+          icon="i-lucide-info"
+          :label="t('nav.about')"
+          :variant="route.path === '/about' ? 'soft' : 'ghost'"
           color="neutral"
           size="xs"
         />

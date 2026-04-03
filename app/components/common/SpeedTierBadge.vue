@@ -16,7 +16,9 @@ const colorMap: Record<string, string> = {
 </script>
 
 <template>
-  <UBadge :color="(colorMap[props.tier] as any) || 'neutral'" variant="solid" size="xs">
-    {{ props.tier }}
-  </UBadge>
+  <NuxtLink to="/about#speed-tiers" class="no-underline">
+    <UBadge :color="(colorMap[props.tier] as any) || 'neutral'" variant="solid" size="xs" class="cursor-help">
+      {{ props.tier }}
+    </UBadge>
+  </NuxtLink>
 </template>

@@ -6,7 +6,8 @@
   "nav": {
     "roster": "My Roster",
     "calculator": "Calculator",
-    "recommend": "Team Builder"
+    "recommend": "Team Builder",
+    "about": "About"
   },
   "roster": {
     "title": "Select Your Characters",
@@ -97,6 +98,40 @@
     "feature4": "Works with any roster size — whether you have 15 characters or 150",
     "feature5": "Trilingual support (English, 繁體中文, 简体中文) — switch languages instantly",
     "footer": "NIKKE Arena Planner is a free, open-source fan tool. Not affiliated with Shift Up or Level Infinite. Character data and arena mechanics based on community research."
+  },
+  "about": {
+    "title": "About — How to Use NIKKE Arena Planner",
+    "metaDescription": "Learn how to use NIKKE Arena Planner to build winning PVP teams. Understand burst speed tiers (2RL, 3RL, 5SG), burst chains, and team composition mechanics.",
+    "whatTitle": "What Is NIKKE Arena Planner?",
+    "whatBody": "NIKKE Arena Planner is a free tool that helps you build the strongest PVP teams from the characters you actually own. Instead of memorizing tier lists or copying teams you can't build, you tell the planner which NIKKEs you have — and it finds the best teams you can make right now. It covers both 5v5 Rookie Arena and 15v15 SP Arena (3 non-overlapping teams).",
+    "howTitle": "How to Use",
+    "step1": "Go to Team Builder and select the characters you own. Click any character to mark it as owned — owned characters get a highlighted border. You can filter by burst type, weapon, element, or manufacturer.",
+    "step2": "Switch between 5v5 and 15v15 tabs to see team recommendations. Each suggestion shows the team archetype (e.g. Scarlet Nuke, Alice Stall), burst speed tier, and timing breakdown.",
+    "step3": "Use the Burst Calculator (advanced) to experiment with custom teams. Pick any 5 characters and see exactly how fast they charge to full burst, with per-tier burst generation bars.",
+    "step4": "Your roster is saved in your browser — come back anytime and your selections are still there. No account needed.",
+    "speedTitle": "Speed Tiers Explained",
+    "speedIntro": "Speed tier measures how quickly your team reaches Full Burst (B1 → B2 → B3). It's named after how many Rocket Launcher (RL) reload cycles it takes. Faster = better — you burst before the enemy and win.",
+    "tierColumn": "Tier",
+    "meaningColumn": "What It Means",
+    "speedColumn": "Approx. Time",
+    "tier_2rl": "Full burst in 2 RL cycles. Extremely fast — only possible with top-tier battery units like Jackal + clip RLs. Bursts before most enemies can react.",
+    "tier_5sg": "Equivalent to 2.5 RL cycles. Very fast. Usually achieved with clip Shotgun batteries.",
+    "tier_3rl": "Full burst in 3 RL cycles. The meta sweet spot — fast enough to win most matchups without over-restricting your team composition.",
+    "tier_7sg": "Equivalent to 3.5 RL cycles. Decent but starting to lose to faster teams. Acceptable for stall/sustain compositions.",
+    "tier_4rl": "Full burst in 4 RL cycles. Slow — you'll often lose to 2-3RL teams unless you have strong defensive units to survive until you burst.",
+    "tier_5rl": "Full burst in 5 RL cycles. Very slow. Generally only viable with massive CP advantage or undying mechanics.",
+    "speedNote": "Times are approximate. Actual timing depends on charge speed stats, weapon fire rates, and whether units enter/exit cover during battle.",
+    "termsTitle": "Key Terms",
+    "term_burstChain": "Burst Chain (B1 → B2 → B3)",
+    "termDesc_burstChain": "Every team needs at least one Burst I, one Burst II, and one Burst III character. They fire in order: B1 first, then B2, then B3 (Full Burst). Without all three types, your team can't reach Full Burst.",
+    "term_burstGen": "Burst Generation",
+    "termDesc_burstGen": "The amount of burst gauge each character contributes per reload cycle. Higher burst gen = faster team. The total across all 5 characters determines your speed tier.",
+    "term_position": "Position (P1–P5)",
+    "termDesc_position": "Each team has 5 positions. P1 and P5 take the most damage (focused by enemy weapons). P3–P4 are the safest spots — put your DPS there. Tanks and defenders belong in P1/P5.",
+    "term_cpPenalty": "CP Penalty",
+    "termDesc_cpPenalty": "If your team's Combat Power is below 84.6% of the opponent's, you receive a stat penalty (20% to 90%). In SP Arena, distribute your strongest characters across all 3 teams to avoid this.",
+    "term_lambda": "Λ (Lambda) Burst",
+    "termDesc_lambda": "Red Hood's unique burst type. She can act as Burst I, II, or III — filling whichever slot your team is missing. This makes her extremely flexible in team building."
   },
   "common": {
     "all": "All",
