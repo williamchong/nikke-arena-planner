@@ -1,10 +1,13 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const route = useRoute()
+const canonicalPath = computed(() => route.path)
 
 useHead({
   title: () => t('meta.title'),
   link: [
     { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+    { rel: 'canonical', href: canonicalPath },
   ],
   meta: [
     { name: 'description', content: () => t('meta.description') },
