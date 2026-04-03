@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import type { BurstType, Element, Manufacturer, Role, WeaponType } from '~/types/character'
+import type { BurstType, Character, Element, Manufacturer, Role, WeaponType } from '~/types/character'
 
 const { t } = useI18n()
 const roster = useRosterStore()
 const { filterCharacters, getAllCharacters } = useCharacters()
-const totalCount = getAllCharacters().length
+const allChars = getAllCharacters()
+const totalCount = allChars.length
+
+// Build a release-order index: last in the JSON = newest = index 0 (highest priority)
+const releaseOrder = new Map(allChars.map((c, i) => [c.id, allChars.length - 1 - i]))
 
 const search = ref('')
 const burst = ref<BurstType | null>(null)
@@ -13,16 +17,26 @@ const element = ref<Element | null>(null)
 const weapon = ref<WeaponType | null>(null)
 const manufacturer = ref<Manufacturer | null>(null)
 
-const filtered = computed(() =>
-  filterCharacters({
+const filtered = computed(() => {
+  const chars = filterCharacters({
     search: search.value,
     burst: burst.value,
     role: role.value,
     element: element.value,
     weapon: weapon.value,
     manufacturer: manufacturer.value,
-  }),
-)
+  })
+
+  return [...chars].sort((a: Character, b: Character) => {
+    // Owned characters first
+    const aOwned = roster.isOwned(a.id) ? 0 : 1
+    const bOwned = roster.isOwned(b.id) ? 0 : 1
+    if (aOwned !== bOwned) return aOwned - bOwned
+
+    // Then by release date descending (newest first)
+    return (releaseOrder.get(b.id) ?? 0) - (releaseOrder.get(a.id) ?? 0)
+  })
+})
 
 function handleSelectAll() {
   roster.selectAll(filtered.value.map(c => c.id))
