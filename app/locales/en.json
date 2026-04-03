@@ -70,6 +70,8 @@
     "whyThisTeam": "Why this team?"
   },
   "common": {
+    "all": "All",
+    "clear": "Clear",
     "position": "P{n}"
   }
 }

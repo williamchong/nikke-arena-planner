@@ -70,6 +70,8 @@
     "whyThisTeam": "為什麼推薦這個隊伍？"
   },
   "common": {
+    "all": "全部",
+    "clear": "清除",
     "position": "P{n}"
   }
 }
