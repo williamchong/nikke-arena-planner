@@ -207,19 +207,18 @@ function fillTemplate(
 
   // Filter alternates: exclude swaps that would reduce meta overlap
   if (matchedArchetypes.length > 0) {
+    const filteredAlternates: Record<number, string[]> = {}
     for (const [posStr, alts] of Object.entries(alternates)) {
       const pos = Number(posStr)
-      const filtered = alts.filter((altId) => {
+      const kept = alts.filter((altId) => {
         const swapped = team.map((c, i) => i === pos ? getCharacter(altId)! : c)
         return findMetaOverlap(swapped, template.id, mode).length >= matchedArchetypes.length
       })
-      if (filtered.length > 0) {
-        alternates[pos] = filtered
-      }
-      else {
-        delete alternates[pos]
+      if (kept.length > 0) {
+        filteredAlternates[pos] = kept
       }
     }
+    return { characters: team, score, alternates: filteredAlternates, matchedArchetypes }
   }
 
   return { characters: team, score, alternates, matchedArchetypes }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ArenaMode, Character } from '~/types/character'
 import type { TeamComposition, TeamTemplate } from '~/types/template'
+import templatesData from '~/data/templates.json'
 
 const props = defineProps<{
   team: TeamComposition
@@ -14,7 +15,6 @@ const { getCharacter } = useCharacters()
 const { localize } = useLocalizedField()
 const { calculate } = useBurstCalculator()
 const { getAvatarUrl } = useAvatars()
-const { getTemplate } = useTeamRecommender()
 
 const characters = computed(() =>
   props.team.characters.map(id => getCharacter(id)).filter((c): c is Character => !!c),
@@ -44,10 +44,12 @@ const templateNotes = computed(() =>
   props.template ? localize(props.template.notes) : null,
 )
 
+const allTemplates = templatesData as TeamTemplate[]
+
 const overlappingTemplates = computed(() => {
   if (!props.team.matchedArchetypes?.length) return []
   return props.team.matchedArchetypes
-    .map(id => getTemplate(id))
+    .map(id => allTemplates.find(t => t.id === id))
     .filter((t): t is TeamTemplate => !!t)
 })
 
