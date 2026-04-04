@@ -141,7 +141,8 @@ function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: Ar
 function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate | undefined {
   const charIds = new Set(chars.map(c => c.id))
   return templates
-    .filter(t => (t.mode === 'both' || t.mode === mode) && t.required.every(r => charIds.has(r)))
+    // Only match templates with 2+ required chars — single-char templates are too easy to match accidentally
+    .filter(t => t.required.length >= 2 && (t.mode === 'both' || t.mode === mode) && t.required.every(r => charIds.has(r)))
     .sort((a, b) => a.priority - b.priority)[0]
 }
 
