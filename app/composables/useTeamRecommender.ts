@@ -146,7 +146,8 @@ function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode):
   score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
 
   const matchedArchetypes = findMetaOverlap(chars, template.id, mode)
-  if (matchedArchetypes.length > 0) {
+  // Only award meta overlap if team meets preferred speed — overlap shouldn't justify a slower team
+  if (matchedArchetypes.length > 0 && actualSpeed >= preferredSpeed) {
     score += 30 * matchedArchetypes.length
   }
 
