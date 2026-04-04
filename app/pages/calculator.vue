@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
+import type { TeamTemplate } from '~/types/template'
 import { scoreTeamRaw } from '~/composables/useSimulatedAnnealing'
+import { matchTemplate, findMetaOverlap } from '~/composables/useTeamRecommender'
+import templatesData from '~/data/templates.json'
 
 const { t } = useI18n()
+const { localize } = useLocalizedField()
 
 useSeoMeta({
   title: () => t('calculator.title'),
@@ -86,6 +90,19 @@ const result = computed(() => {
 const teamScore = computed(() => {
   if (filledCharacters.value.length !== 5) return null
   return scoreTeamRaw(filledCharacters.value, mode.value)
+})
+
+const allTemplates = templatesData as TeamTemplate[]
+
+const matched = computed(() => {
+  if (filledCharacters.value.length !== 5) return null
+  const template = matchTemplate(filledCharacters.value, mode.value)
+  if (!template) return null
+  const overlap = findMetaOverlap(filledCharacters.value, template.id, mode.value)
+  const overlapping = overlap
+    .map(id => allTemplates.find(t => t.id === id))
+    .filter((t): t is TeamTemplate => !!t)
+  return { template, overlapping }
 })
 
 const isSelected = computed(() => new Set(slots.value.filter((id): id is string => !!id)))
@@ -221,11 +238,30 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
             </span>
           </div>
 
-          <div class="flex items-center gap-3">
+          <!-- Template & speed badges -->
+          <div class="flex flex-wrap items-center gap-2">
             <span class="text-sm font-medium">{{ t('calculator.speed') }}:</span>
             <CommonSpeedTierBadge :tier="result.effectiveTier" />
+            <UBadge v-if="matched" color="primary" variant="subtle" size="xs">
+              {{ localize(matched.template.name) }}
+            </UBadge>
+            <UBadge
+              v-for="ot in matched?.overlapping"
+              :key="ot.id"
+              color="neutral"
+              variant="outline"
+              size="xs"
+            >
+              + {{ localize(ot.name) }}
+            </UBadge>
+            <span v-if="teamScore !== null" class="ml-auto text-xs text-muted">
+              {{ t('recommend.score') }}: <span class="font-bold text-default">{{ teamScore }}</span>
+            </span>
           </div>
 
+          <CommonBurstTimeline :characters="filledCharacters" :mode="mode" />
+
+          <!-- Burst generation bars -->
           <div class="rounded-lg border border-default p-4">
             <h3 class="mb-3 text-sm font-medium">
               {{ t('calculator.burstGen') }}
@@ -245,30 +281,6 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
                 <span class="w-12 text-right text-xs font-mono">
                   {{ result.totalBurstGen[tier].toFixed(3) }}
                 </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-lg border border-default p-4">
-            <h3 class="mb-3 text-sm font-medium">
-              {{ t('calculator.timing') }}
-            </h3>
-            <div class="flex gap-4 text-sm">
-              <div class="text-center">
-                <div class="text-lg font-bold">{{ result.timings.b1.toFixed(2) }}s</div>
-                <div class="text-xs text-muted">B1</div>
-              </div>
-              <div class="text-center">
-                <div class="text-lg font-bold">{{ result.timings.b2.toFixed(2) }}s</div>
-                <div class="text-xs text-muted">B2</div>
-              </div>
-              <div class="text-center">
-                <div class="text-lg font-bold">{{ result.timings.b3.toFixed(2) }}s</div>
-                <div class="text-xs text-muted">Full Burst</div>
-              </div>
-              <div v-if="teamScore !== null" class="ml-auto text-center">
-                <div class="text-lg font-bold">{{ teamScore }}</div>
-                <div class="text-xs text-muted">{{ t('recommend.score') }}</div>
               </div>
             </div>
           </div>

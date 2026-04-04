@@ -118,7 +118,7 @@ function buildComposition(
  * beyond the current one. Same-archetype variants (e.g. scarlet-jackal-2rl
  * and scarlet-jackal-3rl) count as one.
  */
-function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: ArenaMode): string[] {
+export function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: ArenaMode): string[] {
   const charIds = new Set(chars.map(c => c.id))
   const currentArchetype = templates.find(t => t.id === currentTemplateId)?.archetype
   const matched = new Map<string, string>()
@@ -138,7 +138,7 @@ function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: Ar
  * Find the best matching template for a team based on required characters present.
  * Returns the highest-priority template whose required chars are all in the team.
  */
-function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate | undefined {
+export function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate | undefined {
   const charIds = new Set(chars.map(c => c.id))
   return templates
     // Only match templates with 2+ required chars — single-char templates are too easy to match accidentally
