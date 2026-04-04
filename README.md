@@ -38,9 +38,9 @@ Characters are assigned to P1-P5 based on role and burst type:
 - **B1 holders** placed in lower positions (fires first in burst order)
 
 ### 3. Scoring
-Each team is scored as: `priority bonus + min(speed tier, preferred speed) + suitability (±200) + PVP tier (×3 tiebreaker) + meta overlap (×30 per archetype)`. Speed score is capped at the template's preferred speed — teams faster than needed don't get extra credit, so stall teams prioritize character quality over unnecessary burst speed.
+Each team is scored as: `priority bonus + speed tier (30-100) + suitability (±200) + PVP tier (×3 tiebreaker) + meta overlap (×5 per archetype)`. In the SA optimizer, speed score is capped at the template's preferred speed to distribute burst gen resources across teams in 15v15.
 
-**Meta overlap**: if a team's characters satisfy multiple distinct archetypes (e.g. Scarlet+Blanc+Jackal fits both "Scarlet nuke" and "Blanc Indomitable"), each additional archetype adds +30. Same-archetype variants don't stack. Overlap is only awarded if the team meets its preferred speed target — overlap shouldn't justify a slower team.
+**Meta overlap**: if a team's characters satisfy multiple distinct archetypes (e.g. Scarlet+Blanc+Jackal fits both "Scarlet nuke" and "Blanc Indomitable"), each additional archetype adds +5 (tiebreaker only). Same-archetype variants don't stack. Overlap is only awarded if the team meets its preferred speed target.
 
 ### 4. Simulated Annealing
 The best template result is refined via simulated annealing (2000 iterations, Metropolis criterion). SA swaps characters between the team and bench, accepting improvements deterministically and worse states probabilistically (high temperature = exploration, low temperature = exploitation). Invalid burst chains (missing B1/B2/B3) are hard-rejected. Each team's speed score is capped at its template's preferred speed during SA, preventing the optimizer from hoarding fast burst generators in one team.
