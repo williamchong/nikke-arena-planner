@@ -180,27 +180,21 @@ function fillTemplate(
     used.add(reqId)
   }
 
+  // Sort flex options by burst gen at preferred speed so we pick chars that help hit the target
+  const prefSpeedTier = template.preferredSpeed
   for (const flex of template.flex) {
-    let filled = false
-    const alts: string[] = []
-    for (const optId of flex.options) {
-      if (availableIds.has(optId) && !used.has(optId)) {
-        const char = getCharacter(optId)
-        if (char) {
-          if (!filled) {
-            team.push(char)
-            used.add(optId)
-            filled = true
-          }
-          else {
-            alts.push(optId)
-          }
-        }
-      }
-    }
-    if (!filled) return null
-    if (alts.length > 0) {
-      alternates[team.length - 1] = alts
+    const available = flex.options
+      .filter(id => availableIds.has(id) && !used.has(id))
+      .map(id => ({ id, char: getCharacter(id) }))
+      .filter((o): o is { id: string, char: Character } => !!o.char)
+      .sort((a, b) => (b.char.burstGen[mode]?.[prefSpeedTier] ?? 0) - (a.char.burstGen[mode]?.[prefSpeedTier] ?? 0))
+
+    if (available.length === 0) return null
+
+    team.push(available[0]!.char)
+    used.add(available[0]!.id)
+    if (available.length > 1) {
+      alternates[team.length - 1] = available.slice(1).map(o => o.id)
     }
   }
 
