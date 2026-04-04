@@ -7,7 +7,7 @@ import { PVP_TIER_SCORES, SPEED_TIER_SCORES, scoreTeamRaw, useSimulatedAnnealing
 
 const templates: TeamTemplate[] = templatesData as TeamTemplate[]
 
-const { calculate } = useBurstCalculator()
+const { calculate, validateBurstChain } = useBurstCalculator()
 const { getCharacter } = useCharacters()
 
 /**
@@ -202,6 +202,9 @@ function fillTemplate(
   }
 
   if (team.length !== 5) return null
+
+  // Reject teams without a valid burst chain (B1+B2+B3)
+  if (!validateBurstChain(team).valid) return null
 
   const { score, matchedArchetypes } = scoreTeam(team, template, mode)
 

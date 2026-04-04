@@ -35,19 +35,13 @@ function validateBurstChain(characters: Character[]): { valid: boolean, missing:
   const types = new Set(characters.map(c => c.burst))
   const hasLambda = types.has('Λ')
 
+  // Λ (Red Hood) acts as wildcard — can fill any burst type in the chain
+  if (hasLambda) return { valid: true, missing: [] }
+
   const missing: BurstType[] = []
   for (const needed of ['I', 'II', 'III'] as BurstType[]) {
-    if (!types.has(needed) && !hasLambda) {
+    if (!types.has(needed)) {
       missing.push(needed)
-    }
-  }
-
-  // If we have Λ, it can fill up to one missing slot
-  if (hasLambda && missing.length > 1) {
-    // Λ can only fill one slot per Red Hood unit
-    const lambdaCount = characters.filter(c => c.burst === 'Λ').length
-    if (missing.length > lambdaCount) {
-      return { valid: false, missing: missing.slice(lambdaCount) }
     }
   }
 
