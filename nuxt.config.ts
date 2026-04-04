@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
+    ['nuxt-gtag', { id: 'G-38968P5QG5' }],
   ],
   i18n: {
     locales: [
