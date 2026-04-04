@@ -66,7 +66,9 @@
     ],
     "counteredBy": [
       "sanis-stall",
-      "alice-carry"
+      "alice-carry",
+      "tactical-trio",
+      "sg-burst"
     ],
     "priority": 1,
     "notes": {
@@ -143,7 +145,9 @@
     "counteredBy": [
       "sanis-stall",
       "rosanna-counter",
-      "alice-carry"
+      "alice-carry",
+      "tactical-trio",
+      "sg-burst"
     ],
     "priority": 1,
     "notes": {
@@ -280,7 +284,8 @@
     ],
     "counteredBy": [
       "sanis-stall",
-      "rosanna-counter"
+      "rosanna-counter",
+      "tactical-trio"
     ],
     "priority": 1,
     "notes": {
@@ -353,7 +358,8 @@
       "mermaid-disrupt",
       "rosanna-counter",
       "rapi-rh",
-      "alice-revive"
+      "alice-revive",
+      "cat-team"
     ],
     "priority": 1,
     "notes": {
@@ -1185,6 +1191,203 @@
       "en": "Cinderella as alternative DPS carry. Good in stall compositions when Alice is used elsewhere.",
       "zh-TW": "灰姑娘作為替代DPS主C。愛麗絲被其他隊伍使用時的好選擇。",
       "zh-CN": "灰姑娘作为替代DPS主C。爱丽丝被其他队伍使用时的好选择。"
+    }
+  },
+  {
+    "id": "cat-team",
+    "name": {
+      "en": "Cat Team (Nero + Moran)",
+      "zh-TW": "貓隊 (尼羅 + 牡丹)",
+      "zh-CN": "猫队 (尼罗 + 牡丹)"
+    },
+    "archetype": "cat-team",
+    "mode": "both",
+    "required": [
+      "nero",
+      "moran-treasure"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "helm-treasure",
+          "cinderella",
+          "scarlet",
+          "ada",
+          "nayuta"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "rapunzel",
+          "noise",
+          "bay-treasure",
+          "biscuit"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "trina",
+          "jackal",
+          "rosanna"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "II",
+      "III",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-nuke",
+      "blanc-indom"
+    ],
+    "counteredBy": [
+      "sanis-stall",
+      "tactical-trio"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "~100% damage reduction via Moran tank + Nero DR stacking. Noted 'undefeated' in championship play. Outlasts most compositions.",
+      "zh-TW": "透過牡丹坦克 + 尼羅減傷疊加達到約100%減傷。錦標賽中被稱為「不敗」。可耗過大多數陣容。",
+      "zh-CN": "通过牡丹坦克 + 尼罗减伤叠加达到约100%减伤。锦标赛中被称为「不败」。可耗过大多数阵容。"
+    }
+  },
+  {
+    "id": "tactical-trio",
+    "name": {
+      "en": "Tactical Upgrade Trio",
+      "zh-TW": "戰術升級三人組",
+      "zh-CN": "战术升级三人组"
+    },
+    "archetype": "tactical-trio",
+    "mode": "attack",
+    "required": [
+      "vesti-tactical-upgrade",
+      "eunhwa-tactical-upgrade",
+      "emma"
+    ],
+    "flex": [
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "centi",
+          "noise",
+          "rosanna"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "trina",
+          "bay-treasure",
+          "blanc"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "II",
+      "I",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "2RL",
+    "counters": [
+      "moran-system",
+      "cat-team",
+      "noah-stall"
+    ],
+    "counteredBy": [
+      "scarlet-nuke"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Pre-burst kill archetype. Emma+Eunhwa:TU+Vesti:TU combine for instant kill pressure before opponent bursts. Universal counter to stall/tank teams.",
+      "zh-TW": "爆裂前擊殺體系。艾瑪+銀華戰術+貝斯蒂戰術組合在對手爆裂前施加即殺壓力。萬用克制持久/坦克隊。",
+      "zh-CN": "爆裂前击杀体系。艾玛+银华战术+贝斯蒂战术组合在对手爆裂前施加即杀压力。万用克制持久/坦克队。"
+    }
+  },
+  {
+    "id": "sg-burst",
+    "name": {
+      "en": "Shotgun Burst",
+      "zh-TW": "霰彈爆裂",
+      "zh-CN": "霰弹爆裂"
+    },
+    "archetype": "sg-burst",
+    "mode": "attack",
+    "required": [
+      "rosanna"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "blanc",
+          "noah",
+          "crown",
+          "noise"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "drake-treasure",
+          "isabel",
+          "neve",
+          "drake",
+          "noir"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "little-mermaid",
+          "ludmilla",
+          "centi"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "trina",
+          "bay-treasure",
+          "biscuit"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "II",
+      "III",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "moran-system",
+      "cat-team"
+    ],
+    "counteredBy": [
+      "noah-stall",
+      "blanc-indom"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Rosanna sacrifice + SG concentrated fire. Kills key targets before burst via shotgun damage. Counters Moran/Peony tank teams.",
+      "zh-TW": "羅珊娜犧牲 + 霰彈集火。透過霰彈傷害在爆裂前擊殺關鍵目標。克制牡丹坦克隊。",
+      "zh-CN": "罗珊娜牺牲 + 霰弹集火。通过霰弹伤害在爆裂前击杀关键目标。克制牡丹坦克队。"
     }
   }
 ]

@@ -6,6 +6,7 @@ import { useCharacters } from './useCharacters'
 import { PVP_TIER_SCORES, SPEED_TIER_SCORES, scoreTeamRaw, useSimulatedAnnealing } from './useSimulatedAnnealing'
 
 const templates: TeamTemplate[] = templatesData as TeamTemplate[]
+const templateById = new Map(templates.map(t => [t.id, t]))
 
 const { calculate, validateBurstChain } = useBurstCalculator()
 const { getCharacter } = useCharacters()
@@ -158,9 +159,9 @@ function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode):
   score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
 
   const matchedArchetypes = findMetaOverlap(chars, template.id, mode)
-  // Meta overlap is a tiebreaker, not a driver — small bonus so it doesn't override speed or character quality
+  // Meta overlap: bonus for teams that satisfy multiple archetypes — strong enough to differentiate similar-priority teams
   if (matchedArchetypes.length > 0 && actualSpeed >= preferredSpeed) {
-    score += 5 * matchedArchetypes.length
+    score += 15 * matchedArchetypes.length
   }
 
   return { score, matchedArchetypes }
@@ -390,6 +391,31 @@ function toComposition(chars: Character[], mode: ArenaMode, label?: string, pref
   }
 }
 
+/**
+ * Bonus for 15v15 team sets that collectively cover diverse counter matchups.
+ * Rewards breadth of counters and penalizes shared vulnerabilities.
+ */
+function counterDiversityBonus(teamSet: TeamComposition[]): number {
+  const allCounters = new Set<string>()
+  const vulnerabilityCounts = new Map<string, number>()
+  for (const t of teamSet) {
+    const tpl = t.templateId ? templateById.get(t.templateId) : undefined
+    if (tpl) {
+      for (const c of tpl.counters) allCounters.add(c)
+      for (const c of tpl.counteredBy) {
+        vulnerabilityCounts.set(c, (vulnerabilityCounts.get(c) || 0) + 1)
+      }
+    }
+  }
+  // +10 per unique archetype countered across all 3 teams
+  let bonus = allCounters.size * 10
+  // Penalty when 2+ teams share the same vulnerability (opponent can sweep with one comp)
+  for (const count of vulnerabilityCounts.values()) {
+    if (count >= 2) bonus -= 15
+  }
+  return bonus
+}
+
 export function useTeamRecommender() {
   const { characters: allCharacters } = useCharacters()
   const { optimize5v5: saOptimize5v5, optimize15v15: saOptimize15v15 } = useSimulatedAnnealing()
@@ -501,9 +527,15 @@ export function useTeamRecommender() {
       // Pass preferred speeds so SA doesn't hoard fast chars in one team
       const seedTeams = teamSet.map(t => resolveCharacters(t.characters))
       const preferredSpeeds = matchedTemplates.map(t => t?.preferredSpeed ?? '3RL')
-      // Empty bench — SA only swaps between teams to redistribute burst gen
-      // Bench swaps pull in non-template chars and destroy team synergy
-      const saTeams = saOptimize15v15(seedTeams, [], mode, { iterations: 5000, startTemp: 150, coolingRate: 0.9985 }, preferredSpeeds)
+      // Limited bench: allow top-tier (S+) owned chars not yet used, so SA can fix weak slots
+      // without pulling in low-quality chars that destroy team synergy
+      const usedInTeams = new Set(seedTeams.flat().map(c => c.id))
+      const saBench = allCharacters
+        .filter(c => ownedIds.has(c.id) && !usedInTeams.has(c.id))
+        .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.S || 6))
+        .sort((a, b) => (PVP_TIER_SCORES[b.pvpTier || 'C'] || 0) - (PVP_TIER_SCORES[a.pvpTier || 'C'] || 0))
+        .slice(0, 5)
+      const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 5000, startTemp: 150, coolingRate: 0.9985 }, preferredSpeeds)
       const saSet = saTeams.map((team, idx) =>
         toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
       )
@@ -515,17 +547,16 @@ export function useTeamRecommender() {
       bestSets.push(saTotal > greedyTotal ? saSet : teamSet)
     }
 
-    return bestSets
-      .sort((a, b) => {
-        const scoreA = a.reduce((sum, t) => sum + t.score, 0)
-        const scoreB = b.reduce((sum, t) => sum + t.score, 0)
-        return scoreB - scoreA
-      })
-      .slice(0, 3)
+    const scored = bestSets.map(s => ({
+      set: s,
+      total: s.reduce((sum, t) => sum + t.score, 0) + counterDiversityBonus(s),
+    }))
+    scored.sort((a, b) => b.total - a.total)
+    return scored.map(s => s.set).slice(0, 3)
   }
 
   function getTemplate(id: string): TeamTemplate | undefined {
-    return templates.find(t => t.id === id)
+    return templateById.get(id)
   }
 
   return { recommend5v5, recommend15v15, getTemplate, templates }
