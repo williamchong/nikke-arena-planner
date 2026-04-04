@@ -162,6 +162,7 @@ function fillTemplate(
   template: TeamTemplate,
   availableIds: Set<string>,
   mode: ArenaMode,
+  optimize = true,
 ): { characters: Character[], score: number, alternates: Record<number, string[]>, matchedArchetypes: string[] } | null {
   for (const reqId of template.required) {
     if (!availableIds.has(reqId)) return null
@@ -169,41 +170,103 @@ function fillTemplate(
 
   if (template.mode !== 'both' && template.mode !== mode) return null
 
-  const team: Character[] = []
-  const used = new Set<string>()
-  const alternates: Record<number, string[]> = {}
+  const requiredChars: Character[] = []
+  const usedByRequired = new Set<string>()
 
   for (const reqId of template.required) {
     const char = getCharacter(reqId)
     if (!char) return null
-    team.push(char)
-    used.add(reqId)
+    requiredChars.push(char)
+    usedByRequired.add(reqId)
   }
 
-  // Sort flex options by burst gen at preferred speed so we pick chars that help hit the target
-  const prefSpeedTier = template.preferredSpeed
+  // Collect available options per flex slot
+  const flexOptions: { id: string, char: Character }[][] = []
   for (const flex of template.flex) {
     const available = flex.options
-      .filter(id => availableIds.has(id) && !used.has(id))
+      .filter(id => availableIds.has(id) && !usedByRequired.has(id))
       .map(id => ({ id, char: getCharacter(id) }))
       .filter((o): o is { id: string, char: Character } => !!o.char)
-      .sort((a, b) => (b.char.burstGen[mode]?.[prefSpeedTier] ?? 0) - (a.char.burstGen[mode]?.[prefSpeedTier] ?? 0))
-
     if (available.length === 0) return null
-
-    team.push(available[0]!.char)
-    used.add(available[0]!.id)
-    if (available.length > 1) {
-      alternates[team.length - 1] = available.slice(1).map(o => o.id)
-    }
+    flexOptions.push(available)
   }
 
-  if (team.length !== 5) return null
+  let team: Character[]
+  let score: number
+  let matchedArchetypes: string[]
+  const alternates: Record<number, string[]> = {}
 
-  // Reject teams without a valid burst chain (B1+B2+B3)
-  if (!validateBurstChain(team).valid) return null
+  if (optimize) {
+    // Brute-force all flex combos to find the highest-scoring team
+    let bestTeam: Character[] | null = null
+    let bestScore = -Infinity
+    let bestMatchedArchetypes: string[] = []
+    let bestComboIndices: number[] = []
 
-  const { score, matchedArchetypes } = scoreTeam(team, template, mode)
+    function tryCombo(slotIdx: number, picked: Character[], usedIds: Set<string>, indices: number[]): void {
+      if (slotIdx === flexOptions.length) {
+        const candidate = [...requiredChars, ...picked]
+        if (candidate.length !== 5) return
+        if (!validateBurstChain(candidate).valid) return
+        const result = scoreTeam(candidate, template, mode)
+        if (result.score > bestScore) {
+          bestScore = result.score
+          bestTeam = candidate
+          bestMatchedArchetypes = result.matchedArchetypes
+          bestComboIndices = [...indices]
+        }
+        return
+      }
+      for (let i = 0; i < flexOptions[slotIdx]!.length; i++) {
+        const opt = flexOptions[slotIdx]![i]!
+        if (usedIds.has(opt.id)) continue
+        usedIds.add(opt.id)
+        picked.push(opt.char)
+        indices.push(i)
+        tryCombo(slotIdx + 1, picked, usedIds, indices)
+        indices.pop()
+        picked.pop()
+        usedIds.delete(opt.id)
+      }
+    }
+
+    tryCombo(0, [], new Set(usedByRequired), [])
+    if (!bestTeam) return null
+
+    team = bestTeam
+    score = bestScore
+    matchedArchetypes = bestMatchedArchetypes
+
+    // Build alternates from non-picked options
+    for (let i = 0; i < flexOptions.length; i++) {
+      const pickedIdx = bestComboIndices[i]!
+      const alts = flexOptions[i]!.filter((_, j) => j !== pickedIdx).map(o => o.id)
+      if (alts.length > 0) {
+        alternates[requiredChars.length + i] = alts
+      }
+    }
+  }
+  else {
+    // Fast path: pick first available per slot (for 15v15 greedy seeds — SA redistributes later)
+    const picked: Character[] = []
+    const usedIds = new Set(usedByRequired)
+    for (let i = 0; i < flexOptions.length; i++) {
+      const opt = flexOptions[i]!.find(o => !usedIds.has(o.id))
+      if (!opt) return null
+      picked.push(opt.char)
+      usedIds.add(opt.id)
+      const alts = flexOptions[i]!.filter(o => o.id !== opt.id && !usedIds.has(o.id)).map(o => o.id)
+      if (alts.length > 0) {
+        alternates[requiredChars.length + i] = alts
+      }
+    }
+    team = [...requiredChars, ...picked]
+    if (team.length !== 5) return null
+    if (!validateBurstChain(team).valid) return null
+    const result = scoreTeam(team, template, mode)
+    score = result.score
+    matchedArchetypes = result.matchedArchetypes
+  }
 
   // Filter alternates: exclude swaps that would reduce meta overlap
   if (matchedArchetypes.length > 0) {
@@ -362,7 +425,7 @@ export function useTeamRecommender() {
       const usedTemplateIds = new Set<string>()
       let failed = false
 
-      const firstFilled = fillTemplate(starter, ownedIds, mode)
+      const firstFilled = fillTemplate(starter, ownedIds, mode, false)
       if (!firstFilled) continue
 
       const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
@@ -378,7 +441,7 @@ export function useTeamRecommender() {
 
         for (const t of sorted) {
           if (usedTemplateIds.has(t.id)) continue
-          const filled = fillTemplate(t, available, mode)
+          const filled = fillTemplate(t, available, mode, false)
           if (filled) {
             team = buildComposition(t, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes)
             matchedTemplate = t
