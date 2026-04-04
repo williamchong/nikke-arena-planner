@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
 import type { TeamTemplate } from '~/types/template'
-import { scoreTeamRaw } from '~/composables/useSimulatedAnnealing'
+import { SPEED_TIER_SCORES, PVP_TIER_SCORES } from '~/composables/useSimulatedAnnealing'
 import { matchTemplate, findMetaOverlap } from '~/composables/useTeamRecommender'
-import templatesData from '~/data/templates.json'
 
 const { t } = useI18n()
 const { localize } = useLocalizedField()
@@ -88,11 +87,15 @@ const result = computed(() => {
 })
 
 const teamScore = computed(() => {
-  if (filledCharacters.value.length !== 5) return null
-  return scoreTeamRaw(filledCharacters.value, mode.value)
+  if (!result.value?.valid || filledCharacters.value.length !== 5) return null
+  const chars = filledCharacters.value
+  let score = SPEED_TIER_SCORES[result.value.effectiveTier] || 0
+  score += chars.reduce((sum, c) => sum + c.suitability[mode.value], 0) * 20
+  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
+  return score
 })
 
-const allTemplates = templatesData as TeamTemplate[]
+const { getTemplate } = useTeamRecommender()
 
 const matched = computed(() => {
   if (filledCharacters.value.length !== 5) return null
@@ -100,7 +103,7 @@ const matched = computed(() => {
   if (!template) return null
   const overlap = findMetaOverlap(filledCharacters.value, template.id, mode.value)
   const overlapping = overlap
-    .map(id => allTemplates.find(t => t.id === id))
+    .map(id => getTemplate(id))
     .filter((t): t is TeamTemplate => !!t)
   return { template, overlapping }
 })
