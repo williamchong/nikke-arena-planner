@@ -306,10 +306,12 @@
       {
         "slot": 2,
         "options": [
-          "blanc",
           "trina",
+          "blanc",
+          "noah",
           "emilia",
-          "crown"
+          "crown",
+          "anchor-innocent-maid"
         ]
       },
       {
@@ -318,7 +320,8 @@
           "maiden-ice-rose",
           "centi",
           "trina",
-          "bay-treasure"
+          "bay-treasure",
+          "anchor-innocent-maid"
         ]
       },
       {
