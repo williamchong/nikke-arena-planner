@@ -181,12 +181,25 @@ function fillTemplate(
   }
 
   // Collect available options per flex slot
+  // In optimize mode, Λ burst chars (e.g. Red Hood) are appended as last-resort fallbacks
+  // scoreTeam will naturally deprioritize them unless they enable a better combo
+  const lambdaFallbacks = optimize
+    ? [...availableIds]
+        .filter(id => !usedByRequired.has(id))
+        .map(id => ({ id, char: getCharacter(id) }))
+        .filter((o): o is { id: string, char: Character } => !!o.char && o.char.burst === 'Λ')
+    : []
+
   const flexOptions: { id: string, char: Character }[][] = []
   for (const flex of template.flex) {
+    const listed = new Set(flex.options)
     const available = flex.options
       .filter(id => availableIds.has(id) && !usedByRequired.has(id))
       .map(id => ({ id, char: getCharacter(id) }))
       .filter((o): o is { id: string, char: Character } => !!o.char)
+    for (const fb of lambdaFallbacks) {
+      if (!listed.has(fb.id)) available.push(fb)
+    }
     if (available.length === 0) return null
     flexOptions.push(available)
   }
