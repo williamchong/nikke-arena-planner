@@ -72,7 +72,7 @@ function generateNeighbor(
 
   const move = Math.random()
 
-  if (move < 0.5 && newTeams.length > 1) {
+  if (move < 0.35 && newTeams.length > 1) {
     // Swap between two teams
     const teamAIdx = randInt(newTeams.length)
     let teamBIdx = randInt(newTeams.length)
@@ -85,7 +85,7 @@ function generateNeighbor(
     newTeams[teamAIdx]![charAIdx] = newTeams[teamBIdx]![charBIdx]!
     newTeams[teamBIdx]![charBIdx] = temp
   }
-  else if (newBench.length > 0) {
+  else if (move < 0.7 && newBench.length > 0) {
     // Swap with bench
     const teamIdx = randInt(newTeams.length)
     const charIdx = randInt(newTeams[teamIdx]!.length)
@@ -94,6 +94,24 @@ function generateNeighbor(
     const temp = newTeams[teamIdx]![charIdx]!
     newTeams[teamIdx]![charIdx] = newBench[benchIdx]!
     newBench[benchIdx] = temp
+  }
+  else if (newBench.length >= 2) {
+    // Double bench swap: replace 2 chars in one team with 2 from bench
+    // Helps cross energy barriers that require coordinated changes
+    const teamIdx = randInt(newTeams.length)
+    const charIdx1 = randInt(newTeams[teamIdx]!.length)
+    let charIdx2 = randInt(newTeams[teamIdx]!.length)
+    while (charIdx2 === charIdx1) charIdx2 = randInt(newTeams[teamIdx]!.length)
+    const benchIdx1 = randInt(newBench.length)
+    let benchIdx2 = randInt(newBench.length)
+    while (benchIdx2 === benchIdx1) benchIdx2 = randInt(newBench.length)
+
+    const t1 = newTeams[teamIdx]![charIdx1]!
+    const t2 = newTeams[teamIdx]![charIdx2]!
+    newTeams[teamIdx]![charIdx1] = newBench[benchIdx1]!
+    newTeams[teamIdx]![charIdx2] = newBench[benchIdx2]!
+    newBench[benchIdx1] = t1
+    newBench[benchIdx2] = t2
   }
 
   return { teams: newTeams, bench: newBench }

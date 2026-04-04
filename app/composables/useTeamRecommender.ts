@@ -134,6 +134,17 @@ function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: Ar
   return [...matched.values()]
 }
 
+/**
+ * Find the best matching template for a team based on required characters present.
+ * Returns the highest-priority template whose required chars are all in the team.
+ */
+function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate | undefined {
+  const charIds = new Set(chars.map(c => c.id))
+  return templates
+    .filter(t => (t.mode === 'both' || t.mode === mode) && t.required.every(r => charIds.has(r)))
+    .sort((a, b) => a.priority - b.priority)[0]
+}
+
 function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode): { score: number, matchedArchetypes: string[] } {
   const result = calculate(chars, mode)
 
@@ -363,12 +374,18 @@ function resolveCharacters(ids: string[]): Character[] {
 function toComposition(chars: Character[], mode: ArenaMode, label?: string, preferredSpeed?: string): TeamComposition {
   const positioned = sortByPosition(chars)
   const result = calculate(positioned, mode)
+  // Match against templates — if required chars are present, award template priority bonus
+  const matched = matchTemplate(positioned, mode)
+  const score = matched
+    ? scoreTeam(positioned, matched, mode).score
+    : scoreTeamRaw(chars, mode, preferredSpeed)
   return {
     id: label || `sa-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    templateId: matched?.id,
     characters: positioned.map(c => c.id),
     mode,
     burstSpeed: result.effectiveTier,
-    score: scoreTeamRaw(chars, mode, preferredSpeed),
+    score,
   }
 }
 
@@ -420,11 +437,10 @@ export function useTeamRecommender() {
   /**
    * Greedy template allocation → SA refinement.
    * 1. Build initial 3 teams via greedy template matching
-   * 2. Run simulated annealing to swap characters between teams and bench
+   * 2. Run simulated annealing to swap characters between teams (no bench — preserves template synergy)
    */
   function recommend15v15(ownedIds: Set<string>, mode: ArenaMode): TeamComposition[][] {
     const bestSets: TeamComposition[][] = []
-    const owned = allCharacters.filter(c => ownedIds.has(c.id))
 
     const sorted = [...templates]
       .filter(t => t.mode === 'both' || t.mode === mode)
@@ -484,10 +500,9 @@ export function useTeamRecommender() {
       // Pass preferred speeds so SA doesn't hoard fast chars in one team
       const seedTeams = teamSet.map(t => resolveCharacters(t.characters))
       const preferredSpeeds = matchedTemplates.map(t => t?.preferredSpeed ?? '3RL')
-      const allUsed = new Set(teamSet.flatMap(t => t.characters))
-      const bench = owned.filter(c => !allUsed.has(c.id))
-
-      const saTeams = saOptimize15v15(seedTeams, bench, mode, undefined, preferredSpeeds)
+      // Empty bench — SA only swaps between teams to redistribute burst gen
+      // Bench swaps pull in non-template chars and destroy team synergy
+      const saTeams = saOptimize15v15(seedTeams, [], mode, { iterations: 5000, startTemp: 150, coolingRate: 0.9985 }, preferredSpeeds)
       const saSet = saTeams.map((team, idx) =>
         toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
       )
