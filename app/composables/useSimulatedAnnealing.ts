@@ -27,13 +27,16 @@ export const PVP_TIER_SCORES: Record<string, number> = {
 /**
  * Score a team without requiring a template.
  * Based on burst speed, suitability, and PVP tier.
+ * If preferredSpeed is provided, speed score is capped at that tier.
  */
-export function scoreTeamRaw(chars: Character[], mode: ArenaMode): number {
+export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed?: string): number {
   const result = calculate(chars, mode)
   if (!result.valid) return -1000
 
   let score = 0
-  score += SPEED_TIER_SCORES[result.effectiveTier] || 0
+  const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
+  const prefSpeed = preferredSpeed ? (SPEED_TIER_SCORES[preferredSpeed] || actualSpeed) : actualSpeed
+  score += Math.min(actualSpeed, prefSpeed)
   score += chars.reduce((sum, c) => sum + c.suitability[mode], 0) * 20
   // Tier is a tiebreaker, not a driver — template priority and speed matter more
   score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
@@ -108,12 +111,13 @@ export function useSimulatedAnnealing() {
     bench: Character[],
     mode: ArenaMode,
     options: Partial<SAOptions> = {},
+    preferredSpeeds?: string[],
   ): Character[][] {
     const opts = { ...DEFAULT_OPTIONS, ...options }
 
     let current = cloneTeams(initialTeams)
     let currentBench = [...bench]
-    let currentEnergy = -totalScore(current, mode)
+    let currentEnergy = -totalScore(current, mode, preferredSpeeds)
     let best = cloneTeams(current)
     let bestEnergy = currentEnergy
     let temp = opts.startTemp
@@ -128,7 +132,7 @@ export function useSimulatedAnnealing() {
         continue
       }
 
-      const neighborEnergy = -totalScore(neighbor.teams, mode)
+      const neighborEnergy = -totalScore(neighbor.teams, mode, preferredSpeeds)
       const delta = neighborEnergy - currentEnergy
 
       // Accept if better, or probabilistically if worse (Metropolis criterion)
@@ -157,26 +161,29 @@ export function useSimulatedAnnealing() {
     bench: Character[],
     mode: ArenaMode,
     options?: Partial<SAOptions>,
+    preferredSpeed?: string,
   ): Character[] {
-    const result = optimize([initialTeam], bench, mode, options)
+    const result = optimize([initialTeam], bench, mode, options, preferredSpeed ? [preferredSpeed] : undefined)
     return result[0]!
   }
 
   /**
    * Optimize 15v15 allocation by swapping characters between 3 teams and with bench.
+   * preferredSpeeds: one per team, controls speed score capping during optimization.
    */
   function optimize15v15(
     initialTeams: Character[][],
     bench: Character[],
     mode: ArenaMode,
     options?: Partial<SAOptions>,
+    preferredSpeeds?: string[],
   ): Character[][] {
-    return optimize(initialTeams, bench, mode, options)
+    return optimize(initialTeams, bench, mode, options, preferredSpeeds)
   }
 
   return { optimize5v5, optimize15v15 }
 }
 
-function totalScore(teams: Character[][], mode: ArenaMode): number {
-  return teams.reduce((sum, team) => sum + scoreTeamRaw(team, mode), 0)
+function totalScore(teams: Character[][], mode: ArenaMode, preferredSpeeds?: string[]): number {
+  return teams.reduce((sum, team, idx) => sum + scoreTeamRaw(team, mode, preferredSpeeds?.[idx]), 0)
 }

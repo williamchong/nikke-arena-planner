@@ -32,9 +32,9 @@ characters.json (187 chars) + templates.json (17 meta archetypes)
 
 1. **Template matching**: 17 templates sorted by priority (P1=meta-defining, P2=strong, P3=viable). For each, check if required chars are owned, fill flex slots with best available, track alternates.
 2. **Position sorting** (`sortByPosition`): Defenders→P1/P5, DPS→P3/P4, B1 holders in lowest position (fires first). Applied to all outputs.
-3. **Scoring** (`scoreTeam`): `(4-priority)*100 + speedTier(30-100) + suitability*20 + pvpTier*3 + metaOverlap*30`
-4. **Meta overlap** (`findMetaOverlap`): Count distinct archetypes the team also satisfies beyond its primary template. Same-archetype variants (e.g. scarlet-jackal 2RL/3RL) don't stack. +30 per unique overlap.
-5. **Simulated annealing**: Refine best template result by swapping chars between team and bench (2000 iterations, T=100, cooling=0.995). For 15v15, operates across all 3 teams. Hard-rejects invalid burst chains.
+3. **Scoring** (`scoreTeam`): `(4-priority)*100 + min(speedTier, preferredSpeed) + suitability*20 + pvpTier*3 + metaOverlap*30`. Speed score is capped at the template's `preferredSpeed` — teams faster than needed don't get extra credit, preventing speed from dominating flex picks in stall comps.
+4. **Meta overlap** (`findMetaOverlap`): Count distinct archetypes the team also satisfies beyond its primary template. Same-archetype variants don't stack. +30 per unique overlap, but **only awarded if team meets preferred speed** — overlap shouldn't justify a slower team.
+5. **Simulated annealing**: Refine best template result by swapping chars between team and bench (2000 iterations, T=100, cooling=0.995). For 15v15, operates across all 3 teams with per-team `preferredSpeed` caps, preventing SA from hoarding fast burst generators in one team. Hard-rejects invalid burst chains.
 6. **Alternate filtering**: Flex slot alternates that would reduce meta overlap count are excluded.
 
 ### Key Domain Concepts
@@ -43,7 +43,7 @@ characters.json (187 chars) + templates.json (17 meta archetypes)
 - **Speed tiers**: Burst gen normalized so `1.0 = full gauge`. Effective tier = fastest tier reaching 1.0. Order: `2RL > 5SG > 3RL > 7SG > 4RL > 5RL`.
 - **ArenaMode**: Always explicit `'attack'` or `'defense'` — characters have different burst gen and suitability per mode.
 - **Λ (Lambda)**: Red Hood's burst type. Acts as wildcard for any B1/B2/B3 slot.
-- **PVP Tier**: SSS through F ratings from Prydwen tier list. Used as tiebreaker in scoring (×3 weight).
+- **PVP Tier**: SSS through F ratings from community PVP tier data. Used as tiebreaker in scoring (×3 weight).
 
 ### Composable Dependencies
 

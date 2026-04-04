@@ -290,7 +290,7 @@ function resolveCharacters(ids: string[]): Character[] {
   return ids.map(id => getCharacter(id)).filter((c): c is Character => !!c)
 }
 
-function toComposition(chars: Character[], mode: ArenaMode, label?: string): TeamComposition {
+function toComposition(chars: Character[], mode: ArenaMode, label?: string, preferredSpeed?: string): TeamComposition {
   const positioned = sortByPosition(chars)
   const result = calculate(positioned, mode)
   return {
@@ -298,7 +298,7 @@ function toComposition(chars: Character[], mode: ArenaMode, label?: string): Tea
     characters: positioned.map(c => c.id),
     mode,
     burstSpeed: result.effectiveTier,
-    score: scoreTeamRaw(chars, mode),
+    score: scoreTeamRaw(chars, mode, preferredSpeed),
   }
 }
 
@@ -325,11 +325,12 @@ export function useTeamRecommender() {
       const seedTeam = resolveCharacters(bestTemplate.characters)
       const bench = owned.filter(c => !bestTemplate.characters.includes(c.id))
 
-      const saResult = saOptimize5v5(seedTeam, bench, mode)
-      const saScore = scoreTeamRaw(saResult, mode)
+      const bestTpl = getTemplate(bestTemplate.templateId ?? '')
+      const saResult = saOptimize5v5(seedTeam, bench, mode, undefined, bestTpl?.preferredSpeed)
+      const saScore = scoreTeamRaw(saResult, mode, bestTpl?.preferredSpeed)
 
       if (saScore > bestTemplate.score) {
-        results.unshift(toComposition(saResult, mode, 'sa-optimized'))
+        results.unshift(toComposition(saResult, mode, 'sa-optimized', bestTpl?.preferredSpeed))
       }
     }
     else if (owned.length >= 5 && results.length === 0) {
@@ -359,10 +360,10 @@ export function useTeamRecommender() {
       .filter(t => t.mode === 'both' || t.mode === mode)
       .sort((a, b) => a.priority - b.priority)
 
-    const starterTemplates = sorted.slice(0, Math.min(5, sorted.length))
-
-    for (const starter of starterTemplates) {
+    // Try more starters than the old limit of 5 — some may fail due to missing required chars
+    for (const starter of sorted.slice(0, 10)) {
       const teamSet: TeamComposition[] = []
+      const matchedTemplates: (TeamTemplate | null)[] = []
       const usedChars = new Set<string>()
       const usedTemplateIds = new Set<string>()
       let failed = false
@@ -372,18 +373,21 @@ export function useTeamRecommender() {
 
       const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
       teamSet.push(firstTeam)
+      matchedTemplates.push(starter)
       for (const id of firstTeam.characters) usedChars.add(id)
       usedTemplateIds.add(starter.id)
 
       for (let i = 0; i < 2; i++) {
         const available = new Set([...ownedIds].filter(id => !usedChars.has(id)))
         let team: TeamComposition | null = null
+        let matchedTemplate: TeamTemplate | null = null
 
         for (const t of sorted) {
           if (usedTemplateIds.has(t.id)) continue
           const filled = fillTemplate(t, available, mode)
           if (filled) {
             team = buildComposition(t, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes)
+            matchedTemplate = t
             usedTemplateIds.add(t.id)
             break
           }
@@ -400,19 +404,22 @@ export function useTeamRecommender() {
         }
 
         teamSet.push(team)
+        matchedTemplates.push(matchedTemplate)
         for (const id of team.characters) usedChars.add(id)
       }
 
       if (failed || teamSet.length !== 3) continue
 
       // SA refinement: optimize character allocation across the 3 teams
+      // Pass preferred speeds so SA doesn't hoard fast chars in one team
       const seedTeams = teamSet.map(t => resolveCharacters(t.characters))
+      const preferredSpeeds = matchedTemplates.map(t => t?.preferredSpeed ?? '3RL')
       const allUsed = new Set(teamSet.flatMap(t => t.characters))
       const bench = owned.filter(c => !allUsed.has(c.id))
 
-      const saTeams = saOptimize15v15(seedTeams, bench, mode)
+      const saTeams = saOptimize15v15(seedTeams, bench, mode, undefined, preferredSpeeds)
       const saSet = saTeams.map((team, idx) =>
-        toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`),
+        toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
       )
 
       // Keep whichever is better: original greedy or SA-refined

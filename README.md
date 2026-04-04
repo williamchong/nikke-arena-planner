@@ -6,7 +6,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 
 ## What You Get
 
-- **Instant team recommendations** matched to 26 proven meta archetypes covering all 6 CN meta systems
+- **Instant team recommendations** matched to 17 proven meta archetypes covering the current PVP meta
 - **15v15 SP Arena allocation** — 3 non-overlapping teams optimized via simulated annealing
 - **Multi-meta detection** — teams fitting multiple archetypes get bonus scoring and show all matched metas
 - **Burst speed calculator** with team scoring, timing visualization, and B1→B2→B3 burst order
@@ -29,7 +29,7 @@ All computation runs client-side — no server, no login, no data collection.
 The planner uses a multi-stage pipeline to find the best teams from your roster:
 
 ### 1. Template Matching
-26 curated meta team templates (Scarlet nuke, Crown burst, Siren control, Alice stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
+17 curated meta team templates (Moran system, Blanc indomitable, Scarlet nuke, Noah stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
 
 ### 2. Position Sorting
 Characters are assigned to P1-P5 based on role and burst type:
@@ -38,14 +38,14 @@ Characters are assigned to P1-P5 based on role and burst type:
 - **B1 holders** placed in lower positions (fires first in burst order)
 
 ### 3. Scoring
-Each team is scored as: `priority bonus + speed tier (30-100) + suitability (±200) + PVP tier (×3 tiebreaker) + meta overlap (×30 per archetype)`.
+Each team is scored as: `priority bonus + min(speed tier, preferred speed) + suitability (±200) + PVP tier (×3 tiebreaker) + meta overlap (×30 per archetype)`. Speed score is capped at the template's preferred speed — teams faster than needed don't get extra credit, so stall teams prioritize character quality over unnecessary burst speed.
 
-**Meta overlap**: if a team's characters satisfy multiple distinct archetypes (e.g. Scarlet+Blanc+Jackal fits both "Scarlet nuke" and "Blanc Indomitable"), each additional archetype adds +30. Same-archetype variants (e.g. Scarlet-Jackal 2RL vs 3RL) don't stack. Matched archetypes are shown as badges in the UI, and their descriptions appear in "Why this team?".
+**Meta overlap**: if a team's characters satisfy multiple distinct archetypes (e.g. Scarlet+Blanc+Jackal fits both "Scarlet nuke" and "Blanc Indomitable"), each additional archetype adds +30. Same-archetype variants don't stack. Overlap is only awarded if the team meets its preferred speed target — overlap shouldn't justify a slower team.
 
 ### 4. Simulated Annealing
-The best template result is refined via simulated annealing (2000 iterations, Metropolis criterion). SA swaps characters between the team and bench, accepting improvements deterministically and worse states probabilistically (high temperature = exploration, low temperature = exploitation). Invalid burst chains (missing B1/B2/B3) are hard-rejected.
+The best template result is refined via simulated annealing (2000 iterations, Metropolis criterion). SA swaps characters between the team and bench, accepting improvements deterministically and worse states probabilistically (high temperature = exploration, low temperature = exploitation). Invalid burst chains (missing B1/B2/B3) are hard-rejected. Each team's speed score is capped at its template's preferred speed during SA, preventing the optimizer from hoarding fast burst generators in one team.
 
-For **15v15**, SA operates across all 3 teams simultaneously — it can swap characters between any two teams or between a team and the bench, optimizing total score across the entire allocation.
+For **15v15**, SA operates across all 3 teams simultaneously — it can swap characters between any two teams or between a team and the bench, optimizing total score across the entire allocation. Per-team preferred speed caps ensure burst gen resources are distributed so all teams can reach their speed targets.
 
 ### 5. Alternates & Meta Filtering
 For each flex slot, other owned characters that could fill it are tracked as alternates. Alternates that would break a multi-meta overlap are filtered out, ensuring swaps don't weaken the composition.
