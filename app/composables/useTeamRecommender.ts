@@ -139,7 +139,9 @@ function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode):
 
   let score = 0
   score += (4 - template.priority) * 100
-  score += SPEED_TIER_SCORES[result.effectiveTier] || 0
+  const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
+  const preferredSpeed = SPEED_TIER_SCORES[template.preferredSpeed] || actualSpeed
+  score += Math.min(actualSpeed, preferredSpeed)
   score += chars.reduce((sum, c) => sum + c.suitability[mode], 0) * 20
   score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
 
