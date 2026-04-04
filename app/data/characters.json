@@ -46,7 +46,7 @@
     },
     "releaseOrder": 1377,
     "avatarImg": "si_c352_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SSS"
   },
   {
     "id": "snow-white-heavy-arms",
@@ -340,7 +340,7 @@
     },
     "releaseOrder": 1020,
     "avatarImg": "si_c240_00_s",
-    "pvpTier": "C"
+    "pvpTier": "S"
   },
   {
     "id": "emilia",
@@ -438,7 +438,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c232_00_s",
-    "pvpTier": "S"
+    "pvpTier": "SS"
   },
   {
     "id": "pascal",
@@ -1124,7 +1124,7 @@
     },
     "releaseOrder": 1405,
     "avatarImg": "si_c262_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "S"
   },
   {
     "id": "mica-snow-buddy",
@@ -1317,7 +1317,8 @@
       "defense": -1
     },
     "releaseOrder": 1230,
-    "avatarImg": "si_c581_00_s"
+    "avatarImg": "si_c581_00_s",
+    "pvpTier": "C"
   },
   {
     "id": "a2",
@@ -1609,7 +1610,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c222_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "S"
   },
   {
     "id": "anchor",
@@ -1900,7 +1901,7 @@
     },
     "releaseOrder": 831,
     "avatarImg": "si_c550_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "S"
   },
   {
     "id": "biscuit",
@@ -2337,7 +2338,7 @@
     },
     "releaseOrder": 978,
     "avatarImg": "si_c840_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "S"
   },
   {
     "id": "mana",
@@ -2434,7 +2435,7 @@
     },
     "releaseOrder": 579,
     "avatarImg": "si_c015_00_s",
-    "pvpTier": "S"
+    "pvpTier": "A"
   },
   {
     "id": "jill",
@@ -2531,7 +2532,7 @@
     },
     "releaseOrder": 730,
     "avatarImg": "si_c225_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "A"
   },
   {
     "id": "harran",
@@ -4365,7 +4366,7 @@
     },
     "releaseOrder": 936,
     "avatarImg": "si_c391_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "A"
   },
   {
     "id": "d-killer-wife",
@@ -7267,7 +7268,7 @@
     },
     "releaseOrder": 1209,
     "avatarImg": "si_c513_00_s",
-    "pvpTier": "SSS"
+    "pvpTier": "SS"
   },
   {
     "id": "sakura-suzuhara",
@@ -7364,7 +7365,7 @@
     },
     "releaseOrder": 1398,
     "avatarImg": "si_c223_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "S"
   },
   {
     "id": "modernia",
@@ -8383,7 +8384,7 @@
     },
     "releaseOrder": 396,
     "avatarImg": "si_c312_00_s",
-    "pvpTier": "C"
+    "pvpTier": "A"
   },
   {
     "id": "elegg",
