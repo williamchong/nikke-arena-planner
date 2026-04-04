@@ -78,7 +78,8 @@
     "selectHere": "选择角色",
     "editRoster": "编辑角色",
     "showingResults": "找到 {count} 个队伍",
-    "orSwap": "或"
+    "orSwap": "或",
+    "tryInCalculator": "在计算器中测试"
   },
   "meta": {
     "title": "NIKKE PVP 队伍规划器 — 赢得更多竞技场胜利",

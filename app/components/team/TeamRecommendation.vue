@@ -11,10 +11,17 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { getCharacter } = useCharacters()
 const { localize } = useLocalizedField()
 const { calculate } = useBurstCalculator()
 const { getAvatarUrl } = useAvatars()
+
+const calculatorLink = computed(() => {
+  const query: Record<string, string> = { team: props.team.characters.join(',') }
+  if (props.mode && props.mode !== 'attack') query.mode = props.mode
+  return { path: localePath('/calculator'), query }
+})
 
 const characters = computed(() =>
   props.team.characters.map(id => getCharacter(id)).filter((c): c is Character => !!c),
@@ -177,22 +184,31 @@ const showNotes = ref(false)
       </div>
     </div>
 
-    <!-- Notes toggle -->
-    <div v-if="templateNotes || overlappingTemplates.length > 0" class="mt-3">
+    <!-- Actions & notes -->
+    <div class="mt-3 flex flex-wrap items-center gap-3">
+      <UButton
+        :to="calculatorLink"
+        icon="i-lucide-flask-conical"
+        :label="t('recommend.tryInCalculator')"
+        size="xs"
+        variant="outline"
+        color="primary"
+      />
       <button
+        v-if="templateNotes || overlappingTemplates.length > 0"
         class="text-xs text-muted hover:text-default"
         @click="showNotes = !showNotes"
       >
         {{ showNotes ? '▼' : '▶' }} {{ t('recommend.whyThisTeam') }}
       </button>
-      <div v-if="showNotes" class="mt-1 space-y-1.5 text-xs text-muted">
-        <p v-if="templateNotes && templateName">
-          <span class="font-medium text-default">{{ templateName }}:</span> {{ templateNotes }}
-        </p>
-        <p v-for="ot in overlappingTemplates" :key="ot.id">
-          <span class="font-medium text-default">{{ localize(ot.name) }}:</span> {{ localize(ot.notes) }}
-        </p>
-      </div>
+    </div>
+    <div v-if="showNotes && (templateNotes || overlappingTemplates.length > 0)" class="mt-1 space-y-1.5 text-xs text-muted">
+      <p v-if="templateNotes && templateName">
+        <span class="font-medium text-default">{{ templateName }}:</span> {{ templateNotes }}
+      </p>
+      <p v-for="ot in overlappingTemplates" :key="ot.id">
+        <span class="font-medium text-default">{{ localize(ot.name) }}:</span> {{ localize(ot.notes) }}
+      </p>
     </div>
   </div>
 </template>

@@ -8,6 +8,8 @@ useSeoMeta({
   title: () => t('calculator.title'),
 })
 
+const router = useRouter()
+const route = useRoute()
 const roster = useRosterStore()
 const { getCharacter, filterCharacters } = useCharacters()
 const { calculate } = useBurstCalculator()
@@ -17,26 +19,49 @@ const mode = ref<ArenaMode>('attack')
 // Fixed 5 slots — null means empty, positions are stable
 const slots = ref<(string | null)[]>([null, null, null, null, null])
 
-// Load from localStorage only on client after mount
+// Load from query string (priority) or localStorage on mount
 if (import.meta.client) {
+  let initialized = false
+
   onMounted(() => {
-    try {
-      const saved = localStorage.getItem('nikke-arena-calc')
-      if (saved) {
-        const data = JSON.parse(saved)
-        if (data.mode) mode.value = data.mode
-        if (data.slots) slots.value = data.slots
-      }
+    const qTeam = route.query.team as string | undefined
+    const qMode = route.query.mode as string | undefined
+
+    if (qTeam) {
+      // Query string takes priority — this is a shared link
+      const ids = qTeam.split(',').filter(Boolean)
+      const validIds = ids.filter(id => getCharacter(id)).slice(0, 5)
+      slots.value = Array.from({ length: 5 }, (_, i) => validIds[i] ?? null)
+      if (qMode === 'attack' || qMode === 'defense') mode.value = qMode
     }
-    catch { /* ignore corrupt localStorage */ }
+    else {
+      try {
+        const saved = localStorage.getItem('nikke-arena-calc')
+        if (saved) {
+          const data = JSON.parse(saved)
+          if (data.mode) mode.value = data.mode
+          if (data.slots) slots.value = data.slots
+        }
+      }
+      catch { /* ignore corrupt localStorage */ }
+    }
+
+    initialized = true
   })
 
   watch([mode, slots], () => {
+    if (!initialized) return
     localStorage.setItem('nikke-arena-calc', JSON.stringify({
       mode: mode.value,
       slots: slots.value,
     }))
-  }, { deep: true })
+    // Sync query string so the URL is always shareable
+    const filledIds = slots.value.filter((id): id is string => !!id)
+    const query: Record<string, string> = {}
+    if (filledIds.length > 0) query.team = filledIds.join(',')
+    if (mode.value !== 'attack') query.mode = mode.value
+    router.replace({ query })
+  })
 }
 const showPicker = ref(false)
 

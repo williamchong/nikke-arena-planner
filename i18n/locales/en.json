@@ -78,7 +78,8 @@
     "selectHere": "Select characters",
     "editRoster": "Edit roster",
     "showingResults": "{count} team(s) found",
-    "orSwap": "or"
+    "orSwap": "or",
+    "tryInCalculator": "Try in Calculator"
   },
   "meta": {
     "title": "NIKKE PVP Team Builder — Win More Arena Matches",
