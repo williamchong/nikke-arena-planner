@@ -57,7 +57,7 @@ const showRosterPicker = ref(false)
         {{ t('recommend.title') }}
       </h1>
       <UBadge color="primary" variant="subtle">
-        {{ t('roster.owned', { count: roster.ownedCount, total: 187 }) }}
+        {{ t('roster.owned', { count: roster.ownedCount, total: 186 }) }}
       </UBadge>
     </div>
 

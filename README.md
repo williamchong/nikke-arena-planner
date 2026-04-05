@@ -6,7 +6,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 
 ## What You Get
 
-- **Instant team recommendations** matched to 17 proven meta archetypes covering the current PVP meta
+- **Instant team recommendations** matched to 20 proven meta archetypes covering the current PVP meta
 - **15v15 SP Arena allocation** — 3 non-overlapping teams optimized via simulated annealing
 - **Multi-meta detection** — teams fitting multiple archetypes get bonus scoring and show all matched metas
 - **Burst speed calculator** with team scoring, timing visualization, and B1→B2→B3 burst order
@@ -18,7 +18,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 
 ## How It Works
 
-1. Select the characters you own from the full roster of 187 NIKKEs
+1. Select the characters you own from the full roster of 186 NIKKEs
 2. Get instant team recommendations for 5v5 Arena and 15v15 SP Arena
 3. See burst speed, timing breakdowns, and why each team works
 
@@ -29,7 +29,7 @@ All computation runs client-side — no server, no login, no data collection.
 The planner uses a multi-stage pipeline to find the best teams from your roster:
 
 ### 1. Template Matching
-17 curated meta team templates (Moran system, Blanc indomitable, Scarlet nuke, Noah stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
+20 curated meta team templates (Moran system, Blanc indomitable, Scarlet nuke, Noah stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
 
 ### 2. Position Sorting
 Characters are assigned to P1-P5 based on role and burst type:
@@ -43,9 +43,9 @@ Each team is scored as: `priority bonus + speed tier (30-100) + suitability (±2
 **Meta overlap**: if a team's characters satisfy multiple distinct archetypes (e.g. Scarlet+Blanc+Jackal fits both "Scarlet nuke" and "Blanc Indomitable"), each additional archetype adds +5 (tiebreaker only). Same-archetype variants don't stack. Overlap is only awarded if the team meets its preferred speed target.
 
 ### 4. Simulated Annealing
-The best template result is refined via simulated annealing (2000 iterations, Metropolis criterion). SA swaps characters between the team and bench, accepting improvements deterministically and worse states probabilistically (high temperature = exploration, low temperature = exploitation). Invalid burst chains (missing B1/B2/B3) are hard-rejected. Each team's speed score is capped at its template's preferred speed during SA, preventing the optimizer from hoarding fast burst generators in one team.
+The best template result is refined via simulated annealing (Metropolis criterion). SA swaps characters between the team and bench, accepting improvements deterministically and worse states probabilistically (high temperature = exploration, low temperature = exploitation). Invalid burst chains (missing B1/B2/B3) are hard-rejected. Template required characters are locked during SA — only flex slots are swapped, preserving team archetype identity.
 
-For **15v15**, SA operates across all 3 teams simultaneously — it can swap characters between any two teams or between a team and the bench, optimizing total score across the entire allocation. Per-team preferred speed caps ensure burst gen resources are distributed so all teams can reach their speed targets.
+For **15v15**, SA operates across all 3 teams simultaneously (8000 iterations) with four move types: random inter-team swaps, directed speed-rebalancing (swaps burst generators from fast teams to slow teams or pulls them from the bench), random bench swaps, and double bench swaps. Per-team preferred speed caps and a below-preferred penalty ensure burst gen resources are distributed so all teams can reach their speed targets.
 
 ### 5. Alternates & Meta Filtering
 For each flex slot, other owned characters that could fill it are tracked as alternates. Alternates that would break a multi-meta overlap are filtered out, ensuring swaps don't weaken the composition.
@@ -56,6 +56,15 @@ For each flex slot, other owned characters that could fill it are tracked as alt
 npm install
 npm run dev
 ```
+
+## Testing
+
+```bash
+npm test            # Run all tests
+npm run test:watch  # Watch mode
+```
+
+25 tests covering scoring, SA optimization, template locking, speed rebalancing, and integration tests with real character data and competitive meta compositions.
 
 ## Build
 
@@ -80,6 +89,7 @@ Deploys automatically to [nikke.williamchong.cloud](https://nikke.williamchong.c
 - Pinia + VueUse (state management with localStorage persistence)
 - @nuxtjs/i18n (trilingual, prefix_except_default, lazy loading)
 - @nuxtjs/sitemap (auto i18n sitemap generation)
+- Vitest + @nuxt/test-utils (25 tests)
 - Fully client-side (SSR disabled, no backend)
 
 ## Disclaimer

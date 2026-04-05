@@ -2,11 +2,11 @@
 
 ## MVP (Completed)
 
-- [x] Character database (187 characters with PVP stats, burst gen, release dates, PVP tier ratings)
+- [x] Character database (186 characters with PVP stats, burst gen, release dates, PVP tier ratings)
 - [x] Character roster selector with search, filters, in-game icons, avatars, and localStorage persistence
 - [x] Roster sorting: owned first, then newest characters first (stable sort on toggle)
 - [x] Burst speed calculator with team scoring, B1→B2→B3 timing, and modal multi-pick
-- [x] Template-based team recommender (26 curated meta archetypes covering all 6 CN meta systems)
+- [x] Template-based team recommender (20 curated meta archetypes covering current PVP meta)
 - [x] Simulated annealing optimization for 5v5 and 15v15 team allocation
 - [x] Position-aware sorting (defenders→P1/P5, DPS→P3/P4, B1 in lowest position)
 - [x] Multi-meta overlap detection with bonus scoring and UI badges
@@ -24,7 +24,8 @@
 - [x] SEO: meta tags, JSON-LD (WebApplication, WebSite, FAQPage), sitemap, hreflang
 - [x] i18n SEO: prefix_except_default strategy, lazy loading, browser detection, useLocaleHead
 - [x] GitHub Pages deployment with custom domain (nikke.williamchong.cloud)
-- [x] CI pipeline (lint + typecheck on every push)
+- [x] CI pipeline (lint + typecheck + test on every push)
+- [x] Test suite (25 tests: SA scoring, optimization, template locking, speed rebalancing, meta team validation)
 
 ## Post-MVP
 
