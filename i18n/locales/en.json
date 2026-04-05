@@ -79,7 +79,8 @@
     "editRoster": "Edit roster",
     "showingResults": "{count} team(s) found",
     "orSwap": "or",
-    "tryInCalculator": "Try in Calculator"
+    "tryInCalculator": "Try in Calculator",
+    "optimizing": "Optimizing teams…"
   },
   "meta": {
     "title": "NIKKE PVP Team Builder — Win More Arena Matches",

@@ -79,7 +79,8 @@
     "editRoster": "編輯角色",
     "showingResults": "找到 {count} 個隊伍",
     "orSwap": "或",
-    "tryInCalculator": "在計算器中測試"
+    "tryInCalculator": "在計算器中測試",
+    "optimizing": "正在優化隊伍…"
   },
   "meta": {
     "title": "NIKKE PVP 隊伍規劃器 — 贏得更多競技場勝利",

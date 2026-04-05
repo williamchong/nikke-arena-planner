@@ -18,10 +18,22 @@ const recommendations5v5 = computed(() => {
   return recommend5v5(roster.ownedIds, 'defense')
 })
 
-const recommendations15v15 = computed(() => {
-  if (!is15v15.value) return []
-  return recommend15v15(roster.ownedIds, 'defense')
-})
+const recommendations15v15 = ref<ReturnType<typeof recommend15v15>>([])
+const isOptimizing = ref(false)
+
+watch(
+  [is15v15, () => roster.ownedIds],
+  ([active]) => {
+    if (!active) { recommendations15v15.value = []; return }
+    isOptimizing.value = true
+    // Defer so the browser can paint the loading state before the heavy SA computation
+    setTimeout(() => {
+      recommendations15v15.value = recommend15v15(roster.ownedIds, 'defense')
+      isOptimizing.value = false
+    }, 50)
+  },
+  { immediate: true },
+)
 
 const tabs = computed(() => [
   { label: t('recommend.mode5v5'), to: localePath('/recommend/5v5') },
@@ -187,7 +199,13 @@ const showRosterPicker = ref(false)
         <CharacterGrid />
       </div>
 
-      <div v-if="recommendations15v15.length === 0" class="py-8 text-center text-muted">
+      <div v-if="isOptimizing" class="flex flex-col items-center gap-3 py-12">
+        <UIcon name="i-lucide-loader-2" class="size-6 animate-spin text-primary" />
+        <p class="text-sm text-muted">
+          {{ t('recommend.optimizing') }}
+        </p>
+      </div>
+      <div v-else-if="recommendations15v15.length === 0" class="py-8 text-center text-muted">
         {{ t('recommend.noTeams') }}
       </div>
       <div

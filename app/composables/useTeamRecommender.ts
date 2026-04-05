@@ -532,17 +532,25 @@ export function useTeamRecommender() {
       const usedInTeams = new Set(seedTeams.flat().map(c => c.id))
       const saBench = allCharacters
         .filter(c => ownedIds.has(c.id) && !usedInTeams.has(c.id))
-        .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.S || 6))
+        .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.A || 4))
         .sort((a, b) => (PVP_TIER_SCORES[b.pvpTier || 'C'] || 0) - (PVP_TIER_SCORES[a.pvpTier || 'C'] || 0))
-        .slice(0, 5)
-      const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 5000, startTemp: 150, coolingRate: 0.9985 }, preferredSpeeds)
+        .slice(0, 8)
+      // Lock template required chars so SA only swaps flex slots
+      const lockedIds = new Set(matchedTemplates.flatMap(t => t?.required ?? []))
+      const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 8000, startTemp: 150, coolingRate: 0.999 }, preferredSpeeds, lockedIds)
       const saSet = saTeams.map((team, idx) =>
         toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
       )
 
-      // Keep whichever is better: original greedy or SA-refined
-      const greedyTotal = teamSet.reduce((sum, t) => sum + t.score, 0)
-      const saTotal = saSet.reduce((sum, t) => sum + t.score, 0)
+      // Compare using scoreTeamRaw (capped speed + below-preferred penalty) plus template priority
+      // so SA teams aren't penalized by matchTemplate's required.length >= 2 filter
+      function score15v15(team: Character[], tplIdx: number): number {
+        const tpl = matchedTemplates[tplIdx]
+        const raw = scoreTeamRaw(team, mode, preferredSpeeds[tplIdx])
+        return raw + (tpl ? (4 - tpl.priority) * 100 : 0)
+      }
+      const greedyTotal = seedTeams.reduce((sum, team, idx) => sum + score15v15(team, idx), 0)
+      const saTotal = saTeams.reduce((sum, team, idx) => sum + score15v15(team, idx), 0)
 
       bestSets.push(saTotal > greedyTotal ? saSet : teamSet)
     }
