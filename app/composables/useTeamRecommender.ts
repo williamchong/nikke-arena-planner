@@ -148,19 +148,22 @@ export function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate
 }
 
 function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode): { score: number, matchedArchetypes: string[] } {
-  const result = calculate(chars, mode)
+  // Build on scoreTeamRaw (speed-capped + suitability + pvpTier) and add template-specific bonuses
+  const raw = scoreTeamRaw(chars, mode, template.preferredSpeed)
+  if (raw <= -1000) return { score: raw, matchedArchetypes: [] }
 
-  let score = 0
+  let score = raw
   score += (4 - template.priority) * 100
+
+  // For 5v5, uncapped speed is always better — add back the capped portion
+  const result = calculate(chars, mode)
   const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
-  const preferredSpeed = SPEED_TIER_SCORES[template.preferredSpeed] || actualSpeed
-  score += actualSpeed
-  score += chars.reduce((sum, c) => sum + c.suitability[mode], 0) * 20
-  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
+  const prefSpeed = SPEED_TIER_SCORES[template.preferredSpeed] || actualSpeed
+  const cappedSpeed = Math.min(actualSpeed, prefSpeed)
+  score += (actualSpeed - cappedSpeed)
 
   const matchedArchetypes = findMetaOverlap(chars, template.id, mode)
-  // Meta overlap: bonus for teams that satisfy multiple archetypes — strong enough to differentiate similar-priority teams
-  if (matchedArchetypes.length > 0 && actualSpeed >= preferredSpeed) {
+  if (matchedArchetypes.length > 0 && actualSpeed >= prefSpeed) {
     score += 15 * matchedArchetypes.length
   }
 
@@ -435,7 +438,7 @@ export function useTeamRecommender() {
     // Phase 2: SA refinement on the best template result
     const owned = allCharacters.filter(c => ownedIds.has(c.id))
     if (results.length > 0 && owned.length >= 5) {
-      const bestTemplate = results.sort((a, b) => b.score - a.score)[0]!
+      const bestTemplate = [...results].sort((a, b) => b.score - a.score)[0]!
       const seedTeam = resolveCharacters(bestTemplate.characters)
       const bench = owned.filter(c => !bestTemplate.characters.includes(c.id))
 
@@ -542,15 +545,14 @@ export function useTeamRecommender() {
         toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
       )
 
-      // Compare using scoreTeamRaw (capped speed + below-preferred penalty) plus template priority
+      // Compare using capped speed (scoreTeamRaw) + template priority
       // so SA teams aren't penalized by matchTemplate's required.length >= 2 filter
-      function score15v15(team: Character[], tplIdx: number): number {
-        const tpl = matchedTemplates[tplIdx]
-        const raw = scoreTeamRaw(team, mode, preferredSpeeds[tplIdx])
-        return raw + (tpl ? (4 - tpl.priority) * 100 : 0)
+      const score15 = (team: Character[], idx: number) => {
+        const tpl = matchedTemplates[idx]
+        return scoreTeamRaw(team, mode, preferredSpeeds[idx]) + (tpl ? (4 - tpl.priority) * 100 : 0)
       }
-      const greedyTotal = seedTeams.reduce((sum, team, idx) => sum + score15v15(team, idx), 0)
-      const saTotal = saTeams.reduce((sum, team, idx) => sum + score15v15(team, idx), 0)
+      const greedyTotal = seedTeams.reduce((sum, team, idx) => sum + score15(team, idx), 0)
+      const saTotal = saTeams.reduce((sum, team, idx) => sum + score15(team, idx), 0)
 
       bestSets.push(saTotal > greedyTotal ? saSet : teamSet)
     }
