@@ -49,6 +49,10 @@ if (import.meta.client) {
       }
     }
     catch { /* ignore */ }
+    // Ensure team count matches current mode after restoring from localStorage
+    if (is15v15.value && lockSlots.value.length < 3) {
+      lockSlots.value = [...lockSlots.value, ...Array.from({ length: 3 - lockSlots.value.length }, emptyTeam)]
+    }
   })
   watch(lockSlots, (v) => {
     localStorage.setItem('nikke-arena-locked', JSON.stringify(v))
