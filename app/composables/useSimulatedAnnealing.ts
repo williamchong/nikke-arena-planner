@@ -252,8 +252,9 @@ export function useSimulatedAnnealing() {
     mode: ArenaMode,
     options?: Partial<SAOptions>,
     preferredSpeed?: string,
+    lockedIds?: Set<string>,
   ): Character[] {
-    const result = optimize([initialTeam], bench, mode, options, preferredSpeed ? [preferredSpeed] : undefined)
+    const result = optimize([initialTeam], bench, mode, options, preferredSpeed ? [preferredSpeed] : undefined, lockedIds)
     return result[0]!
   }
 

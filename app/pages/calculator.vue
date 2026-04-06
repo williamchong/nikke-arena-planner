@@ -21,6 +21,8 @@ const { burstIcon, weaponIcon, elementIcon } = useIcons()
 const mode = ref<ArenaMode>('attack')
 // Fixed 5 slots — null means empty, positions are stable
 const slots = ref<(string | null)[]>([null, null, null, null, null])
+// Locked slot indices — locked slots can't be removed and are preserved during auto-complete
+const lockedSlots = ref<Set<number>>(new Set())
 
 // Load from query string (priority) or localStorage on mount
 if (import.meta.client) {
@@ -44,6 +46,7 @@ if (import.meta.client) {
           const data = JSON.parse(saved)
           if (data.mode) mode.value = data.mode
           if (data.slots) slots.value = data.slots
+          if (data.lockedSlots) lockedSlots.value = new Set(data.lockedSlots)
         }
       }
       catch { /* ignore corrupt localStorage */ }
@@ -52,11 +55,12 @@ if (import.meta.client) {
     initialized = true
   })
 
-  watch([mode, slots], () => {
+  watch([mode, slots, lockedSlots], () => {
     if (!initialized) return
     localStorage.setItem('nikke-arena-calc', JSON.stringify({
       mode: mode.value,
       slots: slots.value,
+      lockedSlots: [...lockedSlots.value],
     }))
     // Sync query string so the URL is always shareable
     const filledIds = slots.value.filter((id): id is string => !!id)
@@ -95,7 +99,7 @@ const teamScore = computed(() => {
   return score
 })
 
-const { getTemplate } = useTeamRecommender()
+const { getTemplate, recommendAround } = useTeamRecommender()
 
 const matched = computed(() => {
   if (filledCharacters.value.length !== 5) return null
@@ -163,25 +167,55 @@ function removeCharacter(index: number) {
   const next = [...slots.value]
   next[index] = null
   slots.value = next
+  if (lockedSlots.value.has(index)) {
+    const nextLocks = new Set(lockedSlots.value)
+    nextLocks.delete(index)
+    lockedSlots.value = nextLocks
+  }
 }
 
 function clearAll() {
   slots.value = [null, null, null, null, null]
+  lockedSlots.value = new Set()
+}
+
+function toggleLock(index: number) {
+  const next = new Set(lockedSlots.value)
+  if (next.has(index)) next.delete(index)
+  else next.add(index)
+  lockedSlots.value = next
+}
+
+const hasLockedSlots = computed(() => lockedSlots.value.size > 0)
+const hasEmptySlots = computed(() => slots.value.some(s => s === null))
+const canAutoComplete = computed(() => hasLockedSlots.value && hasEmptySlots.value)
+
+function autoComplete() {
+  const lockedCharIds = [...lockedSlots.value]
+    .map(i => slots.value[i])
+    .filter((id): id is string => !!id)
+  if (lockedCharIds.length === 0) return
+
+  const result = recommendAround(lockedCharIds, roster.ownedIds, mode.value)
+  if (!result) return
+
+  // Fill empty slots with recommended characters, preserving locked ones
+  const recommended = result.characters.filter(id => !lockedCharIds.includes(id))
+  const next = [...slots.value]
+  let ri = 0
+  for (let i = 0; i < 5; i++) {
+    if (!lockedSlots.value.has(i) && next[i] === null && ri < recommended.length) {
+      next[i] = recommended[ri]!
+      ri++
+    }
+  }
+  slots.value = next
 }
 
 const modeOptions = [
   { label: t('calculator.attack'), value: 'attack' as const },
   { label: t('calculator.defense'), value: 'defense' as const },
 ]
-
-const burstFilters: { label: string, value: BurstType }[] = [
-  { label: 'I', value: 'I' },
-  { label: 'II', value: 'II' },
-  { label: 'III', value: 'III' },
-]
-
-const weaponFilters: WeaponType[] = ['AR', 'SMG', 'SG', 'SR', 'RL', 'MG']
-const elementFilters: Element[] = ['fire', 'water', 'wind', 'electric', 'iron']
 
 const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
 </script>
@@ -215,20 +249,35 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
             :character="slotCharacters[i - 1] ?? null"
             :position="i"
             :removable="!!slotCharacters[i - 1]"
+            :lockable="!!slotCharacters[i - 1]"
+            :locked="lockedSlots.has(i - 1)"
             @click="openPicker"
             @remove="removeCharacter(i - 1)"
+            @toggle-lock="toggleLock(i - 1)"
           />
         </div>
 
-        <UButton
-          v-if="filledCount > 0"
-          icon="i-lucide-x"
-          :label="t('roster.clearAll')"
-          size="xs"
-          variant="ghost"
-          color="error"
-          @click="clearAll"
-        />
+        <div class="flex gap-2">
+          <UButton
+            v-if="canAutoComplete"
+            icon="i-lucide-sparkles"
+            :label="t('calculator.autoComplete')"
+            size="xs"
+            variant="outline"
+            color="warning"
+            :title="t('calculator.autoCompleteDesc')"
+            @click="autoComplete"
+          />
+          <UButton
+            v-if="filledCount > 0"
+            icon="i-lucide-x"
+            :label="t('roster.clearAll')"
+            size="xs"
+            variant="ghost"
+            color="error"
+            @click="clearAll"
+          />
+        </div>
       </div>
 
       <!-- Right: Results -->
@@ -337,7 +386,7 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
           <!-- Compact icon-only filters -->
           <div class="flex flex-wrap items-center gap-1">
             <button
-              v-for="b in burstFilters"
+              v-for="b in BURST_FILTERS"
               :key="b.value"
               class="flex size-7 items-center justify-center rounded border transition-colors"
               :class="pickerBurst === b.value ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
@@ -350,7 +399,7 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
             <span class="mx-0.5 text-muted">|</span>
 
             <button
-              v-for="w in weaponFilters"
+              v-for="w in WEAPON_FILTERS"
               :key="w"
               class="flex size-7 items-center justify-center rounded border transition-colors"
               :class="pickerWeapon === w ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
@@ -363,7 +412,7 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
             <span class="mx-0.5 text-muted">|</span>
 
             <button
-              v-for="e in elementFilters"
+              v-for="e in ELEMENT_FILTERS"
               :key="e"
               class="flex size-7 items-center justify-center rounded border transition-colors"
               :class="pickerElement === e ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"

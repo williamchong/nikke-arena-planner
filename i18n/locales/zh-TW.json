@@ -59,7 +59,11 @@
     "speed": "速度等級",
     "burstGen": "充能值",
     "invalidChain": "無效的爆裂鏈 — 需要至少各一位 B1、B2、B3",
-    "timing": "爆裂時間軸"
+    "timing": "爆裂時間軸",
+    "lock": "鎖定",
+    "unlock": "解鎖",
+    "autoComplete": "自動補齊",
+    "autoCompleteDesc": "根據鎖定角色自動填入最佳搭配"
   },
   "recommend": {
     "title": "隊伍推薦",
@@ -80,7 +84,10 @@
     "showingResults": "找到 {count} 個隊伍",
     "orSwap": "或",
     "tryInCalculator": "在計算器中測試",
-    "optimizing": "正在優化隊伍…"
+    "optimizing": "正在優化隊伍…",
+    "lockCharacters": "釘選角色",
+    "lockDesc": "選擇要鎖定在隊伍中的角色，空位將自動填充最佳搭配。",
+    "clearLocks": "清除全部"
   },
   "meta": {
     "title": "NIKKE PVP 隊伍規劃器 — 贏得更多競技場勝利",

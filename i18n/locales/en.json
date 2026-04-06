@@ -59,7 +59,11 @@
     "speed": "Speed Tier",
     "burstGen": "Burst Generation",
     "invalidChain": "Invalid burst chain — need at least one each of B1, B2, B3",
-    "timing": "Burst Timing"
+    "timing": "Burst Timing",
+    "lock": "Lock",
+    "unlock": "Unlock",
+    "autoComplete": "Auto-complete",
+    "autoCompleteDesc": "Fill empty slots with the best characters around your locked picks"
   },
   "recommend": {
     "title": "Team Recommendations",
@@ -80,7 +84,10 @@
     "showingResults": "{count} team(s) found",
     "orSwap": "or",
     "tryInCalculator": "Try in Calculator",
-    "optimizing": "Optimizing teams…"
+    "optimizing": "Optimizing teams…",
+    "lockCharacters": "Pin Characters",
+    "lockDesc": "Pick characters to always include in recommendations. Empty slots will be auto-filled.",
+    "clearLocks": "Clear All"
   },
   "meta": {
     "title": "NIKKE PVP Team Builder — Win More Arena Matches",

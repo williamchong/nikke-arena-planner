@@ -179,6 +179,7 @@ function fillTemplate(
   availableIds: Set<string>,
   mode: ArenaMode,
   optimize = true,
+  lockedIds?: Set<string>,
 ): { characters: Character[], score: number, alternates: Record<number, string[]>, matchedArchetypes: string[] } | null {
   for (const reqId of template.required) {
     if (!availableIds.has(reqId)) return null
@@ -196,6 +197,22 @@ function fillTemplate(
     usedByRequired.add(reqId)
   }
 
+  // Locked chars not already in template.required are treated as additional required chars
+  if (lockedIds && lockedIds.size > 0) {
+    for (const lockId of lockedIds) {
+      if (usedByRequired.has(lockId)) continue
+      if (!availableIds.has(lockId)) return null
+      const char = getCharacter(lockId)
+      if (!char) return null
+      requiredChars.push(char)
+      usedByRequired.add(lockId)
+    }
+  }
+
+  // Too many required+locked chars — can't fit in a 5-member team with flex
+  const neededFlex = 5 - requiredChars.length
+  if (neededFlex < 0) return null
+
   // Collect available options per flex slot
   // In optimize mode, Λ burst chars (e.g. Red Hood) are appended as last-resort fallbacks
   // scoreTeam will naturally deprioritize them unless they enable a better combo
@@ -207,7 +224,8 @@ function fillTemplate(
     : []
 
   const flexOptions: { id: string, char: Character }[][] = []
-  for (const flex of template.flex) {
+  // Only fill as many flex slots as needed (locked chars reduce the count)
+  for (const flex of template.flex.slice(0, neededFlex)) {
     const listed = new Set(flex.options)
     const available = flex.options
       .filter(id => availableIds.has(id) && !usedByRequired.has(id))
@@ -423,13 +441,13 @@ export function useTeamRecommender() {
   const { characters: allCharacters } = useCharacters()
   const { optimize5v5: saOptimize5v5, optimize15v15: saOptimize15v15 } = useSimulatedAnnealing()
 
-  function recommend5v5(ownedIds: Set<string>, mode: ArenaMode): TeamComposition[] {
+  function recommend5v5(ownedIds: Set<string>, mode: ArenaMode, lockedIds?: Set<string>): TeamComposition[] {
     const results: TeamComposition[] = []
     const sorted = [...templates].sort((a, b) => a.priority - b.priority)
 
     // Phase 1: Template matching
     for (const template of sorted) {
-      const filled = fillTemplate(template, ownedIds, mode)
+      const filled = fillTemplate(template, ownedIds, mode, true, lockedIds)
       if (filled) {
         results.push(buildComposition(template, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes))
       }
@@ -443,7 +461,7 @@ export function useTeamRecommender() {
       const bench = owned.filter(c => !bestTemplate.characters.includes(c.id))
 
       const bestTpl = getTemplate(bestTemplate.templateId ?? '')
-      const saResult = saOptimize5v5(seedTeam, bench, mode, undefined, bestTpl?.preferredSpeed)
+      const saResult = saOptimize5v5(seedTeam, bench, mode, undefined, bestTpl?.preferredSpeed, lockedIds)
       const saScore = scoreTeamRaw(saResult, mode, bestTpl?.preferredSpeed)
 
       if (saScore > bestTemplate.score) {
@@ -451,12 +469,16 @@ export function useTeamRecommender() {
       }
     }
     else if (owned.length >= 5 && results.length === 0) {
-      // No templates matched — SA from auto-fill seed
-      const autoTeam = autoFillTeam(owned, mode)
+      // No templates matched — SA from auto-fill seed with locked chars
+      const lockedChars = lockedIds
+        ? [...lockedIds].map(id => getCharacter(id)).filter((c): c is Character => !!c)
+        : []
+      const available = owned.filter(c => !lockedIds?.has(c.id))
+      const autoTeam = autoFillTeam([...lockedChars, ...available], mode)
       if (autoTeam) {
         const seedTeam = resolveCharacters(autoTeam.characters)
         const bench = owned.filter(c => !autoTeam.characters.includes(c.id))
-        const saResult = saOptimize5v5(seedTeam, bench, mode)
+        const saResult = saOptimize5v5(seedTeam, bench, mode, undefined, undefined, lockedIds)
         results.push(toComposition(saResult, mode, 'sa-optimized'))
       }
     }
@@ -469,7 +491,7 @@ export function useTeamRecommender() {
    * 1. Build initial 3 teams via greedy template matching
    * 2. Run simulated annealing to swap characters between teams (no bench — preserves template synergy)
    */
-  function recommend15v15(ownedIds: Set<string>, mode: ArenaMode): TeamComposition[][] {
+  function recommend15v15(ownedIds: Set<string>, mode: ArenaMode, perTeamLocked?: Set<string>[]): TeamComposition[][] {
     const bestSets: TeamComposition[][] = []
 
     const sorted = [...templates]
@@ -484,7 +506,8 @@ export function useTeamRecommender() {
       const usedTemplateIds = new Set<string>()
       let failed = false
 
-      const firstFilled = fillTemplate(starter, ownedIds, mode, false)
+      const team0Locks = perTeamLocked?.[0]
+      const firstFilled = fillTemplate(starter, ownedIds, mode, false, team0Locks)
       if (!firstFilled) continue
 
       const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
@@ -497,10 +520,11 @@ export function useTeamRecommender() {
         const available = new Set([...ownedIds].filter(id => !usedChars.has(id)))
         let team: TeamComposition | null = null
         let matchedTemplate: TeamTemplate | null = null
+        const teamLocks = perTeamLocked?.[i + 1]
 
         for (const t of sorted) {
           if (usedTemplateIds.has(t.id)) continue
-          const filled = fillTemplate(t, available, mode, false)
+          const filled = fillTemplate(t, available, mode, false, teamLocks)
           if (filled) {
             team = buildComposition(t, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes)
             matchedTemplate = t
@@ -538,9 +562,10 @@ export function useTeamRecommender() {
         .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.A || 4))
         .sort((a, b) => (PVP_TIER_SCORES[b.pvpTier || 'C'] || 0) - (PVP_TIER_SCORES[a.pvpTier || 'C'] || 0))
         .slice(0, 8)
-      // Lock template required chars so SA only swaps flex slots
-      const lockedIds = new Set(matchedTemplates.flatMap(t => t?.required ?? []))
-      const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 8000, startTemp: 150, coolingRate: 0.999 }, preferredSpeeds, lockedIds)
+      // Lock template required chars + all user-locked chars so SA only swaps flex slots
+      const allUserLocked = perTeamLocked ? perTeamLocked.flatMap(s => [...s]) : []
+      const saLockedIds = new Set([...matchedTemplates.flatMap(t => t?.required ?? []), ...allUserLocked])
+      const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 8000, startTemp: 150, coolingRate: 0.999 }, preferredSpeeds, saLockedIds)
       const saSet = saTeams.map((team, idx) =>
         toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
       )
@@ -569,5 +594,17 @@ export function useTeamRecommender() {
     return templateById.get(id)
   }
 
-  return { recommend5v5, recommend15v15, getTemplate, templates }
+  /**
+   * Build the best team around a set of locked characters.
+   * Used by the calculator page's auto-complete feature.
+   */
+  function recommendAround(lockedCharIds: string[], ownedIds: Set<string>, mode: ArenaMode): TeamComposition | null {
+    if (lockedCharIds.length === 0 || lockedCharIds.length >= 5) return null
+
+    const lockedSet = new Set(lockedCharIds)
+    const results = recommend5v5(ownedIds, mode, lockedSet)
+    return results[0] ?? null
+  }
+
+  return { recommend5v5, recommend15v15, recommendAround, getTemplate, templates }
 }
