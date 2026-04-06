@@ -12,6 +12,7 @@ const props = defineProps<{
 
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { trackEvent } = useAnalytics()
 const { getCharacter } = useCharacters()
 const { localize } = useLocalizedField()
 const { getAvatarUrl } = useAvatars()
@@ -57,6 +58,11 @@ const overlappingTemplates = computed(() => {
 })
 
 const showNotes = ref(false)
+
+function toggleNotes() {
+  showNotes.value = !showNotes.value
+  if (showNotes.value) trackEvent('team_expand_notes')
+}
 </script>
 
 <template>
@@ -112,11 +118,12 @@ const showNotes = ref(false)
         size="xs"
         variant="outline"
         color="primary"
+        @click="trackEvent('team_try_calculator')"
       />
       <button
         v-if="templateNotes || overlappingTemplates.length > 0"
         class="text-xs text-muted hover:text-default"
-        @click="showNotes = !showNotes"
+        @click="toggleNotes"
       >
         {{ showNotes ? '▼' : '▶' }} {{ t('recommend.whyThisTeam') }}
       </button>

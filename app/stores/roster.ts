@@ -1,6 +1,7 @@
 const STORAGE_KEY = 'nikke-arena-roster'
 
 export const useRosterStore = defineStore('roster', () => {
+  const { trackEvent } = useAnalytics()
   const storedIds = ref<string[]>([])
 
   // Load from localStorage only on client after mount
@@ -25,9 +26,11 @@ export const useRosterStore = defineStore('roster', () => {
   function toggle(id: string) {
     if (storedIds.value.includes(id)) {
       storedIds.value = storedIds.value.filter((i: string) => i !== id)
+      trackEvent('roster_remove')
     }
     else {
       storedIds.value = [...storedIds.value, id]
+      trackEvent('roster_add')
     }
     persist()
   }
@@ -39,11 +42,13 @@ export const useRosterStore = defineStore('roster', () => {
     }
     storedIds.value = [...current]
     persist()
+    trackEvent('roster_select_all')
   }
 
   function clearAll() {
     storedIds.value = []
     persist()
+    trackEvent('roster_clear_all')
   }
 
   function isOwned(id: string) {

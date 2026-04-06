@@ -14,6 +14,7 @@ useSeoMeta({
 const router = useRouter()
 const route = useRoute()
 const roster = useRosterStore()
+const { trackEvent } = useAnalytics()
 const { getCharacter, filterCharacters } = useCharacters()
 const { calculate } = useBurstCalculator()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
@@ -177,6 +178,7 @@ function removeCharacter(index: number) {
 function clearAll() {
   slots.value = [null, null, null, null, null]
   lockedSlots.value = new Set()
+  trackEvent('calc_clear')
 }
 
 function toggleLock(index: number) {
@@ -198,6 +200,7 @@ function autoComplete() {
 
   const result = recommendAround(lockedCharIds, roster.ownedIds, mode.value)
   if (!result) return
+  trackEvent('calc_auto_complete')
 
   // Fill empty slots with recommended characters, preserving locked ones
   const recommended = result.characters.filter(id => !lockedCharIds.includes(id))
@@ -211,6 +214,10 @@ function autoComplete() {
   }
   slots.value = next
 }
+
+watch(mode, (v) => {
+  trackEvent(v === 'attack' ? 'calc_mode_attack' : 'calc_mode_defense')
+})
 
 const modeOptions = [
   { label: t('calculator.attack'), value: 'attack' as const },

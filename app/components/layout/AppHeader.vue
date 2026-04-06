@@ -2,6 +2,10 @@
 const { t } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
+const { trackEvent } = useAnalytics()
+const colorMode = useColorMode()
+
+watch(() => colorMode.preference, (_val, old) => { if (old) trackEvent('setting_theme') })
 
 const mainNavItems = computed(() => [
   { label: t('nav.recommend'), to: localePath('/recommend/5v5'), icon: 'i-lucide-trophy', match: '/recommend' },

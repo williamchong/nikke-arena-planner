@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { BurstType, Element, Manufacturer, Role, WeaponType } from '~/types/character'
+import { watchDebounced } from '@vueuse/core'
 
 const { t } = useI18n()
+const { trackEvent } = useAnalytics()
 const { burstIcon, roleIcon, weaponIcon, elementIcon, manufacturerIcon } = useIcons()
 
 const search = defineModel<string>('search', { default: '' })
@@ -65,11 +67,27 @@ function clearFilters() {
   element.value = null
   weapon.value = null
   manufacturer.value = null
+  trackEvent('filter_clear')
 }
 
 const hasFilters = computed(() =>
   search.value || burst.value || role.value || element.value || weapon.value || manufacturer.value,
 )
+
+const filterRefs: [string, Ref<unknown>][] = [
+  ['filter_burst', burst],
+  ['filter_role', role],
+  ['filter_weapon', weapon],
+  ['filter_element', element],
+  ['filter_manufacturer', manufacturer],
+]
+for (const [event, filterRef] of filterRefs) {
+  watch(filterRef, () => { if (filterRef.value) trackEvent(event) })
+}
+
+watchDebounced(search, (v: string) => {
+  if (v) trackEvent('filter_search', { search_term: v })
+}, { debounce: 1000 })
 </script>
 
 <template>

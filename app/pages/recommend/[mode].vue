@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { BurstType, Element, WeaponType } from '~/types/character'
+import { watchDebounced } from '@vueuse/core'
 
 const { t } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
 
 const roster = useRosterStore()
+const { trackEvent } = useAnalytics()
 const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
 const { getCharacter, filterCharacters } = useCharacters()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
@@ -93,6 +95,7 @@ function clearLocks() {
   lockSlots.value = is15v15.value
     ? [emptyTeam(), emptyTeam(), emptyTeam()]
     : [emptyTeam()]
+  trackEvent('recommend_clear_locks')
 }
 
 function removeFromSlot(teamIdx: number, slotIdx: number) {
@@ -149,6 +152,7 @@ function toggleInPicker(id: string) {
     currentTeam[existingIdx] = null
   }
   else {
+    trackEvent('recommend_lock')
     // If in another team, remove from there first
     for (const t of next) {
       const idx = t.indexOf(id)
@@ -175,6 +179,10 @@ const recommendations5v5 = computed(() => {
   return recommend5v5(roster.ownedIds, 'defense', lockedIds5v5.value)
 })
 
+watchDebounced(recommendations5v5, (result) => {
+  if (result.length > 0) trackEvent('recommend_5v5')
+}, { debounce: 500 })
+
 const recommendations15v15 = ref<ReturnType<typeof recommend15v15>>([])
 const isOptimizing = ref(false)
 let pendingTimeout: ReturnType<typeof setTimeout> | null = null
@@ -189,10 +197,14 @@ watch(
       pendingTimeout = null
       const teamLocks = perTeamLocked.value
       const hasLocks = teamLocks.some(s => s.size > 0)
+      const start = performance.now()
       recommendations15v15.value = recommend15v15(
         roster.ownedIds, 'defense',
         hasLocks ? teamLocks : undefined,
       )
+      if (recommendations15v15.value.length > 0) {
+        trackEvent('recommend_15v15', { value: Math.round(performance.now() - start) })
+      }
       isOptimizing.value = false
     }, 50)
   },

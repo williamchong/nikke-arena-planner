@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
+const { trackEvent } = useAnalytics()
+
+watch(locale, (_val, old) => { if (old) trackEvent('setting_locale') })
 
 const items = computed(() =>
   (locales.value as Array<{ code: string, name: string }>).map(l => ({
