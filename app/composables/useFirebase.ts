@@ -16,12 +16,18 @@ let userIdPromise: Promise<string | null> | null = null
 function init(): Promise<{ db: Firestore; auth: Auth }> {
   if (!initPromise) {
     initPromise = (async () => {
-      const { initializeApp, getApps, getApp } = await import('firebase/app')
-      const { getFirestore } = await import('firebase/firestore/lite')
-      const { getAuth } = await import('firebase/auth')
+      try {
+        const { initializeApp, getApps, getApp } = await import('firebase/app')
+        const { getFirestore } = await import('firebase/firestore/lite')
+        const { getAuth } = await import('firebase/auth')
 
-      const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
-      return { db: getFirestore(app), auth: getAuth(app) }
+        const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
+        return { db: getFirestore(app), auth: getAuth(app) }
+      }
+      catch (error) {
+        initPromise = null
+        throw error
+      }
     })()
   }
   return initPromise
