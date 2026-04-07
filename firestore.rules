@@ -1,6 +1,101 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function allowedCharacterIds() {
+      return [
+        'helm-treasure', 'snow-white-heavy-arms', 'trina', 'anis', 'jackal',
+        'centi', 'rumani', 'emilia', 'noah', 'pascal', 'maiden-ice-rose',
+        'drake-treasure', 'drake', 'viper', 'viper-treasure', 'maiden', 'neon',
+        'noir', 'pepper', 'sugar', 'soda-twinkling-bunny', 'laplace-treasure',
+        'liberalio', 'mica-snow-buddy', 'zwei', 'nihilister', 'arcana', 'a2',
+        'laplace', 'rapunzel', 'diesel-winter-sweets', 'grave', 'scarlet',
+        'anchor', 'anchor-innocent-maid', 'anne-miracle-fairy', 'vesti', 'bay',
+        'bay-treasure', 'biscuit', 'tia', 'quiry', 'crust', 'mica', 'noise',
+        'power', 'sora', 'ada', 'mana', 'anis-sparkling-summer', 'jill',
+        'scarlet-black-shadow', 'harran', 'raven', 'privaty-unkind-maid',
+        'guilty', 'ether', 'poli', 'poli-treasure', 'leona', 'marciana', 'mary',
+        'naga', 'neve', 'dorothy-serendipity', 'isabel', 'soline-frost-ticket',
+        'brid-silent-track', 'k', 'quency', 'crow', 'soline', 'asuka',
+        'snow-white', 'ade', 'rei-ayanami-tentative-name', 'mihara', 'moran',
+        'phantom', 'vesti-tactical-upgrade', 'himeno', 'rouge', 'eunhwa',
+        'ludmilla', 'quency-escape-queen', 'n102', 'belorta', 'yan', 'yuni',
+        'ein', 'd-killer-wife', 'exia', 'exia-treasure', 'bready', 'dolla',
+        'helm', 'cocoa', 'ram', 'maxwell', 'milk', 'milk-treasure', 'trony',
+        'sakura-bloom-in-summer', 'red-hood', 'rapunzel-pure-grace', 'mari',
+        'eunhwa-tactical-upgrade', 'ade-agent-bunny', 'milk-blooming-bunny',
+        'yulha', 'admi', 'sakura', 'mary-bay-goddess', 'frima',
+        'frima-treasure', 'helm-aquamarine', '2b', 'blanc', 'brid', 'folkwang',
+        'guillotine-winter-slayer', 'rapi', 'rupee', 'rupee-winter-shopper',
+        'rosanna-chic-ocean', 'mori', 'privaty', 'sin', 'dorothy', 'tove',
+        'tove-treasure', 'eve', 'julia', 'julia-treasure', 'miranda-treasure',
+        'd', 'epinel', 'alice-wonderland-bunny', 'clay', 'rei', 'liter', 'mast',
+        'makima', 'misato', 'miranda', 'nero', 'novel', 'volume', 'signal',
+        'little-mermaid', 'sakura-suzuhara', 'nayuta', 'modernia', 'alice',
+        'mihara-bonding-chain', 'cinderella', 'rosanna', 'ludmilla-winter-owner',
+        'asuka-wille', 'aria', 'emma', 'diesel', 'diesel-treasure', 'flora',
+        'crown', 'guillotine', 'kilo', 'rapi-red-hood', 'rem', 'rei-ayanami',
+        'mast-romantic-maid', 'neon-blue-ocean', 'soda', 'elegg',
+        'elegg-boom-and-shock', 'emma-tactical-upgrade', 'delta-ninja-thief',
+        'snow-white-innocent-days', 'label', 'velvet', 'chisato', 'takina',
+        'privaty-treasure', 'zwei-treasure', 'centi-treasure', 'moran-treasure'
+      ];
+    }
+
+    function allowedTemplateIds() {
+      return [
+        'moran-system-atk', 'moran-system-def', 'blanc-emt',
+        'noah-biscuit-stall', 'scarlet-jackal-nuke', 'moran-scarlet',
+        'blanc-scarlet-nuke', 'alice-noah-carry', 'sanis-stall',
+        'little-mermaid-disrupt', 'helm-treasure-carry', 'rosanna-counter',
+        'rapi-rh-carry', 'vesti-tu-carry', 'nayuta-carry',
+        'alice-rapunzel-revive', 'cinderella-carry', 'cat-team',
+        'tactical-trio', 'sg-burst'
+      ];
+    }
+
+    function validTeamCharacters(chars) {
+      return chars is list
+        && chars.size() == 5
+        && chars.hasOnly(allowedCharacterIds());
+    }
+
+    function validOtherRating(entry) {
+      return entry is map
+        && entry.keys().hasAll(['teamCharacters', 'rating'])
+        && entry.keys().hasOnly(['teamCharacters', 'rating'])
+        && validTeamCharacters(entry.teamCharacters)
+        && entry.rating is string
+        && entry.rating in ['up', 'down'];
+    }
+
+    function validOtherRatings(otherRatings) {
+      return otherRatings is list
+        && otherRatings.size() <= 2
+        && (otherRatings.size() < 1 || validOtherRating(otherRatings[0]))
+        && (otherRatings.size() < 2 || validOtherRating(otherRatings[1]));
+    }
+
+    function validAllTeams(allTeams) {
+      return allTeams is list
+        && allTeams.size() <= 3
+        && (allTeams.size() < 1 || validTeamCharacters(allTeams[0]))
+        && (allTeams.size() < 2 || validTeamCharacters(allTeams[1]))
+        && (allTeams.size() < 3 || validTeamCharacters(allTeams[2]));
+    }
+
+    function validMatchedArchetypes(archetypes) {
+      return archetypes is list
+        && archetypes.size() <= 20
+        && archetypes.hasOnly(allowedTemplateIds());
+    }
+
+    function validRoster(roster) {
+      return roster is list
+        && roster.size() >= 5
+        && roster.size() <= 300
+        && roster.hasOnly(allowedCharacterIds());
+    }
+
     match /ratings/{ratingId} {
       allow create: if
         // Must be authenticated
@@ -29,37 +124,34 @@ service cloud.firestore {
             || request.resource.data.teamTemplateId is string)
         && request.resource.data.teamScore is number
         && request.resource.data.teamBurstSpeed is string
-        && request.resource.data.teamMatchedArchetypes is list
+        && request.resource.data.teamBurstSpeed in ['1RL', '2RL', '3SG', '5SG', '3RL', '7SG', '4RL', '5RL']
+        && validMatchedArchetypes(request.resource.data.teamMatchedArchetypes)
         && request.resource.data.arenaMode is string
-        && request.resource.data.otherRatings is list
-        && request.resource.data.roster is list
+        && validOtherRatings(request.resource.data.otherRatings)
+        && validRoster(request.resource.data.roster)
         && request.resource.data.rosterSize is int
         // Validate optional 15v15 fields when present
         && (!('allTeams' in request.resource.data.keys())
-            || (request.resource.data.allTeams is list
-                && request.resource.data.allTeams.size() <= 3))
+          || validAllTeams(request.resource.data.allTeams))
         && (!('teamSetIndex' in request.resource.data.keys())
-            || request.resource.data.teamSetIndex is int)
+          || (request.resource.data.teamSetIndex is int
+            && request.resource.data.teamSetIndex >= 0
+            && request.resource.data.teamSetIndex <= 2))
         && (!('teamIndexInSet' in request.resource.data.keys())
-            || request.resource.data.teamIndexInSet is int)
+          || (request.resource.data.teamIndexInSet is int
+            && request.resource.data.teamIndexInSet >= 0
+            && request.resource.data.teamIndexInSet <= 2))
         // userId field must match the authenticated user's UID
         && request.resource.data.userId == request.auth.uid
         // Rating and arenaMode must be valid
         && request.resource.data.rating in ['up', 'down']
         && request.resource.data.arenaMode in ['5v5', '15v15']
         // Team must have exactly 5 string character IDs
-        && request.resource.data.teamCharacters.size() == 5
-        && request.resource.data.teamCharacters[0] is string
-        && request.resource.data.teamCharacters[1] is string
-        && request.resource.data.teamCharacters[2] is string
-        && request.resource.data.teamCharacters[3] is string
-        && request.resource.data.teamCharacters[4] is string
+        && validTeamCharacters(request.resource.data.teamCharacters)
+        && (request.resource.data.teamTemplateId == null
+          || request.resource.data.teamTemplateId in allowedTemplateIds())
         // Roster must be present and reasonable size
-        && request.resource.data.roster.size() >= 5
-        && request.resource.data.roster.size() <= 300
         // Bound nested list sizes to prevent abuse
-        && request.resource.data.otherRatings.size() <= 50
-        && request.resource.data.teamMatchedArchetypes.size() <= 20
         // rosterSize must match actual roster length
         && request.resource.data.rosterSize == request.resource.data.roster.size()
         // Must use server timestamp

@@ -44,6 +44,10 @@ export function useFirebase() {
       userIdPromise = (async () => {
         try {
           const { auth } = await init()
+          await auth.authStateReady?.()
+          if (auth.currentUser) {
+            return auth.currentUser.uid
+          }
           const { signInAnonymously } = await import('firebase/auth')
           const credential = await signInAnonymously(auth)
           return credential.user.uid

@@ -20,9 +20,11 @@ const { localize } = useLocalizedField()
 const { getAvatarUrl } = useAvatars()
 const ratingsStore = useRatingsStore()
 
+const ratingTargetTeam = computed(() => props.ratingContext?.team ?? props.team)
+
 const currentRating = computed(() =>
   props.ratingContext
-    ? ratingsStore.getRating(props.ratingContext.arenaMode, props.team.characters)
+    ? ratingsStore.getRating(props.ratingContext.arenaMode, ratingTargetTeam.value.characters)
     : null,
 )
 

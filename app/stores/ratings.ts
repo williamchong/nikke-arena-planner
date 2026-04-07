@@ -63,18 +63,28 @@ export const useRatingsStore = defineStore('ratings', () => {
     persist()
   }
 
+  function setLocalRating(key: string, rating: 'up' | 'down' | null) {
+    if (rating) {
+      ratedTeams.value = { ...ratedTeams.value, [key]: rating }
+    }
+    else {
+      const { [key]: _, ...rest } = ratedTeams.value
+      ratedTeams.value = rest
+    }
+    persist()
+  }
+
   async function submitRating(
     rating: 'up' | 'down',
     context: RatingContext,
   ) {
     const { team, arenaMode, allTeams, teamSetIndex, teamIndexInSet } = context
     const key = ratingKey(arenaMode, team.characters)
+    const previousRating = ratedTeams.value[key] ?? null
 
     // Toggle off if same rating already exists
-    if (ratedTeams.value[key] === rating) {
-      const { [key]: _, ...rest } = ratedTeams.value
-      ratedTeams.value = rest
-      persist()
+    if (previousRating === rating) {
+      setLocalRating(key, null)
       trackEvent('rating_remove', { arena_mode: arenaMode })
       return
     }
@@ -82,16 +92,8 @@ export const useRatingsStore = defineStore('ratings', () => {
     if (!canRate()) return
 
     // Update local state immediately for responsive UI
-    ratedTeams.value = { ...ratedTeams.value, [key]: rating }
+    setLocalRating(key, rating)
     lastRatingTime.value = Date.now()
-    sessionRatingCount.value++
-    persist()
-
-    trackEvent('rating_submit', {
-      arena_mode: arenaMode,
-      rating,
-      template_id: team.templateId ?? 'none',
-    })
 
     const teamSetFlat = allTeams && teamSetIndex != null
       ? allTeams[teamSetIndex] ?? []
@@ -107,7 +109,7 @@ export const useRatingsStore = defineStore('ratings', () => {
     // Fire-and-forget Firestore write
     try {
       const userId = await getUserId()
-      if (!userId) return
+      if (!userId) throw new Error('Missing Firebase user ID')
 
       const { db } = await getFirebase()
       const { collection, addDoc, serverTimestamp } = await import('firebase/firestore/lite')
@@ -136,9 +138,16 @@ export const useRatingsStore = defineStore('ratings', () => {
         roster: [...roster.ownedIds].sort(),
         rosterSize: roster.ownedCount,
       })
+
+      sessionRatingCount.value++
+      trackEvent('rating_submit', {
+        arena_mode: arenaMode,
+        rating,
+        template_id: team.templateId ?? 'none',
+      })
     }
     catch {
-      // Silent failure — UI already updated, don't break the experience
+      setLocalRating(key, previousRating)
     }
   }
 

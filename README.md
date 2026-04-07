@@ -22,7 +22,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 2. Get instant team recommendations for 5v5 Arena and 15v15 SP Arena
 3. See burst speed, timing breakdowns, and why each team works
 
-All computation runs client-side — no server, no login. Anonymous thumbs up/down ratings on recommended teams are sent to Firebase to improve recommendations. No personal data is collected.
+Team recommendation computation runs client-side, and no account or email is required. To improve recommendations, the app sends anonymous thumbs up/down feedback and stores an anonymous Firebase Auth identifier (`userId`), a `sessionId`, and related roster/team recommendation feedback in Firebase/Firestore.
 
 ## Recommendation Algorithm
 
