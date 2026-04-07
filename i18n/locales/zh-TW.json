@@ -159,5 +159,9 @@
     "all": "全部",
     "clear": "清除",
     "position": "P{n}"
+  },
+  "rating": {
+    "thumbsUp": "這個隊伍很好用",
+    "thumbsDown": "這個隊伍不好用"
   }
 }

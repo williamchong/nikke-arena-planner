@@ -159,5 +159,9 @@
     "all": "All",
     "clear": "Clear",
     "position": "P{n}"
+  },
+  "rating": {
+    "thumbsUp": "This team works well",
+    "thumbsDown": "This team doesn't work"
   }
 }
