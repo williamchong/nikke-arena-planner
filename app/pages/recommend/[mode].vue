@@ -514,6 +514,7 @@ const resultCount = computed(() =>
         :template="team.templateId ? getTemplate(team.templateId) : undefined"
         :label="`#${i + 1}`"
         mode="defense"
+        :rating-context="{ team, arenaMode: '5v5' as const }"
       />
     </template>
 
@@ -543,6 +544,7 @@ const resultCount = computed(() =>
           :template="team.templateId ? getTemplate(team.templateId) : undefined"
           :label="t('recommend.team', { n: teamIdx + 1 })"
           mode="defense"
+          :rating-context="{ team, arenaMode: '15v15' as const, allTeams: recommendations15v15, teamSetIndex: setIdx, teamIndexInSet: teamIdx }"
         />
       </div>
     </template>

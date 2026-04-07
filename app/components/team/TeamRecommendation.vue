@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ArenaMode, Character } from '~/types/character'
 import type { TeamComposition, TeamTemplate } from '~/types/template'
+import type { RatingContext } from '~/types/rating'
 import templatesData from '~/data/templates.json'
 
 const props = defineProps<{
@@ -8,6 +9,7 @@ const props = defineProps<{
   template?: TeamTemplate
   label?: string
   mode?: ArenaMode
+  ratingContext?: RatingContext
 }>()
 
 const { t } = useI18n()
@@ -16,6 +18,18 @@ const { trackEvent } = useAnalytics()
 const { getCharacter } = useCharacters()
 const { localize } = useLocalizedField()
 const { getAvatarUrl } = useAvatars()
+const ratingsStore = useRatingsStore()
+
+const currentRating = computed(() =>
+  props.ratingContext
+    ? ratingsStore.getRating(props.ratingContext.arenaMode, props.team.characters)
+    : null,
+)
+
+function handleRate(rating: 'up' | 'down') {
+  if (!props.ratingContext) return
+  ratingsStore.submitRating(rating, props.ratingContext)
+}
 
 const calculatorLink = computed(() => {
   const query: Record<string, string> = { team: props.team.characters.join(',') }
@@ -127,6 +141,27 @@ function toggleNotes() {
       >
         {{ showNotes ? '▼' : '▶' }} {{ t('recommend.whyThisTeam') }}
       </button>
+
+      <!-- Rating buttons -->
+      <template v-if="ratingContext">
+        <div class="h-4 w-px bg-(--ui-border)" />
+        <UButton
+          icon="i-lucide-thumbs-up"
+          size="xs"
+          :variant="currentRating === 'up' ? 'solid' : 'ghost'"
+          :color="currentRating === 'up' ? 'success' : 'neutral'"
+          :aria-label="t('rating.thumbsUp')"
+          @click="handleRate('up')"
+        />
+        <UButton
+          icon="i-lucide-thumbs-down"
+          size="xs"
+          :variant="currentRating === 'down' ? 'solid' : 'ghost'"
+          :color="currentRating === 'down' ? 'error' : 'neutral'"
+          :aria-label="t('rating.thumbsDown')"
+          @click="handleRate('down')"
+        />
+      </template>
     </div>
     <div v-if="showNotes && (templateNotes || overlappingTemplates.length > 0)" class="mt-1 space-y-1.5 text-xs text-muted">
       <p v-if="templateNotes && templateName">

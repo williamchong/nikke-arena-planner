@@ -22,7 +22,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 2. Get instant team recommendations for 5v5 Arena and 15v15 SP Arena
 3. See burst speed, timing breakdowns, and why each team works
 
-All computation runs client-side — no server, no login, no data collection.
+All computation runs client-side — no server, no login. Anonymous thumbs up/down ratings on recommended teams are sent to Firebase to improve recommendations. No personal data is collected.
 
 ## Recommendation Algorithm
 

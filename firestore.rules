@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /ratings/{ratingId} {
+      allow create: if
+        // Must be authenticated
+        request.auth != null
+        // Only allow expected fields (required + optional)
+        && request.resource.data.keys().hasAll([
+          'userId', 'sessionId', 'timestamp', 'rating',
+          'teamCharacters', 'teamTemplateId', 'teamScore',
+          'teamBurstSpeed', 'teamMatchedArchetypes',
+          'arenaMode', 'otherRatings', 'roster', 'rosterSize'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'userId', 'sessionId', 'timestamp', 'rating',
+          'teamCharacters', 'teamTemplateId', 'teamScore',
+          'teamBurstSpeed', 'teamMatchedArchetypes',
+          'arenaMode', 'otherRatings', 'roster', 'rosterSize',
+          'allTeams', 'teamSetIndex', 'teamIndexInSet'
+        ])
+        // Validate field types
+        && request.resource.data.userId is string
+        && request.resource.data.sessionId is string
+        && request.resource.data.timestamp is timestamp
+        && request.resource.data.rating is string
+        && request.resource.data.teamCharacters is list
+        && (request.resource.data.teamTemplateId == null
+            || request.resource.data.teamTemplateId is string)
+        && request.resource.data.teamScore is number
+        && request.resource.data.teamBurstSpeed is string
+        && request.resource.data.teamMatchedArchetypes is list
+        && request.resource.data.arenaMode is string
+        && request.resource.data.otherRatings is list
+        && request.resource.data.roster is list
+        && request.resource.data.rosterSize is int
+        // Validate optional 15v15 fields when present
+        && (!('allTeams' in request.resource.data.keys())
+            || (request.resource.data.allTeams is list
+                && request.resource.data.allTeams.size() <= 3))
+        && (!('teamSetIndex' in request.resource.data.keys())
+            || request.resource.data.teamSetIndex is int)
+        && (!('teamIndexInSet' in request.resource.data.keys())
+            || request.resource.data.teamIndexInSet is int)
+        // userId field must match the authenticated user's UID
+        && request.resource.data.userId == request.auth.uid
+        // Rating and arenaMode must be valid
+        && request.resource.data.rating in ['up', 'down']
+        && request.resource.data.arenaMode in ['5v5', '15v15']
+        // Team must have exactly 5 string character IDs
+        && request.resource.data.teamCharacters.size() == 5
+        && request.resource.data.teamCharacters[0] is string
+        && request.resource.data.teamCharacters[1] is string
+        && request.resource.data.teamCharacters[2] is string
+        && request.resource.data.teamCharacters[3] is string
+        && request.resource.data.teamCharacters[4] is string
+        // Roster must be present and reasonable size
+        && request.resource.data.roster.size() >= 5
+        && request.resource.data.roster.size() <= 300
+        // Bound nested list sizes to prevent abuse
+        && request.resource.data.otherRatings.size() <= 50
+        && request.resource.data.teamMatchedArchetypes.size() <= 20
+        // rosterSize must match actual roster length
+        && request.resource.data.rosterSize == request.resource.data.roster.size()
+        // Must use server timestamp
+        && request.resource.data.timestamp == request.time;
+
+      // No reads, updates, or deletes from client
+      allow read, update, delete: if false;
+    }
+  }
+}
