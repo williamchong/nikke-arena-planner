@@ -34,13 +34,40 @@ const filtered = computed(() => {
   })
 
   const snap = ownedSnapshot.value
-  return [...chars].sort((a: Character, b: Character) => {
-    const aOwned = snap.has(a.id) ? 0 : 1
-    const bOwned = snap.has(b.id) ? 0 : 1
-    if (aOwned !== bOwned) return aOwned - bOwned
 
-    // Newest characters first (higher releaseOrder = newer)
-    return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
+  // Pair-level ownership and release order so normal + treasure stay adjacent
+  // and the whole pair moves into the owned section when either is owned.
+  const groupInfo = new Map<string, { owned: boolean, releaseOrder: number }>()
+  for (const c of chars) {
+    const base = baseId(c.id)
+    const rel = c.releaseOrder ?? 0
+    const isOwned = snap.has(c.id)
+    const existing = groupInfo.get(base)
+    if (!existing) {
+      groupInfo.set(base, { owned: isOwned, releaseOrder: rel })
+    }
+    else {
+      if (isOwned) existing.owned = true
+      if (rel > existing.releaseOrder) existing.releaseOrder = rel
+    }
+  }
+
+  return [...chars].sort((a: Character, b: Character) => {
+    const aBase = baseId(a.id)
+    const bBase = baseId(b.id)
+
+    if (aBase !== bBase) {
+      const aInfo = groupInfo.get(aBase)!
+      const bInfo = groupInfo.get(bBase)!
+      const aOwned = aInfo.owned ? 0 : 1
+      const bOwned = bInfo.owned ? 0 : 1
+      if (aOwned !== bOwned) return aOwned - bOwned
+      return bInfo.releaseOrder - aInfo.releaseOrder
+    }
+
+    const aTreasure = a.id.endsWith(TREASURE_SUFFIX) ? 1 : 0
+    const bTreasure = b.id.endsWith(TREASURE_SUFFIX) ? 1 : 0
+    return aTreasure - bTreasure
   })
 })
 

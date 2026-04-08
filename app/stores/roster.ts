@@ -9,7 +9,19 @@ export const useRosterStore = defineStore('roster', () => {
     onNuxtReady(() => {
       try {
         const saved = localStorage.getItem(STORAGE_KEY)
-        if (saved) storedIds.value = JSON.parse(saved)
+        if (saved) {
+          const loaded: string[] = JSON.parse(saved)
+          // Sanitize: if legacy data has both a normal and treasure variant,
+          // prefer the treasure (upgraded) version.
+          const kept = new Set(loaded)
+          for (const id of loaded) {
+            if (id.endsWith(TREASURE_SUFFIX)) {
+              kept.delete(treasurePartnerId(id))
+            }
+          }
+          storedIds.value = [...kept]
+          if (kept.size !== loaded.length) persist()
+        }
       }
       catch { /* ignore corrupt localStorage */ }
     })
@@ -29,7 +41,8 @@ export const useRosterStore = defineStore('roster', () => {
       trackEvent('roster_remove')
     }
     else {
-      storedIds.value = [...storedIds.value, id]
+      const partner = treasurePartnerId(id)
+      storedIds.value = [...storedIds.value.filter((i: string) => i !== partner), id]
       trackEvent('roster_add')
     }
     persist()
@@ -38,6 +51,7 @@ export const useRosterStore = defineStore('roster', () => {
   function selectAll(ids: string[]) {
     const current = new Set(storedIds.value)
     for (const id of ids) {
+      current.delete(treasurePartnerId(id))
       current.add(id)
     }
     storedIds.value = [...current]
