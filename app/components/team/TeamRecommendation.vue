@@ -110,7 +110,13 @@ function toggleNotes() {
         />
         <div v-if="alternatesMap[i]" class="flex items-center gap-0.5">
           <span class="text-[9px] text-muted">{{ t('recommend.orSwap') }}</span>
-          <div v-for="alt in alternatesMap[i].slice(0, 3)" :key="alt.id" :title="localize(alt.name)" class="cursor-help">
+          <div
+            v-for="(alt, altIdx) in alternatesMap[i].slice(0, 3)"
+            :key="alt.id"
+            :title="localize(alt.name)"
+            class="cursor-help"
+            :class="{ 'hidden sm:block': altIdx === 2 }"
+          >
             <img
               v-if="getAvatarUrl(alt.avatarImg)"
               :src="getAvatarUrl(alt.avatarImg)!"
@@ -118,7 +124,8 @@ function toggleNotes() {
               class="size-5 rounded-full opacity-60 ring-1 ring-default hover:opacity-100"
             >
           </div>
-          <span v-if="alternatesMap[i].length > 3" class="text-[9px] text-muted">+{{ alternatesMap[i].length - 3 }}</span>
+          <span v-if="alternatesMap[i].length > 2" class="text-[9px] text-muted sm:hidden">+{{ alternatesMap[i].length - 2 }}</span>
+          <span v-if="alternatesMap[i].length > 3" class="hidden text-[9px] text-muted sm:inline">+{{ alternatesMap[i].length - 3 }}</span>
         </div>
       </div>
     </div>

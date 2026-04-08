@@ -13,11 +13,17 @@ const { getCharacter, filterCharacters } = useCharacters()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
 
 const mode = computed(() => route.params.mode as string)
+const is15v15 = computed(() => mode.value === '15v15')
+
+const modes = computed(() => ({
+  '5v5': { label: t('recommend.mode5v5'), desc: t('recommend.mode5v5Desc'), icon: 'i-lucide-swords', to: localePath('/recommend/5v5') },
+  '15v15': { label: t('recommend.mode15v15'), desc: t('recommend.mode15v15Desc'), icon: 'i-lucide-layers-3', to: localePath('/recommend/15v15') },
+}))
+const currentMode = computed(() => modes.value[mode.value as '5v5' | '15v15'] ?? modes.value['5v5'])
 
 useSeoMeta({
-  title: () => t('recommend.title'),
+  title: () => `${currentMode.value.label} — ${t('recommend.title')}`,
 })
-const is15v15 = computed(() => mode.value === '15v15')
 
 // --- Lock slots: team-formation style ---
 const TEAM_SIZE = 5
@@ -215,10 +221,7 @@ watch(
   { immediate: true },
 )
 
-const tabs = computed(() => [
-  { label: t('recommend.mode5v5'), to: localePath('/recommend/5v5') },
-  { label: t('recommend.mode15v15'), to: localePath('/recommend/15v15') },
-])
+const tabs = computed(() => Object.values(modes.value))
 
 const hasEnoughCharacters = computed(() => {
   if (is15v15.value) return roster.ownedCount >= 15
@@ -236,26 +239,38 @@ const resultCount = computed(() =>
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
-    <div class="flex items-center justify-between">
-      <h1 class="text-2xl font-bold">
-        {{ t('recommend.title') }}
-      </h1>
-      <UBadge color="primary" variant="subtle">
-        {{ t('roster.owned', { count: roster.ownedCount, total: 186 }) }}
-      </UBadge>
-    </div>
-
-    <div class="flex gap-2">
+  <div class="flex flex-col gap-4 sm:gap-6">
+    <div class="grid grid-cols-2 gap-2">
       <UButton
         v-for="tab in tabs"
         :key="tab.to"
         :to="tab.to"
         :label="tab.label"
+        :icon="tab.icon"
         :variant="route.path === tab.to ? 'solid' : 'outline'"
         :color="route.path === tab.to ? 'primary' : 'neutral'"
-        size="sm"
+        size="lg"
+        block
       />
+    </div>
+
+    <div class="flex flex-wrap items-start justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <UIcon :name="currentMode.icon" class="size-6" />
+        </div>
+        <div>
+          <h1 class="text-xl font-bold leading-tight sm:text-2xl">
+            {{ currentMode.label }}
+          </h1>
+          <p class="text-xs text-muted sm:text-sm">
+            {{ currentMode.desc }}
+          </p>
+        </div>
+      </div>
+      <UBadge color="primary" variant="subtle" class="shrink-0">
+        {{ t('roster.owned', { count: roster.ownedCount, total: 186 }) }}
+      </UBadge>
     </div>
 
     <!-- Character picker modal -->
@@ -432,11 +447,11 @@ const resultCount = computed(() =>
 
     <!-- Shared controls for both modes -->
     <template v-if="hasEnoughCharacters">
-      <div class="flex items-center justify-between">
+      <div class="flex flex-wrap items-center justify-between gap-2">
         <p class="text-sm text-muted">
           {{ t('recommend.showingResults', { count: resultCount }) }}
         </p>
-        <div class="flex gap-1">
+        <div class="flex flex-wrap gap-1">
           <UButton
             :label="t('recommend.lockCharacters')"
             icon="i-lucide-pin"
@@ -478,12 +493,12 @@ const resultCount = computed(() =>
         <div
           v-for="(team, teamIdx) in lockSlotCharacters"
           :key="teamIdx"
-          class="flex items-center gap-2"
+          class="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-2"
         >
-          <span v-if="is15v15" class="w-10 text-xs font-medium text-muted">
+          <span v-if="is15v15" class="text-xs font-medium text-muted sm:w-10">
             {{ t('recommend.team', { n: teamIdx + 1 }) }}
           </span>
-          <div class="flex gap-1.5">
+          <div class="flex gap-1.5 overflow-x-auto">
             <TeamSlot
               v-for="(char, slotIdx) in team"
               :key="slotIdx"

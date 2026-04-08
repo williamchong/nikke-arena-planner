@@ -25,7 +25,9 @@ const currentLabel = computed(() =>
       color="neutral"
       variant="ghost"
       icon="i-lucide-languages"
-      :label="currentLabel"
-    />
+      :title="currentLabel"
+    >
+      <span class="hidden sm:inline">{{ currentLabel }}</span>
+    </UButton>
   </UDropdownMenu>
 </template>

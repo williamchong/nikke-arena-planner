@@ -20,7 +20,7 @@ const { t } = useI18n()
 
 <template>
   <div
-    class="relative flex min-h-20 w-20 flex-col items-center justify-center gap-1 rounded-lg border p-2 text-center"
+    class="relative flex min-h-20 w-16 flex-col items-center justify-center gap-1 rounded-lg border p-1.5 text-center sm:w-20 sm:p-2"
     :class="[
       character
         ? locked

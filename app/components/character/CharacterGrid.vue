@@ -51,11 +51,11 @@ function handleSelectAll() {
 
 <template>
   <div class="flex flex-col gap-4">
-    <div class="flex items-center justify-between">
+    <div class="flex flex-wrap items-center justify-between gap-2">
       <h2 class="text-lg font-semibold">
         {{ t('roster.title') }}
       </h2>
-      <div class="flex items-center gap-2">
+      <div class="flex flex-wrap items-center gap-2">
         <UBadge color="primary" variant="subtle">
           {{ t('roster.owned', { count: roster.ownedCount, total: totalCount }) }}
         </UBadge>

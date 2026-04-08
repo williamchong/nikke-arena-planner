@@ -228,8 +228,8 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
-    <h1 class="text-2xl font-bold">
+  <div class="flex flex-col gap-4 sm:gap-6">
+    <h1 class="text-xl font-bold sm:text-2xl">
       {{ t('calculator.title') }}
     </h1>
 
@@ -249,7 +249,7 @@ const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
           />
         </div>
 
-        <div class="flex gap-2">
+        <div class="flex gap-2 overflow-x-auto">
           <TeamSlot
             v-for="i in 5"
             :key="i"

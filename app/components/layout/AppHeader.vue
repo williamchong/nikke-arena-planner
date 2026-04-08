@@ -8,8 +8,10 @@ const colorMode = useColorMode()
 watch(() => colorMode.preference, (_val, old) => { if (old) trackEvent('setting_theme') })
 
 const mainNavItems = computed(() => [
-  { label: t('nav.recommend'), to: localePath('/recommend/5v5'), icon: 'i-lucide-trophy', match: '/recommend' },
-  { label: t('nav.roster'), to: localePath('/roster'), icon: 'i-lucide-users', match: '/roster' },
+  { label: t('nav.recommend'), to: localePath('/recommend/5v5'), icon: 'i-lucide-trophy', match: '/recommend', size: 'sm' as const },
+  { label: t('nav.roster'), to: localePath('/roster'), icon: 'i-lucide-users', match: '/roster', size: 'sm' as const },
+  { label: t('nav.calculator'), to: localePath('/calculator'), icon: 'i-lucide-calculator', match: '/calculator', size: 'xs' as const },
+  { label: t('nav.about'), to: localePath('/about'), icon: 'i-lucide-info', match: '/about', size: 'xs' as const },
 ])
 
 function isActive(item: { to: string, match: string }) {
@@ -19,41 +21,27 @@ function isActive(item: { to: string, match: string }) {
 
 <template>
   <header class="border-b border-default">
-    <div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4">
-      <NuxtLink :to="localePath('/recommend/5v5')" class="flex items-center gap-2 font-bold">
+    <div class="mx-auto flex h-14 max-w-7xl items-center gap-2 px-3 sm:gap-4 sm:px-4">
+      <NuxtLink :to="localePath('/recommend/5v5')" class="flex shrink-0 items-center gap-2 text-sm font-bold sm:text-base">
         {{ t('app.title') }}
       </NuxtLink>
 
-      <nav class="ml-auto flex items-center gap-1">
+      <nav class="ml-auto flex items-center gap-0.5 sm:gap-1">
         <UButton
           v-for="item in mainNavItems"
           :key="item.to"
           :to="item.to"
           :icon="item.icon"
-          :label="item.label"
+          :title="item.label"
           :variant="isActive(item) ? 'soft' : 'ghost'"
           color="neutral"
-          size="sm"
-        />
-        <UButton
-          :to="localePath('/calculator')"
-          icon="i-lucide-calculator"
-          :label="t('nav.calculator')"
-          :variant="route.path.endsWith('/calculator') ? 'soft' : 'ghost'"
-          color="neutral"
-          size="xs"
-        />
-        <UButton
-          :to="localePath('/about')"
-          icon="i-lucide-info"
-          :label="t('nav.about')"
-          :variant="route.path.endsWith('/about') ? 'soft' : 'ghost'"
-          color="neutral"
-          size="xs"
-        />
+          :size="item.size"
+        >
+          <span class="hidden sm:inline">{{ item.label }}</span>
+        </UButton>
       </nav>
 
-      <div class="flex items-center gap-1">
+      <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
         <CommonLocaleToggle />
         <UColorModeButton />
       </div>
