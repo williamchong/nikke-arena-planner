@@ -35,34 +35,42 @@ const MOVE_SPEED_REBALANCE = 0.40
 const MOVE_BENCH_SWAP = 0.65
 
 /**
+ * Precomputed per-team counts used by `matchesTeammateReq` so each token check is O(1)
+ * instead of scanning the team for every token.
+ */
+interface TeamIndex {
+  traits: Map<string, number>
+  roles: Map<string, number>
+  elements: Map<string, number>
+  squads: Map<string, number>
+}
+
+/**
  * Check whether a `requiresTeammate` / `prefersTeammate` token is satisfied by some other
  * team member. Supports plain trait tags plus tokens: `same-element`, `same-squad`,
  * `role:<role>`, `element:<element>`.
  */
-function matchesTeammateReq(
-  char: Character,
-  req: string,
-  chars: Character[],
-  teamTraitCount: Map<string, number>,
-): boolean {
+function matchesTeammateReq(char: Character, req: string, index: TeamIndex): boolean {
   if (req === 'same-element') {
-    return chars.some(o => o.id !== char.id && o.element === char.element)
+    // Self always contributes to the element count, so "another teammate" means count > 1.
+    return (index.elements.get(char.element) ?? 0) > 1
   }
   if (req === 'same-squad') {
-    return !!char.squad && chars.some(o => o.id !== char.id && o.squad === char.squad)
+    if (!char.squad) return false
+    return (index.squads.get(char.squad) ?? 0) > 1
   }
   if (req.startsWith('role:')) {
     const role = req.slice(5)
-    return chars.some(o => o.id !== char.id && o.role === role)
+    const selfContrib = char.role === role ? 1 : 0
+    return (index.roles.get(role) ?? 0) > selfContrib
   }
   if (req.startsWith('element:')) {
     const element = req.slice(8)
-    return chars.some(o => o.id !== char.id && o.element === element)
+    const selfContrib = char.element === element ? 1 : 0
+    return (index.elements.get(element) ?? 0) > selfContrib
   }
-  // Plain trait: the team needs at least one OTHER character with this trait.
-  const total = teamTraitCount.get(req) ?? 0
   const selfContrib = char.traits?.includes(req) ? 1 : 0
-  return total > selfContrib
+  return (index.traits.get(req) ?? 0) > selfContrib
 }
 
 /**
@@ -74,13 +82,21 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   const result = calculate(chars, mode)
   if (!result.valid) return -1000
 
-  // Precompute team trait counts so trait checks are O(1) in the hot loop — scoreTeamRaw
-  // runs per SA iteration and per fillTemplate brute-force combo.
-  const teamTraitCount = new Map<string, number>()
+  // Precompute all team counts once — scoreTeamRaw runs per SA iteration and per
+  // fillTemplate brute-force combo, so O(1) lookups in matchesTeammateReq matter.
+  const index: TeamIndex = {
+    traits: new Map(),
+    roles: new Map(),
+    elements: new Map(),
+    squads: new Map(),
+  }
   for (const c of chars) {
     for (const t of c.traits ?? []) {
-      teamTraitCount.set(t, (teamTraitCount.get(t) ?? 0) + 1)
+      index.traits.set(t, (index.traits.get(t) ?? 0) + 1)
     }
+    index.roles.set(c.role, (index.roles.get(c.role) ?? 0) + 1)
+    index.elements.set(c.element, (index.elements.get(c.element) ?? 0) + 1)
+    if (c.squad) index.squads.set(c.squad, (index.squads.get(c.squad) ?? 0) + 1)
   }
 
   // Hard reject: any character whose `requiresTeammate` is not satisfied.
@@ -89,7 +105,7 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   for (const c of chars) {
     if (!c.requiresTeammate) continue
     for (const req of c.requiresTeammate) {
-      if (!matchesTeammateReq(c, req, chars, teamTraitCount)) return -1000
+      if (!matchesTeammateReq(c, req, index)) return -1000
     }
   }
 
@@ -98,7 +114,7 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   for (const c of chars) {
     if (!c.prefersTeammate) continue
     for (const pref of c.prefersTeammate) {
-      if (!matchesTeammateReq(c, pref, chars, teamTraitCount)) score -= MISSING_PREFERRED_TRAIT_PENALTY
+      if (!matchesTeammateReq(c, pref, index)) score -= MISSING_PREFERRED_TRAIT_PENALTY
     }
   }
 
