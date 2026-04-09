@@ -8,6 +8,11 @@ import { PVP_TIER_SCORES, SPEED_TIER_SCORES, scoreTeamRaw, useSimulatedAnnealing
 const templates: TeamTemplate[] = templatesData as TeamTemplate[]
 const templateById = new Map(templates.map(t => [t.id, t]))
 
+// Speed-score delta at which a template's priority bonus falls off to zero in scoreTeam.
+// 40 points ≈ two tier steps (e.g. 3RL → 5RL), matching the point where a slow template
+// team is effectively unable to complete its burst rotation.
+const PRIORITY_SPEED_FALLOFF = 40
+
 const { calculate, validateBurstChain } = useBurstCalculator()
 const { getCharacter } = useCharacters()
 
@@ -148,17 +153,20 @@ export function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate
 }
 
 function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode): { score: number, matchedArchetypes: string[] } {
-  // Build on scoreTeamRaw (speed-capped + suitability + pvpTier) and add template-specific bonuses
   const raw = scoreTeamRaw(chars, mode, template.preferredSpeed)
   if (raw <= -1000) return { score: raw, matchedArchetypes: [] }
 
-  let score = raw
-  score += (4 - template.priority) * 100
-
-  // For 5v5, uncapped speed is always better — add back the capped portion
   const result = calculate(chars, mode)
   const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
   const prefSpeed = SPEED_TIER_SCORES[template.preferredSpeed] || actualSpeed
+
+  // A slow template team rarely completes its burst rotation, so the priority bonus
+  // linearly decays as the team falls below preferred speed — fully voided at two tiers below.
+  const speedMiss = Math.max(0, prefSpeed - actualSpeed)
+  const priorityMultiplier = Math.max(0, 1 - speedMiss / PRIORITY_SPEED_FALLOFF)
+  let score = raw
+  score += (4 - template.priority) * 100 * priorityMultiplier
+
   const cappedSpeed = Math.min(actualSpeed, prefSpeed)
   score += (actualSpeed - cappedSpeed)
 
@@ -468,18 +476,29 @@ export function useTeamRecommender() {
         results.unshift(toComposition(saResult, mode, 'sa-optimized', bestTpl?.preferredSpeed))
       }
     }
-    else if (owned.length >= 5 && results.length === 0) {
-      // No templates matched — SA from auto-fill seed with locked chars
-      const lockedChars = lockedIds
-        ? [...lockedIds].map(id => getCharacter(id)).filter((c): c is Character => !!c)
-        : []
-      const available = owned.filter(c => !lockedIds?.has(c.id))
-      const autoTeam = autoFillTeam([...lockedChars, ...available], mode)
-      if (autoTeam) {
-        const seedTeam = resolveCharacters(autoTeam.characters)
-        const bench = owned.filter(c => !autoTeam.characters.includes(c.id))
-        const saResult = saOptimize5v5(seedTeam, bench, mode, undefined, undefined, lockedIds)
-        results.push(toComposition(saResult, mode, 'sa-optimized'))
+
+    // Phase 2.5: Non-template fallback. A faster random team often beats a slow template team,
+    // so run auto-fill + SA when no template matched, or when the best result missed its preferred speed.
+    if (owned.length >= 5) {
+      let shouldFallback = results.length === 0
+      if (!shouldFallback) {
+        const bestSoFar = [...results].sort((a, b) => b.score - a.score)[0]!
+        const prefSpeed = getTemplate(bestSoFar.templateId ?? '')?.preferredSpeed
+        const prefScore = prefSpeed ? (SPEED_TIER_SCORES[prefSpeed] || 0) : 0
+        const actualScore = SPEED_TIER_SCORES[bestSoFar.burstSpeed] || 0
+        shouldFallback = prefScore > 0 && actualScore < prefScore
+      }
+
+      if (shouldFallback) {
+        const lockedChars = lockedIds ? resolveCharacters([...lockedIds]) : []
+        const available = owned.filter(c => !lockedIds?.has(c.id))
+        const autoTeam = autoFillTeam([...lockedChars, ...available], mode)
+        if (autoTeam) {
+          const seedTeam = resolveCharacters(autoTeam.characters)
+          const bench = owned.filter(c => !autoTeam.characters.includes(c.id))
+          const saResult = saOptimize5v5(seedTeam, bench, mode, undefined, undefined, lockedIds)
+          results.push(toComposition(saResult, mode, 'sa-non-template'))
+        }
       }
     }
 

@@ -25,6 +25,9 @@ export const PVP_TIER_SCORES: Record<string, number> = {
 }
 
 const BELOW_PREFERRED_PENALTY = 0.5
+// Soft synergy penalty: each unmet `prefersTeammate` trait docks this from the raw score.
+// ~60 is roughly one speed tier step plus a suitability point — noticeable but not disqualifying.
+const MISSING_PREFERRED_TRAIT_PENALTY = 60
 
 // Move probabilities for neighbor generation (cumulative thresholds)
 const MOVE_INTER_TEAM = 0.25
@@ -40,7 +43,31 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   const result = calculate(chars, mode)
   if (!result.valid) return -1000
 
+  // Precompute team trait set once — scoreTeamRaw is called from SA's per-iteration hot loop
+  // and from fillTemplate's brute-force combo scoring, so the O(n²) naive scan matters.
+  const teamTraits = new Set<string>()
+  for (const c of chars) {
+    for (const t of c.traits ?? []) teamTraits.add(t)
+  }
+
+  // Hard reject: characters whose `requiresTeammate` traits are absent from the team
+  // (e.g. Nero's kit requires a healer teammate to activate Cat's Repayment and Grumpy Cat buffs).
+  for (const c of chars) {
+    if (!c.requiresTeammate) continue
+    for (const req of c.requiresTeammate) {
+      if (!teamTraits.has(req)) return -1000
+    }
+  }
+
   let score = 0
+
+  for (const c of chars) {
+    if (!c.prefersTeammate) continue
+    for (const pref of c.prefersTeammate) {
+      if (!teamTraits.has(pref)) score -= MISSING_PREFERRED_TRAIT_PENALTY
+    }
+  }
+
   const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
   const prefSpeed = preferredSpeed ? (SPEED_TIER_SCORES[preferredSpeed] || actualSpeed) : actualSpeed
   score += Math.min(actualSpeed, prefSpeed)

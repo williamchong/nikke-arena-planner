@@ -46,4 +46,10 @@ export interface Character {
   releaseOrder: number
   avatarImg?: string
   pvpTier?: PvpTier
+  /** Trait tags for teammate-synergy lookups (e.g. 'healer'). */
+  traits?: string[]
+  /** Trait tags that at least one teammate MUST have, otherwise this character is broken (hard reject). */
+  requiresTeammate?: string[]
+  /** Trait tags that a teammate ideally has — soft penalty per missing trait, team still allowed. */
+  prefersTeammate?: string[]
 }
