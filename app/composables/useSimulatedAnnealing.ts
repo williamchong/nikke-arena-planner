@@ -35,6 +35,37 @@ const MOVE_SPEED_REBALANCE = 0.40
 const MOVE_BENCH_SWAP = 0.65
 
 /**
+ * Check whether a `requiresTeammate` / `prefersTeammate` token is satisfied by some other
+ * team member. Supports plain trait tags plus tokens: `same-element`, `same-squad`,
+ * `role:<role>`, `element:<element>`.
+ */
+function matchesTeammateReq(
+  char: Character,
+  req: string,
+  chars: Character[],
+  teamTraitCount: Map<string, number>,
+): boolean {
+  if (req === 'same-element') {
+    return chars.some(o => o.id !== char.id && o.element === char.element)
+  }
+  if (req === 'same-squad') {
+    return !!char.squad && chars.some(o => o.id !== char.id && o.squad === char.squad)
+  }
+  if (req.startsWith('role:')) {
+    const role = req.slice(5)
+    return chars.some(o => o.id !== char.id && o.role === role)
+  }
+  if (req.startsWith('element:')) {
+    const element = req.slice(8)
+    return chars.some(o => o.id !== char.id && o.element === element)
+  }
+  // Plain trait: the team needs at least one OTHER character with this trait.
+  const total = teamTraitCount.get(req) ?? 0
+  const selfContrib = char.traits?.includes(req) ? 1 : 0
+  return total > selfContrib
+}
+
+/**
  * Score a team without requiring a template.
  * Based on burst speed, suitability, and PVP tier.
  * If preferredSpeed is provided, speed score is capped at that tier.
@@ -43,19 +74,22 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   const result = calculate(chars, mode)
   if (!result.valid) return -1000
 
-  // Precompute team trait set once — scoreTeamRaw is called from SA's per-iteration hot loop
-  // and from fillTemplate's brute-force combo scoring, so the O(n²) naive scan matters.
-  const teamTraits = new Set<string>()
+  // Precompute team trait counts so trait checks are O(1) in the hot loop — scoreTeamRaw
+  // runs per SA iteration and per fillTemplate brute-force combo.
+  const teamTraitCount = new Map<string, number>()
   for (const c of chars) {
-    for (const t of c.traits ?? []) teamTraits.add(t)
+    for (const t of c.traits ?? []) {
+      teamTraitCount.set(t, (teamTraitCount.get(t) ?? 0) + 1)
+    }
   }
 
-  // Hard reject: characters whose `requiresTeammate` traits are absent from the team
-  // (e.g. Nero's kit requires a healer teammate to activate Cat's Repayment and Grumpy Cat buffs).
+  // Hard reject: any character whose `requiresTeammate` is not satisfied.
+  // Nero is the canonical case — her kit requires a healer teammate to activate
+  // Cat's Repayment and Grumpy Cat's HP Potency buff.
   for (const c of chars) {
     if (!c.requiresTeammate) continue
     for (const req of c.requiresTeammate) {
-      if (!teamTraits.has(req)) return -1000
+      if (!matchesTeammateReq(c, req, chars, teamTraitCount)) return -1000
     }
   }
 
@@ -64,7 +98,7 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   for (const c of chars) {
     if (!c.prefersTeammate) continue
     for (const pref of c.prefersTeammate) {
-      if (!teamTraits.has(pref)) score -= MISSING_PREFERRED_TRAIT_PENALTY
+      if (!matchesTeammateReq(c, pref, chars, teamTraitCount)) score -= MISSING_PREFERRED_TRAIT_PENALTY
     }
   }
 

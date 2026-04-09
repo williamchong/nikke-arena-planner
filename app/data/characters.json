@@ -46,7 +46,8 @@
     },
     "releaseOrder": 1377,
     "avatarImg": "si_c352_00_s",
-    "pvpTier": "SSS"
+    "pvpTier": "SSS",
+    "squad": "Aegis"
   },
   {
     "id": "snow-white-heavy-arms",
@@ -95,7 +96,8 @@
     },
     "releaseOrder": 1461,
     "avatarImg": "si_c471_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Goddess"
   },
   {
     "id": "trina",
@@ -144,7 +146,14 @@
     },
     "releaseOrder": 1167,
     "avatarImg": "si_c412_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Botanic Garden",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "anis",
@@ -193,7 +202,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c012_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "squad": "Counters"
   },
   {
     "id": "jackal",
@@ -242,7 +252,8 @@
     },
     "releaseOrder": 376,
     "avatarImg": "si_c111_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Exotic"
   },
   {
     "id": "centi",
@@ -291,7 +302,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c080_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Mighty Tools"
   },
   {
     "id": "rumani",
@@ -340,7 +352,8 @@
     },
     "releaseOrder": 1020,
     "avatarImg": "si_c240_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Nepenthe"
   },
   {
     "id": "emilia",
@@ -389,7 +402,8 @@
     },
     "releaseOrder": 810,
     "avatarImg": "si_c821_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Emilia's Faction"
   },
   {
     "id": "noah",
@@ -438,7 +452,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c232_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Inherit"
   },
   {
     "id": "pascal",
@@ -487,7 +502,11 @@
     },
     "releaseOrder": 608,
     "avatarImg": "si_c812_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Machine Lifeform"
   },
   {
     "id": "maiden-ice-rose",
@@ -536,7 +555,11 @@
     },
     "releaseOrder": 1069,
     "avatarImg": "si_c183_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Extrinsic",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "drake-treasure",
@@ -585,7 +608,8 @@
     },
     "releaseOrder": 1335,
     "avatarImg": "si_c101_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Matis"
   },
   {
     "id": "drake",
@@ -634,7 +658,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c101_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Matis"
   },
   {
     "id": "viper",
@@ -683,7 +708,8 @@
     },
     "releaseOrder": 383,
     "avatarImg": "si_c112_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Exotic"
   },
   {
     "id": "viper-treasure",
@@ -732,7 +758,8 @@
     },
     "releaseOrder": 383,
     "avatarImg": "si_c112_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Exotic"
   },
   {
     "id": "maiden",
@@ -781,7 +808,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c181_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Extrinsic"
   },
   {
     "id": "neon",
@@ -830,7 +858,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c011_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "squad": "Counters"
   },
   {
     "id": "noir",
@@ -879,7 +908,11 @@
     },
     "releaseOrder": 509,
     "avatarImg": "si_c271_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "777",
+    "prefersTeammate": [
+      "same-squad"
+    ]
   },
   {
     "id": "pepper",
@@ -928,7 +961,11 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c131_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Seraphim",
+    "traits": [
+      "healer"
+    ]
   },
   {
     "id": "sugar",
@@ -977,7 +1014,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c140_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Cafe Sweety"
   },
   {
     "id": "soda-twinkling-bunny",
@@ -1026,7 +1064,8 @@
     },
     "releaseOrder": 880,
     "avatarImg": "si_c314_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Maid For You"
   },
   {
     "id": "laplace-treasure",
@@ -1075,7 +1114,8 @@
     },
     "releaseOrder": 1251,
     "avatarImg": "si_c100_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Matis"
   },
   {
     "id": "liberalio",
@@ -1124,7 +1164,8 @@
     },
     "releaseOrder": 1405,
     "avatarImg": "si_c262_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Heretic"
   },
   {
     "id": "mica-snow-buddy",
@@ -1172,7 +1213,8 @@
       "defense": -1
     },
     "releaseOrder": 712,
-    "avatarImg": "si_c062_00_s"
+    "avatarImg": "si_c062_00_s",
+    "squad": "The Carronades"
   },
   {
     "id": "zwei",
@@ -1220,7 +1262,11 @@
       "defense": -2
     },
     "releaseOrder": 950,
-    "avatarImg": "si_c390_00_s"
+    "avatarImg": "si_c390_00_s",
+    "traits": [
+      "cover-healer"
+    ],
+    "squad": "School Circle"
   },
   {
     "id": "nihilister",
@@ -1269,7 +1315,8 @@
     },
     "releaseOrder": 453,
     "avatarImg": "si_c261_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Heretic"
   },
   {
     "id": "arcana",
@@ -1318,7 +1365,11 @@
     },
     "releaseOrder": 1230,
     "avatarImg": "si_c581_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Best Seller",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "a2",
@@ -1366,7 +1417,8 @@
       "defense": -1
     },
     "releaseOrder": 615,
-    "avatarImg": "si_c811_00_s"
+    "avatarImg": "si_c811_00_s",
+    "squad": "YoRHa"
   },
   {
     "id": "laplace",
@@ -1415,7 +1467,8 @@
     },
     "releaseOrder": 327,
     "avatarImg": "si_c100_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Matis"
   },
   {
     "id": "rapunzel",
@@ -1464,7 +1517,11 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c221_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Pioneer"
   },
   {
     "id": "diesel-winter-sweets",
@@ -1512,7 +1569,8 @@
       "defense": -1
     },
     "releaseOrder": 1433,
-    "avatarImg": "si_c075_00_s"
+    "avatarImg": "si_c075_00_s",
+    "squad": "Infinity Rail"
   },
   {
     "id": "grave",
@@ -1561,7 +1619,8 @@
     },
     "releaseOrder": 1041,
     "avatarImg": "si_c514_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Old Tales"
   },
   {
     "id": "scarlet",
@@ -1610,7 +1669,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c222_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Pioneer"
   },
   {
     "id": "anchor",
@@ -1658,7 +1718,8 @@
       "defense": -1
     },
     "releaseOrder": 579,
-    "avatarImg": "si_c351_00_s"
+    "avatarImg": "si_c351_00_s",
+    "squad": "Aegis"
   },
   {
     "id": "anchor-innocent-maid",
@@ -1707,7 +1768,14 @@
     },
     "releaseOrder": 1132,
     "avatarImg": "si_c355_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Aegis",
+    "prefersTeammate": [
+      "same-squad"
+    ]
   },
   {
     "id": "anne-miracle-fairy",
@@ -1756,7 +1824,15 @@
     },
     "releaseOrder": 348,
     "avatarImg": "si_c121_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Recall & Release",
+    "traits": [
+      "healer"
+    ],
+    "prefersTeammate": [
+      "role:supporter",
+      "role:attacker"
+    ]
   },
   {
     "id": "vesti",
@@ -1804,7 +1880,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c091_00_s"
+    "avatarImg": "si_c091_00_s",
+    "squad": "Absolute"
   },
   {
     "id": "bay",
@@ -1852,7 +1929,8 @@
       "defense": -1
     },
     "releaseOrder": 831,
-    "avatarImg": "si_c550_00_s"
+    "avatarImg": "si_c550_00_s",
+    "squad": "Rewind"
   },
   {
     "id": "bay-treasure",
@@ -1901,7 +1979,8 @@
     },
     "releaseOrder": 831,
     "avatarImg": "si_c550_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Rewind"
   },
   {
     "id": "biscuit",
@@ -1950,7 +2029,16 @@
     },
     "releaseOrder": 438,
     "avatarImg": "si_c381_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Happy Zoo",
+    "prefersTeammate": [
+      "role:attacker",
+      "role:defender",
+      "role:supporter"
+    ]
   },
   {
     "id": "tia",
@@ -1999,7 +2087,11 @@
     },
     "releaseOrder": 649,
     "avatarImg": "si_c451_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Dazzling Pearl",
+    "requiresTeammate": [
+      "cover-healer"
+    ]
   },
   {
     "id": "quiry",
@@ -2047,7 +2139,11 @@
       "defense": -1
     },
     "releaseOrder": 656,
-    "avatarImg": "si_c033_00_s"
+    "avatarImg": "si_c033_00_s",
+    "squad": "A.C.P.U.",
+    "prefersTeammate": [
+      "role:defender"
+    ]
   },
   {
     "id": "crust",
@@ -2095,7 +2191,8 @@
       "defense": -1
     },
     "releaseOrder": 1195,
-    "avatarImg": "si_c521_00_s"
+    "avatarImg": "si_c521_00_s",
+    "squad": "Cooking Oil"
   },
   {
     "id": "mica",
@@ -2143,7 +2240,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c061_00_s"
+    "avatarImg": "si_c061_00_s",
+    "squad": "The Carronades"
   },
   {
     "id": "noise",
@@ -2192,7 +2290,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c430_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Prima Donna"
   },
   {
     "id": "power",
@@ -2241,7 +2340,8 @@
     },
     "releaseOrder": 417,
     "avatarImg": "si_c801_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Devil Hunter"
   },
   {
     "id": "sora",
@@ -2289,7 +2389,8 @@
       "defense": -1
     },
     "releaseOrder": 1279,
-    "avatarImg": "si_c532_00_s"
+    "avatarImg": "si_c532_00_s",
+    "squad": "Over the Horizon"
   },
   {
     "id": "ada",
@@ -2338,7 +2439,8 @@
     },
     "releaseOrder": 978,
     "avatarImg": "si_c840_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "B.S.T."
   },
   {
     "id": "mana",
@@ -2386,7 +2488,11 @@
       "defense": -1
     },
     "releaseOrder": 1111,
-    "avatarImg": "si_c290_00_s"
+    "avatarImg": "si_c290_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "M.M.R."
   },
   {
     "id": "anis-sparkling-summer",
@@ -2435,7 +2541,11 @@
     },
     "releaseOrder": 579,
     "avatarImg": "si_c015_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Counters",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "jill",
@@ -2483,7 +2593,8 @@
       "defense": -1
     },
     "releaseOrder": 978,
-    "avatarImg": "si_c841_00_s"
+    "avatarImg": "si_c841_00_s",
+    "squad": "B.S.T."
   },
   {
     "id": "scarlet-black-shadow",
@@ -2532,7 +2643,8 @@
     },
     "releaseOrder": 730,
     "avatarImg": "si_c225_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Goddess"
   },
   {
     "id": "harran",
@@ -2581,7 +2693,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c230_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Inherit"
   },
   {
     "id": "raven",
@@ -2629,7 +2742,8 @@
       "defense": -1
     },
     "releaseOrder": 1265,
-    "avatarImg": "si_c851_00_s"
+    "avatarImg": "si_c851_00_s",
+    "squad": "2nd Airborne Squad"
   },
   {
     "id": "privaty-unkind-maid",
@@ -2677,7 +2791,8 @@
       "defense": -2
     },
     "releaseOrder": 765,
-    "avatarImg": "si_c313_00_s"
+    "avatarImg": "si_c313_00_s",
+    "squad": "Maid For You"
   },
   {
     "id": "guilty",
@@ -2725,7 +2840,11 @@
       "defense": -2
     },
     "releaseOrder": 376,
-    "avatarImg": "si_c400_00_s"
+    "avatarImg": "si_c400_00_s",
+    "squad": "Real Kindness",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "ether",
@@ -2773,7 +2892,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c291_00_s"
+    "avatarImg": "si_c291_00_s",
+    "squad": "M.M.R."
   },
   {
     "id": "poli",
@@ -2821,7 +2941,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c030_00_s"
+    "avatarImg": "si_c030_00_s",
+    "squad": "A.C.P.U."
   },
   {
     "id": "poli-treasure",
@@ -2869,7 +2990,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c030_00_s"
+    "avatarImg": "si_c030_00_s",
+    "squad": "A.C.P.U."
   },
   {
     "id": "leona",
@@ -2917,7 +3039,8 @@
       "defense": -2
     },
     "releaseOrder": 740,
-    "avatarImg": "si_c382_00_s"
+    "avatarImg": "si_c382_00_s",
+    "squad": "Happy Zoo"
   },
   {
     "id": "marciana",
@@ -2965,7 +3088,11 @@
       "defense": -2
     },
     "releaseOrder": 628,
-    "avatarImg": "si_c321_00_s"
+    "avatarImg": "si_c321_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Academia"
   },
   {
     "id": "mary",
@@ -3013,7 +3140,11 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c130_00_s"
+    "avatarImg": "si_c130_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Seraphim"
   },
   {
     "id": "naga",
@@ -3062,7 +3193,11 @@
     },
     "releaseOrder": 642,
     "avatarImg": "si_c450_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Dazzling Pearl"
   },
   {
     "id": "neve",
@@ -3110,7 +3245,8 @@
       "defense": -2
     },
     "releaseOrder": 341,
-    "avatarImg": "si_c193_00_s"
+    "avatarImg": "si_c193_00_s",
+    "squad": "Unlimited"
   },
   {
     "id": "dorothy-serendipity",
@@ -3159,7 +3295,8 @@
     },
     "releaseOrder": 1293,
     "avatarImg": "si_c234_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Inherit"
   },
   {
     "id": "isabel",
@@ -3207,7 +3344,8 @@
       "defense": -2
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c231_00_s"
+    "avatarImg": "si_c231_00_s",
+    "squad": "Inherit"
   },
   {
     "id": "soline-frost-ticket",
@@ -3255,7 +3393,8 @@
       "defense": -2
     },
     "releaseOrder": 1419,
-    "avatarImg": "si_c074_00_s"
+    "avatarImg": "si_c074_00_s",
+    "squad": "Infinity Rail"
   },
   {
     "id": "brid-silent-track",
@@ -3304,7 +3443,8 @@
     },
     "releaseOrder": 1440,
     "avatarImg": "si_c073_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Infinity Rail"
   },
   {
     "id": "k",
@@ -3352,7 +3492,8 @@
       "defense": -1
     },
     "releaseOrder": 1244,
-    "avatarImg": "si_c041_00_s"
+    "avatarImg": "si_c041_00_s",
+    "squad": "Perilous Siege"
   },
   {
     "id": "quency",
@@ -3400,7 +3541,8 @@
       "defense": -1
     },
     "releaseOrder": 376,
-    "avatarImg": "si_c402_00_s"
+    "avatarImg": "si_c402_00_s",
+    "squad": "Real Kindness"
   },
   {
     "id": "crow",
@@ -3448,7 +3590,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c110_00_s"
+    "avatarImg": "si_c110_00_s",
+    "squad": "Exotic"
   },
   {
     "id": "soline",
@@ -3496,7 +3639,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c071_00_s"
+    "avatarImg": "si_c071_00_s",
+    "squad": "Infinity Rail"
   },
   {
     "id": "asuka",
@@ -3545,7 +3689,11 @@
     },
     "releaseOrder": 964,
     "avatarImg": "si_c830_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "NERV",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "snow-white",
@@ -3593,7 +3741,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c220_00_s"
+    "avatarImg": "si_c220_00_s",
+    "squad": "Pioneer"
   },
   {
     "id": "ade",
@@ -3641,7 +3790,8 @@
       "defense": -1
     },
     "releaseOrder": 775,
-    "avatarImg": "si_c310_00_s"
+    "avatarImg": "si_c310_00_s",
+    "squad": "Maid For You"
   },
   {
     "id": "rei-ayanami-tentative-name",
@@ -3689,7 +3839,8 @@
       "defense": -1
     },
     "releaseOrder": 1153,
-    "avatarImg": "si_c834_00_s"
+    "avatarImg": "si_c834_00_s",
+    "squad": "NERV"
   },
   {
     "id": "mihara",
@@ -3737,7 +3888,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c161_00_s"
+    "avatarImg": "si_c161_00_s",
+    "squad": "Wardress"
   },
   {
     "id": "moran",
@@ -3786,7 +3938,8 @@
     },
     "releaseOrder": 754,
     "avatarImg": "si_c281_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Underworld Queen"
   },
   {
     "id": "phantom",
@@ -3834,7 +3987,8 @@
       "defense": -1
     },
     "releaseOrder": 1013,
-    "avatarImg": "si_c580_00_s"
+    "avatarImg": "si_c580_00_s",
+    "squad": "Best Seller"
   },
   {
     "id": "vesti-tactical-upgrade",
@@ -3883,7 +4037,8 @@
     },
     "releaseOrder": 1328,
     "avatarImg": "si_c094_00_s",
-    "pvpTier": "SSS"
+    "pvpTier": "SSS",
+    "squad": "Absolute"
   },
   {
     "id": "himeno",
@@ -3931,7 +4086,8 @@
       "defense": -1
     },
     "releaseOrder": 417,
-    "avatarImg": "si_c802_00_s"
+    "avatarImg": "si_c802_00_s",
+    "squad": "Devil Hunter"
   },
   {
     "id": "rouge",
@@ -3980,7 +4136,8 @@
     },
     "releaseOrder": 992,
     "avatarImg": "si_c272_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "777"
   },
   {
     "id": "eunhwa",
@@ -4028,7 +4185,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c092_00_s"
+    "avatarImg": "si_c092_00_s",
+    "squad": "Absolute"
   },
   {
     "id": "ludmilla",
@@ -4077,7 +4235,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c190_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Unlimited"
   },
   {
     "id": "quency-escape-queen",
@@ -4125,7 +4284,8 @@
       "defense": -1
     },
     "releaseOrder": 1006,
-    "avatarImg": "si_c403_00_s"
+    "avatarImg": "si_c403_00_s",
+    "squad": "Real Kindness"
   },
   {
     "id": "n102",
@@ -4173,7 +4333,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c120_00_s"
+    "avatarImg": "si_c120_00_s",
+    "squad": "Recall & Release"
   },
   {
     "id": "belorta",
@@ -4221,7 +4382,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c060_00_s"
+    "avatarImg": "si_c060_00_s",
+    "squad": "The Carronades"
   },
   {
     "id": "yan",
@@ -4269,7 +4431,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c201_00_s"
+    "avatarImg": "si_c201_00_s",
+    "squad": "Talentum"
   },
   {
     "id": "yuni",
@@ -4317,7 +4480,11 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c160_00_s"
+    "avatarImg": "si_c160_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Wardress"
   },
   {
     "id": "ein",
@@ -4366,7 +4533,8 @@
     },
     "releaseOrder": 936,
     "avatarImg": "si_c391_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "School Circle"
   },
   {
     "id": "d-killer-wife",
@@ -4415,7 +4583,8 @@
     },
     "releaseOrder": 796,
     "avatarImg": "si_c043_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Perilous Siege"
   },
   {
     "id": "exia",
@@ -4463,7 +4632,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c210_00_s"
+    "avatarImg": "si_c210_00_s",
+    "squad": "Protocol"
   },
   {
     "id": "exia-treasure",
@@ -4512,7 +4682,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c210_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Protocol"
   },
   {
     "id": "bready",
@@ -4560,7 +4731,8 @@
       "defense": -1
     },
     "releaseOrder": 1181,
-    "avatarImg": "si_c520_00_s"
+    "avatarImg": "si_c520_00_s",
+    "squad": "Cooking Oil"
   },
   {
     "id": "dolla",
@@ -4608,7 +4780,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c202_00_s"
+    "avatarImg": "si_c202_00_s",
+    "squad": "Talentum"
   },
   {
     "id": "helm",
@@ -4656,7 +4829,8 @@
       "defense": -1
     },
     "releaseOrder": 313,
-    "avatarImg": "si_c352_00_s"
+    "avatarImg": "si_c352_00_s",
+    "squad": "Aegis"
   },
   {
     "id": "cocoa",
@@ -4705,7 +4879,11 @@
     },
     "releaseOrder": 396,
     "avatarImg": "si_c311_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "squad": "Maid For You",
+    "traits": [
+      "cover-healer"
+    ]
   },
   {
     "id": "ram",
@@ -4754,7 +4932,11 @@
     },
     "releaseOrder": 810,
     "avatarImg": "si_c822_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "squad": "Emilia's Faction",
+    "prefersTeammate": [
+      "same-squad"
+    ]
   },
   {
     "id": "maxwell",
@@ -4803,7 +4985,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c102_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Matis"
   },
   {
     "id": "milk",
@@ -4851,7 +5034,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c141_00_s"
+    "avatarImg": "si_c141_00_s",
+    "squad": "Cafe Sweety"
   },
   {
     "id": "milk-treasure",
@@ -4899,7 +5083,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c141_00_s"
+    "avatarImg": "si_c141_00_s",
+    "squad": "Cafe Sweety"
   },
   {
     "id": "trony",
@@ -4947,7 +5132,8 @@
       "defense": -1
     },
     "releaseOrder": 866,
-    "avatarImg": "si_c501_00_s"
+    "avatarImg": "si_c501_00_s",
+    "squad": "Electric Shock"
   },
   {
     "id": "sakura-bloom-in-summer",
@@ -4995,7 +5181,8 @@
       "defense": -1
     },
     "releaseOrder": 915,
-    "avatarImg": "si_c284_00_s"
+    "avatarImg": "si_c284_00_s",
+    "squad": "Underworld Queen"
   },
   {
     "id": "red-hood",
@@ -5044,7 +5231,8 @@
     },
     "releaseOrder": 670,
     "avatarImg": "si_c470_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Goddess"
   },
   {
     "id": "rapunzel-pure-grace",
@@ -5093,7 +5281,8 @@
     },
     "releaseOrder": 1034,
     "avatarImg": "si_c226_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Goddess"
   },
   {
     "id": "mari",
@@ -5141,7 +5330,8 @@
       "defense": -1
     },
     "releaseOrder": 971,
-    "avatarImg": "si_c832_00_s"
+    "avatarImg": "si_c832_00_s",
+    "squad": "NERV"
   },
   {
     "id": "eunhwa-tactical-upgrade",
@@ -5190,7 +5380,11 @@
     },
     "releaseOrder": 1321,
     "avatarImg": "si_c095_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Absolute",
+    "prefersTeammate": [
+      "same-squad"
+    ]
   },
   {
     "id": "ade-agent-bunny",
@@ -5239,7 +5433,8 @@
     },
     "releaseOrder": 1342,
     "avatarImg": "si_c315_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Maid For You"
   },
   {
     "id": "milk-blooming-bunny",
@@ -5288,7 +5483,8 @@
     },
     "releaseOrder": 1349,
     "avatarImg": "si_c143_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Cafe Sweety"
   },
   {
     "id": "yulha",
@@ -5336,7 +5532,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c171_00_s"
+    "avatarImg": "si_c171_00_s",
+    "squad": "Triangle"
   },
   {
     "id": "admi",
@@ -5384,7 +5581,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c172_00_s"
+    "avatarImg": "si_c172_00_s",
+    "squad": "Triangle"
   },
   {
     "id": "sakura",
@@ -5432,7 +5630,8 @@
       "defense": -1
     },
     "releaseOrder": 453,
-    "avatarImg": "si_c282_00_s"
+    "avatarImg": "si_c282_00_s",
+    "squad": "Underworld Queen"
   },
   {
     "id": "mary-bay-goddess",
@@ -5480,7 +5679,14 @@
       "defense": -1
     },
     "releaseOrder": 530,
-    "avatarImg": "si_c132_00_s"
+    "avatarImg": "si_c132_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Seraphim",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "frima",
@@ -5528,7 +5734,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c142_00_s"
+    "avatarImg": "si_c142_00_s",
+    "squad": "Cafe Sweety"
   },
   {
     "id": "frima-treasure",
@@ -5576,7 +5783,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c142_00_s"
+    "avatarImg": "si_c142_00_s",
+    "squad": "Cafe Sweety"
   },
   {
     "id": "helm-aquamarine",
@@ -5624,7 +5832,8 @@
       "defense": -1
     },
     "releaseOrder": 586,
-    "avatarImg": "si_c353_00_s"
+    "avatarImg": "si_c353_00_s",
+    "squad": "Aegis"
   },
   {
     "id": "2b",
@@ -5673,7 +5882,8 @@
     },
     "releaseOrder": 608,
     "avatarImg": "si_c810_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "YoRHa"
   },
   {
     "id": "blanc",
@@ -5722,7 +5932,14 @@
     },
     "releaseOrder": 502,
     "avatarImg": "si_c270_00_s",
-    "pvpTier": "SSS"
+    "pvpTier": "SSS",
+    "traits": [
+      "healer"
+    ],
+    "squad": "777",
+    "prefersTeammate": [
+      "same-squad"
+    ]
   },
   {
     "id": "brid",
@@ -5770,7 +5987,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c070_00_s"
+    "avatarImg": "si_c070_00_s",
+    "squad": "Infinity Rail"
   },
   {
     "id": "folkwang",
@@ -5819,7 +6037,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c242_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "squad": "Nepenthe"
   },
   {
     "id": "guillotine-winter-slayer",
@@ -5868,7 +6087,11 @@
     },
     "releaseOrder": 1076,
     "avatarImg": "si_c182_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Extrinsic",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "rapi",
@@ -5916,7 +6139,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c010_00_s"
+    "avatarImg": "si_c010_00_s",
+    "squad": "Counters"
   },
   {
     "id": "rupee",
@@ -5964,7 +6188,11 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c200_00_s"
+    "avatarImg": "si_c200_00_s",
+    "squad": "Talentum",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "rupee-winter-shopper",
@@ -6012,7 +6240,8 @@
       "defense": -1
     },
     "releaseOrder": 341,
-    "avatarImg": "si_c203_00_s"
+    "avatarImg": "si_c203_00_s",
+    "squad": "Talentum"
   },
   {
     "id": "rosanna-chic-ocean",
@@ -6060,7 +6289,8 @@
       "defense": -1
     },
     "releaseOrder": 922,
-    "avatarImg": "si_c283_00_s"
+    "avatarImg": "si_c283_00_s",
+    "squad": "Underworld Queen"
   },
   {
     "id": "mori",
@@ -6108,7 +6338,8 @@
       "defense": -1
     },
     "releaseOrder": 1209,
-    "avatarImg": "si_c590_00_s"
+    "avatarImg": "si_c590_00_s",
+    "squad": "Incubator"
   },
   {
     "id": "privaty",
@@ -6157,7 +6388,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c170_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Triangle"
   },
   {
     "id": "sin",
@@ -6205,7 +6437,8 @@
       "defense": -1
     },
     "releaseOrder": 376,
-    "avatarImg": "si_c401_00_s"
+    "avatarImg": "si_c401_00_s",
+    "squad": "Real Kindness"
   },
   {
     "id": "dorothy",
@@ -6253,7 +6486,8 @@
       "defense": -1
     },
     "releaseOrder": 481,
-    "avatarImg": "si_c233_00_s"
+    "avatarImg": "si_c233_00_s",
+    "squad": "Inherit"
   },
   {
     "id": "tove",
@@ -6301,7 +6535,8 @@
       "defense": -1
     },
     "releaseOrder": 691,
-    "avatarImg": "si_c192_00_s"
+    "avatarImg": "si_c192_00_s",
+    "squad": "Unlimited"
   },
   {
     "id": "tove-treasure",
@@ -6349,7 +6584,8 @@
       "defense": -1
     },
     "releaseOrder": 691,
-    "avatarImg": "si_c192_00_s"
+    "avatarImg": "si_c192_00_s",
+    "squad": "Unlimited"
   },
   {
     "id": "eve",
@@ -6397,7 +6633,8 @@
       "defense": -1
     },
     "releaseOrder": 1258,
-    "avatarImg": "si_c850_00_s"
+    "avatarImg": "si_c850_00_s",
+    "squad": "7th Airborne Squad"
   },
   {
     "id": "julia",
@@ -6445,7 +6682,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c150_00_s"
+    "avatarImg": "si_c150_00_s",
+    "squad": "Master Hand"
   },
   {
     "id": "julia-treasure",
@@ -6493,7 +6731,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c150_00_s"
+    "avatarImg": "si_c150_00_s",
+    "squad": "Master Hand"
   },
   {
     "id": "miranda-treasure",
@@ -6542,7 +6781,8 @@
     },
     "releaseOrder": 1356,
     "avatarImg": "si_c032_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "A.C.P.U."
   },
   {
     "id": "d",
@@ -6590,7 +6830,11 @@
       "defense": -1
     },
     "releaseOrder": 467,
-    "avatarImg": "si_c040_00_s"
+    "avatarImg": "si_c040_00_s",
+    "squad": "Perilous Siege",
+    "prefersTeammate": [
+      "role:attacker"
+    ]
   },
   {
     "id": "epinel",
@@ -6639,7 +6883,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c241_00_s",
-    "pvpTier": "D"
+    "pvpTier": "D",
+    "squad": "Nepenthe"
   },
   {
     "id": "alice-wonderland-bunny",
@@ -6687,7 +6932,14 @@
       "defense": -1
     },
     "releaseOrder": 887,
-    "avatarImg": "si_c195_00_s"
+    "avatarImg": "si_c195_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Unlimited",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "clay",
@@ -6735,7 +6987,8 @@
       "defense": -1
     },
     "releaseOrder": 901,
-    "avatarImg": "si_c551_00_s"
+    "avatarImg": "si_c551_00_s",
+    "squad": "Rewind"
   },
   {
     "id": "rei",
@@ -6783,7 +7036,8 @@
       "defense": -1
     },
     "releaseOrder": 481,
-    "avatarImg": "si_c392_00_s"
+    "avatarImg": "si_c392_00_s",
+    "squad": "School Circle"
   },
   {
     "id": "liter",
@@ -6832,7 +7086,11 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c082_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "traits": [
+      "cover-healer"
+    ],
+    "squad": "Mighty Tools"
   },
   {
     "id": "mast",
@@ -6881,7 +7139,8 @@
     },
     "releaseOrder": 565,
     "avatarImg": "si_c350_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Aegis"
   },
   {
     "id": "makima",
@@ -6930,7 +7189,8 @@
     },
     "releaseOrder": 417,
     "avatarImg": "si_c800_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Devil Hunter"
   },
   {
     "id": "misato",
@@ -6978,7 +7238,11 @@
       "defense": -1
     },
     "releaseOrder": 964,
-    "avatarImg": "si_c833_00_s"
+    "avatarImg": "si_c833_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "NERV"
   },
   {
     "id": "miranda",
@@ -7026,7 +7290,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c032_00_s"
+    "avatarImg": "si_c032_00_s",
+    "squad": "A.C.P.U."
   },
   {
     "id": "nero",
@@ -7075,7 +7340,11 @@
     },
     "releaseOrder": 551,
     "avatarImg": "si_c380_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "requiresTeammate": [
+      "healer"
+    ],
+    "squad": "Happy Zoo"
   },
   {
     "id": "novel",
@@ -7123,7 +7392,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c212_00_s"
+    "avatarImg": "si_c212_00_s",
+    "squad": "Protocol"
   },
   {
     "id": "volume",
@@ -7171,7 +7441,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c431_00_s"
+    "avatarImg": "si_c431_00_s",
+    "squad": "Prima Donna"
   },
   {
     "id": "signal",
@@ -7219,7 +7490,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c022_00_s"
+    "avatarImg": "si_c022_00_s",
+    "squad": "The Scouts"
   },
   {
     "id": "little-mermaid",
@@ -7268,7 +7540,8 @@
     },
     "releaseOrder": 1209,
     "avatarImg": "si_c513_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Old Tales"
   },
   {
     "id": "sakura-suzuhara",
@@ -7316,7 +7589,8 @@
       "defense": -1
     },
     "releaseOrder": 1146,
-    "avatarImg": "si_c836_00_s"
+    "avatarImg": "si_c836_00_s",
+    "squad": "WILLE"
   },
   {
     "id": "nayuta",
@@ -7365,7 +7639,8 @@
     },
     "releaseOrder": 1398,
     "avatarImg": "si_c223_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Pioneer"
   },
   {
     "id": "modernia",
@@ -7414,7 +7689,8 @@
     },
     "releaseOrder": 365,
     "avatarImg": "si_c260_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Heretic"
   },
   {
     "id": "alice",
@@ -7463,7 +7739,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c191_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Unlimited"
   },
   {
     "id": "mihara-bonding-chain",
@@ -7512,7 +7789,8 @@
     },
     "releaseOrder": 1216,
     "avatarImg": "si_c162_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Wardress"
   },
   {
     "id": "cinderella",
@@ -7561,7 +7839,8 @@
     },
     "releaseOrder": 1034,
     "avatarImg": "si_c511_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Old Tales"
   },
   {
     "id": "rosanna",
@@ -7610,7 +7889,8 @@
     },
     "releaseOrder": 516,
     "avatarImg": "si_c280_00_s",
-    "pvpTier": "S"
+    "pvpTier": "S",
+    "squad": "Underworld Queen"
   },
   {
     "id": "ludmilla-winter-owner",
@@ -7659,7 +7939,8 @@
     },
     "releaseOrder": 705,
     "avatarImg": "si_c194_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Unlimited"
   },
   {
     "id": "asuka-wille",
@@ -7707,7 +7988,8 @@
       "defense": -1
     },
     "releaseOrder": 1146,
-    "avatarImg": "si_c835_00_s"
+    "avatarImg": "si_c835_00_s",
+    "squad": "WILLE"
   },
   {
     "id": "aria",
@@ -7755,7 +8037,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c432_00_s"
+    "avatarImg": "si_c432_00_s",
+    "squad": "Prima Donna"
   },
   {
     "id": "emma",
@@ -7803,7 +8086,11 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c090_00_s"
+    "avatarImg": "si_c090_00_s",
+    "traits": [
+      "healer"
+    ],
+    "squad": "Absolute"
   },
   {
     "id": "diesel",
@@ -7851,7 +8138,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c072_00_s"
+    "avatarImg": "si_c072_00_s",
+    "squad": "Infinity Rail"
   },
   {
     "id": "diesel-treasure",
@@ -7899,7 +8187,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c072_00_s"
+    "avatarImg": "si_c072_00_s",
+    "squad": "Infinity Rail"
   },
   {
     "id": "flora",
@@ -7947,7 +8236,8 @@
       "defense": -1
     },
     "releaseOrder": 1055,
-    "avatarImg": "si_c411_00_s"
+    "avatarImg": "si_c411_00_s",
+    "squad": "Botanic Garden"
   },
   {
     "id": "crown",
@@ -7996,7 +8286,8 @@
     },
     "releaseOrder": 845,
     "avatarImg": "si_c330_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "White Knight"
   },
   {
     "id": "guillotine",
@@ -8044,7 +8335,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c180_00_s"
+    "avatarImg": "si_c180_00_s",
+    "squad": "Extrinsic"
   },
   {
     "id": "kilo",
@@ -8092,7 +8384,8 @@
       "defense": -1
     },
     "releaseOrder": 845,
-    "avatarImg": "si_c361_00_s"
+    "avatarImg": "si_c361_00_s",
+    "squad": "Heavy Gram"
   },
   {
     "id": "rapi-red-hood",
@@ -8141,7 +8434,8 @@
     },
     "releaseOrder": 1096,
     "avatarImg": "si_c016_00_s",
-    "pvpTier": "SSS"
+    "pvpTier": "SSS",
+    "squad": "Counters"
   },
   {
     "id": "rem",
@@ -8190,7 +8484,8 @@
     },
     "releaseOrder": 817,
     "avatarImg": "si_c820_00_s",
-    "pvpTier": "C"
+    "pvpTier": "C",
+    "squad": "Emilia's Faction"
   },
   {
     "id": "rei-ayanami",
@@ -8238,7 +8533,11 @@
       "defense": -1
     },
     "releaseOrder": 971,
-    "avatarImg": "si_c831_00_s"
+    "avatarImg": "si_c831_00_s",
+    "squad": "NERV",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "mast-romantic-maid",
@@ -8287,7 +8586,8 @@
     },
     "releaseOrder": 1125,
     "avatarImg": "si_c354_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Aegis"
   },
   {
     "id": "neon-blue-ocean",
@@ -8335,7 +8635,8 @@
       "defense": -1
     },
     "releaseOrder": 537,
-    "avatarImg": "si_c014_00_s"
+    "avatarImg": "si_c014_00_s",
+    "squad": "Counters"
   },
   {
     "id": "soda",
@@ -8384,7 +8685,14 @@
     },
     "releaseOrder": 396,
     "avatarImg": "si_c312_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Maid For You",
+    "traits": [
+      "healer"
+    ],
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "elegg",
@@ -8433,7 +8741,8 @@
     },
     "releaseOrder": 782,
     "avatarImg": "si_c500_00_s",
-    "pvpTier": "B"
+    "pvpTier": "B",
+    "squad": "Electric Shock"
   },
   {
     "id": "elegg-boom-and-shock",
@@ -8481,7 +8790,11 @@
       "defense": -1
     },
     "releaseOrder": 1300,
-    "avatarImg": "si_c502_00_s"
+    "avatarImg": "si_c502_00_s",
+    "squad": "Electric Shock",
+    "prefersTeammate": [
+      "same-element"
+    ]
   },
   {
     "id": "emma-tactical-upgrade",
@@ -8530,7 +8843,11 @@
     },
     "releaseOrder": 1314,
     "avatarImg": "si_c093_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Absolute",
+    "prefersTeammate": [
+      "same-squad"
+    ]
   },
   {
     "id": "delta-ninja-thief",
@@ -8578,7 +8895,11 @@
       "defense": -1
     },
     "releaseOrder": 1384,
-    "avatarImg": "si_c023_00_s"
+    "avatarImg": "si_c023_00_s",
+    "squad": "The Scouts",
+    "prefersTeammate": [
+      "role:defender"
+    ]
   },
   {
     "id": "snow-white-innocent-days",
@@ -8626,7 +8947,8 @@
       "defense": -1
     },
     "releaseOrder": 670,
-    "avatarImg": "si_c224_00_s"
+    "avatarImg": "si_c224_00_s",
+    "squad": "Goddess"
   },
   {
     "id": "label",
@@ -8675,7 +8997,8 @@
     },
     "releaseOrder": 1475,
     "avatarImg": "si_c582_00_s",
-    "pvpTier": "A"
+    "pvpTier": "A",
+    "squad": "Best Seller"
   },
   {
     "id": "velvet",
@@ -8723,7 +9046,8 @@
       "defense": -1
     },
     "releaseOrder": 1489,
-    "avatarImg": "si_c316_00_s"
+    "avatarImg": "si_c316_00_s",
+    "squad": "Maid For You"
   },
   {
     "id": "chisato",
@@ -8771,7 +9095,8 @@
       "defense": -1
     },
     "releaseOrder": 1503,
-    "avatarImg": "si_c860_00_s"
+    "avatarImg": "si_c860_00_s",
+    "squad": "Café LycoReco"
   },
   {
     "id": "takina",
@@ -8820,7 +9145,8 @@
     },
     "releaseOrder": 1510,
     "avatarImg": "si_c861_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Café LycoReco"
   },
   {
     "id": "privaty-treasure",
@@ -8869,7 +9195,8 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c170_00_s",
-    "pvpTier": "SS"
+    "pvpTier": "SS",
+    "squad": "Triangle"
   },
   {
     "id": "zwei-treasure",
@@ -8917,7 +9244,11 @@
       "defense": -2
     },
     "releaseOrder": 950,
-    "avatarImg": "si_c390_00_s"
+    "avatarImg": "si_c390_00_s",
+    "traits": [
+      "cover-healer"
+    ],
+    "squad": "School Circle"
   },
   {
     "id": "centi-treasure",
@@ -8965,7 +9296,8 @@
       "defense": -1
     },
     "releaseOrder": 307,
-    "avatarImg": "si_c080_00_s"
+    "avatarImg": "si_c080_00_s",
+    "squad": "Mighty Tools"
   },
   {
     "id": "moran-treasure",
@@ -9014,6 +9346,7 @@
     },
     "releaseOrder": 754,
     "avatarImg": "si_c281_00_s",
-    "pvpTier": "SSS"
+    "pvpTier": "SSS",
+    "squad": "Underworld Queen"
   }
 ]

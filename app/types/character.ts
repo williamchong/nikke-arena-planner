@@ -46,10 +46,19 @@ export interface Character {
   releaseOrder: number
   avatarImg?: string
   pvpTier?: PvpTier
-  /** Trait tags for teammate-synergy lookups (e.g. 'healer'). */
+  /** In-game squad affiliation (e.g. 'Happy Zoo', 'Counters'). Used for same-squad synergy. */
+  squad?: string
+  /** Trait tags provided by this character (e.g. 'healer', 'cover-healer'). */
   traits?: string[]
-  /** Trait tags that at least one teammate MUST have, otherwise this character is broken (hard reject). */
+  /**
+   * Synergy requirements that MUST be satisfied by a teammate, otherwise the team is hard-rejected.
+   * Supports plain trait lookups and special tokens:
+   * - `'healer'` / `'cover-healer'` / … — plain trait name (matches any teammate with that tag)
+   * - `'same-element'` — teammate must share this character's element
+   * - `'same-squad'` — teammate must share this character's squad
+   * - `'role:attacker'` / `'element:fire'` — specific role or element
+   */
   requiresTeammate?: string[]
-  /** Trait tags that a teammate ideally has — soft penalty per missing trait, team still allowed. */
+  /** Soft version of `requiresTeammate` — per-miss penalty applied, team still allowed. Same token format. */
   prefersTeammate?: string[]
 }
