@@ -158,4 +158,24 @@ describe('useTeamRecommender — 15v15 integration', () => {
       }
     }
   })
+
+  it('returns auto-filled teams for a roster that satisfies no template', () => {
+    // 15 owned chars, none of which appear in any template's `required` list for defense mode.
+    // Expectation: still get a valid 3-team set built entirely from autoFillTeam seeds.
+    const NO_TEMPLATE_ROSTER = new Set([
+      'rumani', 'liter', 'noise', 'miranda', 'tove',
+      'trina', 'naga', 'mast-romantic-maid', 'anchor-innocent-maid', 'ade-agent-bunny',
+      'drake', 'laplace', 'snow-white-heavy-arms', 'mihara-bonding-chain', 'privaty-treasure',
+    ])
+    const results = recommend15v15(NO_TEMPLATE_ROSTER, 'defense')
+    expect(results.length).toBeGreaterThanOrEqual(1)
+    const teamSet = results[0]!
+    expect(teamSet).toHaveLength(3)
+    const allIds = teamSet.flatMap(t => t.characters)
+    expect(new Set(allIds).size).toBe(allIds.length)
+    for (const team of teamSet) {
+      expect(team.characters).toHaveLength(5)
+      expect(validateBurstChain(resolve(team.characters)).valid).toBe(true)
+    }
+  })
 })

@@ -517,30 +517,15 @@ export function useTeamRecommender() {
       .filter(t => t.mode === 'both' || t.mode === mode)
       .sort((a, b) => a.priority - b.priority)
 
-    // Budget by *viable* starters, not raw priority rank: rosters that only satisfy
-    // low-priority templates would otherwise be starved when higher-priority templates
-    // dominate the first N slice positions.
-    const STARTER_BUDGET = 10
     const team0Locks = perTeamLocked?.[0]
-    let starterCount = 0
-    for (const starter of sorted) {
-      if (starterCount >= STARTER_BUDGET) break
+    const allUserLocked = perTeamLocked ? perTeamLocked.flatMap(s => [...s]) : []
 
-      const firstFilled = fillTemplate(starter, ownedIds, mode, false, team0Locks)
-      if (!firstFilled) continue
-      starterCount++
-
-      const teamSet: TeamComposition[] = []
-      const matchedTemplates: (TeamTemplate | null)[] = []
-      const usedChars = new Set<string>()
-      const usedTemplateIds = new Set<string>()
-      let failed = false
-
-      const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
-      teamSet.push(firstTeam)
-      matchedTemplates.push(starter)
-      for (const id of firstTeam.characters) usedChars.add(id)
-      usedTemplateIds.add(starter.id)
+    // Given a seed team 1 (template or auto-filled), fill teams 2 + 3 and refine via SA.
+    function buildFromFirstTeam(firstTeam: TeamComposition, firstTemplate: TeamTemplate | null) {
+      const teamSet: TeamComposition[] = [firstTeam]
+      const matchedTemplates: (TeamTemplate | null)[] = [firstTemplate]
+      const usedChars = new Set<string>(firstTeam.characters)
+      const usedTemplateIds = new Set<string>(firstTemplate ? [firstTemplate.id] : [])
 
       for (let i = 0; i < 2; i++) {
         const available = new Set([...ownedIds].filter(id => !usedChars.has(id)))
@@ -564,40 +549,34 @@ export function useTeamRecommender() {
           team = autoFillTeam(avail, mode)
         }
 
-        if (!team) {
-          failed = true
-          break
-        }
+        if (!team) return null
 
         teamSet.push(team)
         matchedTemplates.push(matchedTemplate)
         for (const id of team.characters) usedChars.add(id)
       }
 
-      if (failed || teamSet.length !== 3) continue
+      if (teamSet.length !== 3) return null
 
-      // SA refinement: optimize character allocation across the 3 teams
-      // Pass preferred speeds so SA doesn't hoard fast chars in one team
       const seedTeams = teamSet.map(t => resolveCharacters(t.characters))
       const preferredSpeeds = matchedTemplates.map(t => t?.preferredSpeed ?? '3RL')
-      // Limited bench: allow top-tier (S+) owned chars not yet used, so SA can fix weak slots
-      // without pulling in low-quality chars that destroy team synergy
+      // Bench caps SA swap-ins to S+ owned chars: prevents SA from pulling low-tier
+      // fillers into template slots where they'd break synergy for a marginal speed gain.
       const usedInTeams = new Set(seedTeams.flat().map(c => c.id))
       const saBench = allCharacters
         .filter(c => ownedIds.has(c.id) && !usedInTeams.has(c.id))
         .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.A || 4))
         .sort((a, b) => (PVP_TIER_SCORES[b.pvpTier || 'C'] || 0) - (PVP_TIER_SCORES[a.pvpTier || 'C'] || 0))
         .slice(0, 8)
-      // Lock template required chars + all user-locked chars so SA only swaps flex slots
-      const allUserLocked = perTeamLocked ? perTeamLocked.flatMap(s => [...s]) : []
       const saLockedIds = new Set([...matchedTemplates.flatMap(t => t?.required ?? []), ...allUserLocked])
       const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 8000, startTemp: 150, coolingRate: 0.999 }, preferredSpeeds, saLockedIds)
+      const setLabel = `sa-${firstTemplate?.id ?? 'auto'}`
       const saSet = saTeams.map((team, idx) =>
-        toComposition(team, mode, `sa-${starter.id}-t${idx + 1}`, preferredSpeeds[idx]),
+        toComposition(team, mode, `${setLabel}-t${idx + 1}`, preferredSpeeds[idx]),
       )
 
-      // Compare using capped speed (scoreTeamRaw) + template priority
-      // so SA teams aren't penalized by matchTemplate's required.length >= 2 filter
+      // Comparison uses capped speed + template priority so SA teams aren't penalized
+      // by matchTemplate's required.length >= 2 filter when a flex char was swapped out.
       const score15 = (team: Character[], idx: number) => {
         const tpl = matchedTemplates[idx]
         return scoreTeamRaw(team, mode, preferredSpeeds[idx]) + (tpl ? (4 - tpl.priority) * 100 : 0)
@@ -605,7 +584,37 @@ export function useTeamRecommender() {
       const greedyTotal = seedTeams.reduce((sum, team, idx) => sum + score15(team, idx), 0)
       const saTotal = saTeams.reduce((sum, team, idx) => sum + score15(team, idx), 0)
 
-      bestSets.push(saTotal > greedyTotal ? saSet : teamSet)
+      return saTotal > greedyTotal ? saSet : teamSet
+    }
+
+    // Budget by *viable* starters, not raw priority rank: rosters that only satisfy
+    // low-priority templates would otherwise be starved when higher-priority templates
+    // dominate the first N slice positions.
+    const STARTER_BUDGET = 10
+    let starterCount = 0
+    for (const starter of sorted) {
+      if (starterCount >= STARTER_BUDGET) break
+
+      const firstFilled = fillTemplate(starter, ownedIds, mode, false, team0Locks)
+      if (!firstFilled) continue
+      starterCount++
+
+      const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
+      const set = buildFromFirstTeam(firstTeam, starter)
+      if (set) bestSets.push(set)
+    }
+
+    // Non-template fallback: some rosters satisfy zero templates (missing all meta cores).
+    // As long as 3 valid burst chains can be assembled, still return a 15v15 suggestion
+    // built purely from auto-filled teams. NOTE: team-1 user locks are best-effort here —
+    // autoFillTeam picks by suitability, not by a locked set.
+    if (bestSets.length === 0 && ownedIds.size >= 15) {
+      const avail = allCharacters.filter(c => ownedIds.has(c.id))
+      const autoTeam = autoFillTeam(avail, mode)
+      if (autoTeam) {
+        const set = buildFromFirstTeam(autoTeam, null)
+        if (set) bestSets.push(set)
+      }
     }
 
     const scored = bestSets.map(s => ({
