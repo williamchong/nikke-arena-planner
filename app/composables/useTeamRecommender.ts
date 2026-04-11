@@ -517,17 +517,24 @@ export function useTeamRecommender() {
       .filter(t => t.mode === 'both' || t.mode === mode)
       .sort((a, b) => a.priority - b.priority)
 
-    // Try more starters than the old limit of 5 — some may fail due to missing required chars
-    for (const starter of sorted.slice(0, 10)) {
+    // Budget by *viable* starters, not raw priority rank: rosters that only satisfy
+    // low-priority templates would otherwise be starved when higher-priority templates
+    // dominate the first N slice positions.
+    const STARTER_BUDGET = 10
+    const team0Locks = perTeamLocked?.[0]
+    let starterCount = 0
+    for (const starter of sorted) {
+      if (starterCount >= STARTER_BUDGET) break
+
+      const firstFilled = fillTemplate(starter, ownedIds, mode, false, team0Locks)
+      if (!firstFilled) continue
+      starterCount++
+
       const teamSet: TeamComposition[] = []
       const matchedTemplates: (TeamTemplate | null)[] = []
       const usedChars = new Set<string>()
       const usedTemplateIds = new Set<string>()
       let failed = false
-
-      const team0Locks = perTeamLocked?.[0]
-      const firstFilled = fillTemplate(starter, ownedIds, mode, false, team0Locks)
-      if (!firstFilled) continue
 
       const firstTeam = buildComposition(starter, firstFilled.characters, mode, firstFilled.score, firstFilled.alternates, firstFilled.matchedArchetypes)
       teamSet.push(firstTeam)

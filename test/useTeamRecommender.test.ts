@@ -138,4 +138,24 @@ describe('useTeamRecommender — 15v15 integration', () => {
     )
     expect(has3RL3).toBe(true)
   })
+
+  it('returns teams for a mid-game roster whose only viable carries are priority-3 templates', () => {
+    // Regression: naive priority-rank slice cut off p3 starters here, returning zero teams.
+    const MIDGAME_ROSTER = new Set([
+      'ade-agent-bunny', 'anchor-innocent-maid', 'anis', 'bay', 'bready', 'd-killer-wife',
+      'delta-ninja-thief', 'drake', 'helm-treasure', 'laplace', 'liter', 'little-mermaid',
+      'mast-romantic-maid', 'mihara-bonding-chain', 'miranda', 'moran', 'naga', 'nero', 'noise',
+      'privaty-treasure', 'rapi-red-hood', 'rosanna', 'rouge', 'rumani', 'snow-white-heavy-arms',
+      'tove', 'trina', 'velvet', 'vesti-tactical-upgrade', 'viper', 'zwei',
+    ])
+    const results = recommend15v15(MIDGAME_ROSTER, 'defense')
+    expect(results.length).toBeGreaterThanOrEqual(1)
+    for (const teamSet of results) {
+      expect(teamSet).toHaveLength(3)
+      for (const team of teamSet) {
+        expect(team.characters).toHaveLength(5)
+        expect(validateBurstChain(resolve(team.characters)).valid).toBe(true)
+      }
+    }
+  })
 })
