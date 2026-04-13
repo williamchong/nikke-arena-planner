@@ -30,6 +30,7 @@ export function useCharacters() {
         const matchesName = c.name.en.toLowerCase().includes(q)
           || c.name['zh-TW'].includes(q)
           || c.name['zh-CN'].includes(q)
+          || c.name.ja.includes(q)
         if (!matchesName) return false
       }
       if (filters.burst && c.burst !== filters.burst) return false

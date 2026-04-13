@@ -4,7 +4,8 @@
     "name": {
       "en": "Moran Attack System",
       "zh-TW": "牡丹進攻體系",
-      "zh-CN": "牡丹进攻体系"
+      "zh-CN": "牡丹进攻体系",
+      "ja": "モラン攻撃システム"
     },
     "archetype": "moran-system",
     "mode": "attack",
@@ -74,7 +75,8 @@
     "notes": {
       "en": "THE dominant meta system. Moran:Treasure tanks while DPS nukes. Multiple burst speed configurations.",
       "zh-TW": "最強元數據體系。牡丹珍藏坦克承傷，DPS輸出核爆。多種爆裂速度配置。",
-      "zh-CN": "最强元数据体系。牡丹珍藏坦克承伤，DPS输出核爆。多种爆裂速度配置。"
+      "zh-CN": "最强元数据体系。牡丹珍藏坦克承伤，DPS输出核爆。多种爆裂速度配置。",
+      "ja": "最強のメタシステム。モラン：宝物がタンクを担い、DPSが殲滅する。複数のバースト速度構成が可能。"
     }
   },
   {
@@ -82,7 +84,8 @@
     "name": {
       "en": "Moran Defense Wall",
       "zh-TW": "牡丹防守堅壁",
-      "zh-CN": "牡丹防守坚壁"
+      "zh-CN": "牡丹防守坚壁",
+      "ja": "モラン防御壁"
     },
     "archetype": "moran-system",
     "mode": "defense",
@@ -153,7 +156,8 @@
     "notes": {
       "en": "Tank wall with revival/sustain. Moran:Treasure's damage reduction and revival create an extremely durable defense.",
       "zh-TW": "坦克牆搭配復活/維持。牡丹珍藏的減傷和復活打造極為堅固的防守。",
-      "zh-CN": "坦克墙搭配复活/维持。牡丹珍藏的减伤和复活打造极为坚固的防守。"
+      "zh-CN": "坦克墙搭配复活/维持。牡丹珍藏的减伤和复活打造极为坚固的防守。",
+      "ja": "復活と持続力を備えたタンク壁。モラン：宝物のダメージ軽減と復活により、極めて堅固な防御を実現する。"
     }
   },
   {
@@ -161,7 +165,8 @@
     "name": {
       "en": "Blanc + EMT Indomitable",
       "zh-TW": "布蘭兒 + EMT 不屈",
-      "zh-CN": "布兰儿 + EMT 不屈"
+      "zh-CN": "布兰儿 + EMT 不屈",
+      "ja": "ブラン + エミリア 不屈"
     },
     "archetype": "blanc-indom",
     "mode": "both",
@@ -224,7 +229,8 @@
     "notes": {
       "en": "Blanc's indomitability protects the team while EMT provides sustained burst damage. Core meta system.",
       "zh-TW": "布蘭兒的不屈保護隊伍，EMT提供持續爆裂傷害。核心元數據體系。",
-      "zh-CN": "布兰儿的不屈保护队伍，EMT提供持续爆裂伤害。核心元数据体系。"
+      "zh-CN": "布兰儿的不屈保护队伍，EMT提供持续爆裂伤害。核心元数据体系。",
+      "ja": "ブランの不屈がチームを守り、エミリアが持続的なバーストダメージを提供する。コアメタシステム。"
     }
   },
   {
@@ -232,7 +238,8 @@
     "name": {
       "en": "Noah + Biscuit Stall",
       "zh-TW": "諾雅 + 餅乾持久戰",
-      "zh-CN": "诺雅 + 饼干持久战"
+      "zh-CN": "诺雅 + 饼干持久战",
+      "ja": "ノア + ビスケット 持久戦"
     },
     "archetype": "noah-stall",
     "mode": "both",
@@ -291,7 +298,8 @@
     "notes": {
       "en": "Classic sustain. DPS behind Noah's invincibility shield + Biscuit's defender immunity. Outlasts nuke teams.",
       "zh-TW": "經典持久戰。DPS在諾雅無敵盾和餅乾防禦者免疫後方。耗過核爆隊。",
-      "zh-CN": "经典持久战。DPS在诺雅无敌盾和饼干防御者免疫后方。耗过核爆队。"
+      "zh-CN": "经典持久战。DPS在诺雅无敌盾和饼干防御者免疫后方。耗过核爆队。",
+      "ja": "クラシックな持久戦。ノアの無敵シールドとビスケットのディフェンダー無敵の後ろからDPSが攻撃。核爆チームを消耗戦で凌駕する。"
     }
   },
   {
@@ -299,7 +307,8 @@
     "name": {
       "en": "Scarlet + Jackal Nuke",
       "zh-TW": "紅蓮 + 豺狼核爆",
-      "zh-CN": "红莲 + 豺狼核爆"
+      "zh-CN": "红莲 + 豺狼核爆",
+      "ja": "紅蓮 + ジャッカル 核爆"
     },
     "archetype": "scarlet-nuke",
     "mode": "both",
@@ -365,7 +374,8 @@
     "notes": {
       "en": "Fastest nuke team. Scarlet AoE burst + Jackal speed/link. Still strong meta but countered by tank/stall systems.",
       "zh-TW": "最快核爆隊。紅蓮範圍爆裂 + 豺狼速度/連結。仍是強力元數據但被坦克/持久體系克制。",
-      "zh-CN": "最快核爆队。红莲范围爆裂 + 豺狼速度/连结。仍是强力元数据但被坦克/持久体系克制。"
+      "zh-CN": "最快核爆队。红莲范围爆裂 + 豺狼速度/连结。仍是强力元数据但被坦克/持久体系克制。",
+      "ja": "最速の核爆チーム。紅蓮のAoEバースト + ジャッカルの速度/リンク。依然として強力なメタだがタンク/持久戦システムに弱い。"
     }
   },
   {
@@ -373,7 +383,8 @@
     "name": {
       "en": "Moran + Scarlet (Red Moran)",
       "zh-TW": "牡丹 + 紅蓮 (紅牡丹)",
-      "zh-CN": "牡丹 + 红莲 (红牡丹)"
+      "zh-CN": "牡丹 + 红莲 (红牡丹)",
+      "ja": "モラン + 紅蓮 (紅モラン)"
     },
     "archetype": "moran-scarlet",
     "mode": "attack",
@@ -429,7 +440,8 @@
     "notes": {
       "en": "Moran tank + Scarlet nuke hybrid. Combines Moran's survivability with Scarlet's AoE burst.",
       "zh-TW": "牡丹坦克 + 紅蓮核爆混合。結合牡丹的生存力和紅蓮的範圍爆裂。",
-      "zh-CN": "牡丹坦克 + 红莲核爆混合。结合牡丹的生存力和红莲的范围爆裂。"
+      "zh-CN": "牡丹坦克 + 红莲核爆混合。结合牡丹的生存力和红莲的范围爆裂。",
+      "ja": "モランのタンクと紅蓮の核爆のハイブリッド。モランの生存力と紅蓮のAoEバーストを組み合わせる。"
     }
   },
   {
@@ -437,7 +449,8 @@
     "name": {
       "en": "Blanc + Scarlet Indomitable Nuke",
       "zh-TW": "布蘭兒 + 紅蓮不屈核爆",
-      "zh-CN": "布兰儿 + 红莲不屈核爆"
+      "zh-CN": "布兰儿 + 红莲不屈核爆",
+      "ja": "ブラン + 紅蓮 不屈核爆"
     },
     "archetype": "blanc-indom",
     "mode": "both",
@@ -488,7 +501,8 @@
     "notes": {
       "en": "Nuke behind Blanc's indomitability. Scarlet + Jackal burst while Blanc protects from counter-burst.",
       "zh-TW": "不屈保護下的核爆。紅蓮 + 豺狼爆裂，布蘭兒保護隊伍免受反擊。",
-      "zh-CN": "不屈保护下的核爆。红莲 + 豺狼爆裂，布兰儿保护队伍免受反击。"
+      "zh-CN": "不屈保护下的核爆。红莲 + 豺狼爆裂，布兰儿保护队伍免受反击。",
+      "ja": "ブランの不屈の後ろから核爆。紅蓮 + ジャッカルがバーストする間、ブランが反撃バーストから守る。"
     }
   },
   {
@@ -496,7 +510,8 @@
     "name": {
       "en": "Alice Carry (Noah)",
       "zh-TW": "愛麗絲主C (諾雅)",
-      "zh-CN": "爱丽丝主C (诺雅)"
+      "zh-CN": "爱丽丝主C (诺雅)",
+      "ja": "アリス主砲 (ノア)"
     },
     "archetype": "alice-carry",
     "mode": "both",
@@ -554,7 +569,8 @@
     "notes": {
       "en": "Alice's single-target DPS behind Noah's invincibility shield. Strong sustained damage that cuts through tanks.",
       "zh-TW": "愛麗絲的單體輸出在諾雅無敵盾後方。強力持續傷害可穿透坦克。",
-      "zh-CN": "爱丽丝的单体输出在诺雅无敌盾后方。强力持续伤害可穿透坦克。"
+      "zh-CN": "爱丽丝的单体输出在诺雅无敌盾后方。强力持续伤害可穿透坦克。",
+      "ja": "ノアの無敵シールドの後ろからアリスの単体DPS。タンクを貫く強力な持続ダメージ。"
     }
   },
   {
@@ -562,7 +578,8 @@
     "name": {
       "en": "Summer Anis Stall",
       "zh-TW": "夏日阿妮斯持久戰",
-      "zh-CN": "夏日阿妮斯持久战"
+      "zh-CN": "夏日阿妮斯持久战",
+      "ja": "アニス：スパークリングサマー 持久戦"
     },
     "archetype": "sanis-stall",
     "mode": "both",
@@ -622,7 +639,8 @@
     "notes": {
       "en": "SAnis hits 2 enemies ignoring taunts. Needs heavy defensive support for the 10s burst window. Counters stall teams.",
       "zh-TW": "夏日阿妮斯攻擊2名敵人且無視嘲諷。需要大量防禦輔助支撐10秒爆裂窗口。克制持久隊。",
-      "zh-CN": "夏日阿妮斯攻击2名敌人且无视嘲讽。需要大量防御辅助支撑10秒爆裂窗口。克制持久队。"
+      "zh-CN": "夏日阿妮斯攻击2名敌人且无视嘲讽。需要大量防御辅助支撑10秒爆裂窗口。克制持久队。",
+      "ja": "サマーアニスは挑発を無視して敵2体を攻撃する。10秒のバーストウィンドウには強力な防御支援が必要。持久戦チームへの反制。"
     }
   },
   {
@@ -630,7 +648,8 @@
     "name": {
       "en": "Little Mermaid Disruption",
       "zh-TW": "小美人魚干擾",
-      "zh-CN": "小美人鱼干扰"
+      "zh-CN": "小美人鱼干扰",
+      "ja": "リトルマーメイド 妨害"
     },
     "archetype": "mermaid-disrupt",
     "mode": "both",
@@ -701,7 +720,8 @@
     "notes": {
       "en": "Little Mermaid's stun disrupts enemy burst chains. Pairs with any nuke DPS. SSS-tier disruptor.",
       "zh-TW": "小美人魚的暈眩打斷敵方爆裂鏈。與任何核爆輸出搭配。SSS級干擾者。",
-      "zh-CN": "小美人鱼的晕眩打断敌方爆裂链。与任何核爆输出搭配。SSS级干扰者。"
+      "zh-CN": "小美人鱼的晕眩打断敌方爆裂链。与任何核爆输出搭配。SSS级干扰者。",
+      "ja": "リトルマーメイドのスタンが敵のバーストチェーンを妨害する。あらゆる核爆DPSと組み合わせ可能。SSSティアの妨害役。"
     }
   },
   {
@@ -709,7 +729,8 @@
     "name": {
       "en": "Helm: Treasure DPS",
       "zh-TW": "海倫珍藏主C",
-      "zh-CN": "海伦珍藏主C"
+      "zh-CN": "海伦珍藏主C",
+      "ja": "ヘルム：宝物 主砲"
     },
     "archetype": "helm-carry",
     "mode": "both",
@@ -770,7 +791,8 @@
     "notes": {
       "en": "Helm: Treasure as primary DPS. Strong burst damage with flexible support options.",
       "zh-TW": "海倫珍藏作為主要DPS。強力爆裂傷害搭配靈活輔助選項。",
-      "zh-CN": "海伦珍藏作为主要DPS。强力爆裂伤害搭配灵活辅助选项。"
+      "zh-CN": "海伦珍藏作为主要DPS。强力爆裂伤害搭配灵活辅助选项。",
+      "ja": "ヘルム：宝物を主力DPSとして運用。柔軟な支援構成で強力なバーストダメージを発揮。"
     }
   },
   {
@@ -778,7 +800,8 @@
     "name": {
       "en": "Rosanna Dispel Counter",
       "zh-TW": "羅珊娜驅散反制",
-      "zh-CN": "罗珊娜驱散反制"
+      "zh-CN": "罗珊娜驱散反制",
+      "ja": "ロザンナ 解除反制"
     },
     "archetype": "rosanna-counter",
     "mode": "attack",
@@ -844,7 +867,8 @@
     "notes": {
       "en": "Rosanna's S1 dispels Jackal links and buffs. Essential attack counter vs indomitable and link-based defenses.",
       "zh-TW": "羅珊娜的S1驅散豺狼連結和增益。對抗不屈和連結型防守的必要進攻反制。",
-      "zh-CN": "罗珊娜的S1驱散豺狼连结和增益。对抗不屈和连结型防守的必要进攻反制。"
+      "zh-CN": "罗珊娜的S1驱散豺狼连结和增益。对抗不屈和连结型防守的必要进攻反制。",
+      "ja": "ロザンナのS1がジャッカルのリンクやバフを解除する。不屈やリンク基盤の防御に対する必須の攻撃反制。"
     }
   },
   {
@@ -852,7 +876,8 @@
     "name": {
       "en": "Rapi: Red Hood Carry",
       "zh-TW": "拉比:紅帽主C",
-      "zh-CN": "拉比:红帽主C"
+      "zh-CN": "拉比:红帽主C",
+      "ja": "ラピ：レッドフード 主砲"
     },
     "archetype": "rapi-rh",
     "mode": "both",
@@ -915,7 +940,8 @@
     "notes": {
       "en": "Rapi: Red Hood is SSS tier with massive single-target burst. Pair with defensive supports for sustained damage.",
       "zh-TW": "拉比:紅帽為SSS級，擁有強大的單體爆裂。搭配防禦輔助進行持續輸出。",
-      "zh-CN": "拉比:红帽为SSS级，拥有强大的单体爆裂。搭配防御辅助进行持续输出。"
+      "zh-CN": "拉比:红帽为SSS级，拥有强大的单体爆裂。搭配防御辅助进行持续输出。",
+      "ja": "ラピ：レッドフードはSSSティアで圧倒的な単体バーストを持つ。防御支援と組み合わせて持続ダメージを発揮。"
     }
   },
   {
@@ -923,7 +949,8 @@
     "name": {
       "en": "Vesti: TU Carry",
       "zh-TW": "銀華:戰術升級主C",
-      "zh-CN": "银华:战术升级主C"
+      "zh-CN": "银华:战术升级主C",
+      "ja": "ベスティー：タクティカル・アップ 主砲"
     },
     "archetype": "vesti-tu",
     "mode": "both",
@@ -986,7 +1013,8 @@
     "notes": {
       "en": "Vesti: Tactical Upgrade is SSS tier. Strong burst DPS with self-sustain capability.",
       "zh-TW": "銀華:戰術升級為SSS級。強力爆裂輸出兼具自我維持能力。",
-      "zh-CN": "银华:战术升级为SSS级。强力爆裂输出兼具自我维持能力。"
+      "zh-CN": "银华:战术升级为SSS级。强力爆裂输出兼具自我维持能力。",
+      "ja": "ベスティー：タクティカル・アップはSSSティア。自己持続能力を備えた強力なバーストDPS。"
     }
   },
   {
@@ -994,7 +1022,8 @@
     "name": {
       "en": "Nayuta Carry",
       "zh-TW": "娜由塔主C",
-      "zh-CN": "娜由塔主C"
+      "zh-CN": "娜由塔主C",
+      "ja": "ナユタ 主砲"
     },
     "archetype": "nayuta-carry",
     "mode": "both",
@@ -1057,7 +1086,8 @@
     "notes": {
       "en": "Nayuta as flexible DPS carry. Good filler team when other cores are taken.",
       "zh-TW": "娜由塔作為靈活DPS主C。其他核心被佔用時的好補位。",
-      "zh-CN": "娜由塔作为灵活DPS主C。其他核心被占用时的好补位。"
+      "zh-CN": "娜由塔作为灵活DPS主C。其他核心被占用时的好补位。",
+      "ja": "ナユタを柔軟なDPS主砲として運用。他のコアが使用済みの際の補充チームとして優秀。"
     }
   },
   {
@@ -1065,7 +1095,8 @@
     "name": {
       "en": "Alice Revive (Rapunzel)",
       "zh-TW": "愛麗絲復活 (長髮公主)",
-      "zh-CN": "爱丽丝复活 (长发公主)"
+      "zh-CN": "爱丽丝复活 (长发公主)",
+      "ja": "アリス復活 (ラプンツェル)"
     },
     "archetype": "alice-revive",
     "mode": "attack",
@@ -1121,7 +1152,8 @@
     "notes": {
       "en": "Alice dies early, Rapunzel revives her with ATK buff. Revived Alice deals massive damage. Strong counter to nuke teams.",
       "zh-TW": "愛麗絲先陣亡，長髮公主復活並附帶攻擊增益。復活後的愛麗絲造成巨大傷害。強力反核爆隊。",
-      "zh-CN": "爱丽丝先阵亡，长发公主复活并附带攻击增益。复活后的爱丽丝造成巨大伤害。强力反核爆队。"
+      "zh-CN": "爱丽丝先阵亡，长发公主复活并附带攻击增益。复活后的爱丽丝造成巨大伤害。强力反核爆队。",
+      "ja": "アリスが早期に倒れ、ラプンツェルが攻撃バフと共に復活させる。復活したアリスは圧倒的なダメージを与える。核爆チームへの強力な反制。"
     }
   },
   {
@@ -1129,7 +1161,8 @@
     "name": {
       "en": "Cinderella Carry",
       "zh-TW": "灰姑娘主C",
-      "zh-CN": "灰姑娘主C"
+      "zh-CN": "灰姑娘主C",
+      "ja": "シンデレラ 主砲"
     },
     "archetype": "cinderella-carry",
     "mode": "both",
@@ -1190,7 +1223,8 @@
     "notes": {
       "en": "Cinderella as alternative DPS carry. Good in stall compositions when Alice is used elsewhere.",
       "zh-TW": "灰姑娘作為替代DPS主C。愛麗絲被其他隊伍使用時的好選擇。",
-      "zh-CN": "灰姑娘作为替代DPS主C。爱丽丝被其他队伍使用时的好选择。"
+      "zh-CN": "灰姑娘作为替代DPS主C。爱丽丝被其他队伍使用时的好选择。",
+      "ja": "シンデレラを代替DPS主砲として運用。アリスが他で使用される場合の持久戦構成に適する。"
     }
   },
   {
@@ -1198,7 +1232,8 @@
     "name": {
       "en": "Cat Team (Nero + Moran)",
       "zh-TW": "貓隊 (尼羅 + 牡丹)",
-      "zh-CN": "猫队 (尼罗 + 牡丹)"
+      "zh-CN": "猫队 (尼罗 + 牡丹)",
+      "ja": "キャットチーム (ネロ + モラン)"
     },
     "archetype": "cat-team",
     "mode": "both",
@@ -1256,7 +1291,8 @@
     "notes": {
       "en": "~100% damage reduction via Moran tank + Nero DR stacking. Noted 'undefeated' in championship play. Outlasts most compositions.",
       "zh-TW": "透過牡丹坦克 + 尼羅減傷疊加達到約100%減傷。錦標賽中被稱為「不敗」。可耗過大多數陣容。",
-      "zh-CN": "通过牡丹坦克 + 尼罗减伤叠加达到约100%减伤。锦标赛中被称为「不败」。可耗过大多数阵容。"
+      "zh-CN": "通过牡丹坦克 + 尼罗减伤叠加达到约100%减伤。锦标赛中被称为「不败」。可耗过大多数阵容。",
+      "ja": "モランタンク + ネロのダメージ軽減スタックで約100%のダメージ軽減。大会で『無敗』と評される。ほとんどの構成を持久戦で凌駕する。"
     }
   },
   {
@@ -1264,7 +1300,8 @@
     "name": {
       "en": "Tactical Upgrade Trio",
       "zh-TW": "戰術升級三人組",
-      "zh-CN": "战术升级三人组"
+      "zh-CN": "战术升级三人组",
+      "ja": "タクティカル・アップ 三人組"
     },
     "archetype": "tactical-trio",
     "mode": "attack",
@@ -1313,7 +1350,8 @@
     "notes": {
       "en": "Pre-burst kill archetype. Emma+Eunhwa:TU+Vesti:TU combine for instant kill pressure before opponent bursts. Universal counter to stall/tank teams.",
       "zh-TW": "爆裂前擊殺體系。艾瑪+銀華戰術+貝斯蒂戰術組合在對手爆裂前施加即殺壓力。萬用克制持久/坦克隊。",
-      "zh-CN": "爆裂前击杀体系。艾玛+银华战术+贝斯蒂战术组合在对手爆裂前施加即杀压力。万用克制持久/坦克队。"
+      "zh-CN": "爆裂前击杀体系。艾玛+银华战术+贝斯蒂战术组合在对手爆裂前施加即杀压力。万用克制持久/坦克队。",
+      "ja": "バースト前キルのアーキタイプ。エマ + ウンファ：タクティカル・アップ + ベスティー：タクティカル・アップの組み合わせで、相手がバーストする前に即死圧力を与える。持久戦/タンクチームへの万能反制。"
     }
   },
   {
@@ -1321,7 +1359,8 @@
     "name": {
       "en": "Shotgun Burst",
       "zh-TW": "霰彈爆裂",
-      "zh-CN": "霰弹爆裂"
+      "zh-CN": "霰弹爆裂",
+      "ja": "ショットガン爆撃"
     },
     "archetype": "sg-burst",
     "mode": "attack",
@@ -1387,7 +1426,8 @@
     "notes": {
       "en": "Rosanna sacrifice + SG concentrated fire. Kills key targets before burst via shotgun damage. Counters Moran/Peony tank teams.",
       "zh-TW": "羅珊娜犧牲 + 霰彈集火。透過霰彈傷害在爆裂前擊殺關鍵目標。克制牡丹坦克隊。",
-      "zh-CN": "罗珊娜牺牲 + 霰弹集火。通过霰弹伤害在爆裂前击杀关键目标。克制牡丹坦克队。"
+      "zh-CN": "罗珊娜牺牲 + 霰弹集火。通过霰弹伤害在爆裂前击杀关键目标。克制牡丹坦克队。",
+      "ja": "ロザンナの犠牲 + SG集中砲火。ショットガンのダメージでバースト前に主要ターゲットを撃破する。モラン/牡丹タンクチームへの反制。"
     }
   }
 ]

@@ -2,6 +2,7 @@ export type LocalizedString = {
   en: string
   'zh-TW': string
   'zh-CN': string
+  ja: string
 }
 
 export type SpeedTier = '1RL' | '2RL' | '3SG' | '5SG' | '3RL' | '7SG' | '4RL' | '5RL'
