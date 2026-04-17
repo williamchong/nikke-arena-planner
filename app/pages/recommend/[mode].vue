@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { BurstType, Element, WeaponType } from '~/types/character'
-import { watchDebounced } from '@vueuse/core'
+import type { BurstType, Character, Element, WeaponType } from '~/types/character'
+import { useLocalStorage, watchDebounced } from '@vueuse/core'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -11,6 +11,8 @@ const { trackEvent } = useAnalytics()
 const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
 const { getCharacter, filterCharacters } = useCharacters()
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
+const { getAvatarUrl } = useAvatars()
+const { localize } = useLocalizedField()
 
 const mode = computed(() => route.params.mode as string)
 const is15v15 = computed(() => mode.value === '15v15')
@@ -108,6 +110,48 @@ function clearLocks() {
   trackEvent('recommend_clear_locks')
 }
 
+// --- Banned characters: excluded from the pool the recommender sees ---
+const bannedIds = useLocalStorage<string[]>('nikke-arena-banned', [])
+const bannedSet = computed(() => new Set(bannedIds.value))
+const bannedCharacters = computed(() =>
+  bannedIds.value.map(id => getCharacter(id)).filter((c): c is Character => !!c),
+)
+const hasAnyBans = computed(() => bannedIds.value.length > 0)
+
+// Banning a locked character would produce an unsatisfiable "must include AND must exclude"
+// constraint. Resolve in favor of the ban (last user action wins): strip the id from locks.
+function removeLockById(id: string) {
+  if (!allLockedIds.value.has(id)) return
+  lockSlots.value = lockSlots.value.map(team => team.map(slot => slot === id ? null : slot))
+}
+
+function banCharacter(id: string) {
+  if (bannedSet.value.has(id)) return
+  removeLockById(id)
+  bannedIds.value = [...bannedIds.value, id]
+  trackEvent('recommend_ban')
+}
+
+function unbanCharacter(id: string) {
+  bannedIds.value = bannedIds.value.filter(b => b !== id)
+}
+
+function clearBans() {
+  bannedIds.value = []
+  trackEvent('recommend_clear_bans')
+}
+
+// Effective roster the recommender sees. Owned ∖ banned.
+const effectiveOwnedIds = computed(() => {
+  if (bannedIds.value.length === 0) return roster.ownedIds
+  const next = new Set<string>()
+  for (const id of roster.ownedIds) {
+    if (!bannedSet.value.has(id)) next.add(id)
+  }
+  return next
+})
+const effectiveOwnedCount = computed(() => effectiveOwnedIds.value.size)
+
 function removeFromSlot(teamIdx: number, slotIdx: number) {
   const next = lockSlots.value.map(t => [...t])
   next[teamIdx]![slotIdx] = null
@@ -186,7 +230,7 @@ const pickerTeamIds = computed(() =>
 // --- Recommendations ---
 const recommendations5v5 = computed(() => {
   if (is15v15.value) return []
-  return recommend5v5(roster.ownedIds, 'defense', lockedIds5v5.value)
+  return recommend5v5(effectiveOwnedIds.value, 'defense', lockedIds5v5.value)
 })
 
 watchDebounced(recommendations5v5, (result) => {
@@ -198,7 +242,7 @@ const isOptimizing = ref(false)
 let pendingTimeout: ReturnType<typeof setTimeout> | null = null
 
 watch(
-  [is15v15, () => roster.ownedIds, lockSlots],
+  [is15v15, effectiveOwnedIds, lockSlots],
   ([active]) => {
     if (pendingTimeout !== null) { clearTimeout(pendingTimeout); pendingTimeout = null }
     if (!active) { recommendations15v15.value = []; isOptimizing.value = false; return }
@@ -209,7 +253,7 @@ watch(
       const hasLocks = teamLocks.some(s => s.size > 0)
       const start = performance.now()
       recommendations15v15.value = recommend15v15(
-        roster.ownedIds, 'defense',
+        effectiveOwnedIds.value, 'defense',
         hasLocks ? teamLocks : undefined,
       )
       if (recommendations15v15.value.length > 0) {
@@ -224,8 +268,8 @@ watch(
 const tabs = computed(() => Object.values(modes.value))
 
 const hasEnoughCharacters = computed(() => {
-  if (is15v15.value) return roster.ownedCount >= 15
-  return roster.ownedCount >= 5
+  if (is15v15.value) return effectiveOwnedCount.value >= 15
+  return effectiveOwnedCount.value >= 5
 })
 
 const minRequired = computed(() => is15v15.value ? 15 : 5)
@@ -372,6 +416,50 @@ const resultCount = computed(() =>
       </template>
     </UModal>
 
+    <!-- Banned panel — visible whenever any bans exist, regardless of roster size -->
+    <div
+      v-if="hasAnyBans"
+      class="flex flex-col gap-2 rounded-lg border border-error/30 bg-error/5 p-3"
+    >
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-1.5">
+          <UIcon name="i-lucide-ban" class="size-4 text-error" />
+          <span class="text-sm font-medium">
+            {{ t('recommend.bannedCount', { count: bannedIds.length }) }}
+          </span>
+        </div>
+        <UButton
+          :label="t('recommend.clearBans')"
+          icon="i-lucide-x"
+          size="xs"
+          variant="ghost"
+          color="neutral"
+          @click="clearBans"
+        />
+      </div>
+      <p class="text-xs text-muted">
+        {{ t('recommend.banDesc') }}
+      </p>
+      <div class="flex flex-wrap gap-1.5">
+        <button
+          v-for="char in bannedCharacters"
+          :key="char.id"
+          class="flex items-center gap-1 rounded-full border border-error/40 bg-default px-1.5 py-0.5 text-xs hover:border-error hover:bg-error/10"
+          :title="t('recommend.unbanCharacter')"
+          @click="unbanCharacter(char.id)"
+        >
+          <img
+            v-if="getAvatarUrl(char.avatarImg)"
+            :src="getAvatarUrl(char.avatarImg)!"
+            :alt="localize(char.name)"
+            class="size-5 rounded-full"
+          >
+          <span class="max-w-20 truncate">{{ localize(char.name) }}</span>
+          <UIcon name="i-lucide-x" class="size-3 text-muted" />
+        </button>
+      </div>
+    </div>
+
     <!-- Not enough characters: guide to pick roster -->
     <template v-if="!hasEnoughCharacters">
       <div class="rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-6">
@@ -381,7 +469,7 @@ const resultCount = computed(() =>
             {{ t('recommend.pickRoster') }}
           </h3>
           <p class="mt-1 text-sm text-muted">
-            {{ t('recommend.pickRosterDesc', { min: minRequired, current: roster.ownedCount }) }}
+            {{ t('recommend.pickRosterDesc', { min: minRequired, current: effectiveOwnedCount }) }}
           </p>
         </div>
 
@@ -530,6 +618,8 @@ const resultCount = computed(() =>
         :label="`#${i + 1}`"
         mode="defense"
         :rating-context="{ team, arenaMode: '5v5' as const }"
+        banable
+        @ban="banCharacter"
       />
     </template>
 
@@ -560,6 +650,8 @@ const resultCount = computed(() =>
           :label="t('recommend.team', { n: teamIdx + 1 })"
           mode="defense"
           :rating-context="{ team, arenaMode: '15v15' as const, allTeams: recommendations15v15, teamSetIndex: setIdx, teamIndexInSet: teamIdx }"
+          banable
+          @ban="banCharacter"
         />
       </div>
     </template>

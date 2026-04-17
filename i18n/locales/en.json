@@ -89,7 +89,12 @@
     "optimizing": "Optimizing teams…",
     "lockCharacters": "Pin Characters",
     "lockDesc": "Pick characters to always include in recommendations. Empty slots will be auto-filled.",
-    "clearLocks": "Clear All"
+    "clearLocks": "Clear All",
+    "banCharacter": "Exclude from recommendations",
+    "unbanCharacter": "Remove from banned list",
+    "bannedCount": "Banned ({count})",
+    "banDesc": "These characters will not appear in any recommendation. Click a chip to restore.",
+    "clearBans": "Clear bans"
   },
   "meta": {
     "title": "NIKKE PVP Team Builder — Win More Arena Matches",

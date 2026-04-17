@@ -89,7 +89,12 @@
     "optimizing": "正在優化隊伍…",
     "lockCharacters": "釘選角色",
     "lockDesc": "選擇要鎖定在隊伍中的角色，空位將自動填充最佳搭配。",
-    "clearLocks": "清除全部"
+    "clearLocks": "清除全部",
+    "banCharacter": "從推薦中排除",
+    "unbanCharacter": "從排除清單中移除",
+    "bannedCount": "已排除 ({count})",
+    "banDesc": "這些角色不會出現在任何推薦中。點擊以恢復。",
+    "clearBans": "清除排除"
   },
   "meta": {
     "title": "NIKKE PVP 隊伍規劃器 — 贏得更多競技場勝利",

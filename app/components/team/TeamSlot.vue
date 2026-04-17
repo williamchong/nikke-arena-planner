@@ -7,12 +7,14 @@ defineProps<{
   removable?: boolean
   lockable?: boolean
   locked?: boolean
+  banable?: boolean
 }>()
 
 const emit = defineEmits<{
   remove: []
   click: []
   toggleLock: []
+  ban: []
 }>()
 
 const { t } = useI18n()
@@ -49,6 +51,14 @@ const { t } = useI18n()
         @click.stop="emit('remove')"
       >
         <UIcon name="i-lucide-x" class="size-3" />
+      </button>
+      <button
+        v-if="banable"
+        class="absolute right-0.5 top-0.5 rounded text-muted/60 hover:bg-elevated hover:text-default"
+        :title="t('recommend.banCharacter')"
+        @click.stop="emit('ban')"
+      >
+        <UIcon name="i-lucide-x" class="size-3.5" />
       </button>
     </template>
 

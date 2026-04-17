@@ -10,6 +10,11 @@ const props = defineProps<{
   label?: string
   mode?: ArenaMode
   ratingContext?: RatingContext
+  banable?: boolean
+}>()
+
+const emit = defineEmits<{
+  ban: [id: string]
 }>()
 
 const { t } = useI18n()
@@ -107,6 +112,8 @@ function toggleNotes() {
         <TeamSlot
           :character="char"
           :position="i + 1"
+          :banable="banable"
+          @ban="emit('ban', char.id)"
         />
         <div v-if="alternatesMap[i]" class="flex items-center gap-0.5">
           <span class="text-[9px] text-muted">{{ t('recommend.orSwap') }}</span>

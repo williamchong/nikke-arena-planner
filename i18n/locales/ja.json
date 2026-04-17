@@ -89,7 +89,12 @@
     "optimizing": "最適化中…",
     "lockCharacters": "キャラを固定",
     "lockDesc": "推奨に必ず含めるキャラを選択。空きスロットは自動補完されます。",
-    "clearLocks": "すべて解除"
+    "clearLocks": "すべて解除",
+    "banCharacter": "推奨から除外",
+    "unbanCharacter": "除外リストから外す",
+    "bannedCount": "除外中 ({count})",
+    "banDesc": "これらのキャラはどの推奨にも表示されません。タップで復元できます。",
+    "clearBans": "除外を解除"
   },
   "meta": {
     "title": "NIKKE PVP チームビルダー — アリーナ勝率アップ",
