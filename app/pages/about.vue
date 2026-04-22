@@ -89,6 +89,16 @@ useHead({
       </p>
     </section>
 
+    <!-- Who it's for -->
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">
+        {{ t('about.whoItsForTitle') }}
+      </h2>
+      <p class="text-sm leading-relaxed text-muted">
+        {{ t('about.whoItsForBody') }}
+      </p>
+    </section>
+
     <!-- How to use -->
     <section class="space-y-3">
       <h2 class="text-lg font-semibold">

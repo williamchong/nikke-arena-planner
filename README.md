@@ -6,13 +6,11 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 
 ## What You Get
 
-- **Instant team recommendations** matched to 20 proven meta archetypes covering the current PVP meta
-- **15v15 SP Arena allocation** — 3 non-overlapping teams optimized via simulated annealing
-- **Multi-meta detection** — teams fitting multiple archetypes get bonus scoring and show all matched metas
-- **Burst speed calculator** with team scoring, timing visualization, and B1→B2→B3 burst order
-- **Position-aware** — auto-assigns P1-P5 based on role and burst type
-- **Character avatars and in-game icons** for burst, weapon, element, role, and manufacturer
-- **Alternate picks** — shows which other owned characters could fill each flex slot
+- **Stop guessing which characters to pair** — get the strongest teams your roster can actually field, matched to 20 proven PVP archetypes
+- **Plan all 3 SP Arena teams at once** — 15v15 allocations balanced so no team starves the others of burst generators
+- **Find teams opponents can't easily counter** — compositions that satisfy multiple meta archetypes at once
+- **Know if you'll burst first** — exact speed tier (2RL / 3RL / 5SG…) for every team, so you can see at a glance whether you beat the enemy
+- **See your backup options** — alternate picks for every flex slot when you're short on copies of a meta unit
 - **Works with any roster size** — whether you have 15 characters or 150
 - **Trilingual** — English, 繁體中文, 简体中文
 

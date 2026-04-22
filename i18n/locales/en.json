@@ -102,8 +102,8 @@
     "keywords": "NIKKE, PVP, arena, team builder, SP arena, 5v5, 15v15, burst speed, team composition, goddess of victory"
   },
   "landing": {
-    "heading": "Stop Losing Arena Matches — Build Better Teams in Seconds",
-    "intro": "NIKKE Arena Planner analyzes your roster and instantly recommends the strongest PVP teams you can build. No more guessing which characters to pair, no more losing to teams that burst faster than yours. Select the characters you own, and the planner does the rest.",
+    "heading": "Stop Guessing — See Your Strongest PVP Teams in Seconds",
+    "intro": "NIKKE Arena Planner analyzes your roster and instantly recommends the strongest PVP teams you can build, with burst speed tiers so you can tell at a glance whether you beat the enemy's pace. No more guessing which characters to pair. Select the characters you own, and the planner does the rest.",
     "howItWorksTitle": "How It Works",
     "step1": "Select the characters you own from the full roster of 186 NIKKEs",
     "step2": "Get instant team recommendations for 5v5 Rookie Arena and 15v15 Special Arena",
@@ -122,7 +122,9 @@
     "title": "About — How to Use NIKKE Arena Planner",
     "metaDescription": "Learn how to use NIKKE Arena Planner to build winning PVP teams. Understand burst speed tiers (2RL, 3RL, 5SG), burst chains, and team composition mechanics.",
     "whatTitle": "What Is NIKKE Arena Planner?",
-    "whatBody": "NIKKE Arena Planner is a free tool that helps you build the strongest PVP teams from the characters you actually own. Instead of memorizing tier lists or copying teams you can't build, you tell the planner which NIKKEs you have — and it finds the best teams you can make right now. It covers both 5v5 Rookie Arena and 15v15 SP Arena (3 non-overlapping teams).",
+    "whatBody": "Stop guessing which team to pick. NIKKE Arena Planner shows you the strongest teams your actual roster can field — in seconds. Instead of memorizing tier lists or copying teams you can't build, you tell the planner which NIKKEs you have — and it finds the best teams you can make right now. It covers both 5v5 Rookie Arena and 15v15 SP Arena (3 non-overlapping teams).",
+    "whoItsForTitle": "Who It's For",
+    "whoItsForBody": "Best results with around 30+ characters unlocked and at least a few current meta units pulled. The tool still works with smaller rosters, but recommendations get stronger as your collection grows — new players may see fewer matched archetypes until more key units are unlocked.",
     "howTitle": "How to Use",
     "step1": "Go to Team Builder and select the characters you own. Click any character to mark it as owned — owned characters get a highlighted border. You can filter by burst type, weapon, element, or manufacturer.",
     "step2": "Switch between 5v5 and 15v15 tabs to see team recommendations. Each suggestion shows the team archetype, burst timeline (B1→B2→B3 with character names), speed tier, alternate picks, and matched meta archetypes.",
