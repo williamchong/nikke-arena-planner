@@ -9534,5 +9534,205 @@
     "avatarImg": "si_c281_00_s",
     "pvpTier": "SSS",
     "squad": "Underworld Queen"
+  },
+  {
+    "id": "eh",
+    "name": {
+      "en": "E.H.",
+      "zh-TW": "E.H.",
+      "zh-CN": "E.H.",
+      "ja": "E.H."
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "elysion",
+    "weapon": "SMG",
+    "weaponDmg": 10.12,
+    "ammo": 120,
+    "reloadTime": 1,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.001,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      },
+      "defense": {
+        "1RL": 0.02,
+        "2RL": 0.038,
+        "3SG": 0.029,
+        "5SG": 0.047,
+        "3RL": 0.057,
+        "7SG": 0.065,
+        "4RL": 0.075,
+        "5RL": 0.093
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1517,
+    "avatarImg": "",
+    "squad": "Exotic"
+  },
+  {
+    "id": "arcana-fortune-mate",
+    "name": {
+      "en": "Arcana: Fortune Mate",
+      "zh-TW": "阿爾卡娜:命運伴侶",
+      "zh-CN": "阿尔卡娜:命运伴侣",
+      "ja": "アルカナ：フォーチュンメイト"
+    },
+    "burst": "II",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "elysion",
+    "weapon": "SG",
+    "weaponDmg": 222.8,
+    "ammo": 9,
+    "reloadTime": 2.33,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      },
+      "defense": {
+        "1RL": 0.04,
+        "2RL": 0.08,
+        "3SG": 0.06,
+        "5SG": 0.1,
+        "3RL": 0.12,
+        "7SG": 0.14,
+        "4RL": 0.16,
+        "5RL": 0.18
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -2
+    },
+    "releaseOrder": 1524,
+    "avatarImg": "",
+    "squad": "Best Seller"
+  },
+  {
+    "id": "snow-crane",
+    "name": {
+      "en": "Snow Crane",
+      "zh-TW": "白鶴",
+      "zh-CN": "白鹤",
+      "ja": "シラツル"
+    },
+    "burst": "II",
+    "role": "defender",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    },
+    "releaseOrder": 1531,
+    "avatarImg": "",
+    "squad": "Veiled Order"
+  },
+  {
+    "id": "anis-star",
+    "name": {
+      "en": "Anis: Star",
+      "zh-TW": "阿妮斯:超級巨星",
+      "zh-CN": "阿妮斯:超级巨星",
+      "ja": "アニス：スター"
+    },
+    "burst": "I",
+    "role": "defender",
+    "element": "electric",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.17808,
+        "2RL": 0.35616,
+        "3SG": 0.17808,
+        "5SG": 0.35616,
+        "3RL": 0.53424,
+        "7SG": 0.71232,
+        "4RL": 0.71232,
+        "5RL": 0.8904
+      },
+      "defense": {
+        "1RL": 0.17808,
+        "2RL": 0.35616,
+        "3SG": 0.17808,
+        "5SG": 0.35616,
+        "3RL": 0.53424,
+        "7SG": 0.71232,
+        "4RL": 0.71232,
+        "5RL": 0.8904
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1538,
+    "avatarImg": "",
+    "squad": "Counters"
   }
 ]
