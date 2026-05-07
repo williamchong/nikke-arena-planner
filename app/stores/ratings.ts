@@ -85,7 +85,10 @@ export const useRatingsStore = defineStore('ratings', () => {
     // Toggle off if same rating already exists
     if (previousRating === rating) {
       setLocalRating(key, null)
-      trackEvent('rating_remove', { arena_mode: arenaMode })
+      trackEvent('rating_remove', {
+        arena_mode: arenaMode,
+        template_id: team.templateId ?? 'none',
+      })
       return
     }
 
@@ -144,6 +147,10 @@ export const useRatingsStore = defineStore('ratings', () => {
         arena_mode: arenaMode,
         rating,
         template_id: team.templateId ?? 'none',
+        team_score: team.score,
+        burst_speed: team.burstSpeed,
+        set_index: teamSetIndex ?? null,
+        team_index: teamIndexInSet ?? null,
       })
     }
     catch {

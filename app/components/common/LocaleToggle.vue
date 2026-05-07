@@ -1,9 +1,12 @@
 <script setup lang="ts">
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
-const { trackEvent } = useAnalytics()
+const { trackEvent, registerSuperProperties } = useAnalytics()
 
-watch(locale, (_val, old) => { if (old) trackEvent('setting_locale') })
+watch(locale, (val, old) => {
+  registerSuperProperties({ locale: val })
+  if (old) trackEvent('setting_change', { setting: 'locale', from: old, to: val })
+}, { immediate: true })
 
 const items = computed(() =>
   (locales.value as Array<{ code: string, name: string }>).map(l => ({

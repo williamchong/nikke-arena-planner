@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'nikke-arena-roster'
 
 export const useRosterStore = defineStore('roster', () => {
-  const { trackEvent } = useAnalytics()
+  const { trackEvent, registerSuperProperties } = useAnalytics()
   const storedIds = ref<string[]>([])
 
   // Load from localStorage only on client after mount
@@ -38,17 +38,18 @@ export const useRosterStore = defineStore('roster', () => {
   function toggle(id: string) {
     if (storedIds.value.includes(id)) {
       storedIds.value = storedIds.value.filter((i: string) => i !== id)
-      trackEvent('roster_remove')
+      trackEvent('roster_remove', { character_id: id, roster_size_after: storedIds.value.length })
     }
     else {
       const partner = treasurePartnerId(id)
       storedIds.value = [...storedIds.value.filter((i: string) => i !== partner), id]
-      trackEvent('roster_add')
+      trackEvent('roster_add', { character_id: id, roster_size_after: storedIds.value.length })
     }
     persist()
   }
 
   function selectAll(ids: string[]) {
+    const before = storedIds.value.length
     const current = new Set(storedIds.value)
     for (const id of ids) {
       current.delete(treasurePartnerId(id))
@@ -56,13 +57,17 @@ export const useRosterStore = defineStore('roster', () => {
     }
     storedIds.value = [...current]
     persist()
-    trackEvent('roster_select_all')
+    trackEvent('roster_select_all', {
+      added_count: storedIds.value.length - before,
+      roster_size_after: storedIds.value.length,
+    })
   }
 
   function clearAll() {
+    const before = storedIds.value.length
     storedIds.value = []
     persist()
-    trackEvent('roster_clear_all')
+    trackEvent('roster_clear_all', { roster_size_before: before })
   }
 
   function isOwned(id: string) {
@@ -70,6 +75,13 @@ export const useRosterStore = defineStore('roster', () => {
   }
 
   const ownedCount = computed(() => ownedIds.value.size)
+
+  // Stamp roster size on every subsequent event without per-call boilerplate.
+  if (import.meta.client) {
+    watch(ownedCount, (n) => {
+      registerSuperProperties({ roster_size: n, has_roster: n > 0 })
+    }, { immediate: true })
+  }
 
   return { ownedIds, toggle, selectAll, clearAll, isOwned, ownedCount }
 })

@@ -82,7 +82,20 @@ const showNotes = ref(false)
 
 function toggleNotes() {
   showNotes.value = !showNotes.value
-  if (showNotes.value) trackEvent('team_expand_notes')
+  if (showNotes.value) {
+    trackEvent('team_expand_notes', {
+      template_id: props.team.templateId ?? 'none',
+      arena_mode: effectiveMode.value ?? null,
+      overlap_count: overlappingTemplates.value.length,
+    })
+  }
+}
+
+function onTryCalculator() {
+  trackEvent('team_try_calculator', {
+    template_id: props.team.templateId ?? 'none',
+    arena_mode: effectiveMode.value ?? null,
+  })
 }
 </script>
 
@@ -148,7 +161,7 @@ function toggleNotes() {
         size="xs"
         variant="outline"
         color="primary"
-        @click="trackEvent('team_try_calculator')"
+        @click="onTryCalculator"
       />
       <button
         v-if="templateNotes || overlappingTemplates.length > 0"

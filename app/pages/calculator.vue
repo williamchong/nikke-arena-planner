@@ -176,9 +176,10 @@ function removeCharacter(index: number) {
 }
 
 function clearAll() {
+  const filledBefore = slots.value.filter(s => s !== null).length
   slots.value = [null, null, null, null, null]
   lockedSlots.value = new Set()
-  trackEvent('calc_clear')
+  trackEvent('calc_clear', { filled_count_before: filledBefore })
 }
 
 function toggleLock(index: number) {
@@ -200,7 +201,10 @@ function autoComplete() {
 
   const result = recommendAround(lockedCharIds, roster.ownedIds, mode.value)
   if (!result) return
-  trackEvent('calc_auto_complete')
+  trackEvent('calc_auto_complete', {
+    arena_mode: mode.value,
+    locked_count: lockedCharIds.length,
+  })
 
   // Fill empty slots with recommended characters, preserving locked ones
   const recommended = result.characters.filter(id => !lockedCharIds.includes(id))
@@ -215,8 +219,8 @@ function autoComplete() {
   slots.value = next
 }
 
-watch(mode, (v) => {
-  trackEvent(v === 'attack' ? 'calc_mode_attack' : 'calc_mode_defense')
+watch(mode, (v, old) => {
+  trackEvent('calc_mode_change', { from: old, to: v })
 })
 
 const modeOptions = [

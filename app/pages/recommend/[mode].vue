@@ -104,10 +104,11 @@ const lockedIds5v5 = computed(() => {
 const hasAnyLocks = computed(() => allLockedIds.value.size > 0)
 
 function clearLocks() {
+  const before = allLockedIds.value.size
   lockSlots.value = is15v15.value
     ? [emptyTeam(), emptyTeam(), emptyTeam()]
     : [emptyTeam()]
-  trackEvent('recommend_clear_locks')
+  trackEvent('recommend_clear_locks', { mode: mode.value, locked_count_before: before })
 }
 
 // --- Banned characters: excluded from the pool the recommender sees ---
@@ -129,7 +130,11 @@ function banCharacter(id: string) {
   if (bannedSet.value.has(id)) return
   removeLockById(id)
   bannedIds.value = [...bannedIds.value, id]
-  trackEvent('recommend_ban')
+  trackEvent('recommend_ban', {
+    character_id: id,
+    mode: mode.value,
+    banned_count_after: bannedIds.value.length,
+  })
 }
 
 function unbanCharacter(id: string) {
@@ -137,8 +142,9 @@ function unbanCharacter(id: string) {
 }
 
 function clearBans() {
+  const before = bannedIds.value.length
   bannedIds.value = []
-  trackEvent('recommend_clear_bans')
+  trackEvent('recommend_clear_bans', { mode: mode.value, banned_count_before: before })
 }
 
 // Effective roster the recommender sees. Owned ∖ banned.
@@ -206,7 +212,6 @@ function toggleInPicker(id: string) {
     currentTeam[existingIdx] = null
   }
   else {
-    trackEvent('recommend_lock')
     // If in another team, remove from there first
     for (const t of next) {
       const idx = t.indexOf(id)
@@ -216,6 +221,12 @@ function toggleInPicker(id: string) {
     const emptyIdx = currentTeam.indexOf(null)
     if (emptyIdx === -1) return
     currentTeam[emptyIdx] = id
+    trackEvent('recommend_lock', {
+      character_id: id,
+      mode: mode.value,
+      team_idx: teamIdx,
+      slot_idx: emptyIdx,
+    })
     // Auto-close when team is full
     if (!currentTeam.includes(null)) showPicker.value = false
   }
@@ -234,7 +245,15 @@ const recommendations5v5 = computed(() => {
 })
 
 watchDebounced(recommendations5v5, (result) => {
-  if (result.length > 0) trackEvent('recommend_5v5')
+  if (result.length === 0) return
+  trackEvent('recommend_view', {
+    mode: '5v5',
+    roster_size: roster.ownedCount,
+    banned_count: bannedIds.value.length,
+    locked_count: allLockedIds.value.size,
+    result_count: result.length,
+    has_template_match: result.some(t => !!t.templateId),
+  })
 }, { debounce: 500 })
 
 const recommendations15v15 = ref<ReturnType<typeof recommend15v15>>([])
@@ -257,7 +276,16 @@ watch(
         hasLocks ? teamLocks : undefined,
       )
       if (recommendations15v15.value.length > 0) {
-        trackEvent('recommend_15v15', { value: Math.round(performance.now() - start) })
+        const flatTeams = recommendations15v15.value.flat()
+        trackEvent('recommend_view', {
+          mode: '15v15',
+          roster_size: roster.ownedCount,
+          banned_count: bannedIds.value.length,
+          locked_count: allLockedIds.value.size,
+          result_count: recommendations15v15.value.length,
+          has_template_match: flatTeams.some(t => !!t.templateId),
+          value: Math.round(performance.now() - start),
+        })
       }
       isOptimizing.value = false
     }, 50)

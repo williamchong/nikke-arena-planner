@@ -36,6 +36,7 @@ export default defineNuxtConfig({
         proxy: false,
         region: 'us',
         trigger: 'onNuxtReady',
+        capturePageview: 'history_change',
       },
     },
   },

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const { trackEvent } = useAnalytics()
-function trackOutbound() { trackEvent('outbound_click') }
+function trackOutbound(url: string, label: string) {
+  trackEvent('outbound_click', { url, label, surface: 'about' })
+}
 
 const tiers = [
   { name: '2RL', key: '2rl', time: '~2.5s' },
@@ -186,19 +188,19 @@ useHead({
       </p>
       <ul class="space-y-2 text-sm">
         <li>
-          <a href="https://nikke.gg/" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound">nikke.gg</a>
+          <a href="https://nikke.gg/" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound('https://nikke.gg/', 'nikke.gg')">nikke.gg</a>
           <span class="text-muted"> — {{ t('about.creditNikkeGg') }}</span>
         </li>
         <li>
-          <a href="https://www.prydwen.gg/" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound">Prydwen.gg</a>
+          <a href="https://www.prydwen.gg/" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound('https://www.prydwen.gg/', 'prydwen.gg')">Prydwen.gg</a>
           <span class="text-muted"> — {{ t('about.creditPrydwen') }}</span>
         </li>
         <li>
-          <a href="https://space.bilibili.com/8724249" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound">左猫猫ZuoCatcat</a>
+          <a href="https://space.bilibili.com/8724249" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound('https://space.bilibili.com/8724249', 'zuocatcat')">左猫猫ZuoCatcat</a>
           <span class="text-muted"> — {{ t('about.creditZuoCatcat') }}</span>
         </li>
         <li>
-          <a href="https://nikke-goddess-of-victory-international.fandom.com/wiki/Home" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound">NIKKE Fandom Wiki</a>
+          <a href="https://nikke-goddess-of-victory-international.fandom.com/wiki/Home" target="_blank" rel="noopener" class="font-medium text-primary hover:underline" @click="trackOutbound('https://nikke-goddess-of-victory-international.fandom.com/wiki/Home', 'fandom_wiki')">NIKKE Fandom Wiki</a>
           <span class="text-muted"> — {{ t('about.creditFandom') }}</span>
         </li>
       </ul>
@@ -221,7 +223,7 @@ useHead({
           size="sm"
           variant="outline"
           color="neutral"
-          @click="trackOutbound"
+          @click="trackOutbound('https://github.com/williamchong/nikke-arena-planner', 'github_repo')"
         />
         <UButton
           to="https://github.com/williamchong/nikke-arena-planner/issues"
@@ -231,7 +233,7 @@ useHead({
           size="sm"
           variant="outline"
           color="neutral"
-          @click="trackOutbound"
+          @click="trackOutbound('https://github.com/williamchong/nikke-arena-planner/issues', 'github_issues')"
         />
         <UButton
           to="https://github.com/williamchong/nikke-arena-planner/discussions"
@@ -241,7 +243,7 @@ useHead({
           size="sm"
           variant="outline"
           color="neutral"
-          @click="trackOutbound"
+          @click="trackOutbound('https://github.com/williamchong/nikke-arena-planner/discussions', 'github_discussions')"
         />
       </div>
     </section>

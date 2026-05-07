@@ -5,6 +5,9 @@ import { watchDebounced } from '@vueuse/core'
 const { t } = useI18n()
 const { trackEvent } = useAnalytics()
 const { burstIcon, roleIcon, weaponIcon, elementIcon, manufacturerIcon } = useIcons()
+const route = useRoute()
+
+const surface = computed(() => route.path.includes('/recommend') ? 'recommend' : 'roster')
 
 const search = defineModel<string>('search', { default: '' })
 const burst = defineModel<BurstType | null>('burst', { default: null })
@@ -67,26 +70,28 @@ function clearFilters() {
   element.value = null
   weapon.value = null
   manufacturer.value = null
-  trackEvent('filter_clear')
+  trackEvent('filter_clear', { surface: surface.value })
 }
 
 const hasFilters = computed(() =>
   search.value || burst.value || role.value || element.value || weapon.value || manufacturer.value,
 )
 
-const filterRefs: [string, Ref<unknown>][] = [
-  ['filter_burst', burst],
-  ['filter_role', role],
-  ['filter_weapon', weapon],
-  ['filter_element', element],
-  ['filter_manufacturer', manufacturer],
+const filterRefs: [string, Ref<string | null>][] = [
+  ['burst', burst as Ref<string | null>],
+  ['role', role as Ref<string | null>],
+  ['weapon', weapon as Ref<string | null>],
+  ['element', element as Ref<string | null>],
+  ['manufacturer', manufacturer as Ref<string | null>],
 ]
-for (const [event, filterRef] of filterRefs) {
-  watch(filterRef, () => { if (filterRef.value) trackEvent(event) })
+for (const [dimension, filterRef] of filterRefs) {
+  watch(filterRef, (v) => {
+    if (v) trackEvent('filter_apply', { dimension, value: v, surface: surface.value })
+  })
 }
 
 watchDebounced(search, (v: string) => {
-  if (v) trackEvent('filter_search', { search_term: v })
+  if (v) trackEvent('filter_search', { search_term: v, surface: surface.value })
 }, { debounce: 1000 })
 </script>
 
