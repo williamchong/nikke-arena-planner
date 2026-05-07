@@ -1,12 +1,13 @@
 /**
  * Thin analytics wrapper — keeps event names greppable in one place.
- * Must be called during component/store setup so useGtag() has Nuxt context.
  */
 export function useAnalytics() {
-  const { gtag } = useGtag()
+  const { proxy: ga } = useScriptGoogleAnalytics()
+  const { proxy: ph } = useScriptPostHog()
 
-  function trackEvent(name: string, params?: Record<string, string | number>) {
-    gtag('event', name, params)
+  function trackEvent(name: string, params?: Record<string, unknown>) {
+    ga.gtag('event', name, params)
+    ph.posthog.capture(name, params)
   }
 
   return { trackEvent }

@@ -16,11 +16,29 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
+    '@nuxt/scripts',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
-    ['nuxt-gtag', { id: 'G-38968P5QG5' }],
   ],
+  scripts: {
+    registry: {
+      googleAnalytics: {
+        id: 'G-38968P5QG5',
+        bundle: false,
+        proxy: false,
+        trigger: 'onNuxtReady',
+      },
+      posthog: {
+        apiKey: 'phc_DoErJi8pBhux3JeYpvX5CUxBkmzf9aNfZwXobtUPLt6H',
+        apiHost: 'https://t.williamchong.cloud',
+        bundle: false,
+        proxy: false,
+        region: 'us',
+        trigger: 'onNuxtReady',
+      },
+    },
+  },
   i18n: {
     locales: [
       { code: 'en', name: 'English', language: 'en', file: 'en.json' },
