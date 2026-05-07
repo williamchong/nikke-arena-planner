@@ -5,10 +5,12 @@ const localePath = useLocalePath()
 const { trackEvent, registerSuperProperties } = useAnalytics()
 const colorMode = useColorMode()
 
-watch(() => colorMode.preference, (val, old) => {
-  registerSuperProperties({ theme: val })
-  if (old) trackEvent('setting_change', { setting: 'theme', from: old, to: val })
-}, { immediate: true })
+if (import.meta.client) {
+  watch(() => colorMode.preference, (val, old) => {
+    registerSuperProperties({ theme: val })
+    if (old) trackEvent('setting_change', { setting: 'theme', from: old, to: val })
+  }, { immediate: true })
+}
 
 const mainNavItems = computed(() => [
   { label: t('nav.recommend'), to: localePath('/recommend/5v5'), icon: 'i-lucide-trophy', match: '/recommend', size: 'sm' as const },

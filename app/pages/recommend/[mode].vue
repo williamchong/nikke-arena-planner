@@ -276,14 +276,13 @@ watch(
         hasLocks ? teamLocks : undefined,
       )
       if (recommendations15v15.value.length > 0) {
-        const flatTeams = recommendations15v15.value.flat()
         trackEvent('recommend_view', {
           mode: '15v15',
           roster_size: roster.ownedCount,
           banned_count: bannedIds.value.length,
           locked_count: allLockedIds.value.size,
           result_count: recommendations15v15.value.length,
-          has_template_match: flatTeams.some(t => !!t.templateId),
+          has_template_match: recommendations15v15.value.some(set => set.some(t => !!t.templateId)),
           value: Math.round(performance.now() - start),
         })
       }

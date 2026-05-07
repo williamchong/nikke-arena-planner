@@ -3,10 +3,12 @@ const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const { trackEvent, registerSuperProperties } = useAnalytics()
 
-watch(locale, (val, old) => {
-  registerSuperProperties({ locale: val })
-  if (old) trackEvent('setting_change', { setting: 'locale', from: old, to: val })
-}, { immediate: true })
+if (import.meta.client) {
+  watch(locale, (val, old) => {
+    registerSuperProperties({ locale: val })
+    if (old) trackEvent('setting_change', { setting: 'locale', from: old, to: val })
+  }, { immediate: true })
+}
 
 const items = computed(() =>
   (locales.value as Array<{ code: string, name: string }>).map(l => ({
