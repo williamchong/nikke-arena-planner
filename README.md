@@ -16,7 +16,7 @@ NIKKE Arena Planner analyzes your character roster and instantly recommends the 
 
 ## How It Works
 
-1. Select the characters you own from the full roster of 186 NIKKEs
+1. Select the characters you own from the full roster of 197 NIKKEs
 2. Get instant team recommendations for 5v5 Arena and 15v15 SP Arena
 3. See burst speed, timing breakdowns, and why each team works
 

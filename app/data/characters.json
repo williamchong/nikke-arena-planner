@@ -1238,6 +1238,7 @@
     },
     "releaseOrder": 712,
     "avatarImg": "si_c062_00_s",
+    "pvpTier": "B",
     "squad": "The Carronades"
   },
   {
@@ -1291,6 +1292,7 @@
     "traits": [
       "cover-healer"
     ],
+    "pvpTier": "C",
     "squad": "School Circle"
   },
   {
@@ -1446,6 +1448,7 @@
     },
     "releaseOrder": 615,
     "avatarImg": "si_c811_00_s",
+    "pvpTier": "B",
     "squad": "YoRHa"
   },
   {
@@ -1601,6 +1604,7 @@
     },
     "releaseOrder": 1433,
     "avatarImg": "si_c075_00_s",
+    "pvpTier": "B",
     "squad": "Infinity Rail"
   },
   {
@@ -1753,6 +1757,7 @@
     },
     "releaseOrder": 579,
     "avatarImg": "si_c351_00_s",
+    "pvpTier": "D",
     "squad": "Aegis"
   },
   {
@@ -1918,6 +1923,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c091_00_s",
+    "pvpTier": "D",
     "squad": "Absolute"
   },
   {
@@ -1968,6 +1974,7 @@
     },
     "releaseOrder": 831,
     "avatarImg": "si_c550_00_s",
+    "pvpTier": "S",
     "squad": "Rewind"
   },
   {
@@ -2182,6 +2189,7 @@
     },
     "releaseOrder": 656,
     "avatarImg": "si_c033_00_s",
+    "pvpTier": "A",
     "squad": "A.C.P.U.",
     "prefersTeammate": [
       "role:defender"
@@ -2235,6 +2243,7 @@
     },
     "releaseOrder": 1195,
     "avatarImg": "si_c521_00_s",
+    "pvpTier": "C",
     "squad": "Cooking Oil"
   },
   {
@@ -2285,6 +2294,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c061_00_s",
+    "pvpTier": "D",
     "squad": "The Carronades"
   },
   {
@@ -2437,6 +2447,7 @@
     },
     "releaseOrder": 1279,
     "avatarImg": "si_c532_00_s",
+    "pvpTier": "C",
     "squad": "Over the Horizon"
   },
   {
@@ -2541,6 +2552,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "A",
     "squad": "M.M.R."
   },
   {
@@ -2645,6 +2657,7 @@
     },
     "releaseOrder": 978,
     "avatarImg": "si_c841_00_s",
+    "pvpTier": "D",
     "squad": "B.S.T."
   },
   {
@@ -2797,6 +2810,7 @@
     },
     "releaseOrder": 1265,
     "avatarImg": "si_c851_00_s",
+    "pvpTier": "C",
     "squad": "2nd Airborne Squad"
   },
   {
@@ -2847,6 +2861,7 @@
     },
     "releaseOrder": 765,
     "avatarImg": "si_c313_00_s",
+    "pvpTier": "B",
     "squad": "Maid For You"
   },
   {
@@ -2897,6 +2912,7 @@
     },
     "releaseOrder": 376,
     "avatarImg": "si_c400_00_s",
+    "pvpTier": "D",
     "squad": "Real Kindness",
     "prefersTeammate": [
       "same-element"
@@ -2950,6 +2966,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c291_00_s",
+    "pvpTier": "D",
     "squad": "M.M.R."
   },
   {
@@ -3000,6 +3017,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c030_00_s",
+    "pvpTier": "B",
     "squad": "A.C.P.U."
   },
   {
@@ -3050,6 +3068,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c030_00_s",
+    "pvpTier": "A",
     "squad": "A.C.P.U."
   },
   {
@@ -3100,6 +3119,7 @@
     },
     "releaseOrder": 740,
     "avatarImg": "si_c382_00_s",
+    "pvpTier": "D",
     "squad": "Happy Zoo"
   },
   {
@@ -3153,6 +3173,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "C",
     "squad": "Academia"
   },
   {
@@ -3206,6 +3227,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "D",
     "squad": "Seraphim"
   },
   {
@@ -3310,6 +3332,7 @@
     },
     "releaseOrder": 341,
     "avatarImg": "si_c193_00_s",
+    "pvpTier": "D",
     "squad": "Unlimited"
   },
   {
@@ -3411,6 +3434,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c231_00_s",
+    "pvpTier": "D",
     "squad": "Inherit"
   },
   {
@@ -3461,6 +3485,7 @@
     },
     "releaseOrder": 1419,
     "avatarImg": "si_c074_00_s",
+    "pvpTier": "S",
     "squad": "Infinity Rail"
   },
   {
@@ -3562,6 +3587,7 @@
     },
     "releaseOrder": 1244,
     "avatarImg": "si_c041_00_s",
+    "pvpTier": "E",
     "squad": "Perilous Siege"
   },
   {
@@ -3612,6 +3638,7 @@
     },
     "releaseOrder": 376,
     "avatarImg": "si_c402_00_s",
+    "pvpTier": "E",
     "squad": "Real Kindness"
   },
   {
@@ -3662,6 +3689,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c110_00_s",
+    "pvpTier": "D",
     "squad": "Exotic"
   },
   {
@@ -3712,6 +3740,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c071_00_s",
+    "pvpTier": "D",
     "squad": "Infinity Rail"
   },
   {
@@ -3816,6 +3845,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c220_00_s",
+    "pvpTier": "D",
     "squad": "Pioneer"
   },
   {
@@ -3866,6 +3896,7 @@
     },
     "releaseOrder": 775,
     "avatarImg": "si_c310_00_s",
+    "pvpTier": "C",
     "squad": "Maid For You"
   },
   {
@@ -3916,6 +3947,7 @@
     },
     "releaseOrder": 1153,
     "avatarImg": "si_c834_00_s",
+    "pvpTier": "A",
     "squad": "NERV"
   },
   {
@@ -3966,6 +3998,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c161_00_s",
+    "pvpTier": "E",
     "squad": "Wardress"
   },
   {
@@ -4067,6 +4100,7 @@
     },
     "releaseOrder": 1013,
     "avatarImg": "si_c580_00_s",
+    "pvpTier": "B",
     "squad": "Best Seller"
   },
   {
@@ -4168,6 +4202,7 @@
     },
     "releaseOrder": 417,
     "avatarImg": "si_c802_00_s",
+    "pvpTier": "E",
     "squad": "Devil Hunter"
   },
   {
@@ -4269,6 +4304,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c092_00_s",
+    "pvpTier": "E",
     "squad": "Absolute"
   },
   {
@@ -4370,6 +4406,7 @@
     },
     "releaseOrder": 1006,
     "avatarImg": "si_c403_00_s",
+    "pvpTier": "B",
     "squad": "Real Kindness"
   },
   {
@@ -4420,6 +4457,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c120_00_s",
+    "pvpTier": "D",
     "squad": "Recall & Release"
   },
   {
@@ -4470,6 +4508,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c060_00_s",
+    "pvpTier": "D",
     "squad": "The Carronades"
   },
   {
@@ -4520,6 +4559,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c201_00_s",
+    "pvpTier": "D",
     "squad": "Talentum"
   },
   {
@@ -4573,6 +4613,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "D",
     "squad": "Wardress"
   },
   {
@@ -4725,6 +4766,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c210_00_s",
+    "pvpTier": "E",
     "squad": "Protocol"
   },
   {
@@ -4826,6 +4868,7 @@
     },
     "releaseOrder": 1181,
     "avatarImg": "si_c520_00_s",
+    "pvpTier": "E",
     "squad": "Cooking Oil"
   },
   {
@@ -4876,6 +4919,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c202_00_s",
+    "pvpTier": "D",
     "squad": "Talentum"
   },
   {
@@ -4926,6 +4970,7 @@
     },
     "releaseOrder": 313,
     "avatarImg": "si_c352_00_s",
+    "pvpTier": "C",
     "squad": "Aegis"
   },
   {
@@ -5135,6 +5180,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c141_00_s",
+    "pvpTier": "D",
     "squad": "Cafe Sweety"
   },
   {
@@ -5185,6 +5231,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c141_00_s",
+    "pvpTier": "C",
     "squad": "Cafe Sweety"
   },
   {
@@ -5235,6 +5282,7 @@
     },
     "releaseOrder": 866,
     "avatarImg": "si_c501_00_s",
+    "pvpTier": "E",
     "squad": "Electric Shock"
   },
   {
@@ -5285,6 +5333,7 @@
     },
     "releaseOrder": 915,
     "avatarImg": "si_c284_00_s",
+    "pvpTier": "B",
     "squad": "Underworld Queen"
   },
   {
@@ -5437,6 +5486,7 @@
     },
     "releaseOrder": 971,
     "avatarImg": "si_c832_00_s",
+    "pvpTier": "B",
     "squad": "NERV"
   },
   {
@@ -5643,6 +5693,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c171_00_s",
+    "pvpTier": "D",
     "squad": "Triangle"
   },
   {
@@ -5693,6 +5744,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c172_00_s",
+    "pvpTier": "E",
     "squad": "Triangle"
   },
   {
@@ -5743,6 +5795,7 @@
     },
     "releaseOrder": 453,
     "avatarImg": "si_c282_00_s",
+    "pvpTier": "B",
     "squad": "Underworld Queen"
   },
   {
@@ -5796,6 +5849,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "D",
     "squad": "Seraphim",
     "prefersTeammate": [
       "same-element"
@@ -5849,6 +5903,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c142_00_s",
+    "pvpTier": "D",
     "squad": "Cafe Sweety"
   },
   {
@@ -5899,6 +5954,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c142_00_s",
+    "pvpTier": "D",
     "squad": "Cafe Sweety"
   },
   {
@@ -5949,6 +6005,7 @@
     },
     "releaseOrder": 586,
     "avatarImg": "si_c353_00_s",
+    "pvpTier": "D",
     "squad": "Aegis"
   },
   {
@@ -6107,6 +6164,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c070_00_s",
+    "pvpTier": "D",
     "squad": "Infinity Rail"
   },
   {
@@ -6262,6 +6320,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c010_00_s",
+    "pvpTier": "E",
     "squad": "Counters"
   },
   {
@@ -6312,6 +6371,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c200_00_s",
+    "pvpTier": "E",
     "squad": "Talentum",
     "prefersTeammate": [
       "same-element"
@@ -6365,6 +6425,7 @@
     },
     "releaseOrder": 341,
     "avatarImg": "si_c203_00_s",
+    "pvpTier": "D",
     "squad": "Talentum"
   },
   {
@@ -6415,6 +6476,7 @@
     },
     "releaseOrder": 922,
     "avatarImg": "si_c283_00_s",
+    "pvpTier": "B",
     "squad": "Underworld Queen"
   },
   {
@@ -6465,6 +6527,7 @@
     },
     "releaseOrder": 1209,
     "avatarImg": "si_c590_00_s",
+    "pvpTier": "E",
     "squad": "Incubator"
   },
   {
@@ -6566,6 +6629,7 @@
     },
     "releaseOrder": 376,
     "avatarImg": "si_c401_00_s",
+    "pvpTier": "D",
     "squad": "Real Kindness"
   },
   {
@@ -6616,6 +6680,7 @@
     },
     "releaseOrder": 481,
     "avatarImg": "si_c233_00_s",
+    "pvpTier": "D",
     "squad": "Inherit"
   },
   {
@@ -6666,6 +6731,7 @@
     },
     "releaseOrder": 691,
     "avatarImg": "si_c192_00_s",
+    "pvpTier": "D",
     "squad": "Unlimited"
   },
   {
@@ -6716,6 +6782,7 @@
     },
     "releaseOrder": 691,
     "avatarImg": "si_c192_00_s",
+    "pvpTier": "B",
     "squad": "Unlimited"
   },
   {
@@ -6766,6 +6833,7 @@
     },
     "releaseOrder": 1258,
     "avatarImg": "si_c850_00_s",
+    "pvpTier": "C",
     "squad": "7th Airborne Squad"
   },
   {
@@ -6816,6 +6884,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c150_00_s",
+    "pvpTier": "D",
     "squad": "Master Hand"
   },
   {
@@ -6866,6 +6935,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c150_00_s",
+    "pvpTier": "C",
     "squad": "Master Hand"
   },
   {
@@ -6967,6 +7037,7 @@
     },
     "releaseOrder": 467,
     "avatarImg": "si_c040_00_s",
+    "pvpTier": "D",
     "squad": "Perilous Siege",
     "prefersTeammate": [
       "role:attacker"
@@ -7074,6 +7145,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "D",
     "squad": "Unlimited",
     "prefersTeammate": [
       "same-element"
@@ -7127,6 +7199,7 @@
     },
     "releaseOrder": 901,
     "avatarImg": "si_c551_00_s",
+    "pvpTier": "D",
     "squad": "Rewind"
   },
   {
@@ -7177,6 +7250,7 @@
     },
     "releaseOrder": 481,
     "avatarImg": "si_c392_00_s",
+    "pvpTier": "D",
     "squad": "School Circle"
   },
   {
@@ -7386,6 +7460,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "E",
     "squad": "NERV"
   },
   {
@@ -7436,6 +7511,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c032_00_s",
+    "pvpTier": "C",
     "squad": "A.C.P.U."
   },
   {
@@ -7540,6 +7616,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c212_00_s",
+    "pvpTier": "E",
     "squad": "Protocol"
   },
   {
@@ -7590,6 +7667,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c431_00_s",
+    "pvpTier": "E",
     "squad": "Prima Donna"
   },
   {
@@ -7640,6 +7718,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c022_00_s",
+    "pvpTier": "E",
     "squad": "The Scouts"
   },
   {
@@ -7741,6 +7820,7 @@
     },
     "releaseOrder": 1146,
     "avatarImg": "si_c836_00_s",
+    "pvpTier": "E",
     "squad": "WILLE"
   },
   {
@@ -7813,17 +7893,17 @@
     "chargeTime": 0,
     "maxCharge": null,
     "chargeCoefficient": 0.0005,
-    "hitMultiplier": 2,
+    "hitMultiplier": 1,
     "burstGen": {
       "attack": {
-        "1RL": 0.007,
-        "2RL": 0.033,
-        "3SG": 0.016,
-        "5SG": 0.05,
-        "3RL": 0.071,
-        "7SG": 0.087,
-        "4RL": 0.109,
-        "5RL": 0.147
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
       },
       "defense": {
         "1RL": 0.007,
@@ -7918,14 +7998,14 @@
     "hitMultiplier": 1,
     "burstGen": {
       "attack": {
-        "1RL": 0.008,
-        "2RL": 0.026,
-        "3SG": 0.015,
-        "5SG": 0.0385,
-        "3RL": 0.0495,
-        "7SG": 0.06,
-        "4RL": 0.071,
-        "5RL": 0.00906
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
       },
       "defense": {
         "1RL": 0.008,
@@ -8021,13 +8101,13 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0175,
-        "3SG": 0.009,
-        "5SG": 0.026,
-        "3RL": 0.0365,
-        "7SG": 0.0445,
-        "4RL": 0.0555,
-        "5RL": 0.0745
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
       },
       "defense": {
         "1RL": 0.0035,
@@ -8072,12 +8152,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8123,12 +8203,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8148,6 +8228,7 @@
     },
     "releaseOrder": 1146,
     "avatarImg": "si_c835_00_s",
+    "pvpTier": "E",
     "squad": "WILLE"
   },
   {
@@ -8173,12 +8254,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8198,6 +8279,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c432_00_s",
+    "pvpTier": "E",
     "squad": "Prima Donna"
   },
   {
@@ -8223,12 +8305,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8251,6 +8333,7 @@
     "traits": [
       "healer"
     ],
+    "pvpTier": "C",
     "squad": "Absolute"
   },
   {
@@ -8276,12 +8359,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8301,6 +8384,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c072_00_s",
+    "pvpTier": "C",
     "squad": "Infinity Rail"
   },
   {
@@ -8326,12 +8410,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8351,6 +8435,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c072_00_s",
+    "pvpTier": "C",
     "squad": "Infinity Rail"
   },
   {
@@ -8376,12 +8461,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8401,6 +8486,7 @@
     },
     "releaseOrder": 1055,
     "avatarImg": "si_c411_00_s",
+    "pvpTier": "B",
     "squad": "Botanic Garden"
   },
   {
@@ -8426,12 +8512,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8477,12 +8563,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8502,6 +8588,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c180_00_s",
+    "pvpTier": "D",
     "squad": "Extrinsic"
   },
   {
@@ -8527,12 +8614,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8552,6 +8639,7 @@
     },
     "releaseOrder": 845,
     "avatarImg": "si_c361_00_s",
+    "pvpTier": "B",
     "squad": "Heavy Gram"
   },
   {
@@ -8577,12 +8665,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8628,12 +8716,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8679,12 +8767,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8704,6 +8792,7 @@
     },
     "releaseOrder": 971,
     "avatarImg": "si_c831_00_s",
+    "pvpTier": "B",
     "squad": "NERV",
     "prefersTeammate": [
       "same-element"
@@ -8732,12 +8821,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8783,12 +8872,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8808,6 +8897,7 @@
     },
     "releaseOrder": 537,
     "avatarImg": "si_c014_00_s",
+    "pvpTier": "E",
     "squad": "Counters"
   },
   {
@@ -8833,12 +8923,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8890,12 +8980,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8941,12 +9031,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -8966,6 +9056,7 @@
     },
     "releaseOrder": 1300,
     "avatarImg": "si_c502_00_s",
+    "pvpTier": "C",
     "squad": "Electric Shock",
     "prefersTeammate": [
       "same-element"
@@ -8994,12 +9085,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -9048,12 +9139,12 @@
     "burstGen": {
       "attack": {
         "1RL": 0.0035,
-        "2RL": 0.0165,
+        "2RL": 0.016,
         "3SG": 0.008,
         "5SG": 0.025,
-        "3RL": 0.0355,
+        "3RL": 0.0345,
         "7SG": 0.0435,
-        "4RL": 0.0545,
+        "4RL": 0.053,
         "5RL": 0.0735
       },
       "defense": {
@@ -9073,6 +9164,7 @@
     },
     "releaseOrder": 1384,
     "avatarImg": "si_c023_00_s",
+    "pvpTier": "C",
     "squad": "The Scouts",
     "prefersTeammate": [
       "role:defender"
@@ -9126,6 +9218,7 @@
     },
     "releaseOrder": 670,
     "avatarImg": "si_c224_00_s",
+    "pvpTier": "E",
     "squad": "Goddess"
   },
   {
@@ -9227,6 +9320,7 @@
     },
     "releaseOrder": 1489,
     "avatarImg": "si_c316_00_s",
+    "pvpTier": "C",
     "squad": "Maid For You"
   },
   {
@@ -9277,6 +9371,7 @@
     },
     "releaseOrder": 1503,
     "avatarImg": "si_c860_00_s",
+    "pvpTier": "B",
     "squad": "Café LycoReco"
   },
   {
@@ -9432,6 +9527,7 @@
     "traits": [
       "cover-healer"
     ],
+    "pvpTier": "B",
     "squad": "School Circle"
   },
   {
@@ -9482,6 +9578,7 @@
     },
     "releaseOrder": 307,
     "avatarImg": "si_c080_00_s",
+    "pvpTier": "S",
     "squad": "Mighty Tools"
   },
   {
@@ -9583,6 +9680,7 @@
     },
     "releaseOrder": 1517,
     "avatarImg": "eh",
+    "pvpTier": "C",
     "squad": "Exotic"
   },
   {
@@ -9633,6 +9731,7 @@
     },
     "releaseOrder": 1524,
     "avatarImg": "arcana-fortune-mate",
+    "pvpTier": "B",
     "squad": "Best Seller"
   },
   {
@@ -9683,6 +9782,7 @@
     },
     "releaseOrder": 1531,
     "avatarImg": "snow-crane",
+    "pvpTier": "B",
     "squad": "Veiled Order"
   },
   {
@@ -9733,6 +9833,364 @@
     },
     "releaseOrder": 1538,
     "avatarImg": "anis-star",
+    "pvpTier": "SSS",
     "squad": "Counters"
+  },
+  {
+    "id": "neon-vision-eye",
+    "name": {
+      "en": "Neon: Vision Eye",
+      "zh-TW": "尼恩:透視之眼",
+      "zh-CN": "尼恩:透视之眼",
+      "ja": "ネオン：ビジョン・アイ"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "electric",
+    "manufacturer": "missilis",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.0075,
+    "hitMultiplier": 0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.03,
+        "2RL": 0.06,
+        "3SG": 0.03,
+        "5SG": 0.06,
+        "3RL": 0.09,
+        "7SG": 0.12,
+        "4RL": 0.12,
+        "5RL": 0.15
+      },
+      "defense": {
+        "1RL": 0.03,
+        "2RL": 0.06,
+        "3SG": 0.03,
+        "5SG": 0.06,
+        "3RL": 0.09,
+        "7SG": 0.12,
+        "4RL": 0.12,
+        "5RL": 0.15
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1580,
+    "avatarImg": "neon-vision-eye",
+    "pvpTier": "S",
+    "squad": "Counters"
+  },
+  {
+    "id": "mint",
+    "name": {
+      "en": "Mint",
+      "zh-TW": "敏特",
+      "zh-CN": "敏特",
+      "ja": "ミント"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "iron",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1594,
+    "avatarImg": "mint",
+    "pvpTier": "B",
+    "squad": "T.T. STAR"
+  },
+  {
+    "id": "prika",
+    "name": {
+      "en": "Prika",
+      "zh-TW": "普莉卡",
+      "zh-CN": "普莉卡",
+      "ja": "プリカ"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    },
+    "releaseOrder": 1608,
+    "avatarImg": "prika",
+    "pvpTier": "B",
+    "squad": "T.T. STAR"
+  },
+  {
+    "id": "avistar",
+    "name": {
+      "en": "Avistar",
+      "zh-TW": "阿維斯塔",
+      "zh-CN": "阿维斯塔",
+      "ja": "アビスタ"
+    },
+    "burst": "I",
+    "role": "supporter",
+    "element": "electric",
+    "manufacturer": "elysion",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.0165,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0355,
+        "7SG": 0.0435,
+        "4RL": 0.0545,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1573,
+    "avatarImg": "avistar",
+    "pvpTier": "D",
+    "squad": "Overseer"
+  },
+  {
+    "id": "ark-ranger-black",
+    "name": {
+      "en": "Ark Ranger Black",
+      "zh-TW": "方舟黑色遊俠",
+      "zh-CN": "方舟黑色游侠",
+      "ja": "アークレンジャー・ブラック"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "wind",
+    "manufacturer": "tetra",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1622,
+    "avatarImg": "ark-ranger-black",
+    "pvpTier": "A",
+    "squad": "Ark Rangers"
+  },
+  {
+    "id": "cinderella-crystal-wave",
+    "name": {
+      "en": "Cinderella: Crystal Wave",
+      "zh-TW": "灰姑娘:琉璃波光",
+      "zh-CN": "灰姑娘:琉璃波光",
+      "ja": "シンデレラ：クリスタルウェーブ"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "pilgrim",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1643,
+    "avatarImg": "cinderella-crystal-wave",
+    "pvpTier": "B",
+    "squad": "Old Tales"
+  },
+  {
+    "id": "marciana-marine-study",
+    "name": {
+      "en": "Marciana: Marine Study",
+      "zh-TW": "瑪律恰那:海洋進修",
+      "zh-CN": "玛律恰那:海洋进修",
+      "ja": "マルチャーナ：マリンスタディ"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "iron",
+    "manufacturer": "elysion",
+    "weapon": "AR",
+    "weaponDmg": 13.65,
+    "ammo": 60,
+    "reloadTime": 1,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.002,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      },
+      "defense": {
+        "1RL": 0.026,
+        "2RL": 0.05,
+        "3SG": 0.038,
+        "5SG": 0.062,
+        "3RL": 0.076,
+        "7SG": 0.088,
+        "4RL": 0.1,
+        "5RL": 0.12
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1650,
+    "avatarImg": "marciana-marine-study",
+    "pvpTier": "B",
+    "squad": "Academia"
   }
 ]

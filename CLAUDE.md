@@ -22,7 +22,7 @@ Client-side Nuxt 4 SPA (SSR disabled) for NIKKE PVP team building. No backend �
 ### Data Flow
 
 ```
-characters.json (186 chars) + templates.json (20 meta archetypes)
+characters.json (197 chars) + templates.json (20 meta archetypes)
   → useCharacters() (lookup/filter)
   → useBurstCalculator() (burst speed at each tier)
   → useTeamRecommender() (template match → SA refinement → position sort)

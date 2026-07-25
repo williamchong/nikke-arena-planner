@@ -2,7 +2,7 @@
 
 ## MVP (Completed)
 
-- [x] Character database (186 characters with PVP stats, burst gen, release dates, PVP tier ratings)
+- [x] Character database (197 characters with PVP stats, burst gen, release dates, PVP tier ratings)
 - [x] Character roster selector with search, filters, in-game icons, avatars, and localStorage persistence
 - [x] Roster sorting: owned first, then newest characters first (stable sort on toggle)
 - [x] Burst speed calculator with team scoring, B1→B2→B3 timing, and modal multi-pick
@@ -58,7 +58,7 @@ Add cube data (Lost Fortress, Lost Restoration, Lost Acceleration, etc.) and sug
 Add `@vite-pwa/nuxt` for offline capability. The app is already fully client-side, making PWA conversion straightforward. Cache character data and avatar images.
 
 #### Roster Import
-Import owned characters from game screenshots via OCR, or from community tools that export roster data. Reduces manual selection of 187 characters.
+Import owned characters from game screenshots via OCR, or from community tools that export roster data. Reduces manual selection of 197 characters.
 
 #### Champion Arena Mode
 5-team mode (25 characters required). No CP penalty, sync-locked to level 400. Different scoring since CP doesn't matter — pure team composition optimization.
