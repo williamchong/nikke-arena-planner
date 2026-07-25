@@ -376,43 +376,42 @@ function fillTemplate(
 
 /**
  * Auto-fill a team from available characters ensuring burst chain validity.
+ *
+ * `locked` characters are always seated. Every path that fails to satisfy a template
+ * falls through to here, so this is where a user's pins survive or are lost.
  */
-function autoFillTeam(available: Character[], mode: ArenaMode): TeamComposition | null {
+export function autoFillTeam(available: Character[], mode: ArenaMode, locked: Character[] = []): TeamComposition | null {
+  if (locked.length > 5) return null
+  const team: Character[] = [...locked]
+  const used = new Set(team.map(c => c.id))
+
+  // Sorted once: filter preserves order, so the buckets and the top-up below are both
+  // best-suitability-first for free.
+  const bySuitability = [...available].sort((a, b) => b.suitability[mode] - a.suitability[mode])
   const byBurst: Record<string, Character[]> = { I: [], II: [], III: [], Λ: [] }
-  for (const c of available) {
-    byBurst[c.burst]?.push(c)
+  for (const c of bySuitability) {
+    if (!used.has(c.id)) byBurst[c.burst]?.push(c)
   }
 
-  for (const group of Object.values(byBurst)) {
-    group.sort((a, b) => b.suitability[mode] - a.suitability[mode])
+  // Cover B1/B2/B3 with a real character each. validateBurstChain treats a lone Λ as
+  // satisfying the whole chain, but a team with one character per burst rotates
+  // better, so Λ is only taken when the burst is unavailable or slots run short.
+  const covered = new Set(team.map(c => c.burst))
+  const needed = (['I', 'II', 'III'] as const).filter(b => !covered.has(b))
+  for (const [i, burst] of needed.entries()) {
+    if (team.length >= 5) break
+    const lambda = byBurst['Λ']!.find(c => !used.has(c.id))
+    const exact = byBurst[burst]!.find(c => !used.has(c.id))
+    const gapsOutrunSlots = needed.length - i > 5 - team.length
+    const next = gapsOutrunSlots ? lambda ?? exact : exact ?? lambda
+    if (!next) break
+    team.push(next)
+    used.add(next.id)
   }
 
-  const team: Character[] = []
-  const used = new Set<string>()
-
-  for (const burst of ['I', 'II', 'III'] as const) {
-    const candidates = byBurst[burst]!.filter(c => !used.has(c.id))
-    if (candidates.length > 0) {
-      team.push(candidates[0]!)
-      used.add(candidates[0]!.id)
-    }
-    else {
-      const lambdas = byBurst['Λ']!.filter(c => !used.has(c.id))
-      if (lambdas.length > 0) {
-        team.push(lambdas[0]!)
-        used.add(lambdas[0]!.id)
-      }
-      else {
-        return null
-      }
-    }
-  }
-
-  const remaining = available
-    .filter(c => !used.has(c.id))
-    .sort((a, b) => b.suitability[mode] - a.suitability[mode])
-
-  for (const c of remaining.slice(0, 2)) {
+  for (const c of bySuitability) {
+    if (team.length >= 5) break
+    if (used.has(c.id)) continue
     team.push(c)
     used.add(c.id)
   }
@@ -421,6 +420,9 @@ function autoFillTeam(available: Character[], mode: ArenaMode): TeamComposition 
 
   const positioned = sortByPosition(team)
   const result = calculate(positioned, mode)
+  // A pin set can be unsatisfiable (e.g. five Burst III). Report no team rather than
+  // quietly dropping pins to make one.
+  if (!result.valid) return null
   return {
     id: `auto-${Date.now()}`,
     characters: positioned.map(c => c.id),
@@ -522,9 +524,7 @@ export function useTeamRecommender() {
       }
 
       if (shouldFallback) {
-        const lockedChars = lockedIds ? resolveCharacters([...lockedIds]) : []
-        const available = owned.filter(c => !lockedIds?.has(c.id))
-        const autoTeam = autoFillTeam([...lockedChars, ...available], mode)
+        const autoTeam = autoFillTeam(owned, mode, resolveCharacters([...lockedIds ?? []]))
         if (autoTeam) {
           const seedTeam = resolveCharacters(autoTeam.characters)
           const bench = owned.filter(c => !autoTeam.characters.includes(c.id))
@@ -552,6 +552,19 @@ export function useTeamRecommender() {
     const team0Locks = perTeamLocked?.[0]
     const allUserLocked = perTeamLocked ? perTeamLocked.flatMap(s => [...s]) : []
 
+    // Teams are seeded in order from a shrinking pool, so without reserving them an
+    // earlier team happily takes a character pinned to a later one — leaving that
+    // team's locks unsatisfiable and dropping them in the auto-fill fallback.
+    function poolFor(teamIdx: number, taken: Set<string>): Set<string> {
+      const pool = new Set<string>()
+      for (const id of ownedIds) {
+        if (taken.has(id)) continue
+        if (perTeamLocked?.some((locks, j) => j !== teamIdx && locks.has(id))) continue
+        pool.add(id)
+      }
+      return pool
+    }
+
     // Given a seed team 1 (template or auto-filled), fill teams 2 + 3 and refine via SA.
     function buildFromFirstTeam(firstTeam: TeamComposition, firstTemplate: TeamTemplate | null) {
       const teamSet: TeamComposition[] = [firstTeam]
@@ -560,7 +573,7 @@ export function useTeamRecommender() {
       const usedTemplateIds = new Set<string>(firstTemplate ? [firstTemplate.id] : [])
 
       for (let i = 0; i < 2; i++) {
-        const available = new Set([...ownedIds].filter(id => !usedChars.has(id)))
+        const available = poolFor(i + 1, usedChars)
         let team: TeamComposition | null = null
         let matchedTemplate: TeamTemplate | null = null
         const teamLocks = perTeamLocked?.[i + 1]
@@ -578,7 +591,7 @@ export function useTeamRecommender() {
 
         if (!team) {
           const avail = allCharacters.filter(c => available.has(c.id))
-          team = autoFillTeam(avail, mode)
+          team = autoFillTeam(avail, mode, resolveCharacters([...teamLocks ?? []]))
         }
 
         if (!team) return null
@@ -634,11 +647,12 @@ export function useTeamRecommender() {
     // low-priority templates would otherwise be starved when higher-priority templates
     // dominate the first N slice positions.
     const STARTER_BUDGET = 10
+    const team0Pool = poolFor(0, new Set())
     let starterCount = 0
     for (const starter of sorted) {
       if (starterCount >= STARTER_BUDGET) break
 
-      const firstFilled = fillTemplate(starter, ownedIds, mode, false, team0Locks)
+      const firstFilled = fillTemplate(starter, team0Pool, mode, false, team0Locks)
       if (!firstFilled) continue
       starterCount++
 
@@ -649,11 +663,10 @@ export function useTeamRecommender() {
 
     // Non-template fallback: some rosters satisfy zero templates (missing all meta cores).
     // As long as 3 valid burst chains can be assembled, still return a 15v15 suggestion
-    // built purely from auto-filled teams. NOTE: team-1 user locks are best-effort here —
-    // autoFillTeam picks by suitability, not by a locked set.
+    // built purely from auto-filled teams.
     if (bestSets.length === 0 && ownedIds.size >= 15) {
-      const avail = allCharacters.filter(c => ownedIds.has(c.id))
-      const autoTeam = autoFillTeam(avail, mode)
+      const avail = allCharacters.filter(c => team0Pool.has(c.id))
+      const autoTeam = autoFillTeam(avail, mode, resolveCharacters([...team0Locks ?? []]))
       if (autoTeam) {
         const set = buildFromFirstTeam(autoTeam, null)
         if (set) bestSets.push(set)
@@ -677,9 +690,13 @@ export function useTeamRecommender() {
    * Used by the calculator page's auto-complete feature.
    */
   function recommendAround(lockedCharIds: string[], ownedIds: Set<string>, mode: ArenaMode): TeamComposition | null {
-    if (lockedCharIds.length === 0 || lockedCharIds.length >= 5) return null
+    if (lockedCharIds.length === 0 || lockedCharIds.length > 5) return null
 
     const lockedSet = new Set(lockedCharIds)
+    // A full pin set is already the team — score it rather than reporting no result.
+    if (lockedCharIds.length === 5) {
+      return autoFillTeam([], mode, resolveCharacters(lockedCharIds))
+    }
     const results = recommend5v5(ownedIds, mode, lockedSet)
     return results[0] ?? null
   }
