@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import templatesJson from '~/data/templates.json'
 import type { TeamTemplate } from '~/types/template'
+import { resolveOwned, useTeamRecommender } from '~/composables/useTeamRecommender'
+import { PVP_TIER_SCORES as TIER_SCORE } from '~/composables/useSimulatedAnnealing'
+import { treasurePartnerId } from '~/utils/treasure'
 import { allCharacters, charMap } from './helpers'
+
+const { recommend5v5 } = useTeamRecommender()
 
 const templates = templatesJson as unknown as TeamTemplate[]
 const TEAM_SIZE = 5
@@ -108,5 +113,50 @@ describe('templates.json integrity', () => {
 
   it('character data has no duplicate ids', () => {
     expect(new Set(allCharacters.map(c => c.id)).size).toBe(allCharacters.length)
+  })
+
+  /**
+   * Templates name one side of each base/treasure pair, but the two are mutually
+   * exclusive in a roster, so the other owner is locked out of the comp. Substituting
+   * is only safe upward: what a treasure changes is not modelled here (paired records
+   * are identical apart from pvpTier), so a lower-tier partner is precisely the signal
+   * that the comp depends on the upgrade.
+   */
+  it('substitutes a pair variant only when it is not a downgrade', () => {
+    // upgrade
+    expect(resolveOwned('centi', new Set(['centi-treasure']))).toBe('centi-treasure')
+    // same tier — indistinguishable in our data, so naming either side is arbitrary
+    expect(resolveOwned('bay-treasure', new Set(['bay']))).toBe('bay')
+    // downgrades, however small, are refused
+    expect(resolveOwned('moran-treasure', new Set(['moran']))).toBeNull()
+    expect(resolveOwned('helm-treasure', new Set(['helm']))).toBeNull()
+    expect(resolveOwned('privaty-treasure', new Set(['privaty']))).toBeNull()
+    // no pair, and neither variant owned
+    expect(resolveOwned('blanc', new Set(['moran']))).toBeNull()
+    expect(resolveOwned('blanc', new Set(['blanc']))).toBe('blanc')
+  })
+
+  it('no template is reachable by downgrading a required character', () => {
+    for (const t of templates) {
+      for (const id of t.required) {
+        const substitute = resolveOwned(id, new Set([treasurePartnerId(id)]))
+        if (!substitute) continue
+        const named = charMap.get(id)!
+        const swapped = charMap.get(substitute)!
+        expect(
+          TIER_SCORE[swapped.pvpTier ?? 'C'] ?? 0,
+          `${t.id} accepts ${substitute} (${swapped.pvpTier}) for required ${id} (${named.pvpTier})`,
+        ).toBeGreaterThanOrEqual(TIER_SCORE[named.pvpTier ?? 'C'] ?? 0)
+      }
+    }
+  })
+
+  it('a same-tier partner still gets the comp', () => {
+    // bay and bay-treasure are identical records on the same tier, so jackal-bay-share
+    // naming one side must not exclude holders of the other.
+    const roster = ['jackal', 'bay', 'helm-treasure', 'mast-romantic-maid', 'centi']
+    const team = recommend5v5(new Set(roster), 'attack').find(t => t.templateId === 'jackal-bay-share')
+    expect(team, 'base-Bay roster produced no jackal-bay-share team').toBeTruthy()
+    expect(team!.characters).toContain('bay')
   })
 })

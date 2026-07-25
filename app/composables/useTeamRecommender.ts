@@ -4,6 +4,7 @@ import templatesData from '~/data/templates.json'
 import { useBurstCalculator } from './useBurstCalculator'
 import { useCharacters } from './useCharacters'
 import { PVP_TIER_SCORES, SPEED_TIER_SCORES, scoreTeamRaw, useSimulatedAnnealing } from './useSimulatedAnnealing'
+import { treasurePartnerId } from '~/utils/treasure'
 
 const templates: TeamTemplate[] = templatesData as TeamTemplate[]
 const templateById = new Map(templates.map(t => [t.id, t]))
@@ -15,6 +16,30 @@ const PRIORITY_SPEED_FALLOFF = 40
 
 const { calculate, validateBurstChain } = useBurstCalculator()
 const { getCharacter } = useCharacters()
+
+// A roster holds only one side of each base/treasure pair, but templates name a single
+// side, so the other owner is locked out of the comp. Substituting is only ever safe
+// upward: what a treasure actually changes is not modelled anywhere here — paired
+// records are identical apart from `pvpTier` — so a downgrade would seat a character
+// we have no evidence can carry the comp. Base Helm (C) for Helm: Treasure (SSS) is
+// the obvious case, but even one step is unjustifiable: the tier is the *only* record
+// of what the treasure is worth, so a lower tier is exactly the signal not to swap.
+// Precomputed because findMetaOverlap resolves required ids once per candidate combo.
+const tierScore = (c: Character) => PVP_TIER_SCORES[c.pvpTier || 'C'] || 0
+const substituteFor = new Map<string, string>()
+for (const id of new Set(templates.flatMap(t => [...t.required, ...t.flex.flatMap(f => f.options)]))) {
+  const self = getCharacter(id)
+  const partner = getCharacter(treasurePartnerId(id))
+  if (!self || !partner) continue
+  if (tierScore(partner) >= tierScore(self)) substituteFor.set(id, partner.id)
+}
+
+/** Which variant of `id` this roster actually holds, or null if neither is usable. */
+export function resolveOwned(id: string, ownedIds: Set<string>): string | null {
+  if (ownedIds.has(id)) return id
+  const substitute = substituteFor.get(id)
+  return substitute !== undefined && ownedIds.has(substitute) ? substitute : null
+}
 
 /**
  * Sort a team of 5 characters into optimal P1-P5 positions.
@@ -126,14 +151,14 @@ function buildComposition(
  */
 export function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: ArenaMode): string[] {
   const charIds = new Set(chars.map(c => c.id))
-  const currentArchetype = templates.find(t => t.id === currentTemplateId)?.archetype
+  const currentArchetype = templateById.get(currentTemplateId)?.archetype
   const matched = new Map<string, string>()
   for (const t of templates) {
     if (t.id === currentTemplateId) continue
     if (t.archetype === currentArchetype) continue
     if (t.mode !== 'both' && t.mode !== mode) continue
     if (matched.has(t.archetype)) continue
-    if (t.required.every(r => charIds.has(r))) {
+    if (t.required.every(r => resolveOwned(r, charIds) !== null)) {
       matched.set(t.archetype, t.id)
     }
   }
@@ -148,7 +173,7 @@ export function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate
   const charIds = new Set(chars.map(c => c.id))
   return templates
     // Only match templates with 2+ required chars — single-char templates are too easy to match accidentally
-    .filter(t => t.required.length >= 2 && (t.mode === 'both' || t.mode === mode) && t.required.every(r => charIds.has(r)))
+    .filter(t => t.required.length >= 2 && (t.mode === 'both' || t.mode === mode) && t.required.every(r => resolveOwned(r, charIds) !== null))
     .sort((a, b) => a.priority - b.priority)[0]
 }
 
@@ -189,8 +214,11 @@ function fillTemplate(
   optimize = true,
   lockedIds?: Set<string>,
 ): { characters: Character[], score: number, alternates: Record<number, string[]>, matchedArchetypes: string[] } | null {
+  const resolvedRequired: string[] = []
   for (const reqId of template.required) {
-    if (!availableIds.has(reqId)) return null
+    const owned = resolveOwned(reqId, availableIds)
+    if (!owned) return null
+    resolvedRequired.push(owned)
   }
 
   if (template.mode !== 'both' && template.mode !== mode) return null
@@ -198,7 +226,7 @@ function fillTemplate(
   const requiredChars: Character[] = []
   const usedByRequired = new Set<string>()
 
-  for (const reqId of template.required) {
+  for (const reqId of resolvedRequired) {
     const char = getCharacter(reqId)
     if (!char) return null
     requiredChars.push(char)
@@ -234,9 +262,13 @@ function fillTemplate(
   const flexOptions: { id: string, char: Character }[][] = []
   // Only fill as many flex slots as needed (locked chars reduce the count)
   for (const flex of template.flex.slice(0, neededFlex)) {
-    const listed = new Set(flex.options)
-    const available = flex.options
-      .filter(id => availableIds.has(id) && !usedByRequired.has(id))
+    // Set preserves option order, which the greedy 15v15 path depends on.
+    const listed = new Set<string>()
+    for (const id of flex.options) {
+      const owned = resolveOwned(id, availableIds)
+      if (owned && !usedByRequired.has(owned)) listed.add(owned)
+    }
+    const available = [...listed]
       .map(id => ({ id, char: getCharacter(id) }))
       .filter((o): o is { id: string, char: Character } => !!o.char)
     for (const fb of lambdaFallbacks) {
@@ -568,7 +600,18 @@ export function useTeamRecommender() {
         .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.A || 4))
         .sort((a, b) => (PVP_TIER_SCORES[b.pvpTier || 'C'] || 0) - (PVP_TIER_SCORES[a.pvpTier || 'C'] || 0))
         .slice(0, 8)
-      const saLockedIds = new Set([...matchedTemplates.flatMap(t => t?.required ?? []), ...allUserLocked])
+      // Resolve against each seed team's own ids: when a template's required char was
+      // seated as its partner variant, locking the declared id would leave the real
+      // anchor swappable and let SA bench the character the comp is built around.
+      const saLockedIds = new Set([
+        ...matchedTemplates.flatMap((t, idx) => {
+          const teamIds = new Set(seedTeams[idx]?.map(c => c.id) ?? [])
+          return (t?.required ?? [])
+            .map(r => resolveOwned(r, teamIds))
+            .filter((id): id is string => id !== null)
+        }),
+        ...allUserLocked,
+      ])
       const saTeams = saOptimize15v15(seedTeams, saBench, mode, { iterations: 8000, startTemp: 150, coolingRate: 0.999 }, preferredSpeeds, saLockedIds)
       const setLabel = `sa-${firstTemplate?.id ?? 'auto'}`
       const saSet = saTeams.map((team, idx) =>
