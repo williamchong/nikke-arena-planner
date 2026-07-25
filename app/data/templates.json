@@ -1505,5 +1505,145 @@
       "zh-CN": "SSS级B1防御者，充能能力顶尖，搭配尼恩：透视之眼的B3核爆。持久体系，可耗过核爆队。",
       "ja": "SSSティアのB1ディフェンダー。最高峰のバースト生成に、ネオン：ビジョン・アイのB3核爆を組み合わせる。核爆チームを凌ぐ持久戦システム。"
     }
+  },
+  {
+    "id": "privaty-stun",
+    "name": {
+      "en": "Privaty + Maiden Stun Lock",
+      "zh-TW": "普麗瓦蒂 + 梅登暈眩鎖",
+      "zh-CN": "普丽瓦蒂 + 梅登晕眩锁",
+      "ja": "プリバティ + メイデン スタンロック"
+    },
+    "archetype": "privaty-stun",
+    "mode": "both",
+    "required": [
+      "privaty-treasure",
+      "maiden"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "trina",
+          "crown",
+          "anchor-innocent-maid",
+          "mast-romantic-maid",
+          "naga"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "rapunzel",
+          "noise",
+          "rouge",
+          "tia"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "bay-treasure",
+          "biscuit",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "III",
+      "III",
+      "II",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-nuke",
+      "blanc-indom"
+    ],
+    "counteredBy": [
+      "noah-stall",
+      "moran-system"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Maiden taunts the whole enemy team for 10 sec so Privaty's stun burst lands on the full line, breaking their burst chain before it fires.",
+      "zh-TW": "梅登全體嘲諷10秒，讓普麗瓦蒂的暈眩爆裂命中全隊，在對方爆裂鏈發動前打斷。",
+      "zh-CN": "梅登全体嘲讽10秒，让普丽瓦蒂的晕眩爆裂命中全队，在对方爆裂链发动前打断。",
+      "ja": "メイデンが敵全体を10秒挑発し、プリバティのスタンバーストを全体に当てて相手のバーストチェーンを発動前に断ち切る。"
+    }
+  },
+  {
+    "id": "jackal-bay-share",
+    "name": {
+      "en": "Jackal + Bay Damage Share",
+      "zh-TW": "豺狼 + 貝伊傷害分攤",
+      "zh-CN": "豺狼 + 贝伊伤害分摊",
+      "ja": "ジャッカル + ベイ ダメージ分散"
+    },
+    "archetype": "share-wall",
+    "mode": "both",
+    "required": [
+      "jackal",
+      "bay-treasure"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "helm-treasure",
+          "scarlet-black-shadow",
+          "liberalio",
+          "maiden-ice-rose",
+          "milk-blooming-bunny",
+          "ein"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "mast-romantic-maid",
+          "anchor-innocent-maid",
+          "blanc",
+          "poli-treasure",
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "trina",
+          "noise",
+          "rapunzel"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "II",
+      "III",
+      "II",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-nuke",
+      "blanc-indom"
+    ],
+    "counteredBy": [
+      "noah-stall",
+      "mermaid-disrupt"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Two overlapping damage-share layers spread the opening nuke across the team instead of deleting one target. Blunts burst-alpha comps rather than out-racing them.",
+      "zh-TW": "兩層傷害分攤重疊，將對方首波核爆分散至全隊而非秒殺單一目標。以承傷而非搶速剋制爆發隊。",
+      "zh-CN": "两层伤害分摊重叠，将对方首波核爆分散至全队而非秒杀单一目标。以承伤而非抢速克制爆发队。",
+      "ja": "2層のダメージ分散が相手の初撃核爆をチーム全体に分散させ、単体撃破を許さない。速度勝負ではなく耐久でバースト型を封じる。"
+    }
   }
 ]
