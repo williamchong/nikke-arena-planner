@@ -22,7 +22,7 @@ Client-side Nuxt 4 SPA (SSR disabled) for NIKKE PVP team building. No backend �
 ### Data Flow
 
 ```
-characters.json (197 chars) + templates.json (20 meta archetypes)
+characters.json (197 chars) + templates.json (21 meta archetypes)
   → useCharacters() (lookup/filter)
   → useBurstCalculator() (burst speed at each tier)
   → useTeamRecommender() (template match → SA refinement → position sort)
@@ -31,7 +31,7 @@ characters.json (197 chars) + templates.json (20 meta archetypes)
 
 ### Recommendation Pipeline
 
-1. **Template matching**: 20 templates sorted by priority (P1=meta-defining, P2=strong, P3=viable). For each, check if required chars are owned, fill flex slots with best available, track alternates.
+1. **Template matching**: 21 templates sorted by priority (P1=meta-defining, P2=strong, P3=viable). For each, check if required chars are owned, fill flex slots with best available, track alternates.
 2. **Position sorting** (`sortByPosition`): Defenders→P1/P5, DPS→P3/P4, B1 holders in lowest position (fires first). Applied to all outputs.
 3. **Scoring** (`scoreTeam` builds on `scoreTeamRaw`): `scoreTeamRaw` = `min(actualSpeed, prefSpeed) - belowPreferredPenalty + suitability*20 + pvpTier*3`. `scoreTeam` adds `(4-priority)*100 + uncappedSpeedDelta + metaOverlap*15`. Speed is uncapped in template scoring (faster is always better for 5v5). Speed is capped at `preferredSpeed` in SA scoring to distribute burst gen across teams in 15v15.
 4. **Meta overlap** (`findMetaOverlap`): Count distinct archetypes the team also satisfies beyond its primary template. Same-archetype variants don't stack. +15 per unique overlap, only awarded if team meets preferred speed.

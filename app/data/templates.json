@@ -184,7 +184,8 @@
           "ada",
           "helm-treasure",
           "liberalio",
-          "ein"
+          "ein",
+          "neon-vision-eye"
         ]
       },
       {
@@ -193,7 +194,8 @@
           "jackal",
           "noise",
           "rapunzel",
-          "rosanna"
+          "rosanna",
+          "anis-star"
         ]
       },
       {
@@ -255,7 +257,8 @@
           "anis-sparkling-summer",
           "cinderella",
           "vesti-tactical-upgrade",
-          "rapi-red-hood"
+          "rapi-red-hood",
+          "neon-vision-eye"
         ]
       },
       {
@@ -273,7 +276,8 @@
           "jackal",
           "centi",
           "rosanna",
-          "little-mermaid"
+          "little-mermaid",
+          "anis-star"
         ]
       }
     ],
@@ -335,7 +339,8 @@
           "centi",
           "trina",
           "bay-treasure",
-          "anchor-innocent-maid"
+          "anchor-innocent-maid",
+          "neon-vision-eye"
         ]
       },
       {
@@ -344,7 +349,8 @@
           "centi",
           "trina",
           "noise",
-          "rapunzel"
+          "rapunzel",
+          "anis-star"
         ]
       }
     ],
@@ -666,7 +672,8 @@
           "harran",
           "ada",
           "helm-treasure",
-          "liberalio"
+          "liberalio",
+          "neon-vision-eye"
         ]
       },
       {
@@ -1428,6 +1435,75 @@
       "zh-TW": "羅珊娜犧牲 + 霰彈集火。透過霰彈傷害在爆裂前擊殺關鍵目標。克制牡丹坦克隊。",
       "zh-CN": "罗珊娜牺牲 + 霰弹集火。通过霰弹伤害在爆裂前击杀关键目标。克制牡丹坦克队。",
       "ja": "ロザンナの犠牲 + SG集中砲火。ショットガンのダメージでバースト前に主要ターゲットを撃破する。モラン/牡丹タンクチームへの反制。"
+    }
+  },
+  {
+    "id": "anis-star-neon",
+    "name": {
+      "en": "Anis: Star + Neon Nuke",
+      "zh-TW": "阿妮斯：超級巨星 + 尼恩核爆",
+      "zh-CN": "阿妮斯：超级巨星 + 尼恩核爆",
+      "ja": "アニス：スター + ネオン 核爆"
+    },
+    "archetype": "anis-star-system",
+    "mode": "both",
+    "required": [
+      "anis-star",
+      "neon-vision-eye"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "crown",
+          "trina",
+          "emilia",
+          "anchor-innocent-maid",
+          "mast-romantic-maid"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "jackal",
+          "rapunzel",
+          "noise",
+          "avistar"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "bay-treasure",
+          "biscuit",
+          "trina"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "II",
+      "I",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "scarlet-nuke",
+      "blanc-indom"
+    ],
+    "counteredBy": [
+      "mermaid-disrupt",
+      "sanis-stall"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "SSS-tier B1 defender with elite burst generation, paired with Neon: Vision Eye's B3 nuke. Survivability shell that outlasts nuke teams.",
+      "zh-TW": "SSS級B1防禦者，充能能力頂尖，搭配尼恩：透視之眼的B3核爆。持久體系，可耗過核爆隊。",
+      "zh-CN": "SSS级B1防御者，充能能力顶尖，搭配尼恩：透视之眼的B3核爆。持久体系，可耗过核爆队。",
+      "ja": "SSSティアのB1ディフェンダー。最高峰のバースト生成に、ネオン：ビジョン・アイのB3核爆を組み合わせる。核爆チームを凌ぐ持久戦システム。"
     }
   }
 ]

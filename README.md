@@ -27,7 +27,7 @@ Team recommendation computation runs client-side, and no account or email is req
 The planner uses a multi-stage pipeline to find the best teams from your roster:
 
 ### 1. Template Matching
-20 curated meta team templates (Moran system, Blanc indomitable, Scarlet nuke, Noah stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
+21 curated meta team templates (Moran system, Blanc indomitable, Scarlet nuke, Noah stall, etc.) are tried against your owned characters. Each template defines required core characters and flex slots with ranked substitutes. Templates have a priority tier: **P1** (meta-defining, +300 score) → **P2** (strong, +200) → **P3** (viable, +100).
 
 ### 2. Position Sorting
 Characters are assigned to P1-P5 based on role and burst type:

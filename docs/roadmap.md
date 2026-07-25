@@ -6,7 +6,7 @@
 - [x] Character roster selector with search, filters, in-game icons, avatars, and localStorage persistence
 - [x] Roster sorting: owned first, then newest characters first (stable sort on toggle)
 - [x] Burst speed calculator with team scoring, B1→B2→B3 timing, and modal multi-pick
-- [x] Template-based team recommender (20 curated meta archetypes covering current PVP meta)
+- [x] Template-based team recommender (21 curated meta archetypes covering current PVP meta)
 - [x] Simulated annealing optimization for 5v5 and 15v15 team allocation
 - [x] Position-aware sorting (defenders→P1/P5, DPS→P3/P4, B1 in lowest position)
 - [x] Multi-meta overlap detection with bonus scoring and UI badges
