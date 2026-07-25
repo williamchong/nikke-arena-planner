@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
 import type { TeamTemplate } from '~/types/template'
-import { SPEED_TIER_SCORES, PVP_TIER_SCORES } from '~/composables/useSimulatedAnnealing'
+import { SPEED_TIERS_ORDERED } from '~/composables/useBurstCalculator'
+import { SPEED_TIER_SCORES, pvpTierScore } from '~/composables/useSimulatedAnnealing'
 import { matchTemplate, findMetaOverlap } from '~/composables/useTeamRecommender'
 
 const { t } = useI18n()
@@ -96,7 +97,7 @@ const teamScore = computed(() => {
   const chars = filledCharacters.value
   let score = SPEED_TIER_SCORES[result.value.effectiveTier] || 0
   score += chars.reduce((sum, c) => sum + c.suitability[mode.value], 0) * 20
-  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
+  score += chars.reduce((sum, c) => sum + pvpTierScore(c), 0) * 3
   return score
 })
 
@@ -228,7 +229,7 @@ const modeOptions = [
   { label: t('calculator.defense'), value: 'defense' as const },
 ]
 
-const speedTiers = ['2RL', '5SG', '3RL', '7SG', '4RL', '5RL'] as const
+const speedTiers = SPEED_TIERS_ORDERED
 </script>
 
 <template>

@@ -24,13 +24,14 @@ export function useCharacters() {
   }
 
   function filterCharacters(filters: CharacterFilters, ownedIds?: Set<string>): Character[] {
+    const query = filters.search ? filters.search.toLowerCase() : ''
+
     return characters.filter((c) => {
-      if (filters.search) {
-        const q = filters.search.toLowerCase()
-        const matchesName = c.name.en.toLowerCase().includes(q)
-          || c.name['zh-TW'].includes(q)
-          || c.name['zh-CN'].includes(q)
-          || c.name.ja.includes(q)
+      if (query) {
+        const matchesName = c.name.en.toLowerCase().includes(query)
+          || c.name['zh-TW'].includes(query)
+          || c.name['zh-CN'].includes(query)
+          || c.name.ja.includes(query)
         if (!matchesName) return false
       }
       if (filters.burst && c.burst !== filters.burst) return false

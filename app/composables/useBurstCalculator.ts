@@ -26,26 +26,67 @@ const RL_CYCLE_TIME = 1.0
 // The spreadsheet normalizes burst gen values so that 1.0 = full gauge at that speed tier
 const FULL_GAUGE = 1.0
 
+// Number of RL cycles each tier needs to fill the gauge
+const TIER_CYCLES: Record<SpeedTier, number> = {
+  '1RL': 1,
+  '2RL': 2,
+  '3SG': 1.5,
+  '5SG': 2.5,
+  '3RL': 3,
+  '7SG': 3.5,
+  '4RL': 4,
+  '5RL': 5,
+}
+
+// Each burst stage transition takes ~0.53s (from spreadsheet B1→B2 and B2→B3 intervals)
+const TRANSITION_TIME = 0.533
+
 /**
- * Check if burst chain is valid.
- * Needs at least one each of B1, B2, B3.
- * Λ (Red Hood) counts as any burst type.
+ * Fastest tier whose team burst-gen total reaches a full gauge, or '5RL' if none do.
+ * Split out of `calculate` because the annealing hot path needs only the tier.
+ */
+export function effectiveSpeedTier(characters: Character[], mode: ArenaMode): SpeedTier {
+  for (const tier of SPEED_TIERS_ORDERED) {
+    let total = 0
+    for (const char of characters) {
+      total += char.burstGen[mode][tier] || 0
+    }
+    if (total >= FULL_GAUGE) return tier
+  }
+  return '5RL'
+}
+
+/**
+ * Whether a team can complete its burst chain: at least one each of B1, B2 and B3, or
+ * any Λ (Red Hood), which acts as a wildcard for the whole chain.
+ *
+ * The authoritative rule — `validateBurstChain` defers to it and only adds the list of
+ * which types are missing.
+ */
+export function hasValidBurstChain(characters: Character[]): boolean {
+  let found = 0
+  for (const char of characters) {
+    // Λ (Red Hood) acts as wildcard — can fill any burst type in the chain
+    if (char.burst === 'Λ') return true
+    if (char.burst === 'I') found |= 1
+    else if (char.burst === 'II') found |= 2
+    else if (char.burst === 'III') found |= 4
+  }
+  return found === 7
+}
+
+/**
+ * `hasValidBurstChain` plus which burst types are missing, for the calculator's
+ * invalid-chain message.
  */
 function validateBurstChain(characters: Character[]): { valid: boolean, missing: BurstType[] } {
+  if (hasValidBurstChain(characters)) return { valid: true, missing: [] }
+
   const types = new Set(characters.map(c => c.burst))
-  const hasLambda = types.has('Λ')
-
-  // Λ (Red Hood) acts as wildcard — can fill any burst type in the chain
-  if (hasLambda) return { valid: true, missing: [] }
-
-  const missing: BurstType[] = []
-  for (const needed of ['I', 'II', 'III'] as BurstType[]) {
-    if (!types.has(needed)) {
-      missing.push(needed)
-    }
+  return {
+    valid: false,
+    missing: (['I', 'II', 'III'] as BurstType[]).filter(b => !types.has(b)),
   }
-
-  return { valid: missing.length === 0, missing }
 }
 
 /**
@@ -63,39 +104,18 @@ export function useBurstCalculator() {
       )
     }
 
-    // Determine effective speed tier
-    // The team reaches a speed tier if the total burst gen at that tier >= FULL_GAUGE
-    let effectiveTier: SpeedTier = '5RL'
-    for (const tier of SPEED_TIERS_ORDERED) {
-      if (totalBurstGen[tier] >= FULL_GAUGE) {
-        effectiveTier = tier
-        break
-      }
-    }
+    const effectiveTier = effectiveSpeedTier(characters, mode)
 
     // Calculate approximate timings based on effective tier
     // Each RL cycle = ~1s of charge + fire time
     // Speed tier name tells us how many RL cycles to fill gauge
-    const tierCycles: Record<SpeedTier, number> = {
-      '1RL': 1,
-      '2RL': 2,
-      '3SG': 1.5,
-      '5SG': 2.5,
-      '3RL': 3,
-      '7SG': 3.5,
-      '4RL': 4,
-      '5RL': 5,
-    }
-
-    const cycles = tierCycles[effectiveTier] || 5
-    // Each burst stage transition takes ~0.53s (from spreadsheet B1→B2 and B2→B3 intervals)
-    const transitionTime = 0.533
+    const cycles = TIER_CYCLES[effectiveTier] || 5
 
     const timings = {
       b1: cycles * RL_CYCLE_TIME,
-      b2: cycles * RL_CYCLE_TIME + transitionTime,
-      b3: cycles * RL_CYCLE_TIME + transitionTime * 2,
-      total: cycles * RL_CYCLE_TIME + transitionTime * 2,
+      b2: cycles * RL_CYCLE_TIME + TRANSITION_TIME,
+      b3: cycles * RL_CYCLE_TIME + TRANSITION_TIME * 2,
+      total: cycles * RL_CYCLE_TIME + TRANSITION_TIME * 2,
     }
 
     return {

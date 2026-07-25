@@ -1,7 +1,5 @@
-import type { ArenaMode, Character } from '~/types/character'
-import { useBurstCalculator } from './useBurstCalculator'
-
-const { calculate, validateBurstChain } = useBurstCalculator()
+import type { ArenaMode, Character, SpeedTier } from '~/types/character'
+import { effectiveSpeedTier, hasValidBurstChain } from './useBurstCalculator'
 
 export interface SAOptions {
   iterations: number
@@ -35,42 +33,31 @@ const MOVE_SPEED_REBALANCE = 0.40
 const MOVE_BENCH_SWAP = 0.65
 
 /**
- * Precomputed per-team counts used by `matchesTeammateReq` so each token check is O(1)
- * instead of scanning the team for every token.
- */
-interface TeamIndex {
-  traits: Map<string, number>
-  roles: Map<string, number>
-  elements: Map<string, number>
-  squads: Map<string, number>
-}
-
-/**
  * Check whether a `requiresTeammate` / `prefersTeammate` token is satisfied by some other
  * team member. Supports plain trait tags plus tokens: `same-element`, `same-squad`,
  * `role:<role>`, `element:<element>`.
  */
-function matchesTeammateReq(char: Character, req: string, index: TeamIndex): boolean {
+function matchesTeammateReq(char: Character, req: string, team: Character[]): boolean {
   if (req === 'same-element') {
-    // Self always contributes to the element count, so "another teammate" means count > 1.
-    return (index.elements.get(char.element) ?? 0) > 1
+    return team.some(c => c !== char && c.element === char.element)
   }
   if (req === 'same-squad') {
-    if (!char.squad) return false
-    return (index.squads.get(char.squad) ?? 0) > 1
+    return !!char.squad && team.some(c => c !== char && c.squad === char.squad)
   }
   if (req.startsWith('role:')) {
     const role = req.slice(5)
-    const selfContrib = char.role === role ? 1 : 0
-    return (index.roles.get(role) ?? 0) > selfContrib
+    return team.some(c => c !== char && c.role === role)
   }
   if (req.startsWith('element:')) {
     const element = req.slice(8)
-    const selfContrib = char.element === element ? 1 : 0
-    return (index.elements.get(element) ?? 0) > selfContrib
+    return team.some(c => c !== char && c.element === element)
   }
-  const selfContrib = char.traits?.includes(req) ? 1 : 0
-  return (index.traits.get(req) ?? 0) > selfContrib
+  return team.some(c => c !== char && !!c.traits?.includes(req))
+}
+
+/** PVP tier weight for a character, defaulting untiered records to 'C'. */
+export function pvpTierScore(char: Character): number {
+  return PVP_TIER_SCORES[char.pvpTier || 'C'] || 0
 }
 
 /**
@@ -78,26 +65,10 @@ function matchesTeammateReq(char: Character, req: string, index: TeamIndex): boo
  * Based on burst speed, suitability, and PVP tier.
  * If preferredSpeed is provided, speed score is capped at that tier.
  */
-export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed?: string): number {
-  const result = calculate(chars, mode)
-  if (!result.valid) return -1000
+export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed?: SpeedTier): number {
+  if (!hasValidBurstChain(chars)) return -1000
 
-  // Precompute all team counts once — scoreTeamRaw runs per SA iteration and per
-  // fillTemplate brute-force combo, so O(1) lookups in matchesTeammateReq matter.
-  const index: TeamIndex = {
-    traits: new Map(),
-    roles: new Map(),
-    elements: new Map(),
-    squads: new Map(),
-  }
-  for (const c of chars) {
-    for (const t of c.traits ?? []) {
-      index.traits.set(t, (index.traits.get(t) ?? 0) + 1)
-    }
-    index.roles.set(c.role, (index.roles.get(c.role) ?? 0) + 1)
-    index.elements.set(c.element, (index.elements.get(c.element) ?? 0) + 1)
-    if (c.squad) index.squads.set(c.squad, (index.squads.get(c.squad) ?? 0) + 1)
-  }
+  let score = 0
 
   // Hard reject: any character whose `requiresTeammate` is not satisfied.
   // Nero is the canonical case — her kit requires a healer teammate to activate
@@ -105,34 +76,38 @@ export function scoreTeamRaw(chars: Character[], mode: ArenaMode, preferredSpeed
   for (const c of chars) {
     if (!c.requiresTeammate) continue
     for (const req of c.requiresTeammate) {
-      if (!matchesTeammateReq(c, req, index)) return -1000
+      if (!matchesTeammateReq(c, req, chars)) return -1000
     }
   }
-
-  let score = 0
 
   for (const c of chars) {
     if (!c.prefersTeammate) continue
     for (const pref of c.prefersTeammate) {
-      if (!matchesTeammateReq(c, pref, index)) score -= MISSING_PREFERRED_TRAIT_PENALTY
+      if (!matchesTeammateReq(c, pref, chars)) score -= MISSING_PREFERRED_TRAIT_PENALTY
     }
   }
 
-  const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
+  const actualSpeed = SPEED_TIER_SCORES[effectiveSpeedTier(chars, mode)] || 0
   const prefSpeed = preferredSpeed ? (SPEED_TIER_SCORES[preferredSpeed] || actualSpeed) : actualSpeed
   score += Math.min(actualSpeed, prefSpeed)
   if (prefSpeed > actualSpeed) {
     score -= (prefSpeed - actualSpeed) * BELOW_PREFERRED_PENALTY
   }
-  score += chars.reduce((sum, c) => sum + c.suitability[mode], 0) * 20
+  let suitability = 0
+  let tier = 0
+  for (const c of chars) {
+    suitability += c.suitability[mode]
+    tier += pvpTierScore(c)
+  }
+  score += suitability * 20
   // Tier is a tiebreaker, not a driver — template priority and speed matter more
-  score += chars.reduce((sum, c) => sum + (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0), 0) * 3
+  score += tier * 3
   return score
 }
 
 function isValidTeam(chars: Character[]): boolean {
   if (chars.length !== 5) return false
-  return validateBurstChain(chars).valid
+  return hasValidBurstChain(chars)
 }
 
 function randInt(max: number): number {
@@ -151,18 +126,72 @@ function charBurstGenTotal(c: Character, mode: ArenaMode): number {
   return (bg['2RL'] || 0) + (bg['3RL'] || 0) + (bg['5SG'] || 0)
 }
 
-/**
- * Generate a neighbor state by performing one random move.
- * Returns new teams and updated bench arrays (copies, not mutated).
- */
-function pickSwappableIdx(team: Character[], lockedIds: Set<string>): number | undefined {
-  const unlocked = team.map((_, i) => i).filter(i => !lockedIds.has(team[i]!.id))
-  return unlocked.length > 0 ? unlocked[randInt(unlocked.length)]! : undefined
+const NO_LOCKS: Set<string> = new Set()
+
+function countSwappable(team: Character[], lockedIds: Set<string>): number {
+  let count = 0
+  for (const c of team) {
+    if (!lockedIds.has(c.id)) count++
+  }
+  return count
 }
 
-function swapTeamBench(teams: Character[][], teamIdx: number, charIdx: number, bench: Character[], benchIdx: number): void {
-  const temp = teams[teamIdx]![charIdx]!
-  teams[teamIdx]![charIdx] = bench[benchIdx]!
+/** Index of the `n`-th unlocked member (0-based), or undefined if there are fewer. */
+function nthSwappableIdx(team: Character[], lockedIds: Set<string>, n: number): number | undefined {
+  let remaining = n
+  for (let i = 0; i < team.length; i++) {
+    if (lockedIds.has(team[i]!.id)) continue
+    if (remaining === 0) return i
+    remaining--
+  }
+  return undefined
+}
+
+function pickSwappableIdx(team: Character[], lockedIds: Set<string>): number | undefined {
+  const count = countSwappable(team, lockedIds)
+  return count > 0 ? nthSwappableIdx(team, lockedIds, randInt(count)) : undefined
+}
+
+/**
+ * Pick one of the two unlocked members with the lowest (or highest) burst generation,
+ * at random for variety. Ties resolve to the earlier index.
+ */
+function pickByBurstGen(
+  members: Character[],
+  mode: ArenaMode,
+  lockedIds: Set<string>,
+  want: 'lowest' | 'highest',
+): number | undefined {
+  const lowest = want === 'lowest'
+  let firstIdx = -1
+  let secondIdx = -1
+  let firstBg = 0
+  let secondBg = 0
+
+  for (let i = 0; i < members.length; i++) {
+    const c = members[i]!
+    if (lockedIds.has(c.id)) continue
+    const bg = charBurstGenTotal(c, mode)
+    if (firstIdx === -1 || (lowest ? bg < firstBg : bg > firstBg)) {
+      secondIdx = firstIdx
+      secondBg = firstBg
+      firstIdx = i
+      firstBg = bg
+    }
+    else if (secondIdx === -1 || (lowest ? bg < secondBg : bg > secondBg)) {
+      secondIdx = i
+      secondBg = bg
+    }
+  }
+
+  if (firstIdx === -1) return undefined
+  if (secondIdx === -1) return firstIdx
+  return randInt(2) === 0 ? firstIdx : secondIdx
+}
+
+function swapTeamBench(team: Character[], charIdx: number, bench: Character[], benchIdx: number): void {
+  const temp = team[charIdx]!
+  team[charIdx] = bench[benchIdx]!
   bench[benchIdx] = temp
 }
 
@@ -172,8 +201,26 @@ function generateNeighbor(
   mode: ArenaMode,
   lockedIds: Set<string>,
 ): { teams: Character[][], bench: Character[] } {
-  const newTeams = cloneTeams(teams)
-  const newBench = [...bench]
+  // Copy-on-write: a team (or the bench) is duplicated only once a move mutates it, so
+  // the inputs are never written through. That is what lets `optimize` keep `current`
+  // and `best` pointing at arrays this neighbor may share.
+  const newTeams = teams.slice()
+  let newBench = bench
+
+  function writableTeam(idx: number): Character[] {
+    const team = newTeams[idx]!
+    if (team === teams[idx]) {
+      const copy = team.slice()
+      newTeams[idx] = copy
+      return copy
+    }
+    return team
+  }
+
+  function writableBench(): Character[] {
+    if (newBench === bench) newBench = bench.slice()
+    return newBench
+  }
 
   const move = Math.random()
 
@@ -186,46 +233,44 @@ function generateNeighbor(
     const charAIdx = pickSwappableIdx(newTeams[teamAIdx]!, lockedIds)
     const charBIdx = pickSwappableIdx(newTeams[teamBIdx]!, lockedIds)
     if (charAIdx != null && charBIdx != null) {
-      const temp = newTeams[teamAIdx]![charAIdx]!
-      newTeams[teamAIdx]![charAIdx] = newTeams[teamBIdx]![charBIdx]!
-      newTeams[teamBIdx]![charBIdx] = temp
+      const teamA = writableTeam(teamAIdx)
+      const teamB = writableTeam(teamBIdx)
+      const temp = teamA[charAIdx]!
+      teamA[charAIdx] = teamB[charBIdx]!
+      teamB[charBIdx] = temp
     }
   }
   else if (move < MOVE_SPEED_REBALANCE && newTeams.length > 1) {
-    // Speed-rebalancing: identify slowest team and either swap with fastest team or pull from bench
-    const teamSpeeds = newTeams.map(t => {
-      const result = calculate(t, mode)
-      return SPEED_TIER_SCORES[result.effectiveTier] || 0
-    })
-    const slowIdx = teamSpeeds.indexOf(Math.min(...teamSpeeds))
-    const slowBg = newTeams[slowIdx]!
-      .map((c, i) => ({ i, bg: charBurstGenTotal(c, mode), locked: lockedIds.has(c.id) }))
-      .filter(x => !x.locked)
-    if (slowBg.length === 0) { return { teams: newTeams, bench: newBench } }
-    slowBg.sort((a, b) => a.bg - b.bg)
-    // Pick from bottom 2 (not always #1) for variety
-    const si = slowBg[randInt(Math.min(2, slowBg.length))]!.i
+    // Speed-rebalancing: identify slowest team and either swap with fastest team or pull from bench.
+    // Ties go to the first index.
+    let slowIdx = 0
+    let fastIdx = 0
+    let slowSpeed = Infinity
+    let fastSpeed = -Infinity
+    for (let t = 0; t < newTeams.length; t++) {
+      const speed = SPEED_TIER_SCORES[effectiveSpeedTier(newTeams[t]!, mode)] || 0
+      if (speed < slowSpeed) { slowSpeed = speed; slowIdx = t }
+      if (speed > fastSpeed) { fastSpeed = speed; fastIdx = t }
+    }
+    // Give up the slow team's weakest burst generator
+    const si = pickByBurstGen(newTeams[slowIdx]!, mode, lockedIds, 'lowest')
+    if (si == null) return { teams: newTeams, bench: newBench }
 
     if (Math.random() < 0.5 || newBench.length === 0) {
-      const fastIdx = teamSpeeds.indexOf(Math.max(...teamSpeeds))
-      if (slowIdx !== fastIdx) {
-        const fastBg = newTeams[fastIdx]!
-          .map((c, i) => ({ i, bg: charBurstGenTotal(c, mode), locked: lockedIds.has(c.id) }))
-          .filter(x => !x.locked)
-        if (fastBg.length > 0) {
-          fastBg.sort((a, b) => b.bg - a.bg)
-          const fi = fastBg[randInt(Math.min(2, fastBg.length))]!.i
-          const temp = newTeams[fastIdx]![fi]!
-          newTeams[fastIdx]![fi] = newTeams[slowIdx]![si]!
-          newTeams[slowIdx]![si] = temp
-        }
+      const fi = slowIdx === fastIdx
+        ? undefined
+        : pickByBurstGen(newTeams[fastIdx]!, mode, lockedIds, 'highest')
+      if (fi != null) {
+        const slowTeam = writableTeam(slowIdx)
+        const fastTeam = writableTeam(fastIdx)
+        const temp = fastTeam[fi]!
+        fastTeam[fi] = slowTeam[si]!
+        slowTeam[si] = temp
       }
     }
     else {
-      const benchBg = newBench.map((c, i) => ({ i, bg: charBurstGenTotal(c, mode) }))
-      benchBg.sort((a, b) => b.bg - a.bg)
-      const bi = benchBg[randInt(Math.min(2, benchBg.length))]!.i
-      swapTeamBench(newTeams, slowIdx, si, newBench, bi)
+      const bi = pickByBurstGen(newBench, mode, NO_LOCKS, 'highest')
+      if (bi != null) swapTeamBench(writableTeam(slowIdx), si, writableBench(), bi)
     }
   }
   else if (move < MOVE_BENCH_SWAP && newBench.length > 0) {
@@ -233,32 +278,37 @@ function generateNeighbor(
     const teamIdx = randInt(newTeams.length)
     const charIdx = pickSwappableIdx(newTeams[teamIdx]!, lockedIds)
     if (charIdx != null) {
-      swapTeamBench(newTeams, teamIdx, charIdx, newBench, randInt(newBench.length))
+      swapTeamBench(writableTeam(teamIdx), charIdx, writableBench(), randInt(newBench.length))
     }
   }
   else if (newBench.length > 0) {
     // Double bench swap on flex slots; falls back to single swap if < 2 unlocked or < 2 bench
     const teamIdx = randInt(newTeams.length)
-    const unlocked = newTeams[teamIdx]!.map((_, i) => i).filter(i => !lockedIds.has(newTeams[teamIdx]![i]!.id))
-    if (unlocked.length >= 2 && newBench.length >= 2) {
-      const pick1 = randInt(unlocked.length)
-      let pick2 = randInt(unlocked.length)
-      while (pick2 === pick1) pick2 = randInt(unlocked.length)
-      const charIdx1 = unlocked[pick1]!
-      const charIdx2 = unlocked[pick2]!
+    const unlockedCount = countSwappable(newTeams[teamIdx]!, lockedIds)
+    if (unlockedCount >= 2 && newBench.length >= 2) {
+      const pick1 = randInt(unlockedCount)
+      let pick2 = randInt(unlockedCount)
+      while (pick2 === pick1) pick2 = randInt(unlockedCount)
+      const charIdx1 = nthSwappableIdx(newTeams[teamIdx]!, lockedIds, pick1)!
+      const charIdx2 = nthSwappableIdx(newTeams[teamIdx]!, lockedIds, pick2)!
       const benchIdx1 = randInt(newBench.length)
       let benchIdx2 = randInt(newBench.length)
       while (benchIdx2 === benchIdx1) benchIdx2 = randInt(newBench.length)
 
-      const t1 = newTeams[teamIdx]![charIdx1]!
-      const t2 = newTeams[teamIdx]![charIdx2]!
-      newTeams[teamIdx]![charIdx1] = newBench[benchIdx1]!
-      newTeams[teamIdx]![charIdx2] = newBench[benchIdx2]!
-      newBench[benchIdx1] = t1
-      newBench[benchIdx2] = t2
+      const team = writableTeam(teamIdx)
+      const benchCopy = writableBench()
+      const t1 = team[charIdx1]!
+      const t2 = team[charIdx2]!
+      team[charIdx1] = benchCopy[benchIdx1]!
+      team[charIdx2] = benchCopy[benchIdx2]!
+      benchCopy[benchIdx1] = t1
+      benchCopy[benchIdx2] = t2
     }
-    else if (unlocked.length >= 1) {
-      swapTeamBench(newTeams, teamIdx, unlocked[randInt(unlocked.length)]!, newBench, randInt(newBench.length))
+    else {
+      const charIdx = pickSwappableIdx(newTeams[teamIdx]!, lockedIds)
+      if (charIdx != null) {
+        swapTeamBench(writableTeam(teamIdx), charIdx, writableBench(), randInt(newBench.length))
+      }
     }
   }
 
@@ -277,8 +327,8 @@ export function useSimulatedAnnealing() {
     bench: Character[],
     mode: ArenaMode,
     options: Partial<SAOptions> = {},
-    preferredSpeeds?: string[],
-    lockedIds: Set<string> = new Set(),
+    preferredSpeeds?: SpeedTier[],
+    lockedIds: Set<string> = NO_LOCKS,
   ): Character[][] {
     const opts = { ...DEFAULT_OPTIONS, ...options }
 
@@ -328,7 +378,7 @@ export function useSimulatedAnnealing() {
     bench: Character[],
     mode: ArenaMode,
     options?: Partial<SAOptions>,
-    preferredSpeed?: string,
+    preferredSpeed?: SpeedTier,
     lockedIds?: Set<string>,
   ): Character[] {
     const result = optimize([initialTeam], bench, mode, options, preferredSpeed ? [preferredSpeed] : undefined, lockedIds)
@@ -344,7 +394,7 @@ export function useSimulatedAnnealing() {
     bench: Character[],
     mode: ArenaMode,
     options?: Partial<SAOptions>,
-    preferredSpeeds?: string[],
+    preferredSpeeds?: SpeedTier[],
     lockedIds?: Set<string>,
   ): Character[][] {
     return optimize(initialTeams, bench, mode, options, preferredSpeeds, lockedIds)
@@ -353,6 +403,10 @@ export function useSimulatedAnnealing() {
   return { optimize5v5, optimize15v15 }
 }
 
-function totalScore(teams: Character[][], mode: ArenaMode, preferredSpeeds?: string[]): number {
-  return teams.reduce((sum, team, idx) => sum + scoreTeamRaw(team, mode, preferredSpeeds?.[idx]), 0)
+function totalScore(teams: Character[][], mode: ArenaMode, preferredSpeeds?: SpeedTier[]): number {
+  let sum = 0
+  for (let i = 0; i < teams.length; i++) {
+    sum += scoreTeamRaw(teams[i]!, mode, preferredSpeeds?.[i])
+  }
+  return sum
 }

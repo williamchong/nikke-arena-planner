@@ -1,20 +1,34 @@
-import type { ArenaMode, Character } from '~/types/character'
+import type { ArenaMode, BurstType, Character, SpeedTier } from '~/types/character'
 import type { TeamComposition, TeamTemplate } from '~/types/template'
 import templatesData from '~/data/templates.json'
-import { useBurstCalculator } from './useBurstCalculator'
+import { effectiveSpeedTier, hasValidBurstChain, useBurstCalculator } from './useBurstCalculator'
 import { useCharacters } from './useCharacters'
-import { PVP_TIER_SCORES, SPEED_TIER_SCORES, scoreTeamRaw, useSimulatedAnnealing } from './useSimulatedAnnealing'
+import { PVP_TIER_SCORES, SPEED_TIER_SCORES, pvpTierScore, scoreTeamRaw, useSimulatedAnnealing } from './useSimulatedAnnealing'
 import { treasurePartnerId } from '~/utils/treasure'
 
 const templates: TeamTemplate[] = templatesData as TeamTemplate[]
 const templateById = new Map(templates.map(t => [t.id, t]))
+
+function templateAllowsMode(template: TeamTemplate, mode: ArenaMode): boolean {
+  return template.mode === 'both' || template.mode === mode
+}
+
+// Static module data, so sorted once and treated as read-only by callers.
+const byPriority: readonly TeamTemplate[] = [...templates].sort((a, b) => a.priority - b.priority)
+const byPriorityForMode: Record<ArenaMode, readonly TeamTemplate[]> = {
+  attack: byPriority.filter(t => templateAllowsMode(t, 'attack')),
+  defense: byPriority.filter(t => templateAllowsMode(t, 'defense')),
+}
 
 // Speed-score delta at which a template's priority bonus falls off to zero in scoreTeam.
 // 40 points ≈ two tier steps (e.g. 3RL → 5RL), matching the point where a slow template
 // team is effectively unable to complete its burst rotation.
 const PRIORITY_SPEED_FALLOFF = 40
 
-const { calculate, validateBurstChain } = useBurstCalculator()
+// B1 fires first, so lower burst types belong in lower positions.
+const BURST_POSITION_PRIORITY: Record<BurstType, number> = { I: 0, 'Λ': 1, II: 2, III: 3 }
+
+const { calculate } = useBurstCalculator()
 const { getCharacter } = useCharacters()
 
 // A roster holds only one side of each base/treasure pair, but templates name a single
@@ -25,13 +39,12 @@ const { getCharacter } = useCharacters()
 // the obvious case, but even one step is unjustifiable: the tier is the *only* record
 // of what the treasure is worth, so a lower tier is exactly the signal not to swap.
 // Precomputed because findMetaOverlap resolves required ids once per candidate combo.
-const tierScore = (c: Character) => PVP_TIER_SCORES[c.pvpTier || 'C'] || 0
 const substituteFor = new Map<string, string>()
 for (const id of new Set(templates.flatMap(t => [...t.required, ...t.flex.flatMap(f => f.options)]))) {
   const self = getCharacter(id)
   const partner = getCharacter(treasurePartnerId(id))
   if (!self || !partner) continue
-  if (tierScore(partner) >= tierScore(self)) substituteFor.set(id, partner.id)
+  if (pvpTierScore(partner) >= pvpTierScore(self)) substituteFor.set(id, partner.id)
 }
 
 /** Which variant of `id` this roster actually holds, or null if neither is usable. */
@@ -56,10 +69,8 @@ function sortByPosition(chars: Character[]): Character[] {
   const attackers = chars.filter(c => c.role === 'attacker')
   const supporters = chars.filter(c => c.role === 'supporter')
 
-  // Sort each group: B1 first (lowest burst type fires first from lower position)
-  const burstPriority: Record<string, number> = { I: 0, Λ: 1, II: 2, III: 3 }
   const byBurst = (a: Character, b: Character) =>
-    (burstPriority[a.burst] ?? 3) - (burstPriority[b.burst] ?? 3)
+    BURST_POSITION_PRIORITY[a.burst] - BURST_POSITION_PRIORITY[b.burst]
 
   defenders.sort(byBurst)
   attackers.sort(byBurst)
@@ -148,6 +159,11 @@ function buildComposition(
  * Count how many distinct meta archetypes this team's characters satisfy
  * beyond the current one. Same-archetype variants (e.g. scarlet-jackal-2rl
  * and scarlet-jackal-3rl) count as one.
+ *
+ * Iterates `templates` in declaration order, not priority order: the first match per
+ * archetype wins, so the ids returned — and therefore the overlap badges shown in the
+ * UI — depend on this order. Switching to `byPriorityForMode` would change the reported
+ * representative of each archetype, not just the count.
  */
 export function findMetaOverlap(chars: Character[], currentTemplateId: string, mode: ArenaMode): string[] {
   const charIds = new Set(chars.map(c => c.id))
@@ -156,7 +172,7 @@ export function findMetaOverlap(chars: Character[], currentTemplateId: string, m
   for (const t of templates) {
     if (t.id === currentTemplateId) continue
     if (t.archetype === currentArchetype) continue
-    if (t.mode !== 'both' && t.mode !== mode) continue
+    if (!templateAllowsMode(t, mode)) continue
     if (matched.has(t.archetype)) continue
     if (t.required.every(r => resolveOwned(r, charIds) !== null)) {
       matched.set(t.archetype, t.id)
@@ -171,18 +187,18 @@ export function findMetaOverlap(chars: Character[], currentTemplateId: string, m
  */
 export function matchTemplate(chars: Character[], mode: ArenaMode): TeamTemplate | undefined {
   const charIds = new Set(chars.map(c => c.id))
-  return templates
+  // Priority-ordered, so the first match is the highest-priority one.
+  return byPriorityForMode[mode].find(t =>
     // Only match templates with 2+ required chars — single-char templates are too easy to match accidentally
-    .filter(t => t.required.length >= 2 && (t.mode === 'both' || t.mode === mode) && t.required.every(r => resolveOwned(r, charIds) !== null))
-    .sort((a, b) => a.priority - b.priority)[0]
+    t.required.length >= 2 && t.required.every(r => resolveOwned(r, charIds) !== null),
+  )
 }
 
 function scoreTeam(chars: Character[], template: TeamTemplate, mode: ArenaMode): { score: number, matchedArchetypes: string[] } {
   const raw = scoreTeamRaw(chars, mode, template.preferredSpeed)
   if (raw <= -1000) return { score: raw, matchedArchetypes: [] }
 
-  const result = calculate(chars, mode)
-  const actualSpeed = SPEED_TIER_SCORES[result.effectiveTier] || 0
+  const actualSpeed = SPEED_TIER_SCORES[effectiveSpeedTier(chars, mode)] || 0
   const prefSpeed = SPEED_TIER_SCORES[template.preferredSpeed] || actualSpeed
 
   // A slow template team rarely completes its burst rotation, so the priority bonus
@@ -221,7 +237,7 @@ function fillTemplate(
     resolvedRequired.push(owned)
   }
 
-  if (template.mode !== 'both' && template.mode !== mode) return null
+  if (!templateAllowsMode(template, mode)) return null
 
   const requiredChars: Character[] = []
   const usedByRequired = new Set<string>()
@@ -294,7 +310,7 @@ function fillTemplate(
       if (slotIdx === flexOptions.length) {
         const candidate = [...requiredChars, ...picked]
         if (candidate.length !== 5) return
-        if (!validateBurstChain(candidate).valid) return
+        if (!hasValidBurstChain(candidate)) return
         const result = scoreTeam(candidate, template, mode)
         if (result.score > bestScore) {
           bestScore = result.score
@@ -349,7 +365,7 @@ function fillTemplate(
     }
     team = [...requiredChars, ...picked]
     if (team.length !== 5) return null
-    if (!validateBurstChain(team).valid) return null
+    if (!hasValidBurstChain(team)) return null
     const result = scoreTeam(team, template, mode)
     score = result.score
     matchedArchetypes = result.matchedArchetypes
@@ -436,7 +452,7 @@ function resolveCharacters(ids: string[]): Character[] {
   return ids.map(id => getCharacter(id)).filter((c): c is Character => !!c)
 }
 
-function toComposition(chars: Character[], mode: ArenaMode, label?: string, preferredSpeed?: string): TeamComposition {
+function toComposition(chars: Character[], mode: ArenaMode, label?: string, preferredSpeed?: SpeedTier): TeamComposition {
   const positioned = sortByPosition(chars)
   const result = calculate(positioned, mode)
   // Match against templates — if required chars are present, award template priority bonus
@@ -485,10 +501,9 @@ export function useTeamRecommender() {
 
   function recommend5v5(ownedIds: Set<string>, mode: ArenaMode, lockedIds?: Set<string>): TeamComposition[] {
     const results: TeamComposition[] = []
-    const sorted = [...templates].sort((a, b) => a.priority - b.priority)
 
     // Phase 1: Template matching
-    for (const template of sorted) {
+    for (const template of byPriorityForMode[mode]) {
       const filled = fillTemplate(template, ownedIds, mode, true, lockedIds)
       if (filled) {
         results.push(buildComposition(template, filled.characters, mode, filled.score, filled.alternates, filled.matchedArchetypes))
@@ -545,9 +560,7 @@ export function useTeamRecommender() {
   function recommend15v15(ownedIds: Set<string>, mode: ArenaMode, perTeamLocked?: Set<string>[]): TeamComposition[][] {
     const bestSets: TeamComposition[][] = []
 
-    const sorted = [...templates]
-      .filter(t => t.mode === 'both' || t.mode === mode)
-      .sort((a, b) => a.priority - b.priority)
+    const sorted = byPriorityForMode[mode]
 
     const team0Locks = perTeamLocked?.[0]
     const allUserLocked = perTeamLocked ? perTeamLocked.flatMap(s => [...s]) : []
@@ -604,14 +617,13 @@ export function useTeamRecommender() {
       if (teamSet.length !== 3) return null
 
       const seedTeams = teamSet.map(t => resolveCharacters(t.characters))
-      const preferredSpeeds = matchedTemplates.map(t => t?.preferredSpeed ?? '3RL')
+      const preferredSpeeds: SpeedTier[] = matchedTemplates.map(t => t?.preferredSpeed ?? '3RL')
       // Bench caps SA swap-ins to S+ owned chars: prevents SA from pulling low-tier
       // fillers into template slots where they'd break synergy for a marginal speed gain.
       const usedInTeams = new Set(seedTeams.flat().map(c => c.id))
       const saBench = allCharacters
-        .filter(c => ownedIds.has(c.id) && !usedInTeams.has(c.id))
-        .filter(c => (PVP_TIER_SCORES[c.pvpTier || 'C'] || 0) >= (PVP_TIER_SCORES.A || 4))
-        .sort((a, b) => (PVP_TIER_SCORES[b.pvpTier || 'C'] || 0) - (PVP_TIER_SCORES[a.pvpTier || 'C'] || 0))
+        .filter(c => ownedIds.has(c.id) && !usedInTeams.has(c.id) && pvpTierScore(c) >= (PVP_TIER_SCORES.A || 4))
+        .sort((a, b) => pvpTierScore(b) - pvpTierScore(a))
         .slice(0, 8)
       // Resolve against each seed team's own ids: when a template's required char was
       // seated as its partner variant, locking the declared id would leave the real
