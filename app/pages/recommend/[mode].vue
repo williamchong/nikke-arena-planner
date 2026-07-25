@@ -9,7 +9,8 @@ const localePath = useLocalePath()
 const roster = useRosterStore()
 const { trackEvent } = useAnalytics()
 const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
-const { getCharacter, filterCharacters } = useCharacters()
+const { getCharacter, filterCharacters, getAllCharacters } = useCharacters()
+const totalCharacters = getAllCharacters().length
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
 const { getAvatarUrl } = useAvatars()
 const { localize } = useLocalizedField()
@@ -29,20 +30,19 @@ useSeoMeta({
 
 // --- Lock slots: team-formation style ---
 const TEAM_SIZE = 5
+const MAX_TEAMS = 3
 const emptyTeam = (): (string | null)[] => Array.from({ length: TEAM_SIZE }, () => null)
+const emptyLockSlots = (): (string | null)[][] => Array.from({ length: MAX_TEAMS }, emptyTeam)
 
-// lockSlots[teamIdx][slotIdx] = characterId | null
-const lockSlots = ref<(string | null)[][]>([emptyTeam()])
+// lockSlots[teamIdx][slotIdx] = characterId | null.
+// Always MAX_TEAMS rows regardless of mode: 5v5 reads only the first, so trimming here
+// would let the persistence watcher below write team 2 and 3's pins out of existence.
+const lockSlots = ref<(string | null)[][]>(emptyLockSlots())
 
-// Adjust number of team rows when switching modes
-watch(is15v15, (v) => {
-  if (v && lockSlots.value.length < 3) {
-    lockSlots.value = [...lockSlots.value, ...Array.from({ length: 3 - lockSlots.value.length }, emptyTeam)]
-  }
-  else if (!v && lockSlots.value.length > 1) {
-    lockSlots.value = [lockSlots.value[0] ?? emptyTeam()]
-  }
-}, { immediate: true })
+// The rows the current mode actually uses. 15v15 fields three teams, 5v5 just one.
+const activeLockSlots = computed(() =>
+  is15v15.value ? lockSlots.value : lockSlots.value.slice(0, 1),
+)
 
 // Persist to localStorage
 if (import.meta.client) {
@@ -52,15 +52,13 @@ if (import.meta.client) {
       if (saved) {
         const parsed = JSON.parse(saved)
         if (Array.isArray(parsed) && Array.isArray(parsed[0])) {
-          lockSlots.value = parsed
+          // Older builds persisted fewer rows, so pad rather than trusting the length
+          const rows = parsed.slice(0, MAX_TEAMS) as (string | null)[][]
+          lockSlots.value = Array.from({ length: MAX_TEAMS }, (_, i) => rows[i] ?? emptyTeam())
         }
       }
     }
     catch { /* ignore */ }
-    // Ensure team count matches current mode after restoring from localStorage
-    if (is15v15.value && lockSlots.value.length < 3) {
-      lockSlots.value = [...lockSlots.value, ...Array.from({ length: 3 - lockSlots.value.length }, emptyTeam)]
-    }
   })
   watch(lockSlots, (v) => {
     localStorage.setItem('nikke-arena-locked', JSON.stringify(v))
@@ -69,15 +67,15 @@ if (import.meta.client) {
 
 // Derive locked character objects per team for display
 const lockSlotCharacters = computed(() =>
-  lockSlots.value.map(team =>
+  activeLockSlots.value.map(team =>
     team.map(id => id ? getCharacter(id) ?? null : null),
   ),
 )
 
-// All locked IDs across all teams (for filtering picker)
+// All locked IDs across the active teams (for filtering picker)
 const allLockedIds = computed(() => {
   const ids = new Set<string>()
-  for (const team of lockSlots.value) {
+  for (const team of activeLockSlots.value) {
     for (const id of team) {
       if (id) ids.add(id)
     }
@@ -87,7 +85,7 @@ const allLockedIds = computed(() => {
 
 // Per-team locked sets for recommend15v15
 const perTeamLocked = computed(() =>
-  lockSlots.value.map(team => {
+  activeLockSlots.value.map(team => {
     const ids = team.filter((id): id is string => !!id)
     return new Set(ids)
   }),
@@ -105,9 +103,7 @@ const hasAnyLocks = computed(() => allLockedIds.value.size > 0)
 
 function clearLocks() {
   const before = allLockedIds.value.size
-  lockSlots.value = is15v15.value
-    ? [emptyTeam(), emptyTeam(), emptyTeam()]
-    : [emptyTeam()]
+  lockSlots.value = emptyLockSlots()
   trackEvent('recommend_clear_locks', { mode: mode.value, locked_count_before: before })
 }
 
@@ -340,7 +336,7 @@ const resultCount = computed(() =>
         </div>
       </div>
       <UBadge color="primary" variant="subtle" class="shrink-0">
-        {{ t('roster.owned', { count: roster.ownedCount, total: 186 }) }}
+        {{ t('roster.owned', { count: roster.ownedCount, total: totalCharacters }) }}
       </UBadge>
     </div>
 
