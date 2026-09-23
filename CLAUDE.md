@@ -62,7 +62,7 @@ characters.json (197 chars) + templates.json (21 meta archetypes)
 
 ### i18n
 
-Three locales: `en`, `zh-TW`, `zh-CN`. Files in `i18n/locales/`. Strategy: `prefix_except_default`. Lazy loading automatic (v10). Browser language detection on root with `redirectOn: 'root'`. SEO: `useLocaleHead()` for hreflang/og:locale via `<Html>/<Head>` template components.
+Three locales: `en`, `zh-TW`, `zh-CN`. Files in `i18n/locales/`. Strategy: `prefix_except_default`. Lazy loading automatic (v10). Browser language detection on root with `redirectOn: 'root'`. SEO: `useLocaleHead()` output (hreflang/canonical/og:locale) spread into `useHead` in app.vue.
 
 ### SEO
 

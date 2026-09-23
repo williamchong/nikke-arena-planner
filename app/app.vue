@@ -7,6 +7,16 @@ const localeCodes = computed(() =>
 )
 
 useHead({
+  // unhead v3 types reject a computed htmlAttrs object; per-field getters are required
+  htmlAttrs: {
+    lang: () => i18nHead.value.htmlAttrs.lang,
+    dir: () => i18nHead.value.htmlAttrs.dir,
+  },
+  link: computed(() => i18nHead.value.link),
+  meta: computed(() => [
+    { name: 'keywords', content: t('meta.keywords') },
+    ...i18nHead.value.meta,
+  ]),
   titleTemplate: (title) => {
     const siteName = t('app.title')
     return title && title !== siteName ? `${title} - ${siteName}` : siteName
@@ -45,7 +55,6 @@ useHead({
 
 useSeoMeta({
   description: () => t('meta.description'),
-  keywords: () => t('meta.keywords'),
   ogTitle: () => t('meta.title'),
   ogDescription: () => t('meta.description'),
   ogType: 'website',
@@ -57,25 +66,12 @@ useSeoMeta({
 </script>
 
 <template>
-  <Html :lang="i18nHead.htmlAttrs?.lang" :dir="i18nHead.htmlAttrs?.dir">
-    <Head>
-      <Link rel="icon" type="image/png" href="/favicon.png" />
-      <template v-for="link in i18nHead.link" :key="link.key">
-        <Link :id="link.key" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
-      </template>
-      <template v-for="meta in i18nHead.meta" :key="meta.key">
-        <Meta :id="meta.key" :property="meta.property" :content="meta.content" />
-      </template>
-    </Head>
-    <Body>
-      <UApp>
-        <LayoutAppHeader />
-        <main class="mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-6">
-          <NuxtRouteAnnouncer />
-          <NuxtPage />
-        </main>
-        <LayoutAppFooter />
-      </UApp>
-    </Body>
-  </Html>
+  <UApp>
+    <LayoutAppHeader />
+    <main class="mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-6">
+      <NuxtRouteAnnouncer />
+      <NuxtPage />
+    </main>
+    <LayoutAppFooter />
+  </UApp>
 </template>
