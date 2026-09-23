@@ -105,7 +105,7 @@
     "heading": "Stop Guessing — See Your Strongest PVP Teams in Seconds",
     "intro": "NIKKE Arena Planner analyzes your roster and instantly recommends the strongest PVP teams you can build, with burst speed tiers so you can tell at a glance whether you beat the enemy's pace. No more guessing which characters to pair. Select the characters you own, and the planner does the rest.",
     "howItWorksTitle": "How It Works",
-    "step1": "Select the characters you own from the full roster of 186 NIKKEs",
+    "step1": "Select the characters you own from the full roster of {count} NIKKEs",
     "step2": "Get instant team recommendations for 5v5 Rookie Arena and 15v15 Special Arena",
     "step3": "See burst speed, timing breakdowns, and why each team works",
     "featuresTitle": "What You Get",

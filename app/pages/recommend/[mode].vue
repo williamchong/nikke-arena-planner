@@ -531,7 +531,7 @@ const resultCount = computed(() =>
             {{ t('landing.howItWorksTitle') }}
           </h3>
           <ol class="list-inside list-decimal space-y-1">
-            <li>{{ t('landing.step1') }}</li>
+            <li>{{ t('landing.step1', { count: getAllCharacters().length }) }}</li>
             <li>{{ t('landing.step2') }}</li>
             <li>{{ t('landing.step3') }}</li>
           </ol>
