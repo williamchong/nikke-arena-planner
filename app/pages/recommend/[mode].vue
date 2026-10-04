@@ -404,7 +404,7 @@ const resultCount = computed(() =>
               :title="`Burst ${b.label}`"
               @click="pickerBurst = pickerBurst === b.value ? null : b.value"
             >
-              <img v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :alt="`Burst ${b.label}`" class="size-4">
+              <CommonMonoIcon v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :label="`Burst ${b.label}`" class="size-4" />
             </button>
 
             <span class="mx-0.5 hidden text-muted sm:inline">|</span>
@@ -417,7 +417,7 @@ const resultCount = computed(() =>
               :title="w"
               @click="pickerWeapon = pickerWeapon === w ? null : w"
             >
-              <img v-if="weaponIcon(w)" :src="weaponIcon(w)!" :alt="w" class="size-4">
+              <CommonMonoIcon v-if="weaponIcon(w)" :src="weaponIcon(w)!" :label="w" class="size-4" />
             </button>
 
             <span class="mx-0.5 hidden text-muted sm:inline">|</span>
@@ -430,7 +430,7 @@ const resultCount = computed(() =>
               :title="t(`element.${e}`)"
               @click="pickerElement = pickerElement === e ? null : e"
             >
-              <img v-if="elementIcon(e)" :src="elementIcon(e)!" :alt="t(`element.${e}`)" class="size-4">
+              <CommonMonoIcon v-if="elementIcon(e)" :src="elementIcon(e)!" :label="t(`element.${e}`)" class="size-4" />
             </button>
           </div>
 

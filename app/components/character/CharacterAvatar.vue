@@ -41,20 +41,18 @@ const elementColor: Record<string, string> = {
     >
     <div class="flex items-center gap-0.5">
       <CommonBurstBadge :burst="character.burst" />
-      <img
+      <CommonMonoIcon
         v-if="elementSrc"
         :src="elementSrc"
-        :alt="t(`element.${character.element}`)"
-        :title="t(`element.${character.element}`)"
+        :label="t(`element.${character.element}`)"
         :class="iconSize"
-      >
-      <img
+      />
+      <CommonMonoIcon
         v-if="weaponSrc"
         :src="weaponSrc"
-        :alt="t(`weapon.${character.weapon}`)"
-        :title="t(`weapon.${character.weapon}`)"
+        :label="t(`weapon.${character.weapon}`)"
         :class="iconSize"
-      >
+      />
     </div>
     <span class="line-clamp-2 text-xs font-medium leading-tight break-keep wrap-anywhere">
       {{ displayName }}

@@ -19,7 +19,7 @@ const burstIconSrc = computed(() => burstIcon(props.burst))
 
 <template>
   <UBadge :color="(colorMap[props.burst] as any)" variant="subtle" size="xs" :title="burstLabel">
-    <img v-if="burstIconSrc" :src="burstIconSrc" :alt="burstLabel" class="size-3.5">
+    <CommonMonoIcon v-if="burstIconSrc" :src="burstIconSrc" :label="burstLabel" class="size-3.5" />
     <span v-else>{{ props.burst === 'Λ' ? 'Λ' : `B${props.burst}` }}</span>
   </UBadge>
 </template>

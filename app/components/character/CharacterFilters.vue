@@ -115,7 +115,7 @@ watchDebounced(search, (v: string) => {
           :color="burst === opt.value ? (opt.activeColor as any) : 'neutral'"
           @click="burst = burst === opt.value ? null : opt.value"
         >
-          <img v-if="opt.value && burstIcon(opt.value)" :src="burstIcon(opt.value)!" :alt="opt.label" :title="opt.label" class="size-4">
+          <CommonMonoIcon v-if="opt.value && burstIcon(opt.value)" :src="burstIcon(opt.value)!" class="size-4" />
           {{ opt.label }}
         </UButton>
       </div>
@@ -132,7 +132,7 @@ watchDebounced(search, (v: string) => {
           :color="role === opt.value ? 'primary' : 'neutral'"
           @click="role = role === opt.value ? null : opt.value"
         >
-          <img v-if="roleIcon(opt.value)" :src="roleIcon(opt.value)!" :alt="opt.label" :title="opt.label" class="size-4">
+          <CommonMonoIcon v-if="roleIcon(opt.value)" :src="roleIcon(opt.value)!" class="size-4" />
           {{ opt.label }}
         </UButton>
       </div>
@@ -149,7 +149,7 @@ watchDebounced(search, (v: string) => {
           :color="weapon === opt.value ? 'primary' : 'neutral'"
           @click="weapon = weapon === opt.value ? null : opt.value"
         >
-          <img v-if="weaponIcon(opt.value)" :src="weaponIcon(opt.value)!" :alt="opt.label" :title="opt.label" class="size-4">
+          <CommonMonoIcon v-if="weaponIcon(opt.value)" :src="weaponIcon(opt.value)!" class="size-4" />
           {{ opt.label }}
         </UButton>
       </div>
@@ -166,7 +166,7 @@ watchDebounced(search, (v: string) => {
           :color="element === opt.value ? (elementColorMap[opt.value] as any) : 'neutral'"
           @click="element = element === opt.value ? null : opt.value"
         >
-          <img v-if="elementIcon(opt.value)" :src="elementIcon(opt.value)!" :alt="opt.label" :title="opt.label" class="size-4">
+          <CommonMonoIcon v-if="elementIcon(opt.value)" :src="elementIcon(opt.value)!" class="size-4" />
           {{ opt.label }}
         </UButton>
       </div>
@@ -183,7 +183,7 @@ watchDebounced(search, (v: string) => {
           :color="manufacturer === opt.value ? 'primary' : 'neutral'"
           @click="manufacturer = manufacturer === opt.value ? null : opt.value"
         >
-          <img v-if="manufacturerIcon(opt.value)" :src="manufacturerIcon(opt.value)!" :alt="opt.label" :title="opt.label" class="size-4">
+          <CommonMonoIcon v-if="manufacturerIcon(opt.value)" :src="manufacturerIcon(opt.value)!" class="size-4" />
           {{ opt.label }}
         </UButton>
       </div>
