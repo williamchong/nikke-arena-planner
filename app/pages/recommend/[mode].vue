@@ -305,6 +305,7 @@ const hasEnoughCharacters = computed(() => {
 
 const minRequired = computed(() => is15v15.value ? 15 : 5)
 
+const { hasFinePointer, pickerModalContent } = usePickerFocus()
 const showLockUI = ref(false)
 const showRosterPicker = ref(false)
 const resultsHeader = useTemplateRef('resultsHeader')
@@ -357,7 +358,7 @@ const resultCount = computed(() =>
     </div>
 
     <!-- Character picker modal -->
-    <UModal v-model:open="showPicker">
+    <UModal v-model:open="showPicker" :content="pickerModalContent">
       <template #content>
         <div class="flex flex-col gap-3 p-4">
           <div class="flex items-center justify-between">
@@ -390,7 +391,7 @@ const resultCount = computed(() =>
             :placeholder="t('roster.search')"
             icon="i-lucide-search"
             size="sm"
-            autofocus
+            :autofocus="hasFinePointer"
           />
 
           <!-- Compact icon-only filters -->
@@ -406,7 +407,7 @@ const resultCount = computed(() =>
               <img v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :alt="`Burst ${b.label}`" class="size-4">
             </button>
 
-            <span class="mx-0.5 text-muted">|</span>
+            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
 
             <button
               v-for="w in WEAPON_FILTERS"
@@ -419,7 +420,7 @@ const resultCount = computed(() =>
               <img v-if="weaponIcon(w)" :src="weaponIcon(w)!" :alt="w" class="size-4">
             </button>
 
-            <span class="mx-0.5 text-muted">|</span>
+            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
 
             <button
               v-for="e in ELEMENT_FILTERS"

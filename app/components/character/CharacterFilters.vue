@@ -105,11 +105,12 @@ watchDebounced(search, (v: string) => {
     />
 
     <div class="flex flex-wrap items-center gap-2">
-      <div class="flex gap-1">
+      <div class="flex flex-wrap gap-1">
         <UButton
           v-for="opt in burstOptions"
           :key="String(opt.value)"
           size="xs"
+          class="whitespace-nowrap"
           :variant="burst === opt.value ? 'solid' : 'outline'"
           :color="burst === opt.value ? (opt.activeColor as any) : 'neutral'"
           @click="burst = burst === opt.value ? null : opt.value"
@@ -119,13 +120,14 @@ watchDebounced(search, (v: string) => {
         </UButton>
       </div>
 
-      <USeparator orientation="vertical" class="h-6" />
+      <USeparator orientation="vertical" class="hidden h-6 sm:flex" />
 
-      <div class="flex gap-1">
+      <div class="flex flex-wrap gap-1">
         <UButton
           v-for="opt in roleOptions"
           :key="opt.value"
           size="xs"
+          class="whitespace-nowrap"
           :variant="role === opt.value ? 'solid' : 'outline'"
           :color="role === opt.value ? 'primary' : 'neutral'"
           @click="role = role === opt.value ? null : opt.value"
@@ -135,13 +137,14 @@ watchDebounced(search, (v: string) => {
         </UButton>
       </div>
 
-      <USeparator orientation="vertical" class="h-6" />
+      <USeparator orientation="vertical" class="hidden h-6 sm:flex" />
 
-      <div class="flex gap-1">
+      <div class="flex flex-wrap gap-1">
         <UButton
           v-for="opt in weaponOptions"
           :key="opt.value"
           size="xs"
+          class="whitespace-nowrap"
           :variant="weapon === opt.value ? 'solid' : 'outline'"
           :color="weapon === opt.value ? 'primary' : 'neutral'"
           @click="weapon = weapon === opt.value ? null : opt.value"
@@ -151,13 +154,14 @@ watchDebounced(search, (v: string) => {
         </UButton>
       </div>
 
-      <USeparator orientation="vertical" class="h-6" />
+      <USeparator orientation="vertical" class="hidden h-6 sm:flex" />
 
-      <div class="flex gap-1">
+      <div class="flex flex-wrap gap-1">
         <UButton
           v-for="opt in elementOptions"
           :key="opt.value"
           size="xs"
+          class="whitespace-nowrap"
           :variant="element === opt.value ? 'solid' : 'outline'"
           :color="element === opt.value ? (elementColorMap[opt.value] as any) : 'neutral'"
           @click="element = element === opt.value ? null : opt.value"
@@ -167,13 +171,14 @@ watchDebounced(search, (v: string) => {
         </UButton>
       </div>
 
-      <USeparator orientation="vertical" class="h-6" />
+      <USeparator orientation="vertical" class="hidden h-6 sm:flex" />
 
-      <div class="flex gap-1">
+      <div class="flex flex-wrap gap-1">
         <UButton
           v-for="opt in manufacturerOptions"
           :key="opt.value"
           size="xs"
+          class="whitespace-nowrap"
           :variant="manufacturer === opt.value ? 'solid' : 'outline'"
           :color="manufacturer === opt.value ? 'primary' : 'neutral'"
           @click="manufacturer = manufacturer === opt.value ? null : opt.value"

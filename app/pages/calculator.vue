@@ -73,6 +73,7 @@ if (import.meta.client) {
   })
 }
 const showPicker = ref(false)
+const { hasFinePointer, pickerModalContent } = usePickerFocus()
 
 const pickerSearch = ref('')
 const pickerBurst = ref<BurstType | null>(null)
@@ -366,7 +367,7 @@ const speedTiers = SPEED_TIERS_ORDERED
     </div>
 
     <!-- Character Picker Modal — pick up to 5 in one go -->
-    <UModal v-model:open="showPicker">
+    <UModal v-model:open="showPicker" :content="pickerModalContent">
       <template #content>
         <div class="flex flex-col gap-3 p-4">
           <div class="flex items-center justify-between">
@@ -401,7 +402,7 @@ const speedTiers = SPEED_TIERS_ORDERED
             :placeholder="t('roster.search')"
             icon="i-lucide-search"
             size="sm"
-            autofocus
+            :autofocus="hasFinePointer"
           />
 
           <!-- Compact icon-only filters -->
@@ -417,7 +418,7 @@ const speedTiers = SPEED_TIERS_ORDERED
               <img v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :alt="`Burst ${b.label}`" class="size-4">
             </button>
 
-            <span class="mx-0.5 text-muted">|</span>
+            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
 
             <button
               v-for="w in WEAPON_FILTERS"
@@ -430,7 +431,7 @@ const speedTiers = SPEED_TIERS_ORDERED
               <img v-if="weaponIcon(w)" :src="weaponIcon(w)!" :alt="w" class="size-4">
             </button>
 
-            <span class="mx-0.5 text-muted">|</span>
+            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
 
             <button
               v-for="e in ELEMENT_FILTERS"
