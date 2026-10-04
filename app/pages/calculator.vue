@@ -150,6 +150,12 @@ function toggleInPicker(id: string) {
     const emptyIdx = next.indexOf(null)
     if (emptyIdx === -1) return
     next[emptyIdx] = id
+    trackEvent('calc_slot_fill', {
+      character_id: id,
+      slot_idx: emptyIdx,
+      filled_count_after: next.filter(s => s !== null).length,
+      arena_mode: mode.value,
+    })
     if (!next.includes(null)) {
       showPicker.value = false
     }
@@ -220,9 +226,12 @@ function autoComplete() {
   slots.value = next
 }
 
-watch(mode, (v, old) => {
-  trackEvent('calc_mode_change', { from: old, to: v })
-})
+// Tracked on click rather than via watch(mode), which also fires when the saved mode is restored
+function setMode(v: ArenaMode) {
+  if (v === mode.value) return
+  trackEvent('calc_mode_change', { from: mode.value, to: v })
+  mode.value = v
+}
 
 const modeOptions = [
   { label: t('calculator.attack'), value: 'attack' as const },
@@ -250,7 +259,7 @@ const speedTiers = SPEED_TIERS_ORDERED
             size="xs"
             :variant="mode === opt.value ? 'solid' : 'outline'"
             :color="mode === opt.value ? 'primary' : 'neutral'"
-            @click="mode = opt.value"
+            @click="setMode(opt.value)"
           />
         </div>
 

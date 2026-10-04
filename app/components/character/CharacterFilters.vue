@@ -86,7 +86,7 @@ const filterRefs: [string, Ref<string | null>][] = [
 ]
 for (const [dimension, filterRef] of filterRefs) {
   watch(filterRef, (v) => {
-    if (v) trackEvent('filter_apply', { dimension, value: v, surface: surface.value })
+    if (v) trackEvent('filter_apply', { dimension, filter_value: v, surface: surface.value })
   })
 }
 
