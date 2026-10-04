@@ -79,6 +79,7 @@
     "score": "評分",
     "details": "詳細資訊",
     "whyThisTeam": "為什麼推薦這個隊伍？",
+    "noArchetypeReason": "不屬於任何主流陣容。依你的角色挑選，爆裂速度達 {speed}，且 B1–B3 爆裂鏈完整。",
     "pickRoster": "先選擇你擁有的角色",
     "pickRosterDesc": "至少需要 {min} 個角色才能獲得推薦。目前已選：{current}。",
     "selectHere": "選擇角色",

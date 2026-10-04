@@ -78,6 +78,10 @@ const overlappingTemplates = computed(() => {
     .filter((t): t is TeamTemplate => !!t)
 })
 
+// Teams that match no archetype still get a "why", built from the speed tier and burst chain
+const noArchetype = computed(() => !props.template && overlappingTemplates.value.length === 0)
+const hasNotes = computed(() => !!templateNotes.value || overlappingTemplates.value.length > 0 || noArchetype.value)
+
 const showNotes = ref(false)
 
 function toggleNotes() {
@@ -164,7 +168,7 @@ function onTryCalculator() {
         @click="onTryCalculator"
       />
       <button
-        v-if="templateNotes || overlappingTemplates.length > 0"
+        v-if="hasNotes"
         class="text-xs text-muted hover:text-default"
         @click="toggleNotes"
       >
@@ -192,7 +196,10 @@ function onTryCalculator() {
         />
       </template>
     </div>
-    <div v-if="showNotes && (templateNotes || overlappingTemplates.length > 0)" class="mt-1 space-y-1.5 text-xs text-muted">
+    <div v-if="showNotes && hasNotes" class="mt-1 space-y-1.5 text-xs text-muted">
+      <p v-if="noArchetype">
+        {{ t('recommend.noArchetypeReason', { speed: team.burstSpeed }) }}
+      </p>
       <p v-if="templateNotes && templateName">
         <span class="font-medium text-default">{{ templateName }}:</span> {{ templateNotes }}
       </p>

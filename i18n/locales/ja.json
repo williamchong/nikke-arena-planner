@@ -79,6 +79,7 @@
     "score": "スコア",
     "details": "詳細",
     "whyThisTeam": "この編成を選ぶ理由",
+    "noArchetypeReason": "メタ編成には該当しません。所持キャラから、バースト速度 {speed} で Ⅰ〜Ⅲのバーストチェーンが揃う編成を選びました。",
     "pickRoster": "まずはキャラクターを選択",
     "pickRosterDesc": "推奨を得るには最低 {min} 人必要です。現在の選択数: {current}。",
     "selectHere": "キャラを選択",

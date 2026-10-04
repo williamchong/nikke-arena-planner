@@ -79,6 +79,7 @@
     "score": "评分",
     "details": "详细信息",
     "whyThisTeam": "为什么推荐这个队伍？",
+    "noArchetypeReason": "不属于任何主流阵容。根据你的角色挑选，爆裂速度达 {speed}，且 B1–B3 爆裂链完整。",
     "pickRoster": "先选择你拥有的角色",
     "pickRosterDesc": "至少需要 {min} 个角色才能获得推荐。目前已选：{current}。",
     "selectHere": "选择角色",

@@ -79,6 +79,7 @@
     "score": "Score",
     "details": "Details",
     "whyThisTeam": "Why this team?",
+    "noArchetypeReason": "No meta archetype. Picked for {speed} burst speed with a complete B1–B3 chain from your roster.",
     "pickRoster": "Select your characters first",
     "pickRosterDesc": "You need at least {min} characters to get recommendations. Currently selected: {current}.",
     "selectHere": "Select characters",
