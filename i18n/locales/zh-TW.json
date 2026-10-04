@@ -86,6 +86,7 @@
     "seeTeams": "查看推薦隊伍",
     "editRoster": "編輯角色",
     "showingResults": "找到 {count} 個隊伍",
+    "showingPlans": "找到 {count} 個方案",
     "orSwap": "或",
     "tryInCalculator": "在計算器中測試",
     "optimizing": "正在優化隊伍…",

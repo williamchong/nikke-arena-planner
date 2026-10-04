@@ -86,6 +86,7 @@
     "seeTeams": "おすすめ編成を見る",
     "editRoster": "所持キャラを編集",
     "showingResults": "{count} 編成を発見",
+    "showingPlans": "{count} 件の候補を発見",
     "orSwap": "または",
     "tryInCalculator": "計算機で試す",
     "optimizing": "最適化中…",

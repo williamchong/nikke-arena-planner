@@ -535,7 +535,10 @@ const resultCount = computed(() =>
     <template v-if="hasEnoughCharacters">
       <div ref="resultsHeader" class="flex flex-wrap items-center justify-between gap-2">
         <p class="text-sm text-muted">
-          {{ t('recommend.showingResults', { count: resultCount }) }}
+          <!-- 15v15 shows its own spinner below; a "0 found" count meanwhile would be wrong -->
+          <template v-if="!(is15v15 && isOptimizing)">
+            {{ t(is15v15 ? 'recommend.showingPlans' : 'recommend.showingResults', resultCount) }}
+          </template>
         </p>
         <div class="flex flex-wrap gap-1">
           <UButton
@@ -696,6 +699,7 @@ const resultCount = computed(() =>
           :team="team"
           :template="team.templateId ? getTemplate(team.templateId) : undefined"
           :label="t('recommend.team', { n: teamIdx + 1 })"
+          class="max-sm:rounded-none max-sm:border-x-0 max-sm:border-b-0 max-sm:px-0 max-sm:pb-0 max-sm:pt-3"
           mode="defense"
           :rating-context="{ team, arenaMode: '15v15' as const, allTeams: recommendations15v15, teamSetIndex: setIdx, teamIndexInSet: teamIdx }"
           banable
