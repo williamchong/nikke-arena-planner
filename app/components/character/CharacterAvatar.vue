@@ -56,7 +56,7 @@ const elementColor: Record<string, string> = {
         :class="iconSize"
       >
     </div>
-    <span class="line-clamp-2 text-xs font-medium leading-tight">
+    <span class="line-clamp-2 text-xs font-medium leading-tight break-keep wrap-anywhere">
       {{ displayName }}
     </span>
   </div>

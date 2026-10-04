@@ -8,6 +8,8 @@ defineProps<{
   lockable?: boolean
   locked?: boolean
   banable?: boolean
+  /** Fill the parent's width on phones instead of the fixed 64px slot */
+  fluid?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -22,8 +24,9 @@ const { t } = useI18n()
 
 <template>
   <div
-    class="relative flex min-h-20 w-16 flex-col items-center justify-center gap-1 rounded-lg border p-1.5 text-center sm:w-20 sm:p-2"
+    class="relative flex min-h-20 flex-col items-center justify-center gap-1 rounded-lg border p-1.5 text-center sm:w-20 sm:p-2"
     :class="[
+      fluid ? 'w-full min-w-0' : 'w-16',
       character
         ? locked
           ? 'border-warning/50 bg-warning/10'
@@ -59,7 +62,7 @@ const { t } = useI18n()
         :title="t('recommend.banCharacter')"
         @click.stop="emit('ban')"
       >
-        <UIcon name="i-lucide-x" class="size-3.5" />
+        <UIcon name="i-lucide-ban" class="size-3.5" />
       </button>
     </template>
 

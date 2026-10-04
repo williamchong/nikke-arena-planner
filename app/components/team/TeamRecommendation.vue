@@ -123,34 +123,55 @@ function onTryCalculator() {
       <CommonSpeedTierBadge :tier="team.burstSpeed" />
     </div>
 
-    <!-- Characters -->
-    <div class="flex flex-wrap gap-2">
-      <div v-for="(char, i) in characters" :key="char.id" class="flex flex-col items-center gap-1">
+    <!-- Characters: one row of 5 on phones, wrapping row from sm up -->
+    <div class="grid grid-cols-5 gap-1 sm:flex sm:flex-wrap sm:gap-2">
+      <div v-for="(char, i) in characters" :key="char.id" class="flex min-w-0 flex-col items-center gap-1">
         <TeamSlot
           :character="char"
           :position="i + 1"
           :banable="banable"
+          fluid
           @ban="emit('ban', char.id)"
         />
-        <div v-if="alternatesMap[i]" class="flex items-center gap-0.5">
-          <span class="text-[9px] text-muted">{{ t('recommend.orSwap') }}</span>
-          <div
-            v-for="(alt, altIdx) in alternatesMap[i].slice(0, 3)"
-            :key="alt.id"
-            :title="localize(alt.name)"
-            class="cursor-help"
-            :class="{ 'hidden sm:block': altIdx === 2 }"
-          >
-            <img
-              v-if="getAvatarUrl(alt.avatarImg)"
-              :src="getAvatarUrl(alt.avatarImg)!"
-              :alt="localize(alt.name)"
-              class="size-5 rounded-full opacity-60 ring-1 ring-default hover:opacity-100"
+        <template v-if="alternatesMap[i]">
+          <!-- Phones: a compact chip whose popover lists the swaps by name (no hover on touch) -->
+          <UPopover class="sm:hidden">
+            <button type="button" class="rounded px-1 text-[10px] text-muted ring-1 ring-default">
+              {{ t('recommend.orSwap') }} +{{ alternatesMap[i].length }}
+            </button>
+            <template #content>
+              <ul class="flex flex-col gap-1.5 p-2 text-xs">
+                <li v-for="alt in alternatesMap[i]" :key="alt.id" class="flex items-center gap-2">
+                  <img
+                    v-if="getAvatarUrl(alt.avatarImg)"
+                    :src="getAvatarUrl(alt.avatarImg)!"
+                    alt=""
+                    class="size-6 rounded-full ring-1 ring-default"
+                  >
+                  {{ localize(alt.name) }}
+                </li>
+              </ul>
+            </template>
+          </UPopover>
+          <div class="hidden items-center gap-0.5 sm:flex">
+            <span class="text-[9px] text-muted">{{ t('recommend.orSwap') }}</span>
+            <div
+              v-for="alt in alternatesMap[i].slice(0, 3)"
+              :key="alt.id"
+              :title="localize(alt.name)"
+              class="cursor-help"
             >
+              <img
+                v-if="getAvatarUrl(alt.avatarImg)"
+                :src="getAvatarUrl(alt.avatarImg)!"
+                :alt="localize(alt.name)"
+                loading="lazy"
+                class="size-5 rounded-full opacity-60 ring-1 ring-default hover:opacity-100"
+              >
+            </div>
+            <span v-if="alternatesMap[i].length > 3" class="text-[9px] text-muted">+{{ alternatesMap[i].length - 3 }}</span>
           </div>
-          <span v-if="alternatesMap[i].length > 2" class="text-[9px] text-muted sm:hidden">+{{ alternatesMap[i].length - 2 }}</span>
-          <span v-if="alternatesMap[i].length > 3" class="hidden text-[9px] text-muted sm:inline">+{{ alternatesMap[i].length - 3 }}</span>
-        </div>
+        </template>
       </div>
     </div>
 
@@ -175,9 +196,8 @@ function onTryCalculator() {
         {{ showNotes ? '▼' : '▶' }} {{ t('recommend.whyThisTeam') }}
       </button>
 
-      <!-- Rating buttons -->
-      <template v-if="ratingContext">
-        <div class="h-4 w-px bg-(--ui-border)" />
+      <!-- Rating buttons: one group so they wrap together -->
+      <div v-if="ratingContext" class="ml-auto flex items-center gap-1">
         <UButton
           icon="i-lucide-thumbs-up"
           size="xs"
@@ -194,7 +214,7 @@ function onTryCalculator() {
           :aria-label="t('rating.thumbsDown')"
           @click="handleRate('down')"
         />
-      </template>
+      </div>
     </div>
     <div v-if="showNotes && hasNotes" class="mt-1 space-y-1.5 text-xs text-muted">
       <p v-if="noArchetype">
