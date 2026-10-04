@@ -53,11 +53,13 @@
   "calculator": {
     "title": "Burst Speed Calculator",
     "selectCharacters": "Select 5 characters to calculate burst speed",
+    "pickerTitle": "Pick characters ({n}/5)",
     "mode": "Mode",
     "attack": "Attack",
     "defense": "Defense",
     "speed": "Speed Tier",
     "burstGen": "Burst Generation",
+    "burstGenHint": "1.000 = a full burst gauge. The fastest tier that reaches it is the team's speed.",
     "invalidChain": "Invalid burst chain — need at least one each of B1, B2, B3",
     "timing": "Burst Timing",
     "lock": "Lock",
@@ -170,6 +172,7 @@
   "common": {
     "all": "All",
     "add": "Add",
+    "done": "Done",
     "clear": "Clear",
     "position": "P{n}"
   },

@@ -361,13 +361,14 @@ const resultCount = computed(() =>
     <UModal v-model:open="showPicker" :content="pickerModalContent">
       <template #content>
         <div class="flex flex-col gap-3 p-4">
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between gap-2">
             <h3 class="font-semibold">
               {{ t('recommend.lockCharacters') }}
               <span v-if="is15v15" class="text-muted">
                 — {{ t('recommend.team', { n: pickerTeamIdx + 1 }) }}
               </span>
             </h3>
+            <UButton :label="t('common.done')" size="xs" class="shrink-0" @click="showPicker = false" />
           </div>
 
           <p class="text-xs text-muted">

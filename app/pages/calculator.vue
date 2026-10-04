@@ -264,7 +264,8 @@ const speedTiers = SPEED_TIERS_ORDERED
           />
         </div>
 
-        <div class="flex gap-2 overflow-x-auto">
+        <!-- Padding keeps the corner badges of each slot inside the scroll box, which would otherwise clip them -->
+        <div class="-m-1 flex gap-2 overflow-x-auto p-1">
           <TeamSlot
             v-for="i in 5"
             :key="i"
@@ -337,9 +338,12 @@ const speedTiers = SPEED_TIERS_ORDERED
 
           <!-- Burst generation bars -->
           <div class="rounded-lg border border-default p-4">
-            <h3 class="mb-3 text-sm font-medium">
+            <h3 class="mb-1 text-sm font-medium">
               {{ t('calculator.burstGen') }}
             </h3>
+            <p class="mb-3 text-xs text-muted">
+              {{ t('calculator.burstGenHint') }}
+            </p>
             <div class="space-y-2">
               <div v-for="tier in speedTiers" :key="tier" class="flex items-center gap-2">
                 <span class="w-10 text-xs font-mono text-muted">{{ tier }}</span>
@@ -370,19 +374,22 @@ const speedTiers = SPEED_TIERS_ORDERED
     <UModal v-model:open="showPicker" :content="pickerModalContent">
       <template #content>
         <div class="flex flex-col gap-3 p-4">
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between gap-2">
             <h3 class="font-semibold">
-              {{ t('calculator.selectCharacters') }} ({{ filledCount }}/5)
+              {{ t('calculator.pickerTitle', { n: filledCount }) }}
             </h3>
-            <UButton
-              v-if="filledCount > 0"
-              icon="i-lucide-x"
-              :label="t('roster.clearAll')"
-              size="xs"
-              variant="ghost"
-              color="error"
-              @click="clearAll"
-            />
+            <div class="flex shrink-0 items-center gap-1">
+              <UButton
+                v-if="filledCount > 0"
+                icon="i-lucide-x"
+                :label="t('roster.clearAll')"
+                size="xs"
+                variant="ghost"
+                color="error"
+                @click="clearAll"
+              />
+              <UButton :label="t('common.done')" size="xs" @click="showPicker = false" />
+            </div>
           </div>
 
           <!-- Selected team preview -->

@@ -53,11 +53,13 @@
   "calculator": {
     "title": "バースト速度計算機",
     "selectCharacters": "バースト速度を計算するキャラを5人選択",
+    "pickerTitle": "キャラを選択（{n}/5）",
     "mode": "モード",
     "attack": "攻撃",
     "defense": "防御",
     "speed": "速度段階",
     "burstGen": "バーストゲージ生成",
+    "burstGenHint": "1.000 = バーストゲージ満タン。最初に 1.000 に達するティアが編成の速度です。",
     "invalidChain": "バーストチェーン無効 — Ⅰ・Ⅱ・Ⅲが各1人以上必要",
     "timing": "バーストタイミング",
     "lock": "固定",
@@ -170,6 +172,7 @@
   "common": {
     "all": "すべて",
     "add": "追加",
+    "done": "完了",
     "clear": "クリア",
     "position": "P{n}"
   },

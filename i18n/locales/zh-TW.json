@@ -53,11 +53,13 @@
   "calculator": {
     "title": "爆裂充能計算器",
     "selectCharacters": "選擇 5 位角色來計算爆裂速度",
+    "pickerTitle": "選擇角色（{n}/5）",
     "mode": "模式",
     "attack": "進攻",
     "defense": "防守",
     "speed": "速度等級",
     "burstGen": "充能值",
+    "burstGenHint": "1.000 = 爆裂能量全滿。最快達到 1.000 的等級即為隊伍速度。",
     "invalidChain": "無效的爆裂鏈 — 需要至少各一位 B1、B2、B3",
     "timing": "爆裂時間軸",
     "lock": "鎖定",
@@ -170,6 +172,7 @@
   "common": {
     "all": "全部",
     "add": "新增",
+    "done": "完成",
     "clear": "清除",
     "position": "P{n}"
   },
