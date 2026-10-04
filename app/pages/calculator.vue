@@ -398,7 +398,7 @@ const speedTiers = SPEED_TIERS_ORDERED
 
           <UInput
             v-model="pickerSearch"
-            placeholder="Search..."
+            :placeholder="t('roster.search')"
             icon="i-lucide-search"
             size="sm"
             autofocus

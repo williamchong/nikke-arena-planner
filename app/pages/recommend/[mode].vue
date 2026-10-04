@@ -9,9 +9,10 @@ const localePath = useLocalePath()
 
 const roster = useRosterStore()
 const { trackEvent } = useAnalytics()
-const { recommend5v5, getTemplate } = useTeamRecommender()
+const { recommend5v5, getTemplate, templates } = useTeamRecommender()
 const { getCharacter, filterCharacters, getAllCharacters } = useCharacters()
 const totalCharacters = getAllCharacters().length
+const archetypeCount = new Set(templates.map(t => t.archetype)).size
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
 const { getAvatarUrl } = useAvatars()
 const { localize } = useLocalizedField()
@@ -386,7 +387,7 @@ const resultCount = computed(() =>
 
           <UInput
             v-model="pickerSearch"
-            placeholder="Search..."
+            :placeholder="t('roster.search')"
             icon="i-lucide-search"
             size="sm"
             autofocus
@@ -637,7 +638,7 @@ const resultCount = computed(() =>
             {{ t('landing.featuresTitle') }}
           </h3>
           <ul class="list-inside list-disc space-y-1">
-            <li>{{ t('landing.feature1') }}</li>
+            <li>{{ t('landing.feature1', { count: archetypeCount }) }}</li>
             <li>{{ t('landing.feature2') }}</li>
             <li>{{ t('landing.feature3') }}</li>
             <li>{{ t('landing.feature4') }}</li>

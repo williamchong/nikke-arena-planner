@@ -65,7 +65,7 @@ const { t } = useI18n()
 
     <template v-else>
       <UIcon name="i-lucide-plus" class="size-5 text-muted" />
-      <span class="text-[10px] text-muted">Add</span>
+      <span class="text-[10px] text-muted">{{ t('common.add') }}</span>
     </template>
   </div>
 </template>

@@ -186,7 +186,7 @@ watchDebounced(search, (v: string) => {
       <UButton
         v-if="hasFilters"
         icon="i-lucide-x"
-        label="Clear"
+        :label="t('common.clear')"
         size="xs"
         color="neutral"
         variant="ghost"

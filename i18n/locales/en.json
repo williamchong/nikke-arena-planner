@@ -111,11 +111,11 @@
     "step2": "Get instant team recommendations for 5v5 Rookie Arena and 15v15 Special Arena",
     "step3": "See burst speed, timing breakdowns, and why each team works",
     "featuresTitle": "What You Get",
-    "feature1": "Optimized 5v5 teams matched to 20 proven meta archetypes (Moran system, Blanc indomitable, Scarlet nuke, and more)",
+    "feature1": "Optimized 5v5 teams matched to {count} proven meta archetypes (Moran system, Blanc indomitable, Scarlet nuke, and more)",
     "feature2": "15v15 SP Arena allocation — 3 non-overlapping teams optimized via simulated annealing, with multi-meta overlap detection",
     "feature3": "Visual burst timeline showing B1→B2→B3 order, charge timing, and team scoring for any 5-character combination",
     "feature4": "Works with any roster size — whether you have 15 characters or 150",
-    "feature5": "Trilingual support (English, 繁體中文, 简体中文) — switch languages instantly",
+    "feature5": "Available in English, 繁體中文, 简体中文 and 日本語 — switch languages instantly",
     "footer": "NIKKE Arena Planner is a free, open-source fan tool. Not affiliated with Shift Up or Level Infinite. Character data and arena mechanics based on ",
     "footerLink": "community research",
     "footerEnd": "."
@@ -168,6 +168,7 @@
   },
   "common": {
     "all": "All",
+    "add": "Add",
     "clear": "Clear",
     "position": "P{n}"
   },
