@@ -37,7 +37,12 @@ service cloud.firestore {
         'mast-romantic-maid', 'neon-blue-ocean', 'soda', 'elegg',
         'elegg-boom-and-shock', 'emma-tactical-upgrade', 'delta-ninja-thief',
         'snow-white-innocent-days', 'label', 'velvet', 'chisato', 'takina',
-        'privaty-treasure', 'zwei-treasure', 'centi-treasure', 'moran-treasure'
+        'privaty-treasure', 'zwei-treasure', 'centi-treasure', 'moran-treasure',
+        'eh', 'arcana-fortune-mate', 'snow-crane', 'anis-star', 'neon-vision-eye',
+        'mint', 'prika', 'avistar', 'ark-ranger-black', 'cinderella-crystal-wave',
+        'marciana-marine-study', 'sugar-treasure', 'phantom-treasure',
+        'flora-treasure', 'rosanna-treasure', 'laplace-ultimate-hero',
+        'maxwell-ordinary-mechanic', 'queen', 'yukiko', 'drake-great-villain'
       ];
     }
 
@@ -49,7 +54,8 @@ service cloud.firestore {
         'little-mermaid-disrupt', 'helm-treasure-carry', 'rosanna-counter',
         'rapi-rh-carry', 'vesti-tu-carry', 'nayuta-carry',
         'alice-rapunzel-revive', 'cinderella-carry', 'cat-team',
-        'tactical-trio', 'sg-burst'
+        'tactical-trio', 'sg-burst', 'anis-star-neon', 'privaty-stun',
+        'jackal-bay-share'
       ];
     }
 
