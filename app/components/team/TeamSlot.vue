@@ -36,9 +36,10 @@ const { t } = useI18n()
 
     <template v-if="character">
       <CharacterAvatar :character="character" size="sm" />
+      <!-- Each badge's before: widens its tap area to 28px inward only, so neighbouring slots' badges never overlap -->
       <button
         v-if="lockable"
-        class="absolute -left-1 -top-1 rounded-full p-0.5"
+        class="absolute -left-1 -top-1 rounded-full p-0.5 before:absolute before:left-0 before:top-0 before:-right-3 before:-bottom-3"
         :class="locked ? 'bg-warning text-white' : 'bg-elevated text-muted hover:text-default'"
         :title="locked ? t('calculator.unlock') : t('calculator.lock')"
         @click.stop="emit('toggleLock')"
@@ -47,14 +48,14 @@ const { t } = useI18n()
       </button>
       <button
         v-if="removable && !locked"
-        class="absolute -right-1 -top-1 rounded-full bg-error/80 p-0.5 text-white hover:bg-error"
+        class="absolute -right-1 -top-1 rounded-full bg-error/80 p-0.5 text-white hover:bg-error before:absolute before:right-0 before:top-0 before:-left-3 before:-bottom-3"
         @click.stop="emit('remove')"
       >
         <UIcon name="i-lucide-x" class="size-3" />
       </button>
       <button
         v-if="banable"
-        class="absolute right-0.5 top-0.5 rounded text-muted/60 hover:bg-elevated hover:text-default"
+        class="absolute right-0.5 top-0.5 rounded text-muted/60 hover:bg-elevated hover:text-default before:absolute before:right-0 before:top-0 before:-left-3.5 before:-bottom-3.5"
         :title="t('recommend.banCharacter')"
         @click.stop="emit('ban')"
       >
