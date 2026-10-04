@@ -83,6 +83,7 @@
     "pickRoster": "Select your characters first",
     "pickRosterDesc": "You need at least {min} characters to get recommendations. Currently selected: {current}.",
     "selectHere": "Select characters",
+    "seeTeams": "See recommendations",
     "editRoster": "Edit roster",
     "showingResults": "{count} team(s) found",
     "orSwap": "or",

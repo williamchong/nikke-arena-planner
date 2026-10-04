@@ -306,6 +306,14 @@ const minRequired = computed(() => is15v15.value ? 15 : 5)
 
 const showLockUI = ref(false)
 const showRosterPicker = ref(false)
+const resultsHeader = useTemplateRef('resultsHeader')
+
+async function seeTeams() {
+  showRosterPicker.value = false
+  trackEvent('recommend_see_teams', { mode: mode.value, roster_size: effectiveOwnedCount.value })
+  await nextTick()
+  resultsHeader.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 const resultCount = computed(() =>
   is15v15.value ? recommendations15v15.value.length : recommendations5v5.value.length,
@@ -518,54 +526,12 @@ const resultCount = computed(() =>
             color="neutral"
           />
         </div>
-
-        <div v-if="showRosterPicker" class="mt-4">
-          <CharacterGrid />
-        </div>
-      </div>
-
-      <!-- SEO landing content when no roster selected -->
-      <div class="mt-8 space-y-6 text-sm leading-relaxed text-muted">
-        <div>
-          <h2 class="mb-2 text-lg font-semibold text-default">
-            {{ t('landing.heading') }}
-          </h2>
-          <p>{{ t('landing.intro') }}</p>
-        </div>
-
-        <div>
-          <h3 class="mb-1 font-semibold text-default">
-            {{ t('landing.howItWorksTitle') }}
-          </h3>
-          <ol class="list-inside list-decimal space-y-1">
-            <li>{{ t('landing.step1', { count: getAllCharacters().length }) }}</li>
-            <li>{{ t('landing.step2') }}</li>
-            <li>{{ t('landing.step3') }}</li>
-          </ol>
-        </div>
-
-        <div>
-          <h3 class="mb-1 font-semibold text-default">
-            {{ t('landing.featuresTitle') }}
-          </h3>
-          <ul class="list-inside list-disc space-y-1">
-            <li>{{ t('landing.feature1') }}</li>
-            <li>{{ t('landing.feature2') }}</li>
-            <li>{{ t('landing.feature3') }}</li>
-            <li>{{ t('landing.feature4') }}</li>
-            <li>{{ t('landing.feature5') }}</li>
-          </ul>
-        </div>
-
-        <p class="text-xs text-muted">
-          {{ t('landing.footer') }}<NuxtLink :to="`${localePath('/about')}#credits`" class="text-primary hover:underline">{{ t('landing.footerLink') }}</NuxtLink>{{ t('landing.footerEnd') }}
-        </p>
       </div>
     </template>
 
     <!-- Shared controls for both modes -->
     <template v-if="hasEnoughCharacters">
-      <div class="flex flex-wrap items-center justify-between gap-2">
+      <div ref="resultsHeader" class="flex flex-wrap items-center justify-between gap-2">
         <p class="text-sm text-muted">
           {{ t('recommend.showingResults', { count: resultCount }) }}
         </p>
@@ -629,9 +595,59 @@ const resultCount = computed(() =>
           </div>
         </div>
       </div>
+    </template>
 
-      <div v-if="showRosterPicker" class="rounded-lg border border-default p-4">
-        <CharacterGrid />
+    <!-- One grid instance for both states, so crossing the minimum doesn't remount it and wipe search/filters -->
+    <div v-if="showRosterPicker" class="rounded-lg border border-default p-4">
+      <CharacterGrid />
+      <div v-if="hasEnoughCharacters" class="sticky bottom-4 z-10 mt-4 flex justify-center">
+        <UButton
+          :label="t('recommend.seeTeams')"
+          icon="i-lucide-arrow-down"
+          size="lg"
+          class="shadow-lg"
+          @click="seeTeams"
+        />
+      </div>
+    </div>
+
+    <template v-if="!hasEnoughCharacters">
+      <!-- SEO landing content when no roster selected -->
+      <div class="mt-8 space-y-6 text-sm leading-relaxed text-muted">
+        <div>
+          <h2 class="mb-2 text-lg font-semibold text-default">
+            {{ t('landing.heading') }}
+          </h2>
+          <p>{{ t('landing.intro') }}</p>
+        </div>
+
+        <div>
+          <h3 class="mb-1 font-semibold text-default">
+            {{ t('landing.howItWorksTitle') }}
+          </h3>
+          <ol class="list-inside list-decimal space-y-1">
+            <li>{{ t('landing.step1', { count: getAllCharacters().length }) }}</li>
+            <li>{{ t('landing.step2') }}</li>
+            <li>{{ t('landing.step3') }}</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="mb-1 font-semibold text-default">
+            {{ t('landing.featuresTitle') }}
+          </h3>
+          <ul class="list-inside list-disc space-y-1">
+            <li>{{ t('landing.feature1') }}</li>
+            <li>{{ t('landing.feature2') }}</li>
+            <li>{{ t('landing.feature3') }}</li>
+            <li>{{ t('landing.feature4') }}</li>
+            <li>{{ t('landing.feature5') }}</li>
+          </ul>
+        </div>
+
+        <p class="text-xs text-muted">
+          {{ t('landing.footer') }}<NuxtLink :to="`${localePath('/about')}#credits`" class="text-primary hover:underline">{{ t('landing.footerLink') }}</NuxtLink>{{ t('landing.footerEnd') }}
+        </p>
       </div>
     </template>
 

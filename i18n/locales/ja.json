@@ -83,6 +83,7 @@
     "pickRoster": "まずはキャラクターを選択",
     "pickRosterDesc": "推奨を得るには最低 {min} 人必要です。現在の選択数: {current}。",
     "selectHere": "キャラを選択",
+    "seeTeams": "おすすめ編成を見る",
     "editRoster": "所持キャラを編集",
     "showingResults": "{count} 編成を発見",
     "orSwap": "または",
