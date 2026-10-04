@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { BurstType, Character, Element, WeaponType } from '~/types/character'
+import type { TeamComposition } from '~/types/template'
 import { useLocalStorage, watchDebounced } from '@vueuse/core'
 
 const { t } = useI18n()
@@ -8,7 +9,7 @@ const localePath = useLocalePath()
 
 const roster = useRosterStore()
 const { trackEvent } = useAnalytics()
-const { recommend5v5, recommend15v15, getTemplate } = useTeamRecommender()
+const { recommend5v5, getTemplate } = useTeamRecommender()
 const { getCharacter, filterCharacters, getAllCharacters } = useCharacters()
 const totalCharacters = getAllCharacters().length
 const { burstIcon, weaponIcon, elementIcon } = useIcons()
@@ -252,25 +253,31 @@ watchDebounced(recommendations5v5, (result) => {
   })
 }, { debounce: 500 })
 
-const recommendations15v15 = ref<ReturnType<typeof recommend15v15>>([])
+const recommendations15v15 = ref<TeamComposition[][]>([])
 const isOptimizing = ref(false)
+const { run: runRecommend15v15 } = useRecommend15v15Worker()
 let pendingTimeout: ReturnType<typeof setTimeout> | null = null
+// Bumped on every change so a slower, superseded worker reply is dropped
+let latestRun = 0
 
 watch(
   [is15v15, effectiveOwnedIds, lockSlots],
   ([active]) => {
+    const run = ++latestRun
     if (pendingTimeout !== null) { clearTimeout(pendingTimeout); pendingTimeout = null }
     if (!active) { recommendations15v15.value = []; isOptimizing.value = false; return }
     isOptimizing.value = true
-    pendingTimeout = setTimeout(() => {
+    pendingTimeout = setTimeout(async () => {
       pendingTimeout = null
       const teamLocks = perTeamLocked.value
       const hasLocks = teamLocks.some(s => s.size > 0)
       const start = performance.now()
-      recommendations15v15.value = recommend15v15(
+      const result = await runRecommend15v15(
         effectiveOwnedIds.value, 'defense',
         hasLocks ? teamLocks : undefined,
       )
+      if (run !== latestRun || !result) return
+      recommendations15v15.value = result
       if (recommendations15v15.value.length > 0) {
         trackEvent('recommend_view', {
           mode: '15v15',
