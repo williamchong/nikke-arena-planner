@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { BurstType, Character, Element, WeaponType } from '~/types/character'
+import type { Character } from '~/types/character'
 import type { TeamComposition } from '~/types/template'
 import { useLocalStorage, watchDebounced } from '@vueuse/core'
 
@@ -10,10 +10,9 @@ const localePath = useLocalePath()
 const roster = useRosterStore()
 const { trackEvent } = useAnalytics()
 const { recommend5v5, getTemplate, templates } = useTeamRecommender()
-const { getCharacter, filterCharacters, getAllCharacters } = useCharacters()
+const { getCharacter, getAllCharacters } = useCharacters()
 const totalCharacters = getAllCharacters().length
 const archetypeCount = new Set(templates.map(t => t.archetype)).size
-const { burstIcon, weaponIcon, elementIcon } = useIcons()
 const { getAvatarUrl } = useAvatars()
 const { localize } = useLocalizedField()
 
@@ -165,34 +164,21 @@ function removeFromSlot(teamIdx: number, slotIdx: number) {
 // Picker modal state
 const showPicker = ref(false)
 const pickerTeamIdx = ref(0)
-const pickerSearch = ref('')
-const pickerBurst = ref<BurstType | null>(null)
-const pickerWeapon = ref<WeaponType | null>(null)
-const pickerElement = ref<Element | null>(null)
 
-const pickerCharacters = computed(() => {
-  const chars = filterCharacters({
-    search: pickerSearch.value,
-    burst: pickerBurst.value,
-    weapon: pickerWeapon.value,
-    element: pickerElement.value,
-  }).filter(c => roster.isOwned(c.id))
+function pickerInclude(c: Character) {
+  return roster.isOwned(c.id)
+}
 
+function pickerSort(a: Character, b: Character) {
   const locked = allLockedIds.value
-  return [...chars].sort((a, b) => {
-    const aL = locked.has(a.id) ? 0 : 1
-    const bL = locked.has(b.id) ? 0 : 1
-    if (aL !== bL) return aL - bL
-    return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
-  })
-})
+  const aL = locked.has(a.id) ? 0 : 1
+  const bL = locked.has(b.id) ? 0 : 1
+  if (aL !== bL) return aL - bL
+  return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
+}
 
 function openPicker(teamIdx: number) {
   pickerTeamIdx.value = teamIdx
-  pickerSearch.value = ''
-  pickerBurst.value = null
-  pickerWeapon.value = null
-  pickerElement.value = null
   showPicker.value = true
 }
 
@@ -235,6 +221,10 @@ function toggleInPicker(id: string) {
 const pickerTeamIds = computed(() =>
   new Set(lockSlots.value[pickerTeamIdx.value]?.filter((id): id is string => !!id) ?? []),
 )
+
+function pickerDisabled(id: string) {
+  return allLockedIds.value.has(id) && !pickerTeamIds.value.has(id)
+}
 
 // --- Recommendations ---
 const recommendations5v5 = computed(() => {
@@ -305,7 +295,6 @@ const hasEnoughCharacters = computed(() => {
 
 const minRequired = computed(() => is15v15.value ? 15 : 5)
 
-const { hasFinePointer, pickerModalContent } = usePickerFocus()
 const showLockUI = ref(false)
 const showRosterPicker = ref(false)
 const resultsHeader = useTemplateRef('resultsHeader')
@@ -358,104 +347,39 @@ const resultCount = computed(() =>
     </div>
 
     <!-- Character picker modal -->
-    <UModal v-model:open="showPicker" :content="pickerModalContent">
-      <template #content>
-        <div class="flex flex-col gap-3 p-4">
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-semibold">
-              {{ t('recommend.lockCharacters') }}
-              <span v-if="is15v15" class="text-muted">
-                — {{ t('recommend.team', { n: pickerTeamIdx + 1 }) }}
-              </span>
-            </h3>
-            <UButton :label="t('common.done')" size="xs" class="shrink-0" @click="showPicker = false" />
-          </div>
-
-          <p class="text-xs text-muted">
-            {{ t('recommend.lockDesc') }}
-          </p>
-
-          <!-- Preview of current team being edited -->
-          <div class="flex gap-1.5">
-            <TeamSlot
-              v-for="(char, slotIdx) in lockSlotCharacters[pickerTeamIdx]"
-              :key="slotIdx"
-              :character="char"
-              :position="slotIdx + 1"
-              :removable="!!char"
-              @remove="removeFromSlot(pickerTeamIdx, slotIdx)"
-            />
-          </div>
-
-          <UInput
-            v-model="pickerSearch"
-            :placeholder="t('roster.search')"
-            icon="i-lucide-search"
-            size="sm"
-            :autofocus="hasFinePointer"
-          />
-
-          <!-- Compact icon-only filters -->
-          <div class="flex flex-wrap items-center gap-1">
-            <button
-              v-for="b in BURST_FILTERS"
-              :key="b.value"
-              class="flex size-7 items-center justify-center rounded border transition-colors"
-              :class="pickerBurst === b.value ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-              :title="`Burst ${b.label}`"
-              @click="pickerBurst = pickerBurst === b.value ? null : b.value"
-            >
-              <CommonMonoIcon v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :label="`Burst ${b.label}`" class="size-4" />
-            </button>
-
-            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
-
-            <button
-              v-for="w in WEAPON_FILTERS"
-              :key="w"
-              class="flex size-7 items-center justify-center rounded border transition-colors"
-              :class="pickerWeapon === w ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-              :title="w"
-              @click="pickerWeapon = pickerWeapon === w ? null : w"
-            >
-              <CommonMonoIcon v-if="weaponIcon(w)" :src="weaponIcon(w)!" :label="w" class="size-4" />
-            </button>
-
-            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
-
-            <button
-              v-for="e in ELEMENT_FILTERS"
-              :key="e"
-              class="flex size-7 items-center justify-center rounded border transition-colors"
-              :class="pickerElement === e ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-              :title="t(`element.${e}`)"
-              @click="pickerElement = pickerElement === e ? null : e"
-            >
-              <CommonMonoIcon v-if="elementIcon(e)" :src="elementIcon(e)!" :label="t(`element.${e}`)" class="size-4" />
-            </button>
-          </div>
-
-          <div class="grid max-h-96 grid-cols-4 gap-1 overflow-y-auto">
-            <button
-              v-for="char in pickerCharacters"
-              :key="char.id"
-              class="flex flex-col items-center gap-1 rounded-lg border p-1.5 text-center transition-all"
-              :class="[
-                pickerTeamIds.has(char.id)
-                  ? 'border-warning bg-warning/10 ring-1 ring-warning/30'
-                  : allLockedIds.has(char.id)
-                    ? 'border-muted bg-muted/10 opacity-50'
-                    : 'border-default hover:border-warning/50',
-              ]"
-              :disabled="allLockedIds.has(char.id) && !pickerTeamIds.has(char.id)"
-              @click="toggleInPicker(char.id)"
-            >
-              <CharacterAvatar :character="char" size="sm" />
-            </button>
-          </div>
-        </div>
+    <CharacterPickerModal
+      v-model:open="showPicker"
+      color="warning"
+      :include="pickerInclude"
+      :sort="pickerSort"
+      :selected="pickerTeamIds"
+      :dimmed="allLockedIds"
+      :disabled="pickerDisabled"
+      @toggle="toggleInPicker"
+    >
+      <template #title>
+        {{ t('recommend.lockCharacters') }}
+        <span v-if="is15v15" class="text-muted">
+          — {{ t('recommend.team', { n: pickerTeamIdx + 1 }) }}
+        </span>
       </template>
-    </UModal>
+
+      <p class="text-xs text-muted">
+        {{ t('recommend.lockDesc') }}
+      </p>
+
+      <!-- Preview of current team being edited -->
+      <div class="flex gap-1.5">
+        <TeamSlot
+          v-for="(char, slotIdx) in lockSlotCharacters[pickerTeamIdx]"
+          :key="slotIdx"
+          :character="char"
+          :position="slotIdx + 1"
+          :removable="!!char"
+          @remove="removeFromSlot(pickerTeamIdx, slotIdx)"
+        />
+      </div>
+    </CharacterPickerModal>
 
     <!-- Banned panel — visible whenever any bans exist, regardless of roster size -->
     <div
