@@ -91,13 +91,13 @@ function tileClass(id: string) {
         <div class="flex flex-wrap items-center gap-1">
           <button
             v-for="b in BURST_FILTERS"
-            :key="b.value"
+            :key="b"
             class="flex size-7 items-center justify-center rounded border transition-colors"
-            :class="burst === b.value ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-            :title="`Burst ${b.label}`"
-            @click="burst = burst === b.value ? null : b.value"
+            :class="burst === b ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
+            :title="t(`burst.${b}`)"
+            @click="burst = burst === b ? null : b"
           >
-            <CommonMonoIcon v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :label="`Burst ${b.label}`" class="size-4" />
+            <CommonMonoIcon v-if="burstIcon(b)" :src="burstIcon(b)!" :label="t(`burst.${b}`)" class="size-4" />
           </button>
 
           <span class="mx-0.5 hidden text-muted sm:inline">|</span>
