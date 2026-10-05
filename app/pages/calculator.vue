@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ArenaMode, BurstType, Character, Element, WeaponType } from '~/types/character'
+import type { ArenaMode, Character } from '~/types/character'
 import type { TeamTemplate } from '~/types/template'
 import { SPEED_TIERS_ORDERED } from '~/composables/useBurstCalculator'
 import { SPEED_TIER_SCORES, pvpTierScore } from '~/composables/useSimulatedAnnealing'
@@ -16,9 +16,8 @@ const router = useRouter()
 const route = useRoute()
 const roster = useRosterStore()
 const { trackEvent } = useAnalytics()
-const { getCharacter, filterCharacters } = useCharacters()
+const { getCharacter } = useCharacters()
 const { calculate } = useBurstCalculator()
-const { burstIcon, weaponIcon, elementIcon } = useIcons()
 
 const mode = ref<ArenaMode>('attack')
 // Fixed 5 slots — null means empty, positions are stable
@@ -73,12 +72,6 @@ if (import.meta.client) {
   })
 }
 const showPicker = ref(false)
-const { hasFinePointer, pickerModalContent } = usePickerFocus()
-
-const pickerSearch = ref('')
-const pickerBurst = ref<BurstType | null>(null)
-const pickerWeapon = ref<WeaponType | null>(null)
-const pickerElement = ref<Element | null>(null)
 
 const slotCharacters = computed(() =>
   slots.value.map(id => id ? getCharacter(id) ?? null : null),
@@ -118,28 +111,23 @@ const matched = computed(() => {
 const isSelected = computed(() => new Set(slots.value.filter((id): id is string => !!id)))
 const filledCount = computed(() => isSelected.value.size)
 
-const pickerCharacters = computed(() => {
-  const chars = filterCharacters({
-    search: pickerSearch.value,
-    burst: pickerBurst.value,
-    weapon: pickerWeapon.value,
-    element: pickerElement.value,
-  })
-
+// Selected first, then owned, then newest
+function pickerSort(a: Character, b: Character) {
   const sel = isSelected.value
-  return [...chars].sort((a, b) => {
-    // Selected first, then owned, then newest
-    const aS = sel.has(a.id) ? 0 : 1
-    const bS = sel.has(b.id) ? 0 : 1
-    if (aS !== bS) return aS - bS
+  const aS = sel.has(a.id) ? 0 : 1
+  const bS = sel.has(b.id) ? 0 : 1
+  if (aS !== bS) return aS - bS
 
-    const aOwned = roster.isOwned(a.id) ? 0 : 1
-    const bOwned = roster.isOwned(b.id) ? 0 : 1
-    if (aOwned !== bOwned) return aOwned - bOwned
+  const aOwned = roster.isOwned(a.id) ? 0 : 1
+  const bOwned = roster.isOwned(b.id) ? 0 : 1
+  if (aOwned !== bOwned) return aOwned - bOwned
 
-    return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
-  })
-})
+  return (b.releaseOrder ?? 0) - (a.releaseOrder ?? 0)
+}
+
+function pickerDisabled(id: string) {
+  return !isSelected.value.has(id) && filledCount.value >= 5
+}
 
 function toggleInPicker(id: string) {
   const next = [...slots.value]
@@ -162,14 +150,6 @@ function toggleInPicker(id: string) {
     }
   }
   slots.value = next
-}
-
-function openPicker() {
-  pickerSearch.value = ''
-  pickerBurst.value = null
-  pickerWeapon.value = null
-  pickerElement.value = null
-  showPicker.value = true
 }
 
 function removeCharacter(index: number) {
@@ -274,7 +254,7 @@ const speedTiers = SPEED_TIERS_ORDERED
             :removable="!!slotCharacters[i - 1]"
             :lockable="!!slotCharacters[i - 1]"
             :locked="lockedSlots.has(i - 1)"
-            @click="openPicker"
+            @click="showPicker = true"
             @remove="removeCharacter(i - 1)"
             @toggle-lock="toggleLock(i - 1)"
           />
@@ -371,103 +351,39 @@ const speedTiers = SPEED_TIERS_ORDERED
     </div>
 
     <!-- Character Picker Modal — pick up to 5 in one go -->
-    <UModal v-model:open="showPicker" :content="pickerModalContent">
-      <template #content>
-        <div class="flex flex-col gap-3 p-4">
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-semibold">
-              {{ t('calculator.pickerTitle', { n: filledCount }) }}
-            </h3>
-            <div class="flex shrink-0 items-center gap-1">
-              <UButton
-                v-if="filledCount > 0"
-                icon="i-lucide-x"
-                :label="t('roster.clearAll')"
-                size="xs"
-                variant="ghost"
-                color="error"
-                @click="clearAll"
-              />
-              <UButton :label="t('common.done')" size="xs" @click="showPicker = false" />
-            </div>
-          </div>
-
-          <!-- Selected team preview -->
-          <div v-if="filledCount > 0" class="flex gap-1">
-            <TeamSlot
-              v-for="i in 5"
-              :key="i"
-              :character="slotCharacters[i - 1] ?? null"
-              :position="i"
-              :removable="!!slotCharacters[i - 1]"
-              @remove="removeCharacter(i - 1)"
-            />
-          </div>
-
-          <UInput
-            v-model="pickerSearch"
-            :placeholder="t('roster.search')"
-            icon="i-lucide-search"
-            size="sm"
-            :autofocus="hasFinePointer"
-          />
-
-          <!-- Compact icon-only filters -->
-          <div class="flex flex-wrap items-center gap-1">
-            <button
-              v-for="b in BURST_FILTERS"
-              :key="b.value"
-              class="flex size-7 items-center justify-center rounded border transition-colors"
-              :class="pickerBurst === b.value ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-              :title="`Burst ${b.label}`"
-              @click="pickerBurst = pickerBurst === b.value ? null : b.value"
-            >
-              <CommonMonoIcon v-if="burstIcon(b.value)" :src="burstIcon(b.value)!" :label="`Burst ${b.label}`" class="size-4" />
-            </button>
-
-            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
-
-            <button
-              v-for="w in WEAPON_FILTERS"
-              :key="w"
-              class="flex size-7 items-center justify-center rounded border transition-colors"
-              :class="pickerWeapon === w ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-              :title="w"
-              @click="pickerWeapon = pickerWeapon === w ? null : w"
-            >
-              <CommonMonoIcon v-if="weaponIcon(w)" :src="weaponIcon(w)!" :label="w" class="size-4" />
-            </button>
-
-            <span class="mx-0.5 hidden text-muted sm:inline">|</span>
-
-            <button
-              v-for="e in ELEMENT_FILTERS"
-              :key="e"
-              class="flex size-7 items-center justify-center rounded border transition-colors"
-              :class="pickerElement === e ? 'border-primary bg-primary/15' : 'border-default hover:bg-elevated'"
-              :title="t(`element.${e}`)"
-              @click="pickerElement = pickerElement === e ? null : e"
-            >
-              <CommonMonoIcon v-if="elementIcon(e)" :src="elementIcon(e)!" :label="t(`element.${e}`)" class="size-4" />
-            </button>
-          </div>
-
-          <div class="grid max-h-96 grid-cols-4 gap-1 overflow-y-auto">
-            <button
-              v-for="char in pickerCharacters"
-              :key="char.id"
-              class="flex flex-col items-center gap-1 rounded-lg border p-1.5 text-center transition-all"
-              :class="isSelected.has(char.id)
-                ? 'border-primary bg-primary/10 ring-1 ring-primary/30'
-                : 'border-default hover:border-primary/50'"
-              :disabled="!isSelected.has(char.id) && filledCount >= 5"
-              @click="toggleInPicker(char.id)"
-            >
-              <CharacterAvatar :character="char" size="sm" />
-            </button>
-          </div>
-        </div>
+    <CharacterPickerModal
+      v-model:open="showPicker"
+      :sort="pickerSort"
+      :selected="isSelected"
+      :disabled="pickerDisabled"
+      @toggle="toggleInPicker"
+    >
+      <template #title>
+        {{ t('calculator.pickerTitle', { n: filledCount }) }}
       </template>
-    </UModal>
+      <template #actions>
+        <UButton
+          v-if="filledCount > 0"
+          icon="i-lucide-x"
+          :label="t('roster.clearAll')"
+          size="xs"
+          variant="ghost"
+          color="error"
+          @click="clearAll"
+        />
+      </template>
+
+      <!-- Selected team preview -->
+      <div v-if="filledCount > 0" class="flex gap-1">
+        <TeamSlot
+          v-for="i in 5"
+          :key="i"
+          :character="slotCharacters[i - 1] ?? null"
+          :position="i"
+          :removable="!!slotCharacters[i - 1]"
+          @remove="removeCharacter(i - 1)"
+        />
+      </div>
+    </CharacterPickerModal>
   </div>
 </template>
