@@ -42,7 +42,8 @@ service cloud.firestore {
         'mint', 'prika', 'avistar', 'ark-ranger-black', 'cinderella-crystal-wave',
         'marciana-marine-study', 'sugar-treasure', 'phantom-treasure',
         'flora-treasure', 'rosanna-treasure', 'laplace-ultimate-hero',
-        'maxwell-ordinary-mechanic', 'queen', 'yukiko', 'drake-great-villain'
+        'maxwell-ordinary-mechanic', 'queen', 'yukiko', 'drake-great-villain',
+        'guilty-mighty-bunny', 'sin-swift-bunny', 'belorta-pumpkin-witch'
       ];
     }
 

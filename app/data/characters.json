@@ -75,7 +75,7 @@
         "1RL": 0.056,
         "2RL": 0.336,
         "3SG": 0.28,
-        "5SG": 0.588,
+        "5SG": 0.616,
         "3RL": 0.672,
         "7SG": 0.924,
         "4RL": 1.008,
@@ -85,7 +85,7 @@
         "1RL": 0.056,
         "2RL": 0.336,
         "3SG": 0.28,
-        "5SG": 0.588,
+        "5SG": 0.616,
         "3RL": 0.672,
         "7SG": 0.924,
         "4RL": 1.008,
@@ -1163,21 +1163,21 @@
       "attack": {
         "1RL": 0,
         "2RL": 0.168,
-        "3SG": 0.168,
-        "5SG": 0.168,
+        "3SG": 0.084,
+        "5SG": 0.196,
         "3RL": 0.336,
         "7SG": 0.336,
-        "4RL": 0.336,
+        "4RL": 0.448,
         "5RL": 0.504
       },
       "defense": {
         "1RL": 0,
         "2RL": 0.168,
-        "3SG": 0.168,
-        "5SG": 0.168,
+        "3SG": 0.084,
+        "5SG": 0.196,
         "3RL": 0.336,
         "7SG": 0.336,
-        "4RL": 0.336,
+        "4RL": 0.448,
         "5RL": 0.504
       }
     },
@@ -1384,7 +1384,7 @@
         "5SG": 0.12,
         "3RL": 0.18,
         "7SG": 0.18,
-        "4RL": 0.18,
+        "4RL": 0.24,
         "5RL": 0.24
       }
     },
@@ -3523,11 +3523,11 @@
         "1RL": 0.04,
         "2RL": 0.08,
         "3SG": 0.06,
-        "5SG": 0.1,
-        "3RL": 0.12,
-        "7SG": 0.14,
-        "4RL": 0.16,
-        "5RL": 0.18
+        "5SG": 0.102,
+        "3RL": 0.122,
+        "7SG": 0.142,
+        "4RL": 0.162,
+        "5RL": 0.182
       }
     },
     "suitability": {
@@ -10470,24 +10470,24 @@
     "hitMultiplier": 1,
     "burstGen": {
       "attack": {
-        "1RL": 0.028,
-        "2RL": 0.056,
-        "3SG": 0.028,
-        "5SG": 0.056,
-        "3RL": 0.084,
-        "7SG": 0.084,
-        "4RL": 0.112,
-        "5RL": 0.14
+        "1RL": 0.0995,
+        "2RL": 0.199,
+        "3SG": 0.0995,
+        "5SG": 0.199,
+        "3RL": 0.2985,
+        "7SG": 0.2985,
+        "4RL": 0.398,
+        "5RL": 0.4975
       },
       "defense": {
-        "1RL": 0.028,
-        "2RL": 0.056,
-        "3SG": 0.028,
-        "5SG": 0.056,
-        "3RL": 0.084,
-        "7SG": 0.084,
-        "4RL": 0.112,
-        "5RL": 0.14
+        "1RL": 0.0995,
+        "2RL": 0.199,
+        "3SG": 0.0995,
+        "5SG": 0.199,
+        "3RL": 0.2985,
+        "7SG": 0.2985,
+        "4RL": 0.398,
+        "5RL": 0.4975
       }
     },
     "suitability": {
@@ -10651,5 +10651,155 @@
     "avatarImg": "drake-great-villain",
     "pvpTier": "A",
     "squad": "Matis"
+  },
+  {
+    "id": "guilty-mighty-bunny",
+    "name": {
+      "en": "Guilty: Mighty Bunny",
+      "zh-TW": "吉爾提:神力兔女郎",
+      "zh-CN": "吉尔提:神力兔女郎",
+      "ja": "ギルティ：マイティバニー"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    },
+    "releaseOrder": 1720,
+    "avatarImg": "guilty-mighty-bunny",
+    "squad": "Real Kindness"
+  },
+  {
+    "id": "sin-swift-bunny",
+    "name": {
+      "en": "Sin: Swift Bunny",
+      "zh-TW": "森:疾速兔女郎",
+      "zh-CN": "森:疾速兔女郎",
+      "ja": "シン：スウィフトバニー"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "water",
+    "manufacturer": "missilis",
+    "weapon": "SR",
+    "weaponDmg": 69.04,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.028,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      },
+      "defense": {
+        "1RL": 0.028,
+        "2RL": 0.056,
+        "3SG": 0.028,
+        "5SG": 0.056,
+        "3RL": 0.084,
+        "7SG": 0.084,
+        "4RL": 0.112,
+        "5RL": 0.14
+      }
+    },
+    "suitability": {
+      "attack": 1,
+      "defense": -1
+    },
+    "releaseOrder": 1727,
+    "avatarImg": "sin-swift-bunny",
+    "squad": "Real Kindness"
+  },
+  {
+    "id": "belorta-pumpkin-witch",
+    "name": {
+      "en": "Belorta: Pumpkin Witch",
+      "zh-TW": "貝洛塔:南瓜女巫",
+      "zh-CN": "贝洛塔:南瓜女巫",
+      "ja": "ベロータ：パンプキンウィッチ"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "water",
+    "manufacturer": "tetra",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.014,
+    "hitMultiplier": 4,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      },
+      "defense": {
+        "1RL": 0.056,
+        "2RL": 0.112,
+        "3SG": 0.056,
+        "5SG": 0.112,
+        "3RL": 0.168,
+        "7SG": 0.168,
+        "4RL": 0.224,
+        "5RL": 0.28
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1741,
+    "avatarImg": "belorta-pumpkin-witch",
+    "squad": "The Carronades"
   }
 ]
