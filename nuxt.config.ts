@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://nikke.williamchong.cloud',
     name: 'NIKKE Arena Planner',
+    trailingSlash: true,
   },
   modules: [
     '@nuxt/ui',
@@ -55,5 +56,6 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
     baseUrl: 'https://nikke.williamchong.cloud',
+    trailingSlash: true,
   },
 })

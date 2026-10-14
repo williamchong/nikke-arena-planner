@@ -320,8 +320,8 @@ const resultCount = computed(() =>
         :to="tab.to"
         :label="tab.label"
         :icon="tab.icon"
-        :variant="route.path === tab.to ? 'solid' : 'outline'"
-        :color="route.path === tab.to ? 'primary' : 'neutral'"
+        :variant="tab === currentMode ? 'solid' : 'outline'"
+        :color="tab === currentMode ? 'primary' : 'neutral'"
         size="lg"
         block
       />
