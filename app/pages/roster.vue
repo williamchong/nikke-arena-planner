@@ -3,6 +3,8 @@ const { t } = useI18n()
 
 useSeoMeta({
   title: () => t('roster.title'),
+  description: () => t('roster.metaDescription'),
+  ogDescription: () => t('roster.metaDescription'),
 })
 </script>
 

@@ -24,9 +24,12 @@ const modes = computed(() => ({
   '15v15': { label: t('recommend.mode15v15'), desc: t('recommend.mode15v15Desc'), icon: 'i-lucide-layers-3', to: localePath('/recommend/15v15') },
 }))
 const currentMode = computed(() => modes.value[mode.value as '5v5' | '15v15'] ?? modes.value['5v5'])
+const metaDescription = computed(() => t(is15v15.value ? 'recommend.metaDescription15v15' : 'recommend.metaDescription5v5'))
 
 useSeoMeta({
   title: () => `${currentMode.value.label} — ${t('recommend.title')}`,
+  description: metaDescription,
+  ogDescription: metaDescription,
 })
 
 // --- Lock slots: team-formation style ---

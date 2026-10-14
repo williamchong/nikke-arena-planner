@@ -17,6 +17,7 @@ const tiers = [
 useSeoMeta({
   title: () => t('about.title'),
   description: () => t('about.metaDescription'),
+  ogDescription: () => t('about.metaDescription'),
 })
 
 const faqItems = computed(() => [

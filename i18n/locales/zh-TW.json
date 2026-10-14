@@ -11,6 +11,7 @@
   },
   "roster": {
     "title": "選擇你擁有的角色",
+    "metaDescription": "選擇你擁有的 NIKKE 角色，只用你的角色庫推薦競技場隊伍。資料儲存在瀏覽器，無需登入。",
     "owned": "已擁有：{count} / {total}",
     "selectAll": "全選",
     "clearAll": "清除全部",
@@ -52,6 +53,7 @@
   },
   "calculator": {
     "title": "爆裂充能計算器",
+    "metaDescription": "免費的 NIKKE PVP 爆裂充能計算器。選擇 5 名角色，即可查看攻擊與防守的充能速度等級（2RL、3RL、5SG…）、爆裂鏈，以及 B1→B2→B3 爆裂順序。",
     "selectCharacters": "選擇 5 位角色來計算爆裂速度",
     "pickerTitle": "選擇角色（{n}/5）",
     "mode": "模式",
@@ -69,6 +71,8 @@
   },
   "recommend": {
     "title": "隊伍推薦",
+    "metaDescription5v5": "用你的角色庫組建 NIKKE 新人競技場（5v5）最強隊伍。依充能速度推薦 PVP 主流陣容，並顯示爆裂順序與替代角色。",
+    "metaDescription15v15": "用你的角色庫組建 3 隊 NIKKE 特殊競技場（15v15）陣容。角色不重複，同時優化三隊的充能速度。",
     "mode5v5": "5v5 新人競技場",
     "mode15v15": "15v15 特殊競技場",
     "mode5v5Desc": "1 隊 5 人",

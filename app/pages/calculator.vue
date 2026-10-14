@@ -10,6 +10,8 @@ const { localize } = useLocalizedField()
 
 useSeoMeta({
   title: () => t('calculator.title'),
+  description: () => t('calculator.metaDescription'),
+  ogDescription: () => t('calculator.metaDescription'),
 })
 
 const router = useRouter()

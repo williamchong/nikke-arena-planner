@@ -11,6 +11,7 @@
   },
   "roster": {
     "title": "Select Your Characters",
+    "metaDescription": "Select the NIKKE characters you own to get arena team recommendations built only from your roster. Saved in your browser, no login required.",
     "owned": "Owned: {count} / {total}",
     "selectAll": "Select All",
     "clearAll": "Clear All",
@@ -52,6 +53,7 @@
   },
   "calculator": {
     "title": "Burst Speed Calculator",
+    "metaDescription": "Free NIKKE PVP burst generation calculator. Pick 5 Nikkes to see their burst speed tier (2RL, 3RL, 5SG…) in attack and defense, burst chain, and B1→B2→B3 timing.",
     "selectCharacters": "Select 5 characters to calculate burst speed",
     "pickerTitle": "Pick characters ({n}/5)",
     "mode": "Mode",
@@ -69,6 +71,8 @@
   },
   "recommend": {
     "title": "Team Recommendations",
+    "metaDescription5v5": "Best NIKKE Rookie Arena (5v5) teams from your own roster. Get meta PVP team compositions ranked by burst speed, with burst order and alternate picks.",
+    "metaDescription15v15": "Build 3 NIKKE Special Arena (SP Arena, 15v15) teams from your roster, optimized so every team keeps a fast burst speed without sharing characters.",
     "mode5v5": "5v5 Rookie Arena",
     "mode15v15": "15v15 Special Arena",
     "mode5v5Desc": "1 team of 5",

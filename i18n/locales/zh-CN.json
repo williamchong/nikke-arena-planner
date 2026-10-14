@@ -11,6 +11,7 @@
   },
   "roster": {
     "title": "选择你拥有的角色",
+    "metaDescription": "选择你拥有的 NIKKE 角色，只用你的角色库推荐竞技场队伍。数据保存在浏览器，无需登录。",
     "owned": "已拥有：{count} / {total}",
     "selectAll": "全选",
     "clearAll": "清除全部",
@@ -52,6 +53,7 @@
   },
   "calculator": {
     "title": "爆裂充能计算器",
+    "metaDescription": "免费的 NIKKE PVP 爆裂充能计算器。选择 5 名角色，即可查看攻击与防守的充能速度等级（2RL、3RL、5SG…）、爆裂链，以及 B1→B2→B3 爆裂顺序。",
     "selectCharacters": "选择 5 位角色来计算爆裂速度",
     "pickerTitle": "选择角色（{n}/5）",
     "mode": "模式",
@@ -69,6 +71,8 @@
   },
   "recommend": {
     "title": "队伍推荐",
+    "metaDescription5v5": "用你的角色库组建 NIKKE 新人竞技场（5v5）最强队伍。按充能速度推荐 PVP 主流阵容，并显示爆裂顺序与替代角色。",
+    "metaDescription15v15": "用你的角色库组建 3 队 NIKKE 特殊竞技场（15v15）阵容。角色不重复，同时优化三队的充能速度。",
     "mode5v5": "5v5 新人竞技场",
     "mode15v15": "15v15 特殊竞技场",
     "mode5v5Desc": "1 队 5 人",
