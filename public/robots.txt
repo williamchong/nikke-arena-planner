@@ -1,2 +1,4 @@
 User-Agent: *
 Disallow:
+
+Sitemap: https://nikke.williamchong.cloud/sitemap_index.xml

@@ -62,7 +62,7 @@ characters.json (206 chars) + templates.json (21 meta archetypes)
 
 ### i18n
 
-Three locales: `en`, `zh-TW`, `zh-CN`. Files in `i18n/locales/`. Strategy: `prefix_except_default`. Lazy loading automatic (v10). Browser language detection on root with `redirectOn: 'root'`. SEO: `useLocaleHead()` output (hreflang/canonical/og:locale) spread into `useHead` in app.vue.
+Four locales: `en`, `zh-TW`, `zh-CN`, `ja`. Files in `i18n/locales/`. Strategy: `prefix_except_default`. Lazy loading automatic (v10). Browser language detection on root with `redirectOn: 'root'`. SEO: `useLocaleHead()` output (hreflang/canonical/og:locale) spread into `useHead` in app.vue.
 
 ### SEO
 
@@ -70,7 +70,8 @@ Three locales: `en`, `zh-TW`, `zh-CN`. Files in `i18n/locales/`. Strategy: `pref
 - `titleTemplate` in app.vue (pages just set title)
 - JSON-LD: WebApplication + WebSite (app.vue), FAQPage (about.vue)
 - `@nuxtjs/sitemap` with i18n auto-detection
-- Per-page titles via `useSeoMeta`
+- Per-page titles and descriptions via `useSeoMeta` (`<section>.metaDescription` keys)
+- `trailingSlash: true` in both `site` and `i18n` config: GitHub Pages 301s `/x` → `/x/`, so canonical/hreflang/sitemap URLs must end in `/`
 
 ### Deployment
 
