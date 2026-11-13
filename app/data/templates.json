@@ -1326,7 +1326,7 @@
     "required": [
       "vesti-tactical-upgrade",
       "eunhwa-tactical-upgrade",
-      "emma"
+      "emma-tactical-upgrade"
     ],
     "flex": [
       {
@@ -1366,10 +1366,10 @@
     ],
     "priority": 2,
     "notes": {
-      "en": "Pre-burst kill archetype. Emma+Eunhwa:TU+Vesti:TU combine for instant kill pressure before opponent bursts. Universal counter to stall/tank teams.",
-      "zh-TW": "爆裂前擊殺體系。艾瑪+銀華戰術+貝斯蒂戰術組合在對手爆裂前施加即殺壓力。萬用克制持久/坦克隊。",
-      "zh-CN": "爆裂前击杀体系。艾玛+银华战术+贝斯蒂战术组合在对手爆裂前施加即杀压力。万用克制持久/坦克队。",
-      "ja": "バースト前キルのアーキタイプ。エマ + ウンファ：タクティカル・アップ + ベスティー：タクティカル・アップの組み合わせで、相手がバーストする前に即死圧力を与える。持久戦/タンクチームへの万能反制。"
+      "en": "Pre-burst kill archetype. Emma:TU+Eunhwa:TU+Vesti:TU combine for instant kill pressure before opponent bursts. Universal counter to stall/tank teams.",
+      "zh-TW": "爆裂前擊殺體系。艾瑪戰術+銀華戰術+貝斯蒂戰術組合在對手爆裂前施加即殺壓力。萬用克制持久/坦克隊。",
+      "zh-CN": "爆裂前击杀体系。艾玛战术+银华战术+贝斯蒂战术组合在对手爆裂前施加即杀压力。万用克制持久/坦克队。",
+      "ja": "バースト前キルのアーキタイプ。エマ：タクティカル・アップ + ウンファ：タクティカル・アップ + ベスティー：タクティカル・アップの組み合わせで、相手がバーストする前に即死圧力を与える。持久戦/タンクチームへの万能反制。"
     }
   },
   {
