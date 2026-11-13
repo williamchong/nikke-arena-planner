@@ -280,7 +280,7 @@ watch(
           locked_count: allLockedIds.value.size,
           result_count: recommendations15v15.value.length,
           has_template_match: recommendations15v15.value.some(set => set.some(t => !!t.templateId)),
-          value: Math.round(performance.now() - start),
+          duration_ms: Math.round(performance.now() - start),
         })
       }
       isOptimizing.value = false
