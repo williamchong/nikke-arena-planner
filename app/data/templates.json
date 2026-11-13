@@ -17,6 +17,7 @@
         "slot": 1,
         "options": [
           "scarlet",
+          "snow-white-heavy-arms",
           "maiden-ice-rose",
           "scarlet-black-shadow",
           "ada",
@@ -32,7 +33,8 @@
           "emilia",
           "trina",
           "blanc",
-          "crown"
+          "crown",
+          "ada"
         ]
       },
       {
@@ -50,7 +52,8 @@
           "centi",
           "trina",
           "bay-treasure",
-          "nero"
+          "nero",
+          "noah"
         ]
       }
     ],
@@ -97,6 +100,7 @@
         "slot": 1,
         "options": [
           "scarlet",
+          "snow-white-heavy-arms",
           "maiden-ice-rose",
           "scarlet-black-shadow",
           "ada",
@@ -1042,10 +1046,11 @@
       {
         "slot": 1,
         "options": [
+          "helm-treasure",
+          "privaty-treasure",
           "maiden-ice-rose",
           "scarlet-black-shadow",
           "ada",
-          "helm-treasure",
           "emilia",
           "cinderella"
         ]
@@ -1053,6 +1058,9 @@
       {
         "slot": 2,
         "options": [
+          "red-hood",
+          "moran-treasure",
+          "label",
           "noah",
           "blanc",
           "noise",
@@ -1062,6 +1070,7 @@
       {
         "slot": 3,
         "options": [
+          "rumani",
           "jackal",
           "centi",
           "rapunzel",
@@ -1074,7 +1083,8 @@
           "centi",
           "trina",
           "bay-treasure",
-          "nero"
+          "nero",
+          "emilia"
         ]
       }
     ],
@@ -1090,12 +1100,12 @@
     "counteredBy": [
       "scarlet-nuke"
     ],
-    "priority": 3,
+    "priority": 2,
     "notes": {
-      "en": "Nayuta as flexible DPS carry. Good filler team when other cores are taken.",
-      "zh-TW": "娜由塔作為靈活DPS主C。其他核心被佔用時的好補位。",
-      "zh-CN": "娜由塔作为灵活DPS主C。其他核心被占用时的好补位。",
-      "ja": "ナユタを柔軟なDPS主砲として運用。他のコアが使用済みの際の補充チームとして優秀。"
+      "en": "Nayuta as the carry beside Helm: Treasure. Red Hood's buff or a Moran/Label front line keeps her alive long enough for a comeback burst.",
+      "zh-TW": "娜由塔搭配海倫 珍藏擔任主力。小紅帽的增益或牡丹／蕾貝兒前排讓她存活到爆裂逆轉。",
+      "zh-CN": "娜由塔搭配海伦 珍藏担任主力。小红帽的增益或牡丹／蕾贝儿前排让她存活到爆裂逆转。",
+      "ja": "ヘルム：宝物と並ぶナユタ主軸の編成。レッドフードのバフ、またはモラン／レーベルの前衛でナユタを生存させ、バーストで逆転する。"
     }
   },
   {
@@ -1470,7 +1480,8 @@
           "jackal",
           "rapunzel",
           "noise",
-          "avistar"
+          "avistar",
+          "anis-sparkling-summer"
         ]
       },
       {
@@ -1600,7 +1611,8 @@
           "liberalio",
           "maiden-ice-rose",
           "milk-blooming-bunny",
-          "ein"
+          "ein",
+          "ada"
         ]
       },
       {
@@ -1705,6 +1717,59 @@
       "zh-TW": "僅限進攻的清場隊。阿妮斯：超級巨星負責充能，瑪麗安：女王的爆裂技攻擊敵方全體。瑪麗安本身幾乎不提供充能，爆裂前較為脆弱。",
       "zh-CN": "仅限进攻的清场队。阿妮斯：超级巨星负责充能，玛丽安：女王的爆裂技攻击敌方全体。玛丽安本身几乎不提供充能，爆裂前较为脆弱。",
       "ja": "攻撃専用の全体攻撃編成。アニス：スターがバーストゲージを稼ぎ、マリアン：クイーンのバーストが敵全体を攻撃する。マリアン自身はほとんどゲージを稼げず、バースト前は倒されやすい。"
+    }
+  },
+  {
+    "id": "soda-laplace-stun",
+    "name": {
+      "en": "Soda + Laplace: Ultimate Hero Stun Rush",
+      "zh-TW": "索達 + 拉普拉斯：究極英雄 暈眩速攻",
+      "zh-CN": "索达 + 拉普拉斯：究极英雄 眩晕速攻",
+      "ja": "ソーダ + ラプラス：アルティメットヒーロー スタン速攻"
+    },
+    "archetype": "soda-laplace",
+    "mode": "both",
+    "required": [
+      "soda",
+      "laplace-ultimate-hero",
+      "centi-treasure"
+    ],
+    "flex": [
+      {
+        "slot": 3,
+        "options": [
+          "trina"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "helm-treasure",
+          "anis"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "II",
+      "II",
+      "III"
+    ],
+    "preferredSpeed": "2RL",
+    "counters": [
+      "anis-star-system",
+      "sg-burst"
+    ],
+    "counteredBy": [
+      "tactical-trio"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "2RL rush. Soda's stun stops the enemy's key defensive support, usually Noah, just before Laplace: Ultimate Hero's burst lands. Place Soda in the centre; she needs no investment. Centi: Treasure keeps the team alive.",
+      "zh-TW": "2RL速攻。索達的暈眩在拉普拉斯：究極英雄爆裂命中前封住敵方關鍵防禦輔助（通常是諾雅）。索達放在中間位置，無需培養。桑迪 珍藏負責維持全隊生存。",
+      "zh-CN": "2RL速攻。索达的眩晕在拉普拉斯：究极英雄爆裂命中前封住敌方关键防御辅助（通常是诺雅）。索达放在中间位置，无需培养。桑迪 珍藏负责维持全队生存。",
+      "ja": "2RL速攻。ソーダのスタンで相手の防御役（主にノア）を止め、その直後にラプラス：アルティメットヒーローのバーストを当てる。ソーダは中央に配置し、育成は不要。センチ：宝物が耐久を支える。"
     }
   }
 ]
