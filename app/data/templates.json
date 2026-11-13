@@ -76,10 +76,10 @@
     ],
     "priority": 1,
     "notes": {
-      "en": "THE dominant meta system. Moran:Treasure tanks while DPS nukes. Multiple burst speed configurations.",
-      "zh-TW": "最強元數據體系。牡丹珍藏坦克承傷，DPS輸出核爆。多種爆裂速度配置。",
-      "zh-CN": "最强元数据体系。牡丹珍藏坦克承伤，DPS输出核爆。多种爆裂速度配置。",
-      "ja": "最強のメタシステム。モラン：宝物がタンクを担い、DPSが殲滅する。複数のバースト速度構成が可能。"
+      "en": "Core meta system. Moran:Treasure tanks while DPS nukes. Multiple burst speed configurations.",
+      "zh-TW": "核心元數據體系。牡丹珍藏坦克承傷，DPS輸出核爆。多種爆裂速度配置。",
+      "zh-CN": "核心元数据体系。牡丹珍藏坦克承伤，DPS输出核爆。多种爆裂速度配置。",
+      "ja": "中核となるメタシステム。モラン：宝物がタンクを担い、DPSが殲滅する。複数のバースト速度構成が可能。"
     }
   },
   {
@@ -381,12 +381,12 @@
       "alice-revive",
       "cat-team"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
-      "en": "Fastest nuke team. Scarlet AoE burst + Jackal speed/link. Still strong meta but countered by tank/stall systems.",
-      "zh-TW": "最快核爆隊。紅蓮範圍爆裂 + 豺狼速度/連結。仍是強力元數據但被坦克/持久體系克制。",
-      "zh-CN": "最快核爆队。红莲范围爆裂 + 豺狼速度/连结。仍是强力元数据但被坦克/持久体系克制。",
-      "ja": "最速の核爆チーム。紅蓮のAoEバースト + ジャッカルの速度/リンク。依然として強力なメタだがタンク/持久戦システムに弱い。"
+      "en": "Fastest nuke team. Scarlet AoE burst + Jackal speed/link. Countered by tank/stall systems.",
+      "zh-TW": "最快核爆隊。紅蓮範圍爆裂 + 豺狼速度/連結。被坦克/持久體系克制。",
+      "zh-CN": "最快核爆队。红莲范围爆裂 + 豺狼速度/连结。被坦克/持久体系克制。",
+      "ja": "最速の核爆チーム。紅蓮のAoEバースト + ジャッカルの速度/リンク。タンク/持久戦システムに弱い。"
     }
   },
   {
@@ -730,10 +730,10 @@
     ],
     "priority": 2,
     "notes": {
-      "en": "Little Mermaid's stun disrupts enemy burst chains. Pairs with any nuke DPS. SSS-tier disruptor.",
-      "zh-TW": "小美人魚的暈眩打斷敵方爆裂鏈。與任何核爆輸出搭配。SSS級干擾者。",
-      "zh-CN": "小美人鱼的晕眩打断敌方爆裂链。与任何核爆输出搭配。SSS级干扰者。",
-      "ja": "リトルマーメイドのスタンが敵のバーストチェーンを妨害する。あらゆる核爆DPSと組み合わせ可能。SSSティアの妨害役。"
+      "en": "Little Mermaid's stun disrupts enemy burst chains. Pairs with any nuke DPS.",
+      "zh-TW": "小美人魚的暈眩打斷敵方爆裂鏈。與任何核爆輸出搭配。",
+      "zh-CN": "小美人鱼的晕眩打断敌方爆裂链。与任何核爆输出搭配。",
+      "ja": "リトルマーメイドのスタンが敵のバーストチェーンを妨害する。あらゆる核爆DPSと組み合わせ可能。"
     }
   },
   {
@@ -1305,12 +1305,12 @@
       "sanis-stall",
       "tactical-trio"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
-      "en": "~100% damage reduction via Moran tank + Nero DR stacking. Noted 'undefeated' in championship play. Outlasts most compositions.",
-      "zh-TW": "透過牡丹坦克 + 尼羅減傷疊加達到約100%減傷。錦標賽中被稱為「不敗」。可耗過大多數陣容。",
-      "zh-CN": "通过牡丹坦克 + 尼罗减伤叠加达到约100%减伤。锦标赛中被称为「不败」。可耗过大多数阵容。",
-      "ja": "モランタンク + ネロのダメージ軽減スタックで約100%のダメージ軽減。大会で『無敗』と評される。ほとんどの構成を持久戦で凌駕する。"
+      "en": "~100% damage reduction via Moran tank + Nero DR stacking. Outlasts most compositions.",
+      "zh-TW": "透過牡丹坦克 + 尼羅減傷疊加達到約100%減傷。可耗過大多數陣容。",
+      "zh-CN": "通过牡丹坦克 + 尼罗减伤叠加达到约100%减伤。可耗过大多数阵容。",
+      "ja": "モランタンク + ネロのダメージ軽減スタックで約100%のダメージ軽減。ほとんどの構成を持久戦で凌駕する。"
     }
   },
   {
