@@ -57,7 +57,7 @@ service cloud.firestore {
         'rapi-rh-carry', 'vesti-tu-carry', 'nayuta-carry',
         'alice-rapunzel-revive', 'cinderella-carry', 'cat-team',
         'tactical-trio', 'sg-burst', 'anis-star-neon', 'privaty-stun',
-        'jackal-bay-share'
+        'jackal-bay-share', 'anis-star-marian'
       ];
     }
 

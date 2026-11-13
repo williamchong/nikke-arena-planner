@@ -179,6 +179,7 @@
         "slot": 2,
         "options": [
           "scarlet",
+          "scarlet-goddeath",
           "maiden-ice-rose",
           "scarlet-black-shadow",
           "ada",
@@ -1644,6 +1645,66 @@
       "zh-TW": "兩層傷害分攤重疊，將對方首波核爆分散至全隊而非秒殺單一目標。以承傷而非搶速剋制爆發隊。",
       "zh-CN": "两层伤害分摊重叠，将对方首波核爆分散至全队而非秒杀单一目标。以承伤而非抢速克制爆发队。",
       "ja": "2層のダメージ分散が相手の初撃核爆をチーム全体に分散させ、単体撃破を許さない。速度勝負ではなく耐久でバースト型を封じる。"
+    }
+  },
+  {
+    "id": "anis-star-marian",
+    "name": {
+      "en": "Anis: Star + Marian: Queen Wipe",
+      "zh-TW": "阿妮斯：超級巨星 + 瑪麗安：女王清場",
+      "zh-CN": "阿妮斯：超级巨星 + 玛丽安：女王清场",
+      "ja": "アニス：スター + マリアン：クイーン 全体攻撃"
+    },
+    "archetype": "anis-star-system",
+    "mode": "attack",
+    "required": [
+      "anis-star",
+      "marian-queen"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "blanc",
+          "crown",
+          "trina"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "biscuit",
+          "bay-treasure",
+          "centi"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "helm-treasure",
+          "cinderella",
+          "maiden"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "III",
+      "II",
+      "II",
+      "III"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [],
+    "counteredBy": [
+      "scarlet-nuke"
+    ],
+    "priority": 3,
+    "notes": {
+      "en": "Attack-only wipe. Anis: Star carries burst generation while Marian: Queen's burst hits the whole enemy team. Marian generates almost no burst herself and is fragile before her burst fires.",
+      "zh-TW": "僅限進攻的清場隊。阿妮斯：超級巨星負責充能，瑪麗安：女王的爆裂技攻擊敵方全體。瑪麗安本身幾乎不提供充能，爆裂前較為脆弱。",
+      "zh-CN": "仅限进攻的清场队。阿妮斯：超级巨星负责充能，玛丽安：女王的爆裂技攻击敌方全体。玛丽安本身几乎不提供充能，爆裂前较为脆弱。",
+      "ja": "攻撃専用の全体攻撃編成。アニス：スターがバーストゲージを稼ぎ、マリアン：クイーンのバーストが敵全体を攻撃する。マリアン自身はほとんどゲージを稼げず、バースト前は倒されやすい。"
     }
   }
 ]
