@@ -43,7 +43,8 @@ service cloud.firestore {
         'marciana-marine-study', 'sugar-treasure', 'phantom-treasure',
         'flora-treasure', 'rosanna-treasure', 'laplace-ultimate-hero',
         'maxwell-ordinary-mechanic', 'queen', 'yukiko', 'drake-great-villain',
-        'guilty-mighty-bunny', 'sin-swift-bunny', 'belorta-pumpkin-witch'
+        'guilty-mighty-bunny', 'sin-swift-bunny', 'belorta-pumpkin-witch',
+        'marian-queen', 'rapunzel-sanctuary', 'scarlet-goddeath'
       ];
     }
 

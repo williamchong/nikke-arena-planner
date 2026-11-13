@@ -10801,5 +10801,159 @@
     "releaseOrder": 1741,
     "avatarImg": "belorta-pumpkin-witch",
     "squad": "The Carronades"
+  },
+  {
+    "id": "marian-queen",
+    "name": {
+      "en": "Marian: Queen",
+      "zh-TW": "瑪麗安:女王",
+      "zh-CN": "玛丽安:女王",
+      "ja": "マリアン：クイーン"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "pilgrim",
+    "weapon": "MG",
+    "weaponDmg": 5.57,
+    "ammo": 300,
+    "reloadTime": 2.5,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.0005,
+    "hitMultiplier": 1,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
+      },
+      "defense": {
+        "1RL": 0.0035,
+        "2RL": 0.016,
+        "3SG": 0.008,
+        "5SG": 0.025,
+        "3RL": 0.0345,
+        "7SG": 0.0435,
+        "4RL": 0.053,
+        "5RL": 0.0735
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1762,
+    "avatarImg": "marian-queen",
+    "squad": "Counters"
+  },
+  {
+    "id": "rapunzel-sanctuary",
+    "name": {
+      "en": "Rapunzel: Sanctuary",
+      "zh-TW": "長髮公主:聖域",
+      "zh-CN": "长发公主:圣域",
+      "ja": "ラプンツェル：サンクチュアリ"
+    },
+    "burst": "II",
+    "role": "supporter",
+    "element": "fire",
+    "manufacturer": "pilgrim",
+    "weapon": "RL",
+    "weaponDmg": 61.3,
+    "ammo": 6,
+    "reloadTime": 2,
+    "chargeTime": 1,
+    "maxCharge": 250,
+    "chargeCoefficient": 0.015,
+    "hitMultiplier": 0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.09,
+        "5SG": 0.18,
+        "3RL": 0.27,
+        "7SG": 0.27,
+        "4RL": 0.36,
+        "5RL": 0.45
+      },
+      "defense": {
+        "1RL": 0.09,
+        "2RL": 0.18,
+        "3SG": 0.09,
+        "5SG": 0.18,
+        "3RL": 0.27,
+        "7SG": 0.27,
+        "4RL": 0.36,
+        "5RL": 0.45
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1762,
+    "avatarImg": "rapunzel-sanctuary",
+    "squad": "Goddess",
+    "traits": [
+      "healer"
+    ]
+  },
+  {
+    "id": "scarlet-goddeath",
+    "name": {
+      "en": "Scarlet: Goddeath",
+      "zh-TW": "紅蓮:弒神",
+      "zh-CN": "红莲:弑神",
+      "ja": "紅蓮：神殺"
+    },
+    "burst": "III",
+    "role": "attacker",
+    "element": "fire",
+    "manufacturer": "pilgrim",
+    "weapon": "AR",
+    "weaponDmg": 107.57,
+    "ammo": 9,
+    "reloadTime": 1.17,
+    "chargeTime": 0,
+    "maxCharge": null,
+    "chargeCoefficient": 0.017,
+    "hitMultiplier": 0,
+    "burstGen": {
+      "attack": {
+        "1RL": 0.136,
+        "2RL": 0.272,
+        "3SG": 0.204,
+        "5SG": 0.306,
+        "3RL": 0.374,
+        "7SG": 0.408,
+        "4RL": 0.476,
+        "5RL": 0.476
+      },
+      "defense": {
+        "1RL": 0.136,
+        "2RL": 0.272,
+        "3SG": 0.204,
+        "5SG": 0.306,
+        "3RL": 0.374,
+        "7SG": 0.408,
+        "4RL": 0.476,
+        "5RL": 0.476
+      }
+    },
+    "suitability": {
+      "attack": 2,
+      "defense": -1
+    },
+    "releaseOrder": 1769,
+    "avatarImg": "scarlet-goddeath",
+    "pvpTier": "SS",
+    "squad": "Goddess"
   }
 ]
