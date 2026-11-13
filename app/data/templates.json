@@ -72,8 +72,6 @@
       "scarlet-nuke"
     ],
     "counteredBy": [
-      "sanis-stall",
-      "alice-carry",
       "tactical-trio",
       "sg-burst"
     ],
@@ -118,7 +116,8 @@
           "emilia",
           "blanc",
           "trina",
-          "crown"
+          "crown",
+          "ada"
         ]
       },
       {
@@ -127,7 +126,8 @@
           "rapunzel",
           "noise",
           "nero",
-          "rosanna"
+          "rosanna",
+          "jackal"
         ]
       },
       {
@@ -136,7 +136,8 @@
           "bay-treasure",
           "nero",
           "centi",
-          "trina"
+          "trina",
+          "noah"
         ]
       }
     ],
@@ -153,9 +154,7 @@
       "mermaid-disrupt"
     ],
     "counteredBy": [
-      "sanis-stall",
       "rosanna-counter",
-      "alice-carry",
       "tactical-trio",
       "sg-burst"
     ],
@@ -165,82 +164,6 @@
       "zh-TW": "坦克牆搭配復活/維持。牡丹珍藏的減傷和復活打造極為堅固的防守。",
       "zh-CN": "坦克墙搭配复活/维持。牡丹珍藏的减伤和复活打造极为坚固的防守。",
       "ja": "復活と持続力を備えたタンク壁。モラン：宝物のダメージ軽減と復活により、極めて堅固な防御を実現する。"
-    }
-  },
-  {
-    "id": "blanc-emt",
-    "name": {
-      "en": "Blanc + EMT Indomitable",
-      "zh-TW": "布蘭兒 + EMT 不屈",
-      "zh-CN": "布兰儿 + EMT 不屈",
-      "ja": "ブラン + エミリア 不屈"
-    },
-    "archetype": "blanc-indom",
-    "mode": "both",
-    "required": [
-      "blanc",
-      "emilia"
-    ],
-    "flex": [
-      {
-        "slot": 2,
-        "options": [
-          "scarlet",
-          "scarlet-goddeath",
-          "maiden-ice-rose",
-          "scarlet-black-shadow",
-          "ada",
-          "helm-treasure",
-          "liberalio",
-          "ein",
-          "neon-vision-eye"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "jackal",
-          "noise",
-          "rapunzel",
-          "rosanna",
-          "anis-star"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "centi",
-          "trina",
-          "bay-treasure",
-          "takina"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "II",
-      "III",
-      "III",
-      "I",
-      "II"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "scarlet-nuke",
-      "mermaid-disrupt"
-    ],
-    "counteredBy": [
-      "rosanna-counter",
-      "sanis-stall",
-      "noah-stall",
-      "mermaid-disrupt",
-      "alice-revive"
-    ],
-    "priority": 2,
-    "notes": {
-      "en": "Blanc's indomitability protects the team while EMT provides sustained burst damage. Core meta system.",
-      "zh-TW": "布蘭兒的不屈保護隊伍，EMT提供持續爆裂傷害。核心元數據體系。",
-      "zh-CN": "布兰儿的不屈保护队伍，EMT提供持续爆裂伤害。核心元数据体系。",
-      "ja": "ブランの不屈がチームを守り、エミリアが持続的なバーストダメージを提供する。コアメタシステム。"
     }
   },
   {
@@ -277,7 +200,10 @@
           "rapunzel",
           "noise",
           "bay-treasure",
-          "mast-romantic-maid"
+          "mast-romantic-maid",
+          "trina",
+          "anis-sparkling-summer",
+          "centi"
         ]
       },
       {
@@ -287,7 +213,11 @@
           "centi",
           "rosanna",
           "little-mermaid",
-          "anis-star"
+          "anis-star",
+          "cinderella",
+          "moran-treasure",
+          "rapunzel",
+          "rumani"
         ]
       }
     ],
@@ -304,7 +234,6 @@
       "blanc-indom"
     ],
     "counteredBy": [
-      "sanis-stall",
       "rosanna-counter",
       "tactical-trio"
     ],
@@ -380,11 +309,8 @@
       "noah-stall",
       "moran-system",
       "blanc-indom",
-      "alice-carry",
       "mermaid-disrupt",
       "rosanna-counter",
-      "rapi-rh",
-      "alice-revive",
       "cat-team"
     ],
     "priority": 2,
@@ -393,72 +319,6 @@
       "zh-TW": "最快核爆隊。紅蓮範圍爆裂 + 豺狼速度/連結。被坦克/持久體系克制。",
       "zh-CN": "最快核爆队。红莲范围爆裂 + 豺狼速度/连结。被坦克/持久体系克制。",
       "ja": "最速の核爆チーム。紅蓮のAoEバースト + ジャッカルの速度/リンク。タンク/持久戦システムに弱い。"
-    }
-  },
-  {
-    "id": "moran-scarlet",
-    "name": {
-      "en": "Moran + Scarlet (Red Moran)",
-      "zh-TW": "牡丹 + 紅蓮 (紅牡丹)",
-      "zh-CN": "牡丹 + 红莲 (红牡丹)",
-      "ja": "モラン + 紅蓮 (紅モラン)"
-    },
-    "archetype": "moran-scarlet",
-    "mode": "attack",
-    "required": [
-      "moran-treasure",
-      "scarlet"
-    ],
-    "flex": [
-      {
-        "slot": 2,
-        "options": [
-          "trina",
-          "blanc",
-          "emilia",
-          "crown"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "jackal",
-          "noise",
-          "rapunzel",
-          "rosanna"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "centi",
-          "bay-treasure",
-          "trina",
-          "nero"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "I",
-      "III",
-      "II",
-      "I",
-      "II"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "mermaid-disrupt"
-    ],
-    "counteredBy": [
-      "noah-stall",
-      "sanis-stall"
-    ],
-    "priority": 3,
-    "notes": {
-      "en": "Moran tank + Scarlet nuke hybrid. Combines Moran's survivability with Scarlet's AoE burst.",
-      "zh-TW": "牡丹坦克 + 紅蓮核爆混合。結合牡丹的生存力和紅蓮的範圍爆裂。",
-      "zh-CN": "牡丹坦克 + 红莲核爆混合。结合牡丹的生存力和红莲的范围爆裂。",
-      "ja": "モランのタンクと紅蓮の核爆のハイブリッド。モランの生存力と紅蓮のAoEバーストを組み合わせる。"
     }
   },
   {
@@ -492,7 +352,9 @@
           "trina",
           "centi",
           "bay-treasure",
-          "takina"
+          "takina",
+          "red-hood",
+          "rosanna"
         ]
       }
     ],
@@ -509,10 +371,8 @@
     ],
     "counteredBy": [
       "rosanna-counter",
-      "sanis-stall",
       "noah-stall",
-      "mermaid-disrupt",
-      "alice-revive"
+      "mermaid-disrupt"
     ],
     "priority": 2,
     "notes": {
@@ -520,144 +380,6 @@
       "zh-TW": "不屈保護下的核爆。紅蓮 + 豺狼爆裂，布蘭兒保護隊伍免受反擊。",
       "zh-CN": "不屈保护下的核爆。红莲 + 豺狼爆裂，布兰儿保护队伍免受反击。",
       "ja": "ブランの不屈の後ろから核爆。紅蓮 + ジャッカルがバーストする間、ブランが反撃バーストから守る。"
-    }
-  },
-  {
-    "id": "alice-noah-carry",
-    "name": {
-      "en": "Alice Carry (Noah)",
-      "zh-TW": "愛麗絲主C (諾雅)",
-      "zh-CN": "爱丽丝主C (诺雅)",
-      "ja": "アリス主砲 (ノア)"
-    },
-    "archetype": "alice-carry",
-    "mode": "both",
-    "required": [
-      "alice",
-      "noah"
-    ],
-    "flex": [
-      {
-        "slot": 2,
-        "options": [
-          "biscuit",
-          "rapunzel",
-          "noise",
-          "bay-treasure",
-          "mast-romantic-maid"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "rapunzel",
-          "biscuit",
-          "takina",
-          "anchor-innocent-maid"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "jackal",
-          "centi",
-          "rosanna",
-          "little-mermaid"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "III",
-      "II",
-      "II",
-      "I",
-      "I"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "moran-system",
-      "scarlet-nuke"
-    ],
-    "counteredBy": [
-      "sanis-stall",
-      "rosanna-counter"
-    ],
-    "priority": 3,
-    "notes": {
-      "en": "Alice's single-target DPS behind Noah's invincibility shield. Strong sustained damage that cuts through tanks.",
-      "zh-TW": "愛麗絲的單體輸出在諾雅無敵盾後方。強力持續傷害可穿透坦克。",
-      "zh-CN": "爱丽丝的单体输出在诺雅无敌盾后方。强力持续伤害可穿透坦克。",
-      "ja": "ノアの無敵シールドの後ろからアリスの単体DPS。タンクを貫く強力な持続ダメージ。"
-    }
-  },
-  {
-    "id": "sanis-stall",
-    "name": {
-      "en": "Summer Anis Stall",
-      "zh-TW": "夏日阿妮斯持久戰",
-      "zh-CN": "夏日阿妮斯持久战",
-      "ja": "アニス：スパークリングサマー 持久戦"
-    },
-    "archetype": "sanis-stall",
-    "mode": "both",
-    "required": [
-      "anis-sparkling-summer",
-      "noah"
-    ],
-    "flex": [
-      {
-        "slot": 2,
-        "options": [
-          "biscuit",
-          "rapunzel",
-          "noise",
-          "bay-treasure",
-          "mast-romantic-maid"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "rapunzel",
-          "biscuit",
-          "takina",
-          "anchor-innocent-maid"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "jackal",
-          "centi",
-          "rosanna",
-          "little-mermaid"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "III",
-      "II",
-      "II",
-      "I",
-      "I"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "alice-carry",
-      "noah-stall",
-      "moran-system"
-    ],
-    "counteredBy": [
-      "scarlet-nuke",
-      "blanc-indom",
-      "vesti-tu"
-    ],
-    "priority": 3,
-    "notes": {
-      "en": "SAnis hits 2 enemies ignoring taunts. Needs heavy defensive support for the 10s burst window. Counters stall teams.",
-      "zh-TW": "夏日阿妮斯攻擊2名敵人且無視嘲諷。需要大量防禦輔助支撐10秒爆裂窗口。克制持久隊。",
-      "zh-CN": "夏日阿妮斯攻击2名敌人且无视嘲讽。需要大量防御辅助支撑10秒爆裂窗口。克制持久队。",
-      "ja": "サマーアニスは挑発を無視して敵2体を攻撃する。10秒のバーストウィンドウには強力な防御支援が必要。持久戦チームへの反制。"
     }
   },
   {
@@ -731,8 +453,7 @@
       "moran-system",
       "noah-stall",
       "blanc-indom",
-      "scarlet-nuke",
-      "moran-scarlet"
+      "scarlet-nuke"
     ],
     "priority": 3,
     "notes": {
@@ -890,152 +611,6 @@
     }
   },
   {
-    "id": "rapi-rh-carry",
-    "name": {
-      "en": "Rapi: Red Hood Carry",
-      "zh-TW": "拉比:紅帽主C",
-      "zh-CN": "拉比:红帽主C",
-      "ja": "ラピ：レッドフード 主砲"
-    },
-    "archetype": "rapi-rh",
-    "mode": "both",
-    "required": [
-      "rapi-red-hood"
-    ],
-    "flex": [
-      {
-        "slot": 1,
-        "options": [
-          "noah",
-          "blanc",
-          "noise",
-          "bay-treasure"
-        ]
-      },
-      {
-        "slot": 2,
-        "options": [
-          "biscuit",
-          "rapunzel",
-          "takina",
-          "mast-romantic-maid"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "jackal",
-          "centi",
-          "rosanna",
-          "little-mermaid"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "centi",
-          "trina",
-          "bay-treasure",
-          "nero"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "III",
-      "II",
-      "II",
-      "I",
-      "II"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "scarlet-nuke"
-    ],
-    "counteredBy": [
-      "moran-system"
-    ],
-    "priority": 3,
-    "notes": {
-      "en": "Rapi: Red Hood is SSS tier with massive single-target burst. Pair with defensive supports for sustained damage.",
-      "zh-TW": "拉比:紅帽為SSS級，擁有強大的單體爆裂。搭配防禦輔助進行持續輸出。",
-      "zh-CN": "拉比:红帽为SSS级，拥有强大的单体爆裂。搭配防御辅助进行持续输出。",
-      "ja": "ラピ：レッドフードはSSSティアで圧倒的な単体バーストを持つ。防御支援と組み合わせて持続ダメージを発揮。"
-    }
-  },
-  {
-    "id": "vesti-tu-carry",
-    "name": {
-      "en": "Vesti: TU Carry",
-      "zh-TW": "銀華:戰術升級主C",
-      "zh-CN": "银华:战术升级主C",
-      "ja": "ベスティー：タクティカル・アップ 主砲"
-    },
-    "archetype": "vesti-tu",
-    "mode": "both",
-    "required": [
-      "vesti-tactical-upgrade"
-    ],
-    "flex": [
-      {
-        "slot": 1,
-        "options": [
-          "noah",
-          "blanc",
-          "noise",
-          "bay-treasure"
-        ]
-      },
-      {
-        "slot": 2,
-        "options": [
-          "biscuit",
-          "rapunzel",
-          "takina",
-          "mast-romantic-maid"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "jackal",
-          "centi",
-          "rosanna",
-          "little-mermaid"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "centi",
-          "trina",
-          "bay-treasure",
-          "nero"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "III",
-      "II",
-      "II",
-      "I",
-      "II"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "sanis-stall"
-    ],
-    "counteredBy": [
-      "scarlet-nuke"
-    ],
-    "priority": 3,
-    "notes": {
-      "en": "Vesti: Tactical Upgrade is SSS tier. Strong burst DPS with self-sustain capability.",
-      "zh-TW": "銀華:戰術升級為SSS級。強力爆裂輸出兼具自我維持能力。",
-      "zh-CN": "银华:战术升级为SSS级。强力爆裂输出兼具自我维持能力。",
-      "ja": "ベスティー：タクティカル・アップはSSSティア。自己持続能力を備えた強力なバーストDPS。"
-    }
-  },
-  {
     "id": "nayuta-carry",
     "name": {
       "en": "Nayuta Carry",
@@ -1116,72 +691,6 @@
       "zh-TW": "娜由塔搭配海倫 珍藏擔任主力。小紅帽的增益或牡丹／蕾貝兒前排讓她存活到爆裂逆轉。",
       "zh-CN": "娜由塔搭配海伦 珍藏担任主力。小红帽的增益或牡丹／蕾贝儿前排让她存活到爆裂逆转。",
       "ja": "ヘルム：宝物と並ぶナユタ主軸の編成。レッドフードのバフ、またはモラン／レーベルの前衛でナユタを生存させ、バーストで逆転する。"
-    }
-  },
-  {
-    "id": "alice-rapunzel-revive",
-    "name": {
-      "en": "Alice Revive (Rapunzel)",
-      "zh-TW": "愛麗絲復活 (長髮公主)",
-      "zh-CN": "爱丽丝复活 (长发公主)",
-      "ja": "アリス復活 (ラプンツェル)"
-    },
-    "archetype": "alice-revive",
-    "mode": "attack",
-    "required": [
-      "alice",
-      "rapunzel"
-    ],
-    "flex": [
-      {
-        "slot": 2,
-        "options": [
-          "blanc",
-          "noah",
-          "biscuit",
-          "noise"
-        ]
-      },
-      {
-        "slot": 3,
-        "options": [
-          "biscuit",
-          "noah",
-          "bay-treasure",
-          "takina"
-        ]
-      },
-      {
-        "slot": 4,
-        "options": [
-          "jackal",
-          "centi",
-          "rosanna",
-          "little-mermaid"
-        ]
-      }
-    ],
-    "burstSlots": [
-      "III",
-      "I",
-      "II",
-      "II",
-      "I"
-    ],
-    "preferredSpeed": "3RL",
-    "counters": [
-      "scarlet-nuke",
-      "blanc-indom"
-    ],
-    "counteredBy": [
-      "sanis-stall"
-    ],
-    "priority": 3,
-    "notes": {
-      "en": "Alice dies early, Rapunzel revives her with ATK buff. Revived Alice deals massive damage. Strong counter to nuke teams.",
-      "zh-TW": "愛麗絲先陣亡，長髮公主復活並附帶攻擊增益。復活後的愛麗絲造成巨大傷害。強力反核爆隊。",
-      "zh-CN": "爱丽丝先阵亡，长发公主复活并附带攻击增益。复活后的爱丽丝造成巨大伤害。强力反核爆队。",
-      "ja": "アリスが早期に倒れ、ラプンツェルが攻撃バフと共に復活させる。復活したアリスは圧倒的なダメージを与える。核爆チームへの強力な反制。"
     }
   },
   {
@@ -1312,7 +821,6 @@
       "blanc-indom"
     ],
     "counteredBy": [
-      "sanis-stall",
       "tactical-trio"
     ],
     "priority": 3,
@@ -1519,8 +1027,7 @@
       "blanc-indom"
     ],
     "counteredBy": [
-      "mermaid-disrupt",
-      "sanis-stall"
+      "mermaid-disrupt"
     ],
     "priority": 1,
     "notes": {
@@ -1592,7 +1099,7 @@
       "noah-stall",
       "moran-system"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "Maiden taunts the whole enemy team for 10 sec so Privaty's stun burst lands on the full line, breaking their burst chain before it fires.",
       "zh-TW": "梅登全體嘲諷10秒，讓普麗瓦蒂的暈眩爆裂命中全隊，在對方爆裂鏈發動前打斷。",
@@ -1623,8 +1130,7 @@
           "liberalio",
           "maiden-ice-rose",
           "milk-blooming-bunny",
-          "ein",
-          "ada"
+          "ein"
         ]
       },
       {
@@ -1663,7 +1169,7 @@
       "noah-stall",
       "mermaid-disrupt"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "Two overlapping damage-share layers spread the opening nuke across the team instead of deleting one target. Blunts burst-alpha comps rather than out-racing them.",
       "zh-TW": "兩層傷害分攤重疊，將對方首波核爆分散至全隊而非秒殺單一目標。以承傷而非搶速剋制爆發隊。",

@@ -88,25 +88,19 @@ describe('templates.json integrity', () => {
    * recommend5v5 does not dedup by character set, so two templates that can build the
    * same five characters can occupy two of the five result slots with one visible team.
    * Same-archetype variants are exempt — they never surface together.
-   *
-   * Known pre-existing offender, well above every other pair (next highest is 16):
-   * moran-scarlet is largely a subset of moran-system-atk. Left as-is rather than
-   * silently raising the threshold for everyone.
    */
   it('no two templates in the same mode produce heavily overlapping teams', () => {
     const MAX_SHARED = 20
-    const KNOWN = new Map([['moran-system-atk|moran-scarlet', 60]])
     const producible = new Map(templates.map(t => [t.id, producibleTeams(t)]))
     for (const [i, a] of templates.entries()) {
       for (const b of templates.slice(i + 1)) {
         if (a.archetype === b.archetype) continue
         if (a.mode !== 'both' && b.mode !== 'both' && a.mode !== b.mode) continue
         const shared = [...producible.get(a.id)!].filter(team => producible.get(b.id)!.has(team))
-        const budget = KNOWN.get(`${a.id}|${b.id}`) ?? MAX_SHARED
         expect(
           shared.length,
           `${a.id} and ${b.id} share ${shared.length} identical teams, e.g. ${shared[0]?.split('|').join(' + ')}`,
-        ).toBeLessThanOrEqual(budget)
+        ).toBeLessThanOrEqual(MAX_SHARED)
       }
     }
   })
