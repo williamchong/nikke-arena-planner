@@ -17,6 +17,7 @@
         "slot": 1,
         "options": [
           "scarlet",
+          "scarlet-goddeath",
           "snow-white-heavy-arms",
           "maiden-ice-rose",
           "scarlet-black-shadow",
@@ -34,7 +35,8 @@
           "trina",
           "blanc",
           "crown",
-          "ada"
+          "ada",
+          "neon-vision-eye"
         ]
       },
       {
@@ -43,7 +45,8 @@
           "jackal",
           "noise",
           "rapunzel",
-          "rosanna"
+          "rosanna",
+          "rumani"
         ]
       },
       {
@@ -232,7 +235,7 @@
       "mermaid-disrupt",
       "alice-revive"
     ],
-    "priority": 1,
+    "priority": 2,
     "notes": {
       "en": "Blanc's indomitability protects the team while EMT provides sustained burst damage. Core meta system.",
       "zh-TW": "布蘭兒的不屈保護隊伍，EMT提供持續爆裂傷害。核心元數據體系。",
@@ -258,6 +261,8 @@
       {
         "slot": 0,
         "options": [
+          "helm-treasure",
+          "snow-white-heavy-arms",
           "alice",
           "anis-sparkling-summer",
           "cinderella",
@@ -351,6 +356,7 @@
       {
         "slot": 4,
         "options": [
+          "rosanna",
           "centi",
           "trina",
           "noise",
@@ -447,7 +453,7 @@
       "noah-stall",
       "sanis-stall"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "Moran tank + Scarlet nuke hybrid. Combines Moran's survivability with Scarlet's AoE burst.",
       "zh-TW": "牡丹坦克 + 紅蓮核爆混合。結合牡丹的生存力和紅蓮的範圍爆裂。",
@@ -576,7 +582,7 @@
       "sanis-stall",
       "rosanna-counter"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "Alice's single-target DPS behind Noah's invincibility shield. Strong sustained damage that cuts through tanks.",
       "zh-TW": "愛麗絲的單體輸出在諾雅無敵盾後方。強力持續傷害可穿透坦克。",
@@ -646,7 +652,7 @@
       "blanc-indom",
       "vesti-tu"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "SAnis hits 2 enemies ignoring taunts. Needs heavy defensive support for the 10s burst window. Counters stall teams.",
       "zh-TW": "夏日阿妮斯攻擊2名敵人且無視嘲諷。需要大量防禦輔助支撐10秒爆裂窗口。克制持久隊。",
@@ -728,7 +734,7 @@
       "scarlet-nuke",
       "moran-scarlet"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "Little Mermaid's stun disrupts enemy burst chains. Pairs with any nuke DPS.",
       "zh-TW": "小美人魚的暈眩打斷敵方爆裂鏈。與任何核爆輸出搭配。",
@@ -1058,8 +1064,8 @@
       {
         "slot": 2,
         "options": [
-          "red-hood",
           "moran-treasure",
+          "red-hood",
           "label",
           "noah",
           "blanc",
@@ -1074,7 +1080,10 @@
           "jackal",
           "centi",
           "rapunzel",
-          "little-mermaid"
+          "little-mermaid",
+          "snow-white-heavy-arms",
+          "laplace-treasure",
+          "anis"
         ]
       },
       {
@@ -1084,7 +1093,8 @@
           "trina",
           "bay-treasure",
           "nero",
-          "emilia"
+          "emilia",
+          "laplace-treasure"
         ]
       }
     ],
@@ -1305,7 +1315,7 @@
       "sanis-stall",
       "tactical-trio"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "~100% damage reduction via Moran tank + Nero DR stacking. Outlasts most compositions.",
       "zh-TW": "透過牡丹坦克 + 尼羅減傷疊加達到約100%減傷。可耗過大多數陣容。",
@@ -1332,15 +1342,17 @@
       {
         "slot": 3,
         "options": [
+          "rosanna",
           "jackal",
           "centi",
-          "noise",
-          "rosanna"
+          "noise"
         ]
       },
       {
         "slot": 4,
         "options": [
+          "flora-treasure",
+          "mast",
           "centi",
           "trina",
           "bay-treasure",
@@ -1440,7 +1452,7 @@
       "noah-stall",
       "blanc-indom"
     ],
-    "priority": 2,
+    "priority": 3,
     "notes": {
       "en": "Rosanna sacrifice + SG concentrated fire. Kills key targets before burst via shotgun damage. Counters Moran/Peony tank teams.",
       "zh-TW": "羅珊娜犧牲 + 霰彈集火。透過霰彈傷害在爆裂前擊殺關鍵目標。克制牡丹坦克隊。",
@@ -1744,8 +1756,10 @@
       {
         "slot": 4,
         "options": [
+          "anis",
           "helm-treasure",
-          "anis"
+          "jackal",
+          "noise"
         ]
       }
     ],
@@ -1762,7 +1776,8 @@
       "sg-burst"
     ],
     "counteredBy": [
-      "tactical-trio"
+      "tactical-trio",
+      "noah-launcher"
     ],
     "priority": 2,
     "notes": {
@@ -1770,6 +1785,204 @@
       "zh-TW": "2RL速攻。索達的暈眩在拉普拉斯：究極英雄爆裂命中前封住敵方關鍵防禦輔助（通常是諾雅）。索達放在中間位置，無需培養。桑迪 珍藏負責維持全隊生存。",
       "zh-CN": "2RL速攻。索达的眩晕在拉普拉斯：究极英雄爆裂命中前封住敌方关键防御辅助（通常是诺雅）。索达放在中间位置，无需培养。桑迪 珍藏负责维持全队生存。",
       "ja": "2RL速攻。ソーダのスタンで相手の防御役（主にノア）を止め、その直後にラプラス：アルティメットヒーローのバーストを当てる。ソーダは中央に配置し、育成は不要。センチ：宝物が耐久を支える。"
+    }
+  },
+  {
+    "id": "anis-star-indom",
+    "name": {
+      "en": "Anis: Star + Blanc + Biscuit Indomitable",
+      "zh-TW": "阿妮斯：超級巨星 + 布蘭兒 + 餅乾 不屈",
+      "zh-CN": "阿妮斯：超级巨星 + 布兰儿 + 饼干 不屈",
+      "ja": "アニス：スター + ブラン + ビスケット 不屈"
+    },
+    "archetype": "anis-star-system",
+    "mode": "both",
+    "required": [
+      "anis-star",
+      "blanc",
+      "biscuit"
+    ],
+    "flex": [
+      {
+        "slot": 3,
+        "options": [
+          "privaty-treasure",
+          "anis-sparkling-summer",
+          "vesti-tactical-upgrade",
+          "neon-vision-eye",
+          "cinderella"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "maiden-ice-rose",
+          "cinderella",
+          "mihara-bonding-chain",
+          "helm-treasure"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "II",
+      "II",
+      "III",
+      "III"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "soda-laplace",
+      "tactical-trio"
+    ],
+    "counteredBy": [
+      "noah-launcher"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "Late-burst indomitable shell. Biscuit's taunt protection sits on Anis: Star while Blanc's indomitability carries the team through the enemy burst. The second attacker is the flex: Privaty for a full-team stun, or Anis: Sparkling Summer for damage.",
+      "zh-TW": "後手爆裂的不屈體系。餅乾保護阿妮斯：超級巨星，布蘭兒的不屈讓全隊撐過敵方爆裂。第二輸出位可自由調整：普麗瓦蒂提供全體暈眩，阿妮斯：閃耀夏日提供傷害。",
+      "zh-CN": "后手爆裂的不屈体系。饼干保护阿妮斯：超级巨星，布兰儿的不屈让全队撑过敌方爆裂。第二输出位可自由调整：普丽瓦蒂提供全体眩晕，阿妮斯：闪耀夏日提供伤害。",
+      "ja": "後出しバーストの不屈編成。ビスケットがアニス：スターを守り、ブランの不屈で相手のバーストを耐える。2人目のアタッカーは自由枠で、プリバティなら全体スタン、アニス：スパークリングサマーなら火力を補える。"
+    }
+  },
+  {
+    "id": "jackal-blanc-indom",
+    "name": {
+      "en": "Jackal + Blanc Indomitable",
+      "zh-TW": "豺狼 + 布蘭兒 不屈",
+      "zh-CN": "豺狼 + 布兰儿 不屈",
+      "ja": "ジャッカル + ブラン 不屈"
+    },
+    "archetype": "blanc-indom",
+    "mode": "both",
+    "required": [
+      "jackal",
+      "blanc"
+    ],
+    "flex": [
+      {
+        "slot": 2,
+        "options": [
+          "vesti-tactical-upgrade",
+          "snow-white-heavy-arms",
+          "scarlet-goddeath"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "ada",
+          "anis-star",
+          "maiden-ice-rose",
+          "centi"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "maiden-ice-rose",
+          "neon-vision-eye",
+          "helm-treasure",
+          "drake-treasure",
+          "emilia",
+          "ada"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "I",
+      "II",
+      "III",
+      "III",
+      "III"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "noah-stall"
+    ],
+    "counteredBy": [
+      "tactical-trio",
+      "rosanna-counter"
+    ],
+    "priority": 1,
+    "notes": {
+      "en": "Jackal's link plus Blanc's indomitability around one main attacker, usually Vesti: Tactical Upgrade or Snow White: Heavy Arms. Put Jackal first and Blanc fourth. Rosanna removes the link, and the Tactical Upgrade trio breaks through it.",
+      "zh-TW": "以豺狼連結加布蘭兒不屈保護一名主力輸出，通常是貝斯蒂：戰術升級或白雪公主：重型武裝。豺狼放1號位，布蘭兒放4號位。羅珊娜可解除連結，戰術升級三人組可強行突破。",
+      "zh-CN": "以豺狼连结加布兰儿不屈保护一名主力输出，通常是贝斯蒂：战术升级或白雪公主：重型武装。豺狼放1号位，布兰儿放4号位。罗珊娜可解除连结，战术升级三人组可强行突破。",
+      "ja": "ジャッカルのリンクとブランの不屈で主力アタッカー1人を守る編成。主力はベスティー：タクティカル・アップかスノーホワイト：ヘビーアームズ。ジャッカルは1番、ブランは4番に置く。ロザンナにリンクを解除され、タクティカル・アップ3人組に突破されやすい。"
+    }
+  },
+  {
+    "id": "noah-launcher",
+    "name": {
+      "en": "Noah Launcher Rush",
+      "zh-TW": "諾雅火箭筒速攻",
+      "zh-CN": "诺雅火箭筒速攻",
+      "ja": "ノア ランチャー速攻"
+    },
+    "archetype": "noah-launcher",
+    "mode": "both",
+    "required": [
+      "noah"
+    ],
+    "flex": [
+      {
+        "slot": 1,
+        "options": [
+          "noise",
+          "rumani",
+          "jackal"
+        ]
+      },
+      {
+        "slot": 2,
+        "options": [
+          "neon-vision-eye",
+          "liberalio"
+        ]
+      },
+      {
+        "slot": 3,
+        "options": [
+          "liberalio",
+          "laplace-treasure",
+          "neon-vision-eye",
+          "centi"
+        ]
+      },
+      {
+        "slot": 4,
+        "options": [
+          "centi",
+          "rumani",
+          "jackal",
+          "noise"
+        ]
+      }
+    ],
+    "burstSlots": [
+      "II",
+      "I",
+      "III",
+      "III",
+      "II"
+    ],
+    "preferredSpeed": "3RL",
+    "counters": [
+      "soda-laplace",
+      "anis-star-system"
+    ],
+    "counteredBy": [
+      "blanc-indom",
+      "noah-stall"
+    ],
+    "priority": 2,
+    "notes": {
+      "en": "Rocket launcher burst generation behind Noah's invincibility, finishing with Liberalio or Neon: Vision Eye. Neon in slot 2 with Noah in slot 4 is the standard answer to the Soda + Laplace stun rush.",
+      "zh-TW": "以火箭筒充能配合諾雅的無敵，由莉貝雷利奧或尼恩：透視之眼收尾。尼恩放2號位、諾雅放4號位，是對付索達 + 拉普拉斯暈眩速攻的標準解法。",
+      "zh-CN": "以火箭筒充能配合诺雅的无敌，由莉贝雷利奥或尼恩：透视之眼收尾。尼恩放2号位、诺雅放4号位，是对付索达 + 拉普拉斯眩晕速攻的标准解法。",
+      "ja": "ランチャーでゲージを稼ぎ、ノアの無敵で守りつつリバーレリオかネオン：ビジョン・アイで決める編成。ネオンを2番、ノアを4番に置く形がソーダ + ラプラスのスタン速攻への定番の対策。"
     }
   }
 ]
